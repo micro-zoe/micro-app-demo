@@ -1,10 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Link } from 'react-router-dom'
+import logo from '../../assets/logo.svg';
+import './home.css';
 
 function App() {
   return (
     <div className="App">
+      <Link to='/page2'>跳转page2</Link>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
