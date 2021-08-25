@@ -29,6 +29,8 @@
     "@micro-zoe/micro-app": "0.2.4"
   },
   "devDependencies": {
+    "@vue/cli-plugin-eslint": "~4.5.13",
+    "@vue/cli-plugin-typescript": "~4.5.13",
     "express": "~4.17.1"
   }
 }
