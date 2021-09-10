@@ -24,7 +24,7 @@ const routes: Array<RouteRecordRaw> = [
 
 const router = createRouter({
   // @ts-ignore
-  history: createWebHistory(window.__MICRO_APP_BASE_URL__ || process.env.BASE_URL),
+  history: createWebHistory(window.__MICRO_APP_BASE_ROUTE__ || process.env.BASE_URL),
   routes
 })
 

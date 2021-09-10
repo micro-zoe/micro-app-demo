@@ -6,7 +6,7 @@ const Page2 = lazy(() => import(/* webpackChunkName: "page2" */ './pages/page2/p
 
 function App () {
   return (
-    <BrowserRouter basename={window.__MICRO_APP_BASE_URL__ || '/'}>
+    <BrowserRouter basename={window.__MICRO_APP_BASE_ROUTE__ || '/'}>
       <Switch>
         <Route path="/" exact>
           <Home />

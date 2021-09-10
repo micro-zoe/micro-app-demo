@@ -6,6 +6,12 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script>
+    if (window.__MICRO_APP_ENVIRONMENT__) {
+      const base = document.querySelector('base')
+      base.setAttribute('href', window.__MICRO_APP_BASE_ROUTE__)
+    }
+  </script>
 </head>
 <body>
   <app-root></app-root>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-export default () => {
+const Page2 = () => {
   return (
     <div>
       <h2>react17 - page2</h2>
@@ -8,3 +8,5 @@ export default () => {
     </div>
   )
 }
+
+export default Page2

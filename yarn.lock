@@ -2092,6 +2092,11 @@
   resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.2.4.tgz#6a21d1c3d04b30fd1c1937ec0b736eedb2942cd5"
   integrity sha512-HxK0mSuHfCYu7yPZQAC/U0rV/Tzpfq6I3C5JXHeCn84NbaAKp8NKD0YIL7CgnNTtbFhU/DSeUi2ReOBU8CEBlQ==
 
+"@micro-zoe/micro-app@~0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.3.2.tgz#b6088b84ccb988db7316196161f8c74900f549a4"
+  integrity sha512-81AAPt/UuTCm2oAwoXxg4fkNPIWEAno/PCeyL8Q/iwwnStDMA2HWn95G2Gy9fu28ZRU+36eeVF3lf0zEBwOJWA==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -19430,7 +19435,7 @@ zone.js@~0.10.3:
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.10.3.tgz#3e5e4da03c607c9dcd92e37dd35687a14a140c16"
   integrity sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
 
-zone.js@~0.11.3:
+zone.js@~0.11.3, zone.js@~0.11.4:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.11.4.tgz#0f70dcf6aba80f698af5735cbb257969396e8025"
   integrity sha512-DDh2Ab+A/B+9mJyajPjHFPWfYU1H+pdun4wnnk0OcQTNjem1XQSZ2CDW+rfZEUDjv5M19SBqAkjZi0x5wuB5Qw==

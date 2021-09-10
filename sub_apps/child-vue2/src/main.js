@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   mode: 'history',
-  base: window.__MICRO_APP_BASE_URL__ || '/',
+  base: window.__MICRO_APP_BASE_ROUTE__ || '/',
   routes,
 })
 

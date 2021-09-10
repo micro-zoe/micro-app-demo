@@ -1,6 +1,13 @@
 <template>
   <div>
-    <micro-app name='vue2' url='http://localhost:4008/' baseurl='/vue2'></micro-app>
+    <micro-app
+      name='vue2'
+      url='http://localhost:4008/'
+      baseroute='/vue2'
+      @created='handleCreate'
+      @mounted='handleMount'
+      @unmount='handleUnMount'
+    ></micro-app>
   </div>
 </template>
 
@@ -10,6 +17,17 @@ export default {
   name: 'vue2',
   data() {
     return {
+    }
+  },
+  methods: {
+    handleCreate () {
+      console.log('child-vue2 创建了')
+    },
+    handleMount () {
+      console.log('child-vue2 渲染了')
+    },
+    handleUnMount () {
+      console.log('child-vue2 卸载了')
     }
   }
 }

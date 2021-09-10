@@ -6,17 +6,17 @@ export default defineConfig({
   plugins: [
     vue(),
     (function () {
-      let baseUrl = ''
+      let basePath = ''
       return {
         name: "vite:micro-app",
         apply: 'build',
         configResolved(config) {
-          baseUrl = `${config.base}${config.build.assetsDir}/`
+          basePath = `${config.base}${config.build.assetsDir}/`
         },
         renderChunk(code, chunk) {
           if (chunk.fileName.endsWith('.js') && /(from|import)(\s*['"])(\.\.?\/)/g.test(code)) {
             code = code.replace(/(from|import)(\s*['"])(\.\.?\/)/g, (all, $1, $2, $3) => {
-              return all.replace($3, new URL($3, baseUrl))
+              return all.replace($3, new URL($3, basePath))
             })
           }
           return code

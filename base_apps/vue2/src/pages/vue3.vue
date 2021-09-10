@@ -1,6 +1,10 @@
 <template>
   <div>
-    <micro-app name='vue3' url='http://localhost:4009/' baseurl='/vue3'></micro-app>
+    <micro-app
+      name='vue3'
+      url='http://localhost:4009/'
+      baseroute='/vue3'
+    ></micro-app>
   </div>
 </template>
 
@@ -11,7 +15,7 @@ export default {
   data() {
     return {
     }
-  }
+  },
 }
 </script>
 
