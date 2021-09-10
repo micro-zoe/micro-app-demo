@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <router-view />
+    <micro-app name='sidebar' url='http://localhost:4006'></micro-app>
+    <router-view class='router-view' />
   </div>
 </template>
 
@@ -17,6 +18,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  display: flex;
+}
+body {
+  margin: 0;
+}
+.router-view {
+  flex: 1;
 }
 </style>

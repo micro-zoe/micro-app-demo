@@ -26,11 +26,13 @@
   },
   "homepage": "https://github.com/micro-zoe/micro-app-demo#readme",
   "dependencies": {
-    "@micro-zoe/micro-app": "0.2.4"
+    "@micro-zoe/micro-app": "0.2.4",
+    "element-ui": "~2.15.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~4.5.13",
     "@vue/cli-plugin-typescript": "~4.5.13",
+    "babel-plugin-component": "~1.1.1",
     "express": "~4.17.1"
   }
 }
