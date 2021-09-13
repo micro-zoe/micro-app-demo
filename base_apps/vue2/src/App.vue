@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <micro-app name='sidebar' url='http://localhost:4006'></micro-app>
+    <micro-app name='sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
     <router-view class='router-view' />
   </div>
 </template>
 
 <script>
+import microApp from '@micro-zoe/micro-app'
+
 export default {
   name: 'App',
+  data () {
+    return {
+      sidebarData: {
+        pushState: (path) => {
+          this.$router.push(path)
+        }
+      }
+    }
+  },
 }
 </script>
 

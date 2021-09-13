@@ -15,10 +15,6 @@
 
 export default {
   name: 'vue2',
-  data() {
-    return {
-    }
-  },
   methods: {
     handleCreate () {
       console.log('child-vue2 创建了')

@@ -53,13 +53,13 @@ export default {
     const pathArr = location.pathname.split('/')
     this.defaultIndex = pathArr[1] ? pathArr[1] : '/'
   },
-  components: {
-  },
   methods: {
     select (index) {
-      history.pushState(null, null, `/${index}`.replaceAll(/\/{2,}/g, '/'))
-      // 主动触发一次popstate事件
-      window.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+      const path = `/${index}`.replaceAll(/\/{2,}/g, '/')
+      if (window.microApp) {
+        const data = window.microApp.getData()
+        data && data.pushState(path)
+      }
     },
   }
 }
