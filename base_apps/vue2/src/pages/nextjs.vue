@@ -1,6 +1,6 @@
 <template>
   <div>
-    <micro-app name='nextjs' url='http://localhost:4002/' baseroute='/nextjs' inline></micro-app>
+    <micro-app name='nextjs' url='http://localhost:4002/nextjs'></micro-app>
   </div>
 </template>
 

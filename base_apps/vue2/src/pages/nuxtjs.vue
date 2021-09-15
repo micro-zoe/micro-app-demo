@@ -1,6 +1,6 @@
 <template>
   <div>
-    nuxtjs
+    <micro-app name='nuxtjs' url='http://localhost:4003/nuxtjs'></micro-app>
   </div>
 </template>
 

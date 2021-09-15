@@ -7,7 +7,7 @@ const Home: NextPage = () => {
     <div className={styles.page2Container}>
       <p>next -- page2</p>
       <div>
-        <Link href="/react17">
+        <Link href="/">
           <a>跳转首页</a>
         </Link>
       </div>

@@ -1,5 +1,6 @@
 const express = require('express')
 const next = require('next')
+const config = require('./next.config')
 
 const port = parseInt(process.env.PORT, 10) || 4002
 const dev = process.env.NODE_ENV !== 'production'
@@ -16,6 +17,6 @@ app.prepare().then(() => {
 
   server.listen(port, (err) => {
     if (err) throw err
-    console.log(`> Ready on http://localhost:${port}`)
+    console.log(`> Ready on http://localhost:${port}${config.basePath}/`)
   })
 })
