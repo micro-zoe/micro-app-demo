@@ -1,6 +1,6 @@
 <template>
   <div>
-    <micro-app name='nuxtjs' url='http://localhost:4003/nuxtjs'></micro-app>
+    <micro-app name='appname-nuxtjs' :url='url'></micro-app>
   </div>
 </template>
 
@@ -10,7 +10,11 @@ export default {
   name: 'nuxtjs',
   data() {
     return {
+      url: 'http://localhost:4003'
     }
+  },
+  created () {
+    this.url = this.url + location.pathname
   }
 }
 </script>

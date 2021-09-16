@@ -1,16 +1,12 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
 import styles from '../styles/page2.module.css'
+import { formatPath } from '../lib/utils'
 
 const Home: NextPage = () => {
   return (
     <div className={styles.page2Container}>
-      <p>next -- page2</p>
-      <div>
-        <Link href="/">
-          <a>跳转首页</a>
-        </Link>
-      </div>
+      <h3>page2</h3>
+      <img src={formatPath("/micro-app-logo.png")} alt="micro-app-logo" />
     </div>
   )
 }

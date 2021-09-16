@@ -1,3 +1,4 @@
+import "./public-path"
 import Vue from 'vue'
 import App from './App.vue'
 import routes from './router'

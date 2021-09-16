@@ -1,6 +1,10 @@
 <template>
   <div>
-    <micro-app name='react17' url='http://localhost:4005/react17/' baseroute='/react17'></micro-app>
+    <micro-app
+      name='appname-react17'
+      url='http://localhost:4005/'
+      baseroute='/app-react17'
+    ></micro-app>
   </div>
 </template>
 

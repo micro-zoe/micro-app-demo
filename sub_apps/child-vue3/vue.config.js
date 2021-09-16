@@ -3,7 +3,7 @@ module.exports = {
   outputDir: 'vue3',
   productionSourceMap: false,
   devServer: {
-    hot: true,
+    hot: false,
     disableHostCheck: true,
     port: 4009,
     open: false,

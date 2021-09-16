@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 microApp.start({
   plugins: {
     modules: {
-      vite: [
+      'appname-vite': [
         {
           loader(code) {
             if (process.env.NODE_ENV === 'development') {
@@ -23,7 +23,7 @@ microApp.start({
           }
         }
       ],
-      react16: [{
+      'appname-react16': [{
         loader(code) {
           if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
             code = code.replace('window.location.port', '4004')
@@ -31,7 +31,7 @@ microApp.start({
           return code
         }
       }],
-      react17: [{
+      'appname-react17': [{
         loader(code) {
           if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
             code = code.replace('window.location.port', '4005')
@@ -39,6 +39,20 @@ microApp.start({
           return code
         }
       }],
+      // nuxtjs: [{
+      //   loader (code) {
+      //     if (process.env.NODE_ENV === 'development') {
+      //       const hmrPath = '/nuxtjs/__webpack_hmr/client'
+      //       const encodeHmrPath = encodeURIComponent(hmrPath)
+      //       if (code.indexOf(encodeHmrPath) > -1) {
+      //         code = code.replaceAll(new RegExp(encodeHmrPath, 'g'), () => {
+      //           return encodeURIComponent(`http://localhost:4003${hmrPath}`)
+      //         })
+      //       }
+      //     }
+      //     return code
+      //   }
+      // }]
     }
   }
 })

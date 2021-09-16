@@ -3,7 +3,7 @@ module.exports = {
   outputDir: 'dist',
   productionSourceMap: false,
   devServer: {
-    hot: true,
+    hot: false,
     disableHostCheck: true,
     port: 4008,
     open: false,

@@ -11,7 +11,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 const logo = new URL('../assets/logo.png', import.meta.url)
 
 export default defineComponent({
-  name: 'App',
+  name: 'Home',
   data () {
     return {
       logo,

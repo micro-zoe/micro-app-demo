@@ -1,6 +1,6 @@
 <template>
   <div>
-    <micro-app name='nextjs' url='http://localhost:4002/nextjs'></micro-app>
+    <micro-app name='appname-nextjs' :url='url'></micro-app>
   </div>
 </template>
 
@@ -10,7 +10,11 @@ export default {
   name: 'nextjs',
   data() {
     return {
+      url: 'http://localhost:4002'
     }
+  },
+  created () {
+    this.url = this.url + location.pathname
   }
 }
 </script>

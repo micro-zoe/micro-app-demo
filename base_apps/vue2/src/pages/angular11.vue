@@ -1,9 +1,9 @@
 <template>
   <div>
     <micro-app
-      name='angular11'
+      name='appname-angular11'
       url='http://localhost:4001/'
-      baseroute='/angular11'
+      baseroute='/app-angular11'
     ></micro-app>
   </div>
 </template>

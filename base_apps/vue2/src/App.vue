@@ -1,12 +1,11 @@
 <template>
   <div id="app">
-    <micro-app name='sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
-    <router-view class='router-view' />
+    <micro-app name='appname-sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
+    <router-view class='router-container' />
   </div>
 </template>
 
 <script>
-import microApp from '@micro-zoe/micro-app'
 
 export default {
   name: 'App',
@@ -23,18 +22,33 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  display: flex;
-}
 body {
   margin: 0;
 }
-.router-view {
+
+#app {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  text-align: center;
+}
+
+.router-container {
   flex: 1;
+}
+
+#public-links {
+  padding: 10px 0;
+}
+
+#public-links a {
+  text-decoration: underline;
+  color: -webkit-link;
+  cursor: pointer;
+}
+
+#public-links a:active {
+  color: #f53f3f;
 }
 </style>

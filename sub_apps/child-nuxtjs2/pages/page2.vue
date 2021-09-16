@@ -1,7 +1,11 @@
 <template>
   <div>
-    page2
-    <img src="/nuxtjs/micro-app-logo.png" width="40" />
+    <div id='public-links'>
+      <NuxtLink to="/">Home</NuxtLink> |
+      <NuxtLink to="/page2">Page2</NuxtLink>
+    </div>
+    <h3>page2</h3>
+    <img src="/app-nuxtjs/micro-app-logo.png" width="100" />
   </div>
 </template>
 

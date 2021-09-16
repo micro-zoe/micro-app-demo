@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='vite'
+      name='appname-vite'
       url='http://localhost:4007/'
       inline
       disablesandbox

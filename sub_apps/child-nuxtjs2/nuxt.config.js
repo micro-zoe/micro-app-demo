@@ -51,7 +51,7 @@ module.exports = {
     publicPath: 'http://线上地址',
   },
   router: {
-    base: '/nuxtjs'
+    base: '/app-nuxtjs'
   },
   telemetry: false,
 }

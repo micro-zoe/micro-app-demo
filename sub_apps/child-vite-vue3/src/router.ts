@@ -13,7 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   //   component: React17
   // },
   {
-    path: '/page2/:page*',
+    path: '/page2',
     name: 'page2',
     // route level code-splitting
     // this generates a separate chunk (page2.[hash].js) for this route

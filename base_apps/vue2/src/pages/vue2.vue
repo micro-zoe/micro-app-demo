@@ -1,9 +1,9 @@
 <template>
   <div>
     <micro-app
-      name='vue2'
+      name='appname-vue2'
       url='http://localhost:4008/'
-      baseroute='/vue2'
+      baseroute='/app-vue2'
       @created='handleCreate'
       @mounted='handleMount'
       @unmount='handleUnMount'

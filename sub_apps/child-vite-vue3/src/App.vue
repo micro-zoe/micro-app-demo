@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div id='public-links'>
+      <router-link to="/">Home</router-link> | <router-link to="/page2">Page2</router-link>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -14,11 +17,10 @@ export default defineComponent({
 
 <style>
 #vite-app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

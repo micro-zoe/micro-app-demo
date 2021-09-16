@@ -1,9 +1,9 @@
 <template>
   <div>
     <micro-app
-      name='vue3'
+      name='appname-vue3'
       url='http://localhost:4009/'
-      baseroute='/vue3'
+      baseroute='/app-vue3'
     ></micro-app>
   </div>
 </template>

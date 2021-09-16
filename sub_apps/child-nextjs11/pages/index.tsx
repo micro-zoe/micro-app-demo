@@ -1,9 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
+import { formatPath } from '../lib/utils'
+
 import styles from '../styles/Home.module.css'
-import logo from '../public/vercel.svg'
 
 const Home: NextPage = () => {
   return (
@@ -53,9 +52,6 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-        <Link href="/page2">
-          <a>跳转page2</a>
-        </Link>
       </main>
 
       <footer className={styles.footer}>
@@ -66,7 +62,7 @@ const Home: NextPage = () => {
         >
           Powered by{' '}
           <span className={styles.logo}>
-            <img src="/nextjs/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+            <img src={formatPath("/vercel.svg")} alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>

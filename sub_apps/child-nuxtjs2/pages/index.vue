@@ -1,7 +1,9 @@
 <template>
   <div>
-    <img src="/nuxtjs/micro-app-logo.png" width="40" />
-    <NuxtLink to="/page2">page2</NuxtLink>
+    <div id='public-links'>
+      <NuxtLink to="/">Home</NuxtLink> |
+      <NuxtLink to="/page2">Page2</NuxtLink>
+    </div>
     <Tutorial />
   </div>
 </template>
