@@ -29,5 +29,5 @@ app.use(nuxt.render)
 
 // Start express server
 app.listen(port, host, () => {
-  console.log(`Server is listening on port: ${port}`)
+  console.log(`Ready on http://localhost:${port}/`)
 })

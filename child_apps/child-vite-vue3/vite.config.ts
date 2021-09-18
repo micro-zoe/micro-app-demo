@@ -27,5 +27,5 @@ export default defineConfig({
   server: {
     port: 4007,
   },
-  base: 'vite',
+  base: '/app-vite/',
 })

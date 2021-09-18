@@ -52,7 +52,7 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-        <Link href="/page2">
+        <Link href="/react17">
           <a>跳转page2</a>
         </Link>
       </main>

@@ -12,7 +12,8 @@
     "@micro-zoe/micro-app": "~0.2.4",
     "next": "11.1.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@types/react": "17.0.18",

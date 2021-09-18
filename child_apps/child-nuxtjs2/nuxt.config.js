@@ -44,8 +44,6 @@ module.exports = {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
-  buildDir: 'app-nuxtjs',
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     publicPath: 'http://线上地址',
