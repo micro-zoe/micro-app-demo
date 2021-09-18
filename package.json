@@ -5,8 +5,8 @@
   "main": "index.js",
   "private": true,
   "workspaces": [
-    "base_apps/*",
-    "sub_apps/*"
+    "main_apps/*",
+    "child_apps/*"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
