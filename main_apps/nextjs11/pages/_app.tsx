@@ -2,6 +2,7 @@ import type { AppProps } from 'next/app'
 import '../styles/globals.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
+import microApp from '@micro-zoe/micro-app'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -11,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   useEffect(() => {
-    const microApp = require('@micro-zoe/micro-app').default
+    // const microApp = require('@micro-zoe/micro-app').default
     microApp.start({
       plugins: {
         modules: {
