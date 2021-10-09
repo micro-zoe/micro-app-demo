@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -19,9 +21,6 @@ module.exports = {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
   ],
-  env: {
-    'access-control-allow-origin': "*",
-  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -48,4 +47,15 @@ module.exports = {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
+  telemetry: false,
+  alias: {
+    "tochange":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
+  },
+  vue: {
+    config: {
+      ignoredElements: [
+        'micro-app',
+      ],
+    }
+  }
 }

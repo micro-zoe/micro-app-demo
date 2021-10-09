@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <micro-app name='appname-sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
-    <router-view class='router-container' />
+    <router-view id='router-container' />
   </div>
 </template>
 
@@ -34,7 +34,7 @@ body {
   text-align: center;
 }
 
-.router-container {
+#router-container {
   flex: 1;
 }
 

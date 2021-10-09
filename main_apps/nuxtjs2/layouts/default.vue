@@ -1,24 +1,29 @@
-import type { AppProps } from 'next/app'
-import '../styles/globals.css'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-import microApp from '@micro-zoe/micro-app'
+<template>
+  <div id='app-root'>
+    <micro-app name='appname-sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
+    <div id='router-container'>
+      <Nuxt />
+    </div>
+  </div>
+</template>
 
-function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+<script>
+import microApp from 'tochange'
 
-  function pushState (path: string) {
-    router.push(path)
-  }
-
-  useEffect(() => {
-    // const microApp = require('@micro-zoe/micro-app').default
+export default {
+  name: 'default',
+  data () {
+    return {
+      sidebarData: {}
+    }
+  },
+  mounted () {
     microApp.start({
       plugins: {
         modules: {
           'appname-vite': [
             {
-              loader(code: string) {
+              loader(code) {
                 if (process.env.NODE_ENV === 'development') {
                   // 这里 /basename/ 需要和子应用vite.config.js中base的配置保持一致
                   code = code.replace(/(from|import)(\s*['"])(\/app-vite\/)/g, all => {
@@ -31,7 +36,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             }
           ],
           'appname-react16': [{
-            loader(code: string) {
+            loader(code) {
               if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
                 code = code.replace('window.location.port', '4004')
               }
@@ -39,7 +44,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             }
           }],
           'appname-react17': [{
-            loader(code: string) {
+            loader(code) {
               if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
                 code = code.replace('window.location.port', '4005')
               }
@@ -49,18 +54,38 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
       }
     })
-    // 👇 基座向sidebar子应用下发一个名为pushState的方法
-    microApp.setData('appname-sidebar', { pushState })
-  }, [])
 
-  return (
-    <div id='next-root'>
-      <micro-app name='appname-sidebar' url='http://localhost:4006'></micro-app>
-      <div id='router-container'>
-        <Component {...pageProps} />
-      </div>
-    </div>
-  )
+    this.sidebarData = {
+      pushState: (path) => {
+        this.$router.push(path)
+      }
+    }
+  }
 }
+</script>
 
-export default MyApp
+<style>
+  #app-root {
+    display: flex;
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  #router-container {
+    flex: 1;
+  }
+
+  #public-links {
+    padding: 10px 0;
+  }
+
+  #public-links a {
+    text-decoration: underline;
+    color: -webkit-link;
+    cursor: pointer;
+  }
+
+  #public-links a:active {
+    color: #f53f3f;
+  }
+</style>

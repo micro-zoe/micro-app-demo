@@ -2100,20 +2100,15 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
-"@micro-zoe/micro-app@0.2.4":
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.2.4.tgz#6a21d1c3d04b30fd1c1937ec0b736eedb2942cd5"
-  integrity sha512-HxK0mSuHfCYu7yPZQAC/U0rV/Tzpfq6I3C5JXHeCn84NbaAKp8NKD0YIL7CgnNTtbFhU/DSeUi2ReOBU8CEBlQ==
+"@micro-zoe/micro-app@*", "@micro-zoe/micro-app@~0.3.3":
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.3.3.tgz#756ff90aeb455c0ab9f8f3a932c06e2bd9ee3c1b"
+  integrity sha512-mJkol7yLuFKXN8ztOJTnvq3kt8QuNuNg2Nh9fNnrXWcSKflBZ73zeOTtQCn02tgx4/ibOISJO6MSoBW/VvO2sg==
 
 "@micro-zoe/micro-app@~0.2.4":
   version "0.2.5"
   resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.2.5.tgz#57313fb29d4dbc34cd9fa4198e841a7bccab52ff"
   integrity sha512-xgXbo9s3HAXwHq4lroHc+rhBPENsoruBal3fzYkld4MhL8R8fjq18/+onS624vgsCKKNO61+iPANt+zcXyoB8w==
-
-"@micro-zoe/micro-app@~0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.3.3.tgz#756ff90aeb455c0ab9f8f3a932c06e2bd9ee3c1b"
-  integrity sha512-mJkol7yLuFKXN8ztOJTnvq3kt8QuNuNg2Nh9fNnrXWcSKflBZ73zeOTtQCn02tgx4/ibOISJO6MSoBW/VvO2sg==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -18625,7 +18620,7 @@ webpack-dev-server@^3.11.0:
     ws "^6.2.1"
     yargs "^13.3.2"
 
-webpack-hot-middleware@^2.25.0, webpack-hot-middleware@~2.25.1:
+webpack-hot-middleware@^2.25.0:
   version "2.25.1"
   resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.25.1.tgz#581f59edf0781743f4ca4c200fd32c9266c6cf7c"
   integrity sha512-Koh0KyU/RPYwel/khxbsDz9ibDivmUbrRuKSSQvW42KSDdO4w23WI3SkHpSUKHE76LrFnnM/L7JCrpBwu8AXYw==

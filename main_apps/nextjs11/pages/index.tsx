@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
@@ -52,9 +51,6 @@ const Home: NextPage = () => {
             </p>
           </a>
         </div>
-        <Link href="/react17">
-          <a>跳转page2</a>
-        </Link>
       </main>
 
       <footer className={styles.footer}>

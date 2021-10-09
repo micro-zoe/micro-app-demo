@@ -26,7 +26,6 @@ app.all('*', (req, res, next) => {
 // Give nuxt middleware to express
 app.use(nuxt.render)
 
-
 // Start express server
 app.listen(port, host, () => {
   console.log(`Ready on http://localhost:${port}/`)

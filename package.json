@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/micro-zoe/micro-app-demo#readme",
   "dependencies": {
-    "@micro-zoe/micro-app": "0.2.4",
+    "@micro-zoe/micro-app": "*",
     "element-ui": "~2.15.6"
   },
   "devDependencies": {

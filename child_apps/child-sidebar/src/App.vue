@@ -52,7 +52,7 @@ export default {
   },
   methods: {
     select (index) {
-      const path = `/${index}`.replaceAll(/\/{2,}/g, '/')
+      const path = `/${index}/`.replaceAll(/\/{2,}/g, '/')
       if (window.microApp) {
         const data = window.microApp.getData()
         data && data.pushState(path)
@@ -71,6 +71,10 @@ export default {
   color: #2c3e50;
   display: inline-block;
   margin-right: 40px;
+}
+
+h4 {
+  font-weight: revert;
 }
 
 .el-menu-item {
