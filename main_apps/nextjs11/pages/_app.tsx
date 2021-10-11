@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   useEffect(() => {
-    // const microApp = require('@micro-zoe/micro-app').default
     microApp.start({
       plugins: {
         modules: {
@@ -30,6 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               }
             }
           ],
+          // 解决create-react-app中sockjs-node报错的问题
           'appname-react16': [{
             loader(code: string) {
               if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
@@ -38,6 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
               return code
             }
           }],
+          // 解决create-react-app中sockjs-node报错的问题
           'appname-react17': [{
             loader(code: string) {
               if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {

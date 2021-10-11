@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Page2Component } from './page2.component';
+import { React17Component } from './react17.component';
 
-describe('Page2Component', () => {
-  let component: Page2Component;
-  let fixture: ComponentFixture<Page2Component>;
+describe('React17Component', () => {
+  let component: React17Component;
+  let fixture: ComponentFixture<React17Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Page2Component ]
+      declarations: [ React17Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Page2Component);
+    fixture = TestBed.createComponent(React17Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div id="app">
+  <micro-app name='appname-sidebar' url='http://localhost:4006' [data]="sidebarData"></micro-app>
+  <div id='router-container'>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<style>
+  #app {
+    display: flex;
+    text-align: center;
+  }
+
+  #router-container {
+    flex: 1;
+  }
+  </style>

@@ -1,16 +1,71 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { Page2Component } from './page2/page2.component';
+import { Angular11Component } from './angular11/angular11.component';
+import { NextjsComponent } from './nextjs/nextjs.component';
+import { NuxtjsComponent } from './nuxtjs/nuxtjs.component';
+import { React16Component } from './react16/react16.component';
+import { React17Component } from './react17/react17.component';
+import { ViteComponent } from './vite/vite.component';
+import { Vue2Component } from './vue2/vue2.component';
+import { Vue3Component } from './vue3/vue3.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'page2',
-    component: Page2Component,
+    path: 'app-angular11',
     children: [{
       path: '**',
-      component: Page2Component
+      component: Angular11Component
+    }]
+  },
+  {
+    path: 'app-nextjs',
+    children: [{
+      path: '**',
+      component: NextjsComponent
+    }]
+  },
+  {
+    path: 'app-nuxtjs',
+    children: [{
+      path: '**',
+      component: NuxtjsComponent
+    }]
+  },
+  {
+    path: 'app-react16',
+    children: [{
+      path: '**',
+      component: React16Component
+    }]
+  },
+  {
+    path: 'app-react17',
+    children: [{
+      path: '**',
+      component: React17Component
+    }]
+  },
+  {
+    path: 'app-vite',
+    children: [{
+      path: '**',
+      component: ViteComponent
+    }]
+  },
+  {
+    path: 'app-vue2',
+    children: [{
+      path: '**',
+      component: Vue2Component
+    }]
+  },
+  {
+    path: 'app-vue3',
+    children: [{
+      path: '**',
+      component: Vue3Component
     }]
   },
 ];

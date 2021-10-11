@@ -10,12 +10,9 @@ export default {
   name: 'nuxtjs',
   data() {
     return {
-      url: 'http://localhost:4003'
+      url: 'http://localhost:4003' + location.pathname
     }
   },
-  created () {
-    this.url = this.url + location.pathname
-  }
 }
 </script>
 

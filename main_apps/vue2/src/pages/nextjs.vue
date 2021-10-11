@@ -10,12 +10,9 @@ export default {
   name: 'nextjs',
   data() {
     return {
-      url: 'http://localhost:4002'
+      url: 'http://localhost:4002' + location.pathname
     }
   },
-  created () {
-    this.url = this.url + location.pathname
-  }
 }
 </script>
 
