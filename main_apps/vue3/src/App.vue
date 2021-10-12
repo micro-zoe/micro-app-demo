@@ -1,30 +1,51 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="app-container">
+    <micro-app name='appname-sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
+    <router-view id='router-container' />
   </div>
-  <router-view />
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  name: 'App',
+  data () {
+    return {
+      sidebarData: {
+        pushState: (path: string) => {
+          this.$router.push(path)
+        }
+      }
+    }
+  },
+} as any)
+</script>
+
+<style>
+#app-container {
+  font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
   text-align: center;
-  color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+#router-container {
+  flex: 1;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+#public-links {
+  padding: 10px 0;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+#public-links a {
+  text-decoration: underline;
+  color: -webkit-link;
+  cursor: pointer;
+}
+
+#public-links a:active {
+  color: #f53f3f;
 }
 </style>

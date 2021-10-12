@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   publicPath: '/',
   outputDir: 'vue3',
@@ -18,5 +20,19 @@ module.exports = {
     output: {
       jsonpFunction: `webpackJsonp-base-vue3`,
     }
+  },
+  chainWebpack: config => {
+    config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+
+    config.module
+      .rule('vue')
+      .use('vue-loader')
+        .tap(options => {
+          options.compilerOptions = {
+            ...(options.compilerOptions || {}),
+            isCustomElement: (tag) => /^micro-app/.test(tag),
+          };
+          return options
+        })
   },
 }
