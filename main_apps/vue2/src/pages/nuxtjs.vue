@@ -1,6 +1,6 @@
 <template>
   <div>
-    <micro-app name='appname-nuxtjs' :url='url'></micro-app>
+    <micro-app name='appname-nuxtjs' :url='url' inline></micro-app>
   </div>
 </template>
 

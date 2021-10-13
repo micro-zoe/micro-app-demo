@@ -53,7 +53,10 @@ export default {
   methods: {
     select (index) {
       const path = `/${index}/`.replaceAll(/\/{2,}/g, '/')
-      if (window.microApp) {
+      if (
+        window.microApp &&
+        (!location.pathname.startsWith(path) || path === '/')
+      ) {
         const data = window.microApp.getData()
         data && data.pushState(path)
       }

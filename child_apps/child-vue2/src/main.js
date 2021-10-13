@@ -1,4 +1,4 @@
-import "./public-path"
+import './public-path'
 import Vue from 'vue'
 import App from './App.vue'
 import routes from './router'
@@ -12,23 +12,36 @@ const router = new VueRouter({
   routes,
 })
 
-let app
+let app = null
+// 将渲染操作放入 mount 函数
+function mount () {
+  app = new Vue({
+    router,
+    render: h => h(App),
+  }).$mount('#vue2-app')
 
-window[`micro-app-${window.__MICRO_APP_NAME__ || ''}`] = {
-  mount () {
-    console.log("微应用child-vue2渲染了");
-    app = new Vue({
-      router,
-      render: h => h(App),
-    }).$mount('#vue2-app')
-  },
-  unmount () {
-    console.log("微应用child-vue2卸载了");
-    // 卸载应用
-    app.$destroy()
-  }
+  console.log('微应用child-vue2渲染了')
+
+  // 主动获取数据
+  console.log('child-vue2 getData:', window.microApp?.getData())
+
+  // 监听数据变化
+  window.microApp?.addDataListener((data) => {
+    console.log('child-vue2 addDataListener:', data)
+  })
 }
 
-if (!window.__MICRO_APP_ENVIRONMENT__) {
-  window[`micro-app-${window.__MICRO_APP_NAME__ || ''}`].mount()
+// 将卸载操作放入 unmount 函数
+function unmount () {
+  app.$destroy()
+  app = null
+  console.log('微应用child-vue2卸载了')
+}
+
+// 微前端环境下，设置mount和unmount方法，优化内存
+if (window.__MICRO_APP_ENVIRONMENT__) {
+  window[`micro-app-${window.__MICRO_APP_NAME__ || ''}`] = { mount, unmount }
+} else {
+  // 非微前端环境直接渲染
+  mount()
 }

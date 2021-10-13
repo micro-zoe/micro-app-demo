@@ -4,6 +4,7 @@
       name='appname-vue3'
       url='http://localhost:4009/'
       baseroute='/app-vue3'
+      inline
     ></micro-app>
   </div>
 </template>
