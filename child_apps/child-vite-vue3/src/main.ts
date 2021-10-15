@@ -29,7 +29,7 @@ function unmount () {
   console.log('微应用child-vite卸载了')
 }
 
-// 微前端环境下，设置mount和unmount方法，优化内存
+// 微前端环境下，注册mount和unmount方法
 if (window.__MICRO_APP_BASE_APPLICATION__) {
   // @ts-ignore
   window['micro-app-appname-vite'] = { mount, unmount }

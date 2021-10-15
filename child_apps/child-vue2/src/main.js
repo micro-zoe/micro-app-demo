@@ -38,9 +38,9 @@ function unmount () {
   console.log('微应用child-vue2卸载了')
 }
 
-// 微前端环境下，设置mount和unmount方法，优化内存
+// 微前端环境下，注册mount和unmount方法
 if (window.__MICRO_APP_ENVIRONMENT__) {
-  window[`micro-app-${window.__MICRO_APP_NAME__ || ''}`] = { mount, unmount }
+  window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
 } else {
   // 非微前端环境直接渲染
   mount()

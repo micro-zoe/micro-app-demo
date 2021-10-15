@@ -15,7 +15,8 @@ let app: any = null
 // 将渲染操作放入 mount 函数
 function mount () {
   app = createApp(App)
-  app.use(router).mount('#vue3-app')
+  app.use(router)
+  app.mount('#vue3-app')
 
   console.log('微应用child-vue3渲染了')
 
@@ -35,10 +36,10 @@ function unmount () {
   console.log('微应用child-vue3卸载了')
 }
 
-// 微前端环境下，设置mount和unmount方法，优化内存
+// 微前端环境下，注册mount和unmount方法
 if (window.__MICRO_APP_ENVIRONMENT__) {
   // @ts-ignore
-  window[`micro-app-${window.__MICRO_APP_NAME__ || ''}`] = { mount, unmount }
+  window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
 } else {
   // 非微前端环境直接渲染
   mount()
