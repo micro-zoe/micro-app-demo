@@ -7,6 +7,10 @@ import type { NextPage } from 'next'
 const Vite: NextPage = () => {
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-vite 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-vite 即将被渲染')
   }
@@ -36,6 +40,7 @@ const Vite: NextPage = () => {
             url='http://localhost:4007/'
             inline
             disablesandbox
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}

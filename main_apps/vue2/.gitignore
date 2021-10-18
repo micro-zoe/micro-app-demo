@@ -1,6 +1,7 @@
 .DS_Store
 node_modules
 /dist
+/main-vue2
 
 
 # local env files

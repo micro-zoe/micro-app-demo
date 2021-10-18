@@ -30,7 +30,7 @@ const React16 = () => {
     console.log('child-react16 加载出错了')
   }
 
-  function handleDataChange (e) {
+  function handleDataChange (e: CustomEvent) {
     console.log('来自子应用 child-react16 的数据:', e.detail.data)
   }
 

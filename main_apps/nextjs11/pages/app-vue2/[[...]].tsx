@@ -8,6 +8,10 @@ const Vue2: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-vue2 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-vue2 即将被渲染')
   }
@@ -45,6 +49,7 @@ const Vue2: NextPage = () => {
             url='http://localhost:4008/'
             baseroute='/app-vue2'
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}

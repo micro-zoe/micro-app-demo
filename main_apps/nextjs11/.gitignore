@@ -14,6 +14,7 @@
 
 # production
 /build
+/main-nextjs
 
 # misc
 .DS_Store

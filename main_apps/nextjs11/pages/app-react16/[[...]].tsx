@@ -8,6 +8,10 @@ const React16: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-react16 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-react16 即将被渲染')
   }
@@ -45,6 +49,7 @@ const React16: NextPage = () => {
             url='http://localhost:4004/'
             baseroute='/app-react16'
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}

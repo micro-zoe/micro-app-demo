@@ -8,12 +8,16 @@ const Vue3: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-vue3 创建了')
+  }
+
   function handleBeforeMount (): void {
-    console.log('child-vue2 即将被渲染')
+    console.log('child-vue3 即将被渲染')
   }
 
   function handleMount (): void {
-    console.log('child-vue2 已经渲染完成')
+    console.log('child-vue3 已经渲染完成')
 
     setTimeout(() => {
       changeMicroAppData({msg: '来自基座的新数据'})
@@ -21,15 +25,15 @@ const Vue3: NextPage = () => {
   }
 
   function handleUnmount (): void {
-    console.log('child-vue2 卸载了')
+    console.log('child-vue3 卸载了')
   }
 
   function handleError (): void {
-    console.log('child-vue2 加载出错了')
+    console.log('child-vue3 加载出错了')
   }
 
   function handleDataChange (e: CustomEvent): void {
-    console.log('来自子应用 child-vue2 的数据:', e.detail.data)
+    console.log('来自子应用 child-vue3 的数据:', e.detail.data)
   }
 
   useEffect(() => {
@@ -45,6 +49,7 @@ const Vue3: NextPage = () => {
             url='http://localhost:4009/'
             baseroute='/app-vue3'
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}

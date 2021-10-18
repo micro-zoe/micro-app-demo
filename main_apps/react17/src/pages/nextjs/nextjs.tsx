@@ -3,19 +3,19 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
 
-const React16 = () => {
+const Nextjs = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
 
   function handleCreate () {
-    console.log('child-react16 创建了')
+    console.log('child-nexjs 创建了')
   }
 
   function handleBeforeMount () {
-    console.log('child-react16 即将被渲染')
+    console.log('child-nexjs 即将被渲染')
   }
 
   function handleMount () {
-    console.log('child-react16 已经渲染完成')
+    console.log('child-nexjs 已经渲染完成')
 
     setTimeout(() => {
       changeMicroAppData({msg: '来自基座的新数据'})
@@ -23,23 +23,22 @@ const React16 = () => {
   }
 
   function handleUnmount () {
-    console.log('child-react16 卸载了')
+    console.log('child-nexjs 卸载了')
   }
 
   function handleError () {
-    console.log('child-react16 加载出错了')
+    console.log('child-nexjs 加载出错了')
   }
 
-  function handleDataChange (e) {
-    console.log('来自子应用 child-react16 的数据:', e.detail.data)
+  function handleDataChange (e: CustomEvent) {
+    console.log('来自子应用 child-nexjs 的数据:', e.detail.data)
   }
 
   return (
     <div>
       <micro-app
-        name='appname-react16'
-        url='http://localhost:4004/'
-        baseroute='/app-react16'
+        name='appname-nextjs'
+        url={'http://localhost:4002' + window.location.pathname}
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}
@@ -52,4 +51,4 @@ const React16 = () => {
   )
 }
 
-export default React16
+export default Nextjs

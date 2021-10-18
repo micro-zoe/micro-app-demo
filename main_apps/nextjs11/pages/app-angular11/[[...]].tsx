@@ -9,6 +9,11 @@ const Angular11: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  // zone.js冲突，created无法触发
+  function handleCreate (): void {
+    console.log('child-angular11 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-angular11 即将被渲染')
   }
@@ -46,11 +51,13 @@ const Angular11: NextPage = () => {
             url='http://localhost:4001/'
             baseroute='/app-angular11'
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}
             onError={handleError}
             onDataChange={handleDataChange}
+            destory
           ></micro-app>
         )
       }

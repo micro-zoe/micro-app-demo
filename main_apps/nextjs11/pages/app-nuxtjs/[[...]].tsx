@@ -9,6 +9,10 @@ const Nuxtjs: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-nuxtjs 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-nuxtjs 即将被渲染')
   }
@@ -46,6 +50,7 @@ const Nuxtjs: NextPage = () => {
             name='appname-nuxtjs'
             url={url}
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}

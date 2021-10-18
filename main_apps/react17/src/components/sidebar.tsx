@@ -5,7 +5,7 @@ import microApp from '@micro-zoe/micro-app'
 const SideBar = () => {
   const history = useHistory()
 
-  function pushState (path) {
+  function pushState (path: string) {
     history.push(path)
   }
 

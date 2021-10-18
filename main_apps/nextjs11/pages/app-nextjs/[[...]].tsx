@@ -9,6 +9,10 @@ const Nextjs: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
+  function handleCreate (): void {
+    console.log('child-nextjs 创建了')
+  }
+
   function handleBeforeMount (): void {
     console.log('child-nextjs 即将被渲染')
   }
@@ -47,6 +51,7 @@ const Nextjs: NextPage = () => {
             url={url}
             disablescopecss
             data={microAppData}
+            onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
             onMounted={handleMount}
             onUnmount={handleUnmount}
