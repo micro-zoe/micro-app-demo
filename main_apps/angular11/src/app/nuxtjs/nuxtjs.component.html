@@ -1,3 +1,13 @@
 <div>
-  <micro-app name='appname-nuxtjs' [attr.url]='url'></micro-app>
+  <micro-app
+    name='appname-nuxtjs'
+    [attr.url]='url'
+    [data]='microAppData'
+    (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
+    (mounted)='handleMount()'
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
+    (datachange)='handleDataChange($event)'
+  ></micro-app>
 </div>

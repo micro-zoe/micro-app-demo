@@ -17,7 +17,8 @@ let app: any = null
 // 将渲染操作放入 mount 函数
 function mount () {
   app = createApp(App)
-  app.use(router).mount('#vite-app')
+  app.use(router)
+  app.mount('#vite-app')
 
   console.log('微应用child-vite渲染了')
 }

@@ -3,9 +3,12 @@
     name='appname-angular11'
     url='http://localhost:4001/'
     baseroute='/app-angular11'
+    [data]='microAppData'
     (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
     (mounted)='handleMount()'
-    (unmount)='handleUnMount()'
-    [data]="microAppData"
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
+    (datachange)='handleDataChange($event)'
   ></micro-app>
 </div>

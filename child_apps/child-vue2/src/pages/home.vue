@@ -1,7 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Vue@{{version}}</h1>
+    <h1>子应用 -- Vue@{{version}}</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>

@@ -4,5 +4,10 @@
     url='http://localhost:4007/'
     inline
     disablesandbox
+    (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
+    (mounted)='handleMount()'
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
   ></micro-app>
 </div>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <img alt="Vue logo" :src="logo" />
-    <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+    <HelloWorld msg="子应用 -- Vite+Vue@3.x" />
   </div>
 </template>
 

@@ -3,5 +3,12 @@
     name='appname-react17'
     url='http://localhost:4005/'
     baseroute='/app-react17'
+    [data]='microAppData'
+    (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
+    (mounted)='handleMount()'
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
+    (datachange)='handleDataChange($event)'
   ></micro-app>
 </div>
