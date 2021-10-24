@@ -42,6 +42,7 @@ function mount () {
 // 将卸载操作放入 unmount 函数
 function unmount () {
   app.$destroy()
+  app.$el.innerHTML = ''
   app = null
   console.log('微应用child-vue2卸载了')
 }

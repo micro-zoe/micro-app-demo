@@ -1,6 +1,7 @@
-import { createApp } from 'vue'
+import { createApp, App as AppInstance } from 'vue'
+import { createRouter, createWebHashHistory, RouterHistory, Router } from 'vue-router'
 import App from './App.vue'
-import router from './router'
+import routes from './router'
 
 // createApp(App).use(router).mount('#vite-app')
 
@@ -13,9 +14,17 @@ declare global {
   }
 }
 
-let app: any = null
+let app: AppInstance | null = null
+let router: Router | null = null
+let history: RouterHistory | null = null
 // 将渲染操作放入 mount 函数
 function mount () {
+  history = createWebHashHistory(import.meta.env.BASE_URL)
+  router = createRouter({
+    history,
+    routes,
+  })
+
   app = createApp(App)
   app.use(router)
   app.mount('#vite-app')
@@ -25,8 +34,11 @@ function mount () {
 
 // 将卸载操作放入 unmount 函数
 function unmount () {
-  app.unmount()
+  app?.unmount()
+  history?.destroy()
   app = null
+  router = null
+  history = null
   console.log('微应用child-vite卸载了')
 }
 

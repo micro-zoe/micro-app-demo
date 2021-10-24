@@ -6,6 +6,7 @@ const Home: NextPage = () => {
   return (
     <div className={styles.page2Container}>
       <h3>page2</h3>
+      <div className={styles.childNextjs11TestBtn}>test</div>
       <img src={formatPath("/micro-app-logo.png")} alt="micro-app-logo" />
     </div>
   )
