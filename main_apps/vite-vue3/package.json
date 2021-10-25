@@ -7,7 +7,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "@micro-zoe/micro-app": "*",
+    "@micro-zoe/micro-app": "latest",
     "vue": "^3.0.5",
     "vue-router": "4.0.10",
     "zone.js": "~0.11.4"

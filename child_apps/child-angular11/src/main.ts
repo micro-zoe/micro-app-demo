@@ -18,11 +18,21 @@ declare global {
 }
 
 let app = null;
+let container = null;
 // 将渲染操作放入 mount 函数
 async function mount () {
+  // 如果根元素不是app-root，根据实际情况调整
+  const rootElement = document.querySelector('app-root')
+  if (rootElement && !container) {
+    container = rootElement
+    container.__MICRO_APP_NAME__ = window.__MICRO_APP_NAME__ // 标记元素为微应用元素
+  } else if (!rootElement && container) {
+    document.body.prepend(container) // 处理卸载时根元素丢失的情况
+  }
+
   app = await platformBrowserDynamic()
-  .bootstrapModule(AppModule)
-  .catch(err => console.error(err))
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err))
 
   console.log('微应用child-angular11渲染了');
 
@@ -45,9 +55,8 @@ async function mount () {
 
 // 将卸载操作放入 unmount 函数
 function unmount () {
-  app?.destroy();
-  // @ts-ignore 清空根元素，如果根元素不是app-root，根据实际情况调整
-  document.querySelector('app-root')?.innerHTML = '';
+  app.destroy();
+  container.innerHTML = '';
   app = null;
   console.log('微应用child-angular11卸载了');
 }

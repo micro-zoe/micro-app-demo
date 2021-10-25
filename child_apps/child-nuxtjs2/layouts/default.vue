@@ -7,6 +7,14 @@
 <script lang="ts">
 import Vue from 'vue'
 
+declare global {
+  interface Window {
+    microApp: any
+    __MICRO_APP_NAME__: string
+    __MICRO_APP_ENVIRONMENT__: string
+  }
+}
+
 export default Vue.extend({
   mounted() {
     console.log('微应用child-nuxtjs渲染了');

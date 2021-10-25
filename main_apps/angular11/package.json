@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@micro-zoe/micro-app": "*",
+    "@micro-zoe/micro-app": "latest",
     "@angular/animations": "~11.1.2",
     "@angular/common": "~11.1.2",
     "@angular/compiler": "~11.1.2",
