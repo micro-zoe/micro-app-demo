@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import microApp from 'tochange'
+import microApp from '@micro-zoe/micro-app'
 
 export default {
   name: 'default',

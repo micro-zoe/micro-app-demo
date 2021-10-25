@@ -1,5 +1,3 @@
-const path = require('path')
-
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -48,9 +46,6 @@ module.exports = {
   build: {
   },
   telemetry: false,
-  alias: {
-    "tochange":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
-  },
   vue: {
     config: {
       ignoredElements: [
