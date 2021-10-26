@@ -57,7 +57,7 @@ const Angular11: NextPage = () => {
             onUnmount={handleUnmount}
             onError={handleError}
             onDataChange={handleDataChange}
-            destory
+            // destory
           ></micro-app>
         )
       }

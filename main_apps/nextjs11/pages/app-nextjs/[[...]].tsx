@@ -49,7 +49,6 @@ const Nextjs: NextPage = () => {
           <micro-app
             name='appname-nextjs'
             url={url}
-            disablescopecss
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
