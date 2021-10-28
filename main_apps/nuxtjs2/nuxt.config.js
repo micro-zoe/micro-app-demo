@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -52,5 +54,8 @@ module.exports = {
         'micro-app',
       ],
     }
-  }
+  },
+  alias: {
+    "tochange":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
+  },
 }

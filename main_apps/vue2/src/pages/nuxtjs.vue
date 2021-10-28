@@ -3,6 +3,7 @@
     <micro-app
       name='appname-nuxtjs'
       :url='url'
+      inline
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'

@@ -39,6 +39,7 @@ const Nuxtjs = () => {
       <micro-app
         name='appname-nuxtjs'
         url={'http://localhost:4003' + window.location.pathname}
+        inline
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}

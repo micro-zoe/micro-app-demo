@@ -39,6 +39,7 @@ const Nextjs = () => {
       <micro-app
         name='appname-nextjs'
         url={'http://localhost:4002' + window.location.pathname}
+        inline
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}

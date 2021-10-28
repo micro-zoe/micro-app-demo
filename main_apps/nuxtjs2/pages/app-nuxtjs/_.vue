@@ -5,6 +5,7 @@
       name='appname-nuxtjs'
       :url='url'
       :data='microAppData'
+      inline
       @created='handleCreate'
       @beforemount='handleBeforeMount'
       @mounted='handleMount'

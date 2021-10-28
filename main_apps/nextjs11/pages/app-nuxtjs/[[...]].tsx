@@ -49,6 +49,7 @@ const Nuxtjs: NextPage = () => {
           <micro-app
             name='appname-nuxtjs'
             url={url}
+            inline
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
