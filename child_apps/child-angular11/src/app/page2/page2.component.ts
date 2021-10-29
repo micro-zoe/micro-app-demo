@@ -9,7 +9,12 @@ export class Page2Component implements OnInit {
 
   constructor() { }
 
+  btnColor = 'red'
+
   ngOnInit(): void {
   }
 
+  changeColor () {
+    this.btnColor = this.btnColor === 'red' ? 'blue' : 'red'
+  }
 }

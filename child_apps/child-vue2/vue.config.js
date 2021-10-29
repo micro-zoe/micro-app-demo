@@ -1,6 +1,6 @@
 module.exports = {
-  publicPath: '/',
-  outputDir: 'dist',
+  publicPath: process.env.NODE_ENV === 'production' ? '/child-vue2/' : '/',
+  outputDir: 'child-vue2',
   productionSourceMap: false,
   devServer: {
     hot: false,

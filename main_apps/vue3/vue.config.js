@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   publicPath: '/',
   outputDir: 'vue3',
@@ -20,6 +22,8 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+
     config.module
       .rule('vue')
       .use('vue-loader')

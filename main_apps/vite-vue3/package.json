@@ -1,5 +1,5 @@
 {
-  "name": "main-vue3-vite",
+  "name": "main-vite",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

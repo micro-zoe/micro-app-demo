@@ -1,6 +1,6 @@
 module.exports = {
-  publicPath: '/',
-  outputDir: 'vue3',
+  publicPath: process.env.NODE_ENV === 'production' ? '/child-vue3/' : '/',
+  outputDir: 'child-vue3',
   productionSourceMap: false,
   devServer: {
     hot: false,

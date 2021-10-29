@@ -10,6 +10,7 @@
 
 # production
 /build
+/child-react16
 
 # misc
 .DS_Store

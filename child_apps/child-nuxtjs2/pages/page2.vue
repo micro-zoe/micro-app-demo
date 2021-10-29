@@ -37,5 +37,6 @@ export default Vue.extend({})
   font-size: 20px;
   font-weight: bolder;
   margin: 0 auto;
+  user-select: none;
 }
 </style>
