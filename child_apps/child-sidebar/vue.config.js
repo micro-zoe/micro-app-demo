@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/child-sidebar/' : '/',
+  publicPath: '/child-sidebar/',
   outputDir: 'child-sidebar',
   productionSourceMap: false,
   devServer: {

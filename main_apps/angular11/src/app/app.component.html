@@ -1,5 +1,5 @@
 <div id="app">
-  <micro-app name='appname-sidebar' url='http://localhost:4006' [data]="sidebarData"></micro-app>
+  <micro-app name='appname-sidebar' [attr.url]='url' [data]="sidebarData"></micro-app>
   <div id='router-container'>
     <router-outlet></router-outlet>
   </div>

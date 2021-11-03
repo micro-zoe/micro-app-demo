@@ -1,5 +1,6 @@
 import { Component, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
+import config from '../config'
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   constructor(private router: Router, private ngZone: NgZone) {}
+
+  url = `${config.sidebar}/child-sidebar/`
+
   // sidebar data数据
   sidebarData = {
     pushState: (path: string) => {

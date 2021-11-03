@@ -1,8 +1,8 @@
 <div>
   <micro-app
     name='appname-angular11'
-    url='http://localhost:4001/'
-    baseroute='/app-angular11'
+    [attr.url]='url'
+    baseroute='/main-angular11/app-angular11'
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'

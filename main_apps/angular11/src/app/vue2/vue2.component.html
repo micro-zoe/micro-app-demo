@@ -1,8 +1,8 @@
 <div>
   <micro-app
     name='appname-vue2'
-    url='http://localhost:4008/'
-    baseroute='/app-vue2'
+    [attr.url]='url'
+    baseroute='/main-angular11/app-vue2'
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'

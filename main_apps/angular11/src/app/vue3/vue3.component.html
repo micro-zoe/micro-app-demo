@@ -1,8 +1,8 @@
 <div>
   <micro-app
     name='appname-vue3'
-    url='http://localhost:4009/'
-    baseroute='/app-vue3'
+    [attr.url]='url'
+    baseroute='/main-angular11/app-vue3'
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'

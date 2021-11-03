@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-vue2',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class Vue2Component implements OnInit {
 
   constructor() { }
+
+  url = `${config.vue2}/child-vue2/`
 
   microAppData = {msg: '来自基座的数据'}
 

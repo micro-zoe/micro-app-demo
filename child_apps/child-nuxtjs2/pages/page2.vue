@@ -7,7 +7,7 @@
     <div class='nuxt-page2'>
       <h3>page2</h3>
       <div class="child-nuxtjs2-test-btn">test</div>
-      <img src="/app-nuxtjs/micro-app-logo.png" width="100" alt="micro-app-logo" />
+      <img :src="logoSrc" width="100" alt="micro-app-logo" />
     </div>
   </div>
 </template>
@@ -15,7 +15,13 @@
 <script lang="ts">
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data () {
+    return {
+      logoSrc: process.env.assetPrefix + '/micro-app-logo.png',
+    }
+  }
+})
 </script>
 
 <style>

@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
+    "dev:main-angular11": "cross-env BASE_ROUTE='/main-angular11/app-nuxtjs' node server.js",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production node server.js",
     "generate": "nuxt generate",

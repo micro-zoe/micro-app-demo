@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { Angular11Component } from './angular11/angular11.component';
 import { NextjsComponent } from './nextjs/nextjs.component';
@@ -72,6 +73,8 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  // 设置主应用基础路由为main-angular11(用于后续打包部署)，则子应用基础路由(baseroute)为/main-angular11/xxx
+  providers: [{ provide: APP_BASE_HREF, useValue: '/main-angular11'}]
 })
 export class AppRoutingModule { }

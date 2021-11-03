@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-react16',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class React16Component implements OnInit {
 
   constructor() { }
+
+  url = `${config.react16}/child-react16/`
 
   microAppData = {msg: '来自基座的数据'}
 

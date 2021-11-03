@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-vite',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class ViteComponent implements OnInit {
 
   constructor() { }
+
+  url = `${config.vite}/child-vite/`
 
   ngOnInit(): void {
   }

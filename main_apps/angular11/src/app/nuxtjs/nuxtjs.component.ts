@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-nuxtjs',
@@ -9,7 +10,7 @@ export class NuxtjsComponent implements OnInit {
 
   constructor() { }
 
-  url = 'http://localhost:4003' + location.pathname
+  url = config.nuxtjs + location.pathname
 
   microAppData = {msg: '来自基座的数据'}
 

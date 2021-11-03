@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-nextjs',
@@ -9,7 +10,7 @@ export class NextjsComponent implements OnInit {
 
   constructor() {}
 
-  url = 'http://localhost:4002' + location.pathname
+  url = config.nextjs + location.pathname
 
   microAppData = {msg: '来自基座的数据'}
 

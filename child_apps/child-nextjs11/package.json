@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node server.js",
+    "dev:main-angular11": "cross-env BASE_ROUTE='/main-angular11/app-nextjs' node server.js",
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "lint": "next lint"

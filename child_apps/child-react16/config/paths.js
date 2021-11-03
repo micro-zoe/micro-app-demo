@@ -17,7 +17,7 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 // like /todos/42/static/js/bundle.7289d.js. We have to know the root.
 const publicUrlOrPath = getPublicUrlOrPath(
   process.env.NODE_ENV === 'development',
-  '/child-react16/',
+  '',
   process.env.PUBLIC_URL
 );
 
@@ -67,10 +67,7 @@ module.exports = {
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
-  publicUrlOrPath,
-  getPublicPath: (isEnvProduction) => {
-    return isEnvProduction ? '/child-react16/' : ''
-  }
+  publicUrlOrPath: '/child-react16/',
 };
 
 

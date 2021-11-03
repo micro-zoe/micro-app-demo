@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import config from '../../config';
 
 @Component({
   selector: 'app-angular11',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class Angular11Component implements OnInit {
 
   constructor() {}
+
+  url = `${config.angular11}/child-angular11/`
 
   microAppData = {msg: '来自基座的数据'}
 

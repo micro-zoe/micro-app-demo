@@ -1,3 +1,10 @@
+const isProduction = process.env.NODE_ENV === 'production'
+
+// 根据 BASE_ROUTE baseRoute 动态设置baseroute的值
+const baseRoute  = process.env.BASE_ROUTE || '/app-nuxtjs'
+// 根据basePath设置资源前缀
+const assetPrefix = isProduction ? `http://localhost:4003${baseRoute}` : `http://localhost:4003${baseRoute}`
+
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -41,12 +48,16 @@ module.exports = {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  env: {
+    assetPrefix,
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: 'http://线上地址',
+    publicPath: assetPrefix,
   },
   router: {
-    base: '/app-nuxtjs'
+    base: baseRoute,
   },
   telemetry: false,
 }

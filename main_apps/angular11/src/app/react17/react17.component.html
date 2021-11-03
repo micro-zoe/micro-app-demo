@@ -1,8 +1,8 @@
 <div>
   <micro-app
     name='appname-react17'
-    url='http://localhost:4005/'
-    baseroute='/app-react17'
+    [attr.url]='url'
+    baseroute='/main-angular11/app-react17'
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'

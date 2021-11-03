@@ -19,7 +19,7 @@ let router: Router | null = null
 let history: RouterHistory | null = null
 // 将渲染操作放入 mount 函数
 function mount () {
-  history = createWebHashHistory(import.meta.env.BASE_URL)
+  history = createWebHashHistory()
   router = createRouter({
     history,
     routes,
