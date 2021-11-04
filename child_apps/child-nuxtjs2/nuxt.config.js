@@ -1,9 +1,9 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
-// 根据 BASE_ROUTE baseRoute 动态设置baseroute的值
-const baseRoute  = process.env.BASE_ROUTE || '/app-nuxtjs'
-// 根据basePath设置资源前缀
-const assetPrefix = isProduction ? `http://localhost:4003${baseRoute}` : `http://localhost:4003${baseRoute}`
+// 每个主应用的baseroute都是不同的，根据 BASE_ROUTE 动态设置baseroute的值
+const baseRoute = process.env.BASE_ROUTE || '/app-nuxtjs'
+// 根据baseroute设置资源前缀
+const assetPrefix = isProduction ? `http://localhost:${process.env.PORT || '4003'}${baseRoute}` : `http://localhost:4003${baseRoute}`
 
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -23,13 +23,6 @@ module.exports = {
     ]
   },
 
-  // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
-  ],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
-
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
@@ -45,19 +38,23 @@ module.exports = {
     '@nuxtjs/axios'
   ],
 
-  // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  // build: {
+  //   publicPath: assetPrefix, // upload the content of .nuxt/dist/client directory to your CDN
+  // },
 
+  // 将 assetPrefix 写入环境变量，通过 process.env.assetPrefix 访问
   env: {
     assetPrefix,
   },
 
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {
-    publicPath: assetPrefix,
-  },
+  // 为不同的主应用构建单独的包
+  buildDir: process.env.DISTDIR || '.nuxt',
+
+  // 设置基础路由
   router: {
     base: baseRoute,
   },
+
   telemetry: false,
 }

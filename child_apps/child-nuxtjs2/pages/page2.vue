@@ -18,6 +18,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data () {
     return {
+      // 补全图片地址
       logoSrc: process.env.assetPrefix + '/micro-app-logo.png',
     }
   }

@@ -12,18 +12,24 @@ const config = {
   vue3: 'http://localhost:4009',
 }
 
-// if (environment.production) {
-//   const locationOrigin = `${location.origin}/`
-//   Object.keys(config).forEach((key) => {
-//     config[key] = locationOrigin
-//   })
-// }
-
-if (true) {
-  const locationOrigin = `http://127.0.0.1:8080`
+if (environment.production) {
   Object.keys(config).forEach((key) => {
-    config[key] = locationOrigin
+    config[key] = location.origin
   })
+
+  const { protocol, hostname } = location
+  config.nextjs = `${protocol}//${hostname}:5001`
+  config.nuxtjs = `${protocol}//${hostname}:6001`
 }
+
+// if (true) {
+//   Object.keys(config).forEach((key) => {
+//     config[key] = `http://127.0.0.1:8080`
+//   })
+
+//   const { protocol, hostname } = location
+//   config.nextjs = `${protocol}//${hostname}:5001`
+//   config.nuxtjs = `${protocol}//${hostname}:6001`
+// }
 
 export default config

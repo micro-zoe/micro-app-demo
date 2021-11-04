@@ -4,6 +4,10 @@
   "description": "micro-app 案例",
   "main": "index.js",
   "private": true,
+  "workspaces": [
+    "main_apps/*",
+    "child_apps/*"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

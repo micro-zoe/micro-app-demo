@@ -6,7 +6,9 @@
     "dev": "node server.js",
     "dev:main-angular11": "cross-env BASE_ROUTE='/main-angular11/app-nextjs' node server.js",
     "build": "next build",
+    "build:main-angular11": "cross-env PORT=5001 BASE_ROUTE='/main-angular11/app-nextjs' DISTDIR='/build/angular11' next build",
     "start": "cross-env NODE_ENV=production node server.js",
+    "start:main-angular11": "cross-env NODE_ENV=production PORT=5001 BASE_ROUTE='/main-angular11/app-nextjs' DISTDIR='/build/angular11' node server.js",
     "lint": "next lint"
   },
   "dependencies": {
