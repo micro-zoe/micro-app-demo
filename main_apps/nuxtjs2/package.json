@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "cross-env NODE_ENV=production PORT=3010 node server.js",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "prepare": "husky install",

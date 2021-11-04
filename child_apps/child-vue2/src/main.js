@@ -8,7 +8,8 @@ Vue.config.productionTip = false
 
 const router = new VueRouter({
   mode: 'history',
-  base: window.__MICRO_APP_BASE_ROUTE__ || '/',
+  // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
+  base: window.__MICRO_APP_BASE_ROUTE__ || '/child-vue2',
   routes,
 })
 
