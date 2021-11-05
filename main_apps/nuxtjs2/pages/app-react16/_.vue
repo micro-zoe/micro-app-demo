@@ -1,8 +1,9 @@
 <template>
   <div>
     <micro-app
+      v-if='show'
       name='appname-react16'
-      url='http://localhost:4004/'
+      url='http://localhost:4004/child-react16'
       baseroute='/app-react16'
       :data='microAppData'
       @created='handleCreate'
@@ -19,10 +20,14 @@
 
 export default {
   name: 'react16',
-  data() {
+  data () {
     return {
+      show: false,
       microAppData: {msg: '来自基座的数据'}
     }
+  },
+  mounted () {
+    this.show = true
   },
   methods: {
     handleCreate (): void {
@@ -54,7 +59,7 @@ export default {
       console.log('来自子应用 child-react16 的数据:', e.detail.data)
     },
   }
-}
+} as any
 </script>
 
 <style>

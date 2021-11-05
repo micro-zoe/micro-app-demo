@@ -4,6 +4,7 @@
       name='appname-nextjs'
       :url='url'
       inline
+      disableScopecss
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -19,7 +20,7 @@
 
 export default {
   name: 'nextjs',
-  data() {
+  data () {
     return {
       url: 'http://localhost:4002' + location.pathname,
       microAppData: {msg: '来自基座的数据'}

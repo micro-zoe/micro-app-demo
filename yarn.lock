@@ -2112,6 +2112,11 @@
   resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.4.1.tgz#48bf52fbd0c4471ee59947b1b3b3946d2738136d"
   integrity sha512-fMOeh8AsvCBhGw/QtYFFo97Dh7TUMej36tskEbkBdQVoEVEVIX2JIKYSqm5+ZGlubgFudZ/2SVNdrnViOTw4og==
 
+"@micro-zoe/micro-app@~0.4.3":
+  version "0.4.3"
+  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-0.4.3.tgz#c6866140bcebb788731e3acc5757b5197983d1ca"
+  integrity sha512-yVGPNEW7OFDjFwevkNFVzbLyBRoAa4SlrN8KxKY44asoidduxjQtTfYEKriIGkzTOMiRuGHzFe29XTIux9hAfQ==
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"

@@ -1,8 +1,9 @@
 <template>
   <div>
     <micro-app
+      v-if='show'
       name='appname-angular11'
-      url='http://localhost:4001/'
+      url='http://localhost:4001/child-angular11'
       baseroute='/app-angular11'
       :data='microAppData'
       @created='handleCreate'
@@ -20,10 +21,14 @@ import 'zone.js'
 
 export default {
   name: 'angular11',
-  data() {
+  data () {
     return {
+      show: false,
       microAppData: {msg: '来自基座的数据'}
     }
+  },
+  mounted () {
+    this.show = true
   },
   methods: {
     handleCreate (): void {
@@ -55,5 +60,5 @@ export default {
       console.log('来自子应用 child-angular11 的数据:', e.detail.data)
     },
   }
-}
+} as any
 </script>

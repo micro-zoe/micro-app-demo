@@ -20,8 +20,8 @@ function MyApp({ Component, pageProps }: AppProps) {
               loader(code: string) {
                 if (process.env.NODE_ENV === 'development') {
                   // 这里 /basename/ 需要和子应用vite.config.js中base的配置保持一致
-                  code = code.replace(/(from|import)(\s*['"])(\/app-vite\/)/g, all => {
-                    return all.replace('/app-vite/', 'http://localhost:4007/app-vite/')
+                  code = code.replace(/(from|import)(\s*['"])(\/child-vite\/)/g, all => {
+                    return all.replace('/child-vite/', 'http://localhost:4007/child-vite/')
                   })
                 }
 
@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div id='next-root'>
-      <micro-app name='appname-sidebar' url='http://localhost:4006'></micro-app>
+      <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar'></micro-app>
       <div id='router-container'>
         <Component {...pageProps} />
       </div>

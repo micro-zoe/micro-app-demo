@@ -3,6 +3,7 @@
     name='appname-nextjs'
     [attr.url]='url'
     inline
+    disableScopecss
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'
@@ -10,6 +11,5 @@
     (unmount)='handleUnmount()'
     (error)='handleError()'
     (datachange)='handleDataChange($event)'
-    disableScopecss
   ></micro-app>
 </div>

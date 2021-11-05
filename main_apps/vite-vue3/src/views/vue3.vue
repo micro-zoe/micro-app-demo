@@ -19,7 +19,7 @@
 
 export default {
   name: 'vue3',
-  data() {
+  data () {
     return {
       microAppData: {msg: '来自基座的数据'}
     }

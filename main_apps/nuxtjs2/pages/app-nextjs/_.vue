@@ -1,11 +1,12 @@
 <template>
   <div>
     <micro-app
-      v-if='url'
+      v-if='show'
       name='appname-nextjs'
       :url='url'
       :data='microAppData'
       inline
+      disableScopecss
       @created='handleCreate'
       @beforemount='handleBeforeMount'
       @mounted='handleMount'
@@ -20,14 +21,16 @@
 
 export default {
   name: 'nextjs',
-  data() {
+  data () {
     return {
+      show: false,
       url: '',
       microAppData: {msg: '来自基座的数据'}
     }
   },
   mounted () {
     this.url = 'http://localhost:4002' + location.pathname
+    this.show = true
   },
   methods: {
     handleCreate (): void {

@@ -56,6 +56,6 @@ module.exports = {
     }
   },
   alias: {
-    "tochange":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
+    "@micro-zoe/micro-app":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
   },
 }

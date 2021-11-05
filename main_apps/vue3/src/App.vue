@@ -1,6 +1,6 @@
 <template>
   <div id="app-container">
-    <micro-app name='appname-sidebar' url='http://localhost:4006' :data='sidebarData'></micro-app>
+    <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar' :data='sidebarData'></micro-app>
     <router-view id='router-container' />
   </div>
 </template>

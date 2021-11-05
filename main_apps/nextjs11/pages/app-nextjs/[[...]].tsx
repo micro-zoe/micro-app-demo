@@ -50,6 +50,7 @@ const Nextjs: NextPage = () => {
             name='appname-nextjs'
             url={url}
             inline
+            disableScopecss
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}

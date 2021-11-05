@@ -19,7 +19,7 @@
 
 export default {
   name: 'nuxtjs',
-  data() {
+  data () {
     return {
       url: 'http://localhost:4003' + location.pathname,
       microAppData: {msg: '来自基座的数据'}

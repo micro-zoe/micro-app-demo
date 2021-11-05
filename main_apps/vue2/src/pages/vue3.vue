@@ -19,7 +19,7 @@
 
 export default {
   name: 'vue3',
-  data() {
+  data () {
     return {
       microAppData: {msg: '来自基座的数据'}
     }
@@ -37,7 +37,6 @@ export default {
       console.log('child-vue3 已经渲染完成')
 
       setTimeout(() => {
-        // @ts-ignore
         this.microAppData = {msg: '来自基座的新数据'}
       }, 2000)
     },

@@ -1,8 +1,9 @@
 <template>
   <div>
     <micro-app
+      v-if='show'
       name='appname-vue3'
-      url='http://localhost:4009/'
+      url='http://localhost:4009/child-vue3'
       baseroute='/app-vue3'
       :data='microAppData'
       @created='handleCreate'
@@ -19,10 +20,14 @@
 
 export default {
   name: 'vue3',
-  data() {
+  data () {
     return {
+      show: false,
       microAppData: {msg: '来自基座的数据'}
     }
+  },
+  mounted () {
+    this.show = true
   },
   methods: {
     handleCreate (): void {
@@ -54,7 +59,7 @@ export default {
       console.log('来自子应用 child-vue3 的数据:', e.detail.data)
     },
   }
-}
+} as any
 </script>
 
 <style>

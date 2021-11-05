@@ -20,7 +20,7 @@ import 'zone.js'
 
 export default {
   name: 'angular11',
-  data() {
+  data () {
     return {
       microAppData: {msg: '来自基座的数据'}
     }

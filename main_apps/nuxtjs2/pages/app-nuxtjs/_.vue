@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      v-if='url'
+      v-if='show'
       name='appname-nuxtjs'
       :url='url'
       :data='microAppData'
@@ -20,14 +20,16 @@
 
 export default {
   name: 'nuxtjs',
-  data() {
+  data () {
     return {
+      show: false,
       url: '',
       microAppData: {msg: '来自基座的数据'}
     }
   },
   mounted () {
     this.url = 'http://localhost:4003' + location.pathname
+    this.show = true
   },
   methods: {
     handleCreate (): void {

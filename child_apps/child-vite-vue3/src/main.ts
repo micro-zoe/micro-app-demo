@@ -7,7 +7,7 @@ import routes from './router'
 
 declare global {
   interface Window {
-    microApp: any
+    eventCenterForAppNameVite: any
     __MICRO_APP_NAME__: string
     __MICRO_APP_ENVIRONMENT__: string
     __MICRO_APP_BASE_APPLICATION__: string
@@ -30,12 +30,30 @@ function mount () {
   app.mount('#vite-app')
 
   console.log('微应用child-vite渲染了')
+
+  // eventCenterForAppNameVite 是基座添加到window的数据通信对象
+  if (window.eventCenterForAppNameVite) {
+    // 主动获取基座下发的数据
+    console.log('child-vite getData:', window.eventCenterForAppNameVite.getData())
+
+    // 监听基座下发的数据变化
+    window.eventCenterForAppNameVite.addDataListener((data: Record<string, unknown>) => {
+      console.log('child-vite addDataListener:', data)
+    })
+
+    // 向基座发送数据
+    setTimeout(() => {
+      window.eventCenterForAppNameVite.dispatch({ myname: 'child-vite' })
+    }, 3000)
+  }
 }
 
 // 将卸载操作放入 unmount 函数
 function unmount () {
   app?.unmount()
   history?.destroy()
+  // 卸载所有数据监听函数
+  window.eventCenterForAppNameVite?.clearDataListener()
   app = null
   router = null
   history = null
