@@ -5,9 +5,9 @@
       <NuxtLink to="/page2">Page2</NuxtLink>
     </div>
     <div class='nuxt-page2'>
-      <h3>page2</h3>
+      <h1 class='nuxt-page2-title'>child-nuxtjs2-page2</h1>
       <div class="child-nuxtjs2-test-btn">test</div>
-      <img :src="logoSrc" width="100" alt="micro-app-logo" />
+      <img :src="logoSrc" alt="micro-app-logo" />
     </div>
   </div>
 </template>
@@ -45,5 +45,11 @@ export default Vue.extend({
   font-weight: bolder;
   margin: 0 auto;
   user-select: none;
+}
+
+.nuxt-page2-title {
+  font-weight: revert;
+  font-size: revert;
+  margin: revert;
 }
 </style>

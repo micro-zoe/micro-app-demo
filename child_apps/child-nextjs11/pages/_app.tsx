@@ -1,5 +1,6 @@
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Link from 'next/link'
 import '../styles/globals.css'
 
@@ -11,8 +12,11 @@ declare global {
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter()
+
   useEffect(() => {
     console.log('微应用child-nextjs渲染了');
+
 
     // 是否是微前端环境
     if (window.__MICRO_APP_ENVIRONMENT__) {
@@ -22,6 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
       // 监听基座下发的数据变化
       window.microApp.addDataListener((data: Record<string, unknown>) => {
         console.log('child-nextjs addDataListener:', data);
+
+        // 当基座下发path时进行跳转
+        if (data.path && data.path !== router.pathname) {
+          router.push(data.path as string)
+        }
       })
 
       // 向基座发送数据

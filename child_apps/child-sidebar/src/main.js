@@ -1,3 +1,4 @@
+import './public-path'
 import Vue from 'vue'
 import { Menu, Submenu, MenuItem } from 'element-ui';
 import App from './App.vue'

@@ -27,6 +27,11 @@ export default Vue.extend({
       // 监听基座下发的数据变化
       window.microApp.addDataListener((data: Record<string, any>) => {
         console.log('child-nuxtjs addDataListener:', data);
+
+        // 当基座下发path时进行跳转
+        if (data.path && data.path !== this.$router.currentRoute.path) {
+          this.$router.push(data.path as string)
+        }
       })
 
       // 向基座发送数据

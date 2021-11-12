@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h4>page2</h4>
+    <h1>child-vite-page2</h1>
     <div class="child-vite-vue3-test-btn">test</div>
     <img :src="microAppLogo" alt="micro-app-logo" />
   </div>

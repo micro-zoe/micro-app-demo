@@ -54,7 +54,7 @@
     "react-dev-utils": "^11.0.3",
     "react-dom": "16.13.0",
     "react-refresh": "^0.8.3",
-    "react-router-dom": "~5.2.0",
+    "react-router-dom": "5.1.2",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
     "sass-loader": "^10.0.5",
