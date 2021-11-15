@@ -41,6 +41,31 @@ function handleMicroData (router: Router) {
   }
 }
 
+// ----------分割线---默认模式------两种模式任选其一-----放开注释即可运行------- //
+// const router = createRouter({
+//   history: createWebHashHistory(),
+//   routes,
+// })
+
+// const app = createApp(App)
+// app.use(router)
+// app.mount('#vite-app')
+
+// console.log('微应用child-vite渲染了')
+
+// handleMicroData(router)
+
+// // 监听卸载操作
+// window.addEventListener("unmount", function () {
+//   app.unmount()
+//   // 卸载所有数据监听函数
+//   window.eventCenterForAppNameVite?.clearDataListener()
+//   console.log('微应用child-vite卸载了')
+// })
+
+
+
+// ----------分割线---umd模式------两种模式任选其一-------------- //
 let app: AppInstance | null = null
 let router: Router | null = null
 let history: RouterHistory | null = null

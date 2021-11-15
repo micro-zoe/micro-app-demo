@@ -1,5 +1,5 @@
 import './public-path';
-import { enableProdMode } from '@angular/core';
+import { enableProdMode, NgModuleRef } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -17,25 +17,8 @@ declare global {
   }
 }
 
-let app = null;
-let container = null;
-// 将渲染操作放入 mount 函数
-async function mount () {
-  // 如果根元素不是app-root，根据实际情况调整
-  const rootElement = document.querySelector('app-root')
-  if (rootElement && !container) {
-    container = rootElement
-    container.__MICRO_APP_NAME__ = window.__MICRO_APP_NAME__ // 标记元素为微应用元素
-  } else if (!rootElement && container) {
-    document.body.prepend(container) // 处理卸载时根元素丢失的情况
-  }
-
-  app = await platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-    .catch(err => console.error(err))
-
-  console.log('微应用child-angular11渲染了');
-
+// 与基座的数据交互
+function handleMicroData () {
   // 是否是微前端环境
   if (window.__MICRO_APP_ENVIRONMENT__) {
     // 主动获取基座下发的数据
@@ -53,10 +36,44 @@ async function mount () {
   }
 }
 
+// ----------分割线---默认模式------两种模式任选其一-----放开注释即可运行------- //
+// let app = null;
+// platformBrowserDynamic()
+//   .bootstrapModule(AppModule)
+//   .then((res: NgModuleRef<AppModule>) => {
+//     app = res
+//   })
+//   .catch(err => console.error(err))
+
+// console.log('微应用child-angular11渲染了');
+
+// handleMicroData()
+
+// // 监听卸载操作
+// window.addEventListener("unmount", function () {
+//   app.destroy();
+//   app = null;
+//   console.log('微应用child-angular11卸载了');
+// })
+
+
+// ----------分割线---umd模式------两种模式任选其一-------------- //
+let app = null;
+// 将渲染操作放入 mount 函数
+async function mount () {
+  app = await platformBrowserDynamic()
+    .bootstrapModule(AppModule)
+    .catch(err => console.error(err))
+
+  console.log('微应用child-angular11渲染了');
+
+  handleMicroData()
+}
+
 // 将卸载操作放入 unmount 函数
 function unmount () {
-  app.destroy();
-  container.innerHTML = '';
+  // angular部分版本在执行destory时会删除容器元素app-root(如：angular11)，此时可删除`app.destroy()`以防止报错
+  // app.destroy();
   app = null;
   console.log('微应用child-angular11卸载了');
 }
