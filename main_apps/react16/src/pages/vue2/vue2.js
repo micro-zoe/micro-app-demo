@@ -2,6 +2,7 @@
 /** @jsx jsxCustomEvent */
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
+import config from '../../config'
 
 const Vue2 = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -38,8 +39,8 @@ const Vue2 = () => {
     <div>
       <micro-app
         name='appname-vue2'
-        url='http://localhost:4008/'
-        baseroute='/app-vue2'
+        url={`${config.vue2}/child-vue2/`}
+        baseroute='/main-react16/app-vue2'
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}

@@ -5,7 +5,6 @@
       name='appname-nuxtjs'
       :url='url'
       :data='microAppData'
-      inline
       @created='handleCreate'
       @beforemount='handleBeforeMount'
       @mounted='handleMount'
@@ -17,6 +16,7 @@
 </template>
 
 <script lang="ts">
+import config from '../../lib/config'
 
 export default {
   name: 'nuxtjs',
@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted () {
-    this.url = 'http://localhost:4003' + location.pathname
+    this.url = config.nuxtjs + location.pathname
     this.show = true
   },
   methods: {

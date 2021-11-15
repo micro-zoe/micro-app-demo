@@ -3,7 +3,7 @@
     <micro-app
       v-if='show'
       name='appname-angular11'
-      url='http://localhost:4001/child-angular11'
+      :url='url'
       baseroute='/app-angular11'
       :data='microAppData'
       @created='handleCreate'
@@ -18,12 +18,14 @@
 
 <script lang="ts">
 import 'zone.js'
+import config from '../../lib/config'
 
 export default {
   name: 'angular11',
   data () {
     return {
       show: false,
+      url: `${config.angular11}/child-angular11/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

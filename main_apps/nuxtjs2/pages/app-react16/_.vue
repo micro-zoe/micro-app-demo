@@ -3,7 +3,7 @@
     <micro-app
       v-if='show'
       name='appname-react16'
-      url='http://localhost:4004/child-react16'
+      :url='url'
       baseroute='/app-react16'
       :data='microAppData'
       @created='handleCreate'
@@ -17,12 +17,14 @@
 </template>
 
 <script lang="ts">
+import config from '../../lib/config'
 
 export default {
   name: 'react16',
   data () {
     return {
       show: false,
+      url: `${config.react16}/child-react16/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

@@ -2,8 +2,8 @@
   <div>
     <micro-app
       name='appname-vue3'
-      url='http://localhost:4009/'
-      baseroute='/app-vue3'
+      :url='url'
+      baseroute='/main-vite/app-vue3'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -16,11 +16,13 @@
 </template>
 
 <script lang="ts">
+import config from '../config'
 
 export default {
   name: 'vue3',
   data () {
     return {
+      url: `${config.vue3}/child-vue3/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

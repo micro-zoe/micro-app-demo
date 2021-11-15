@@ -2,6 +2,7 @@
 /** @jsx jsxCustomEvent */
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
+import config from '../../config'
 
 const Nextjs = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -38,8 +39,7 @@ const Nextjs = () => {
     <div>
       <micro-app
         name='appname-nextjs'
-        url={'http://localhost:4002' + window.location.pathname}
-        inline
+        url={config.nextjs + window.location.pathname}
         disableScopecss
         data={microAppData}
         onCreated={handleCreate}

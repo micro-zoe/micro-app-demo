@@ -2,8 +2,8 @@
   <div>
     <micro-app
       name='appname-react17'
-      url='http://localhost:4005/'
-      baseroute='/app-react17'
+      :url='url'
+      baseroute='/main-vite/app-react17'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -16,11 +16,13 @@
 </template>
 
 <script lang="ts">
+import config from '../config'
 
 export default {
   name: 'react17',
   data () {
     return {
+      url: `${config.react17}/child-react17/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

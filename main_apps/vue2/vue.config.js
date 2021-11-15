@@ -1,8 +1,8 @@
 const path = require('path')
 
 module.exports = {
-  publicPath: '/',
-  outputDir: 'dist',
+  publicPath: '/main-vue2/',
+  outputDir: 'main-vue2',
   productionSourceMap: false,
   devServer: {
     hot: false,

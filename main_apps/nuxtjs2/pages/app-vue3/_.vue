@@ -3,7 +3,7 @@
     <micro-app
       v-if='show'
       name='appname-vue3'
-      url='http://localhost:4009/child-vue3'
+      :url='url'
       baseroute='/app-vue3'
       :data='microAppData'
       @created='handleCreate'
@@ -17,12 +17,14 @@
 </template>
 
 <script lang="ts">
+import config from '../../lib/config'
 
 export default {
   name: 'vue3',
   data () {
     return {
       show: false,
+      url: `${config.vue3}/child-vue3/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

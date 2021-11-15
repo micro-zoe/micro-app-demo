@@ -125,7 +125,7 @@ export default {
 
     // 兼容vite子应用，只有它是hash路由
     if (this.defaultIndex === 'app-vite' && location.hash.includes('page2')) {
-      this.defaultIndex += location.hash.replace('#', '')
+      this.defaultIndex += location.hash.replace(/^#/, '').replace(/\/$/, '')
     }
   },
   methods: {
@@ -172,6 +172,7 @@ export default {
   color: #2c3e50;
   display: inline-block;
   margin-right: 40px;
+  border-right: 1px solid rgb(230, 230, 230);
 }
 
 h4 {
@@ -184,6 +185,7 @@ h4 {
 
 .el-menu {
   width: 200px;
+  border-right: none;
 }
 
 .submenu-text {

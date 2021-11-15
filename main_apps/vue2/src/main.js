@@ -61,6 +61,7 @@ microApp.start({
 
 const router = new VueRouter({
   mode: 'history',
+  base: '/main-vue2',
   routes,
 })
 

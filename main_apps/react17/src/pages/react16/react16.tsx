@@ -2,6 +2,7 @@
 /** @jsx jsxCustomEvent */
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
+import config from '../../config'
 
 const React16 = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -38,8 +39,8 @@ const React16 = () => {
     <div>
       <micro-app
         name='appname-react16'
-        url='http://localhost:4004/'
-        baseroute='/app-react16'
+        url={`${config.react16}/child-react16/`}
+        baseroute='/main-react17/app-react16'
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}

@@ -3,7 +3,7 @@
     <micro-app
       v-if='show'
       name='appname-vite'
-      url='http://localhost:4007/'
+      :url='url'
       inline
       disablesandbox
       :data='microAppData'
@@ -19,12 +19,14 @@
 
 <script lang="ts">
 import microApp, { EventCenterForMicroApp } from '@micro-zoe/micro-app'
+import config from '../../lib/config'
 
 export default {
   name: 'vite',
   data () {
     return {
       show: false,
+      url: `${config.vite}/child-vite/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

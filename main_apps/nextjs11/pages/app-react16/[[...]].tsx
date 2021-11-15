@@ -3,6 +3,7 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
+import config from '../../lib/config'
 
 const React16: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -46,7 +47,7 @@ const React16: NextPage = () => {
         show && (
           <micro-app
             name='appname-react16'
-            url='http://localhost:4004/'
+            url={`${config.react16}/child-react16/`}
             baseroute='/app-react16'
             data={microAppData}
             onCreated={handleCreate}

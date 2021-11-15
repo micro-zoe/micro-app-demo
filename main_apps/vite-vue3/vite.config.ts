@@ -21,5 +21,9 @@ export default defineConfig({
     alias: {
       "@micro-zoe/micro-app": path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
     },
-  }
+  },
+  base: '/main-vite/',
+  build: {
+    outDir: 'main-vite',
+  },
 })

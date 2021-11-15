@@ -3,6 +3,7 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
+import config from '../../lib/config'
 
 const Nextjs: NextPage = () => {
   const [url, changeUrl] = useState('')
@@ -38,7 +39,7 @@ const Nextjs: NextPage = () => {
   }
 
   useEffect(() => {
-    changeUrl('http://localhost:4002' + location.pathname)
+    changeUrl(config.nextjs + location.pathname)
     changeShow(true)
   }, [])
 
@@ -49,7 +50,6 @@ const Nextjs: NextPage = () => {
           <micro-app
             name='appname-nextjs'
             url={url}
-            inline
             disableScopecss
             data={microAppData}
             onCreated={handleCreate}

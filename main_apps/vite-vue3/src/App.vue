@@ -7,16 +7,25 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import microApp from '@micro-zoe/micro-app'
 
 export default defineComponent({
   name: 'App',
   data () {
     return {
       sidebarData: {
-        pushState: (path) => {
+        // 子应用控制基座页面跳转
+        pushState: (path: string, hash?: string) => {
+          // vite子应用为hash路由，这里拼接一下hash值
+          hash && (path += `/#${hash}`)
           this.$router.push(path)
+        },
+        // 基座控制子应用页面跳转
+        jumpChildPage: (appName: string, path: string) => {
+          // 下发通知到子应用
+          microApp.setData(appName, { path })
         }
-      }
+      },
     }
   },
 } as any)

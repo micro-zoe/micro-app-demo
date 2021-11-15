@@ -3,6 +3,7 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
 import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
+import config from '../../config'
 
 // 因为vite子应用关闭了沙箱，我们需要为子应用appname-vite创建EventCenterForMicroApp对象来实现数据通信
 window.eventCenterForAppNameVite = new EventCenterForMicroApp('appname-vite')
@@ -42,7 +43,7 @@ const Vite = () => {
     <div>
       <micro-app
         name='appname-vite'
-        url='http://localhost:4007/'
+        url={`${config.vite}/child-vite/`}
         inline
         disablesandbox
         data={microAppData}

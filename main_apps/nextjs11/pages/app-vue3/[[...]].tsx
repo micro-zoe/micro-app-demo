@@ -3,6 +3,7 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
+import config from '../../lib/config'
 
 const Vue3: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -46,7 +47,7 @@ const Vue3: NextPage = () => {
         show && (
           <micro-app
             name='appname-vue3'
-            url='http://localhost:4009/'
+            url={`${config.vue3}/child-vue3/`}
             baseroute='/app-vue3'
             data={microAppData}
             onCreated={handleCreate}

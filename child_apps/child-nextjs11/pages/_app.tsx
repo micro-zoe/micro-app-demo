@@ -28,7 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         console.log('child-nextjs addDataListener:', data);
 
         // 当基座下发path时进行跳转
-        if (data.path && data.path !== router.pathname) {
+        if (data.path) {
           router.push(data.path as string)
         }
       })

@@ -3,6 +3,7 @@
 import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
+import config from '../../lib/config'
 
 const Nuxtjs: NextPage = () => {
   const [url, changeUrl] = useState('')
@@ -38,7 +39,7 @@ const Nuxtjs: NextPage = () => {
   }
 
   useEffect(() => {
-    changeUrl('http://localhost:4003' + location.pathname)
+    changeUrl(config.nuxtjs + location.pathname)
     changeShow(true)
   }, [])
 
@@ -49,7 +50,6 @@ const Nuxtjs: NextPage = () => {
           <micro-app
             name='appname-nuxtjs'
             url={url}
-            inline
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}

@@ -5,7 +5,6 @@
       name='appname-nextjs'
       :url='url'
       :data='microAppData'
-      inline
       disableScopecss
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -18,6 +17,7 @@
 </template>
 
 <script lang="ts">
+import config from '../../lib/config'
 
 export default {
   name: 'nextjs',
@@ -29,7 +29,7 @@ export default {
     }
   },
   mounted () {
-    this.url = 'http://localhost:4002' + location.pathname
+    this.url = config.nextjs + location.pathname
     this.show = true
   },
   methods: {

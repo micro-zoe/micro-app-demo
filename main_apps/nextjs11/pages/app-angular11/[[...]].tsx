@@ -4,6 +4,7 @@ import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import 'zone.js'
+import config from '../../lib/config'
 
 const Angular11: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -48,7 +49,7 @@ const Angular11: NextPage = () => {
         show && (
           <micro-app
             name='appname-angular11'
-            url='http://localhost:4001/'
+            url={`${config.angular11}/child-angular11/`}
             baseroute='/app-angular11'
             data={microAppData}
             onCreated={handleCreate}

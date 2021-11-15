@@ -2,7 +2,7 @@
   <div>
     <micro-app
       name='appname-vite'
-      url='http://localhost:4007/'
+      :url='url'
       inline
       disablesandbox
       :data='microAppData'
@@ -18,6 +18,7 @@
 
 <script>
 import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
+import config from '../config'
 
 // 因为vite子应用关闭了沙箱，我们需要为子应用appname-vite创建EventCenterForMicroApp对象来实现数据通信
 window.eventCenterForAppNameVite = new EventCenterForMicroApp('appname-vite')
@@ -26,6 +27,7 @@ export default {
   name: 'vite',
   data () {
     return {
+      url: `${config.vite}/child-vite/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

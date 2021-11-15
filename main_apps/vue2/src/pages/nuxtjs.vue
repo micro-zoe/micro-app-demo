@@ -3,7 +3,6 @@
     <micro-app
       name='appname-nuxtjs'
       :url='url'
-      inline
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -16,12 +15,13 @@
 </template>
 
 <script>
+import config from '../config'
 
 export default {
   name: 'nuxtjs',
   data () {
     return {
-      url: 'http://localhost:4003' + location.pathname,
+      url: config.nuxtjs + location.pathname,
       microAppData: {msg: '来自基座的数据'}
     }
   },

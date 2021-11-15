@@ -2,8 +2,8 @@
   <div>
     <micro-app
       name='appname-react16'
-      url='http://localhost:4004/'
-      baseroute='/app-react16'
+      :url='url'
+      baseroute='/main-vue2/app-react16'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -16,11 +16,13 @@
 </template>
 
 <script>
+import config from '../config'
 
 export default {
   name: 'react16',
   data () {
     return {
+      url: `${config.react16}/child-react16/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

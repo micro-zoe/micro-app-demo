@@ -4,6 +4,7 @@ import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
+import config from '../../lib/config'
 
 const Vite: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
@@ -53,7 +54,7 @@ const Vite: NextPage = () => {
         show && (
           <micro-app
             name='appname-vite'
-            url='http://localhost:4007/'
+            url={`${config.vite}/child-vite/`}
             inline
             disablesandbox
             data={microAppData}

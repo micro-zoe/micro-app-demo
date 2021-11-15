@@ -2,8 +2,8 @@
   <div>
     <micro-app
       name='appname-angular11'
-      url='http://localhost:4001/'
-      baseroute='/app-angular11'
+      :url='url'
+      baseroute='/main-vue2/app-angular11'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -17,11 +17,13 @@
 
 <script>
 import 'zone.js'
+import config from '../config'
 
 export default {
   name: 'angular11',
   data () {
     return {
+      url: `${config.angular11}/child-angular11/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

@@ -3,7 +3,6 @@
     <micro-app
       name='appname-nextjs'
       :url='url'
-      inline
       disableScopecss
       :data='microAppData'
       @created='handleCreate'
@@ -17,12 +16,13 @@
 </template>
 
 <script>
+import config from '../config'
 
 export default {
   name: 'nextjs',
   data () {
     return {
-      url: 'http://localhost:4002' + location.pathname,
+      url: config.nextjs + location.pathname,
       microAppData: {msg: '来自基座的数据'}
     }
   },

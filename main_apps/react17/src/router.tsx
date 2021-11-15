@@ -13,7 +13,7 @@ const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3
 
 function App () {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/main-react17'>
       <SideBar />
       <div id='router-container'>
         <Switch>
