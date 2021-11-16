@@ -61,6 +61,7 @@ microApp.start({
 
 const router = new VueRouter({
   mode: 'history',
+  // 设置主应用基础路由为main-vue2(用于后续部署)，则子应用基础路由(baseroute)为/main-vue2/xxx
   base: '/main-vue2',
   routes,
 })

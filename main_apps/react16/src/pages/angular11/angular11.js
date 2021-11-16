@@ -50,7 +50,6 @@ const Angular11 = () => {
         onUnmount={handleUnmount}
         onError={handleError}
         onDataChange={handleDataChange}
-        destory
       ></micro-app>
     </div>
   )

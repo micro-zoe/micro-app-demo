@@ -74,7 +74,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  // 设置主应用基础路由为main-angular11(用于后续打包部署)，则子应用基础路由(baseroute)为/main-angular11/xxx
+  // 设置主应用基础路由为main-angular11(用于后续部署)，则子应用基础路由(baseroute)为/main-angular11/xxx
   providers: [{ provide: APP_BASE_HREF, useValue: '/main-angular11'}]
 })
 export class AppRoutingModule { }

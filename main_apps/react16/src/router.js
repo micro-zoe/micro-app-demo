@@ -13,6 +13,7 @@ const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3
 
 function App () {
   return (
+    // 设置主应用基础路由为main-react16(用于后续部署)，则子应用基础路由(baseroute)为/main-react16/xxx
     <BrowserRouter basename='/main-react16'>
       <SideBar />
       <div id='router-container'>
