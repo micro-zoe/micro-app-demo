@@ -113,20 +113,18 @@ export default {
     }
   },
   created () {
-    // 注意vite为hash路由，其它子应用都为history路由
+    // location.pathname的值通常为：/main-angular11/app-vue2/page2，我们只取`app-vue2/page2`
     const pathArr = location.pathname.match(/app-.+[^\/$]/)
     this.defaultIndex = pathArr ? pathArr[0] : '/'
-
-    // 获取基座下发的数据
-    this.microAppData = window.microApp && window.microApp.getData()
-
-    // 记录正在运行的app
-    this.activeApp = this.defaultIndex.split('/')[0]
 
     // 兼容vite子应用，只有它是hash路由
     if (this.defaultIndex === 'app-vite' && location.hash.includes('page2')) {
       this.defaultIndex += location.hash.replace(/^#/, '').replace(/\/$/, '')
     }
+
+    // 获取基座下发的数据
+    this.microAppData = window.microApp && window.microApp.getData()
+
   },
   methods: {
     select (index, indexPath) {
@@ -134,29 +132,18 @@ export default {
         // 获取跳转的路由地址，如：app-vue2 转换为 /app-vue2/
         let fullPath = `/${index}/`.replaceAll(/\/{2,}/g, '/')
 
-        /**
-         * 子应用初次渲染，控制基座路由跳转页面，子应用在渲染时会根据浏览器地址渲染对应的页面
-         * 子应用已经渲染完成，则无法通过基座路由控制子应用的页面，需要在基座下发通知，在子应用内部跳转
-         */
-        // 子应用已经渲染，下发通知让子应用跳转
-        if (this.activeApp && index.startsWith(this.activeApp)) {
-          // 获取子应用name
-          const appName = indexPath[0]
-          const effectivePath = fullPath.replace(`/${this.activeApp}`, '')
-          this.microAppData.jumpChildPage(appName, effectivePath)
-        } else {
-          // 只有跳转vite子应用才需要传递hash值
-          let hash = null
-          if (fullPath === '/app-vite/page2/') {
-            fullPath = '/app-vite'
-            hash = '/page2'
-          }
-          // 控制基座跳转页面，并渲染子应用
-          this.microAppData.pushState(fullPath, hash)
+        // 因为只有vite子应用是hash路由，所以需要传递hash值
+        let hash = null
+        if (fullPath === '/app-vite/page2/') {
+          fullPath = '/app-vite'
+          hash = '/page2'
         }
 
-        // 记录正在运行的app
-        this.activeApp = index.split('/')[0]
+        // 获取子应用appName
+        const appName = indexPath[0]
+
+        // 控制基座跳转页面，并渲染子应用
+        this.microAppData.pushState(appName, fullPath, hash)
       }
     },
   }
