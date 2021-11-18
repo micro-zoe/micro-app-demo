@@ -1,9 +1,5 @@
 <template>
   <div>
-    <div id='public-links'>
-      <NuxtLink to="/">Home</NuxtLink> |
-      <NuxtLink to="/page2">Page2</NuxtLink>
-    </div>
     <Tutorial />
   </div>
 </template>

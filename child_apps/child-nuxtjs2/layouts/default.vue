@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div id='public-links' @click="onRouteChange">
+      <NuxtLink to="/" page-path=''>Home</NuxtLink> |
+      <NuxtLink to="/page2" page-path='/page2'>Page2</NuxtLink>
+    </div>
     <Nuxt />
   </div>
 </template>
@@ -30,7 +34,8 @@ export default Vue.extend({
 
         // 当基座下发path时进行跳转
         if (data.path && data.path !== this.$router.currentRoute.path) {
-          this.$router.push(data.path as string)
+          // 因为vue-router在pathname相同的情况下依然会将路由推入堆栈，所以这里使用了replace，以防止点击两次浏览器返回按钮才能正确返回的问题。
+          this.$router.replace(data.path as string)
         }
       })
 
@@ -43,6 +48,16 @@ export default Vue.extend({
       window.addEventListener('unmount', () => {
         console.log('微应用child-nuxtjs卸载了');
       })
+    }
+  },
+  methods: {
+    // 子应用内部跳转时，通知侧边栏改变菜单状态
+    onRouteChange (e: any) {
+      if (window.__MICRO_APP_ENVIRONMENT__) {
+        const activePage = e.target.getAttribute('page-path')
+        // 发送全局数据，通知侧边栏修改菜单展示
+        window.microApp.setGlobalData({ activePage })
+      }
     }
   }
 })

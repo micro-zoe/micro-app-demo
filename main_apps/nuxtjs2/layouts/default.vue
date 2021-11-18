@@ -57,18 +57,29 @@ export default {
       }
     })
 
+    // 👇 主应用向sidebar子应用下发一个名为pushState的方法
     this.sidebarData = {
-      // 子应用控制基座页面跳转
-      pushState: (path: string, hash?: string) => {
+      // 子应用sidebar 通过pushState控制主应用跳转
+      pushState: (appName: string, path: string, hash: string) => {
         // vite子应用为hash路由，这里拼接一下hash值
         hash && (path += `/#${hash}`)
-        this.$router.push(path)
+        // 主应用跳转
+        this.$router.push(path === '/' ? '/' : path + '/')
+
+        // 主应用控制其它子应用跳转 👇
+        if (appName.startsWith('appname-')) { // 判断appName是否正确
+          let childPath = null
+          // 只有vite子应用是hash路由，hash值就是它的页面地址
+          if (hash) {
+            childPath = hash
+          } else {
+            // path的值形式如：/app-vue2/page2，这里/app-vue2是子应用的基础路由，/page2才是页面地址，所以我们需要将/app-vue2部分删除
+            childPath = path.replace(/^\/app-[^/]+/, '')
+            !childPath && (childPath = '/') // 防止地址为空
+          }
+          microApp.setData(appName, { path: childPath })
+        }
       },
-      // 基座控制子应用页面跳转
-      jumpChildPage: (appName: string, path: string) => {
-        // 下发通知到子应用
-        microApp.setData(appName, { path })
-      }
     }
   }
 } as any

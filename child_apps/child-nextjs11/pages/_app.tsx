@@ -14,6 +14,15 @@ declare global {
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
+  // 子应用内部跳转时，通知侧边栏改变菜单状态
+  function onRouteChange (e: any): void {
+    if (window.__MICRO_APP_ENVIRONMENT__) {
+      const activePage = e.target.getAttribute('page-path')
+      // 发送全局数据，通知侧边栏修改菜单展示
+      window.microApp.setGlobalData({ activePage })
+    }
+  }
+
   useEffect(() => {
     console.log('微应用child-nextjs渲染了');
 
@@ -47,8 +56,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div>
-      <div id='public-links'>
-        <Link href="/"><a>Home</a></Link> | <Link href="/page2"><a>Page2</a></Link>
+      <div id='public-links' onClick={onRouteChange}>
+        <Link href="/"><a page-path=''>Home</a></Link>&ensp;|&ensp;
+        <Link href="/page2"><a page-path='/page2'>Page2</a></Link>
       </div>
       <Component {...pageProps} />
     </div>
