@@ -39,7 +39,8 @@ const Nuxtjs = () => {
     <div>
       <micro-app
         name='appname-nuxtjs'
-        url={config.nuxtjs + window.location.pathname}
+        url={`${config.nuxtjs}/main-react16/app-nuxtjs`}
+        ssr
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}

@@ -5,6 +5,7 @@
       name='appname-nextjs'
       :url='url'
       :data='microAppData'
+      ssr
       disableScopecss
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -24,12 +25,11 @@ export default {
   data () {
     return {
       show: false,
-      url: '',
+      url: `${config.nextjs}/app-nextjs`,
       microAppData: {msg: '来自基座的数据'}
     }
   },
   mounted () {
-    this.url = config.nextjs + location.pathname
     this.show = true
   },
   methods: {

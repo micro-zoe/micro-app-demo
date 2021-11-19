@@ -39,7 +39,8 @@ const Nextjs = () => {
     <div>
       <micro-app
         name='appname-nextjs'
-        url={config.nextjs + window.location.pathname}
+        url={`${config.nextjs}/main-react17/app-nextjs`}
+        ssr
         disableScopecss
         data={microAppData}
         onCreated={handleCreate}

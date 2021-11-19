@@ -4,6 +4,7 @@
       v-if='show'
       name='appname-nuxtjs'
       :url='url'
+      ssr
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -23,12 +24,11 @@ export default {
   data () {
     return {
       show: false,
-      url: '',
+      url: `${config.nuxtjs}/app-nuxtjs`,
       microAppData: {msg: '来自基座的数据'}
     }
   },
   mounted () {
-    this.url = config.nuxtjs + location.pathname
     this.show = true
   },
   methods: {

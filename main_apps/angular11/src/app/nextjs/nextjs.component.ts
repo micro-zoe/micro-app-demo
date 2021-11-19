@@ -10,7 +10,7 @@ export class NextjsComponent implements OnInit {
 
   constructor() {}
 
-  url = `${config.nextjs}/main-angular11/app-nextjs'`
+  url = `${config.nextjs}/main-angular11/app-nextjs`
 
   microAppData = {msg: '来自基座的数据'}
 

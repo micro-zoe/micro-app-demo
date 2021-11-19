@@ -3,6 +3,7 @@
     <micro-app
       name='appname-nuxtjs'
       :url='url'
+      ssr
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -21,7 +22,7 @@ export default {
   name: 'nuxtjs',
   data () {
     return {
-      url: config.nuxtjs + location.pathname,
+      url: `${config.nuxtjs}/main-vue2/app-nuxtjs`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

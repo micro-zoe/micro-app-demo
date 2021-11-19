@@ -6,7 +6,6 @@ import type { NextPage } from 'next'
 import config from '../../lib/config'
 
 const Nuxtjs: NextPage = () => {
-  const [url, changeUrl] = useState('')
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
@@ -39,7 +38,6 @@ const Nuxtjs: NextPage = () => {
   }
 
   useEffect(() => {
-    changeUrl(config.nuxtjs + location.pathname)
     changeShow(true)
   }, [])
 
@@ -49,7 +47,8 @@ const Nuxtjs: NextPage = () => {
         show && (
           <micro-app
             name='appname-nuxtjs'
-            url={url}
+            url={`${config.nuxtjs}/app-nuxtjs`}
+            ssr
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}

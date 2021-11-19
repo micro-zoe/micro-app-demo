@@ -10,7 +10,7 @@ export class NuxtjsComponent implements OnInit {
 
   constructor() { }
 
-  url = config.nuxtjs + location.pathname
+  url = `${config.nuxtjs}/main-angular11/app-nuxtjs`
 
   microAppData = {msg: '来自基座的数据'}
 

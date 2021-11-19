@@ -6,7 +6,6 @@ import type { NextPage } from 'next'
 import config from '../../lib/config'
 
 const Nextjs: NextPage = () => {
-  const [url, changeUrl] = useState('')
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
@@ -39,7 +38,6 @@ const Nextjs: NextPage = () => {
   }
 
   useEffect(() => {
-    changeUrl(config.nextjs + location.pathname)
     changeShow(true)
   }, [])
 
@@ -49,7 +47,8 @@ const Nextjs: NextPage = () => {
         show && (
           <micro-app
             name='appname-nextjs'
-            url={url}
+            url={`${config.nextjs}/app-nextjs`}
+            ssr
             disableScopecss
             data={microAppData}
             onCreated={handleCreate}
