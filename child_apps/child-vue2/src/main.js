@@ -26,8 +26,7 @@ function handleMicroData () {
 
       // 当基座下发path时进行跳转
       if (data.path && data.path !== router.currentRoute.path) {
-        // 因为vue-router在pathname相同的情况下依然会将路由推入堆栈，所以这里使用了replace，以防止点击两次浏览器返回按钮才能正确返回的问题。
-        router.replace(data.path)
+        router.push(data.path)
       }
     })
 

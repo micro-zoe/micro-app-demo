@@ -1,21 +1,26 @@
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import microApp from '@micro-zoe/micro-app'
+import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 
 const SideBar = () => {
   const history = useHistory()
 
-  // 子应用sidebar 通过pushState控制主应用跳转
+  // 子应用sidebar通过pushState控制主应用跳转
   function pushState (appName: string, path: string, hash: string) {
-    // vite子应用为hash路由，这里拼接一下hash值
-    hash && (path += `/#${hash}`)
-    // 主应用跳转
-    history.push(path)
-
-    // 主应用控制其它子应用跳转 👇
-    if (appName.startsWith('appname-')) { // 判断appName是否正确
+    /**
+     * 当子应用还未渲染，通过基座控制路由跳转，子应用在初始化时会自己根据url渲染对应的页面
+     * 当子应用已经渲染，则直接控制子应用进行内部跳转
+     *
+     * getActiveApps: 用于获取正在运行的子应用
+    */
+    if (!getActiveApps().includes(appName)) {
+      // vite子应用为hash路由，这里拼接一下hash值
+      hash && (path += `/#${hash}`)
+      // 主应用跳转
+      history.push(path)
+    } else {
       let childPath = null
-      // 只有vite子应用是hash路由，hash值就是它的页面地址
+      // vite子应用是hash路由，hash值就是它的页面地址，这里单独处理
       if (hash) {
         childPath = hash
       } else {
@@ -23,8 +28,11 @@ const SideBar = () => {
         childPath = path.replace(/^\/app-[^/]+/, '')
         !childPath && (childPath = '/') // 防止地址为空
       }
+
+      // 主应用通过下发data数据控制子应用跳转
       microApp.setData(appName, { path: childPath })
     }
+
   }
 
   useEffect(() => {
