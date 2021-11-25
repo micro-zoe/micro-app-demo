@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "nuxt",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production PORT=6000 node server.js",
+    "start": "cross-env PORT=7000 nuxt start",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "prepare": "husky install",

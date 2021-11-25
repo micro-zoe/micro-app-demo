@@ -55,6 +55,9 @@ module.exports = {
       ],
     }
   },
+  server: {
+    port: process.env.PORT || 3000,
+  },
   alias: {
     "@micro-zoe/micro-app":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
   },

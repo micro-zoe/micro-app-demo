@@ -18,7 +18,7 @@ module.exports = {
   // 自定义webpack配置
   configureWebpack: {
     output: {
-      jsonpFunction: `webpackJsonp-base-vue2`,
+      jsonpFunction: `webpackJsonp-main-vue2`,
     }
   },
   chainWebpack: config => {

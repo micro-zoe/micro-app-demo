@@ -16,13 +16,12 @@ const config: Record<string, string> = {
 if (process.env.NODE_ENV === 'production') {
   // 基座应用和子应用部署在同一个域名下，这里使用location.origin进行补全
   Object.keys(config).forEach((key) => {
-    config[key] = location.origin
+    config[key] = 'http://127.0.0.1:8080'
   })
 
   // 在部署后，nextjs和nuxtjs依然和开发环境保持一致，绑定4002和4003端口，这里单独处理
-  const { protocol, hostname } = location
-  config.nextjs = `${protocol}//${hostname}:4002`
-  config.nuxtjs = `${protocol}//${hostname}:4003`
+  config.nextjs = `http://localhost:4002`
+  config.nuxtjs = `http://localhost:4003`
 }
 
 // if (true) {
@@ -31,8 +30,8 @@ if (process.env.NODE_ENV === 'production') {
 //   })
 
 //   const { protocol, hostname } = location
-//   config.nextjs = `${protocol}//${hostname}:5001`
-//   config.nuxtjs = `${protocol}//${hostname}:6001`
+//   config.nextjs = `${protocol}//${hostname}:4002`
+//   config.nuxtjs = `${protocol}//${hostname}:4003`
 // }
 
 export default config

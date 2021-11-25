@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar' :data='sidebarData'></micro-app>
+    <micro-app name='appname-sidebar' :url='url' :data='sidebarData'></micro-app>
     <router-view id='router-container' />
   </div>
 </template>
 
 <script>
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
+import config from './config'
 
 export default {
   name: 'App',
   data () {
     return {
+      url: `${config.sidebar}/child-sidebar/`,
       // 👇 主应用向sidebar子应用下发一个名为pushState的方法
       sidebarData: {
         // 子应用sidebar通过pushState控制主应用跳转

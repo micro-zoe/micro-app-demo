@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
+import config from '../config'
 
 const SideBar = () => {
   const history = useHistory()
@@ -39,7 +40,7 @@ const SideBar = () => {
     microApp.setData('appname-sidebar', { pushState })
   })
 
-  return <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar'></micro-app>
+  return <micro-app name='appname-sidebar' url={`${config.sidebar}/child-sidebar/`}></micro-app>
 }
 
 export default SideBar

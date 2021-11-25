@@ -3,6 +3,7 @@ import '../styles/globals.css'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
+import config from '../lib/config'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -93,7 +94,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div id='next-root'>
-      <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar'></micro-app>
+      <micro-app name='appname-sidebar' url={`${config.sidebar}/child-sidebar`}></micro-app>
       <div id='router-container'>
         <Component {...pageProps} />
       </div>

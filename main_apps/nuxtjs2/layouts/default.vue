@@ -1,6 +1,6 @@
 <template>
   <div id='app-root'>
-    <micro-app name='appname-sidebar' url='http://localhost:4006/child-sidebar' :data='sidebarData'></micro-app>
+    <micro-app name='appname-sidebar' :url='url' :data='sidebarData'></micro-app>
     <div id='router-container'>
       <Nuxt />
     </div>
@@ -9,12 +9,14 @@
 
 <script lang="ts">
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
+import config from '../lib/config'
 
 export default {
   name: 'default',
   data () {
     return {
-      sidebarData: {}
+      sidebarData: {},
+      url: `${config.sidebar}/child-sidebar/`,
     }
   },
   mounted () {

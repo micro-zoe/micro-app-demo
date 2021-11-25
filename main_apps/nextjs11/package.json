@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next",
     "build": "next build",
-    "start": "cross-env NODE_ENV=production PORT=5000 node server.js",
+    "start": "cross-env PORT=5000 next start",
     "lint": "next lint"
   },
   "dependencies": {

@@ -8,22 +8,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'App',
-  methods: {
-    // 子应用内部跳转时，通知侧边栏改变菜单状态
-    onRouteChange (e) {
-      if (window.eventCenterForAppNameVite) {
-        const activePage = e.target.getAttribute('page-path')
-        // 发送全局数据，通知侧边栏修改菜单展示
-        window.eventCenterForAppNameVite.setGlobalData({ activePage })
-      }
-    }
+<script lang="ts" setup>
+// 子应用内部跳转时，通知侧边栏改变菜单状态
+const onRouteChange = (e: any) => {
+  if (window.eventCenterForAppNameVite) {
+    const activePage = e.target.getAttribute('page-path')
+    // 发送全局数据，通知侧边栏修改菜单展示
+    window.eventCenterForAppNameVite.setGlobalData({ activePage })
   }
-} as any)
+}
 </script>
 
 <style>

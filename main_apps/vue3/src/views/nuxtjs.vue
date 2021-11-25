@@ -56,7 +56,7 @@ export default {
       console.log('来自子应用 child-nuxtjs 的数据:', e.detail.data)
     },
   }
-} as any
+}
 </script>
 
 <style>
