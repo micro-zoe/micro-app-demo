@@ -131,5 +131,5 @@ yarn dev:main-nuxtjs2
 此时分别运行 `main_apps/nuxtjs2` 以及 `child_apps` 文件夹下的所有子应用。
 
 
-# 效果如下：
+## 效果如下：
 ![](./example.png)
