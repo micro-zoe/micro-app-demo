@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 import config from '../config'

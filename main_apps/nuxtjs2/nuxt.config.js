@@ -1,4 +1,4 @@
-const path = require('path')
+// const path = require('path')
 
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -59,6 +59,6 @@ module.exports = {
     port: process.env.PORT || 3000,
   },
   alias: {
-    "@micro-zoe/micro-app":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
+    // "@micro-zoe/micro-app":  path.join(__dirname, '../../../micro-app/lib/index.esm.js'),
   },
 }

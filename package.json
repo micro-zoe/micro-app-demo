@@ -9,6 +9,43 @@
     "child_apps/*"
   ],
   "scripts": {
+    "dev:main-angular11": "npm-run-all --parallel dev-main:angular11 dev-child:* dev:child-nextjs-angular11 dev:child-nuxtjs-angular11",
+    "dev:main-nextjs11": "npm-run-all --parallel dev-main:nextjs11 dev-child:* dev:child-nextjs-common dev:child-nuxtjs-common",
+    "dev:main-nuxtjs2": "npm-run-all --parallel dev-main:nuxtjs2 dev-child:* dev:child-nextjs-common dev:child-nuxtjs-common",
+    "dev:main-react16": "npm-run-all --parallel dev-main:react16 dev-child:* dev:child-nextjs-react16 dev:child-nuxtjs-react16",
+    "dev:main-react17": "npm-run-all --parallel dev-main:react17 dev-child:* dev:child-nextjs-react17 dev:child-nuxtjs-react17",
+    "dev:main-vite": "npm-run-all --parallel dev-main:vite dev-child:* dev:child-nextjs-vite dev:child-nuxtjs-vite",
+    "dev:main-vue2": "npm-run-all --parallel dev-main:vue2 dev-child:* dev:child-nextjs-vue2 dev:child-nuxtjs-vue2",
+    "dev:main-vue3": "npm-run-all --parallel dev-main:vue3 dev-child:* dev:child-nextjs-vue3 dev:child-nuxtjs-vue3",
+    "dev-main:angular11": "cd main_apps/angular11 && yarn dev",
+    "dev-main:nextjs11": "cd main_apps/nextjs11 && yarn dev",
+    "dev-main:nuxtjs2": "cd main_apps/nuxtjs2 && yarn dev",
+    "dev-main:react16": "cd main_apps/react16 && yarn dev",
+    "dev-main:react17": "cd main_apps/react17 && yarn dev",
+    "dev-main:vite": "cd main_apps/vite-vue3 && yarn dev",
+    "dev-main:vue2": "cd main_apps/vue2 && yarn dev",
+    "dev-main:vue3": "cd main_apps/vue3 && yarn dev",
+    "dev-child:angular11": "cd child_apps/child-angular11 && yarn dev",
+    "dev-child:react16": "cd child_apps/child-react16 && yarn dev",
+    "dev-child:react17": "cd child_apps/child-react17 && yarn dev",
+    "dev-child:sidebar": "cd child_apps/child-sidebar && yarn dev",
+    "dev-child:vite": "cd child_apps/child-vite-vue3 && yarn dev",
+    "dev-child:vue2": "cd child_apps/child-vue2 && yarn dev",
+    "dev-child:vue3": "cd child_apps/child-vue3 && yarn dev",
+    "dev:child-nextjs-common": "cd child_apps/child-nextjs11 && yarn dev",
+    "dev:child-nuxtjs-common": "cd child_apps/child-nuxtjs2 && yarn dev",
+    "dev:child-nextjs-angular11": "cd child_apps/child-nextjs11 && yarn dev:main-angular11",
+    "dev:child-nextjs-react16": "cd child_apps/child-nextjs11 && yarn dev:main-react16",
+    "dev:child-nextjs-react17": "cd child_apps/child-nextjs11 && yarn dev:main-react17",
+    "dev:child-nextjs-vite": "cd child_apps/child-nextjs11 && yarn dev:main-vite",
+    "dev:child-nextjs-vue2": "cd child_apps/child-nextjs11 && yarn dev:main-vue2",
+    "dev:child-nextjs-vue3": "cd child_apps/child-nextjs11 && yarn dev:main-vue3",
+    "dev:child-nuxtjs-angular11": "cd child_apps/child-nuxtjs2 && yarn dev:main-angular11",
+    "dev:child-nuxtjs-react16": "cd child_apps/child-nuxtjs2 && yarn dev:main-react16",
+    "dev:child-nuxtjs-react17": "cd child_apps/child-nuxtjs2 && yarn dev:main-react17",
+    "dev:child-nuxtjs-vite": "cd child_apps/child-nuxtjs2 && yarn dev:main-vite",
+    "dev:child-nuxtjs-vue2": "cd child_apps/child-nuxtjs2 && yarn dev:main-vue2",
+    "dev:child-nuxtjs-vue3": "cd child_apps/child-nuxtjs2 && yarn dev:main-vue3",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,13 +63,21 @@
   },
   "homepage": "https://github.com/micro-zoe/micro-app-demo#readme",
   "dependencies": {
-    "@micro-zoe/micro-app": "latest"
+    "@micro-zoe/micro-app": "latest",
+    "react": "16.13.0",
+    "react-app-polyfill": "^2.0.0",
+    "react-dev-utils": "^11.0.3",
+    "react-dom": "16.13.0",
+    "react-refresh": "^0.8.3",
+    "react-router": "5.1.2",
+    "react-router-dom": "5.1.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-eslint": "~4.5.13",
     "@vue/cli-plugin-typescript": "~4.5.13",
     "babel-plugin-component": "~1.1.1",
     "cross-env": "~7.0.3",
-    "express": "~4.17.1"
+    "express": "~4.17.1",
+    "npm-run-all": "~4.1.5"
   }
 }

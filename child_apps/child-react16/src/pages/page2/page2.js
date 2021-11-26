@@ -1,3 +1,4 @@
+import React from 'react'
 import microAappLogo from '../../assets/micro-app-logo.png'
 import './page2.css'
 

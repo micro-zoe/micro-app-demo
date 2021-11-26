@@ -17,9 +17,7 @@
       "es2018",
       "dom"
     ],
-    "paths": {
-      "@micro-zoe/micro-app": ["../../../micro-app/lib/index.esm.js"],
-    }
+    "paths": {}
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
