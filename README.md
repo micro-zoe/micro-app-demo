@@ -35,7 +35,7 @@ micro-app-demo中的案例足够精简，你完全可以将其中的demo作为�
 
 ## 1、安装依赖
 
-我们使用了yarn的workspaces功能，所以必须使用yarn
+我们使用了yarn的workspaces功能，所以必须使用yarn安装依赖。
 
 ```bash
 yarn 
