@@ -4,7 +4,6 @@
       v-if='show'
       name='appname-react17'
       :url='url'
-      baseroute='/app-react17'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'

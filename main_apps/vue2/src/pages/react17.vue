@@ -3,7 +3,6 @@
     <micro-app
       name='appname-react17'
       :url='url'
-      baseroute='/main-vue2/app-react17'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'

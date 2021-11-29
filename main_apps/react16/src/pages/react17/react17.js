@@ -40,7 +40,6 @@ const React17 = () => {
       <micro-app
         name='appname-react17'
         url={`${config.react17}/child-react17/`}
-        baseroute='/main-react16/app-react17'
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}
