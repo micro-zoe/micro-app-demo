@@ -31,12 +31,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "react16" */ './pages/react16.vue'),
   },
   {
-    path: '/app-react17*',
+    // 因为主应用为history路由，appname-react17子应用是hash路由，所以不需要设置基础路由，这里正常设置
+    path: '/app-react17',
     name: 'app-react17',
     component: () => import(/* webpackChunkName: "react17" */ './pages/react17.vue'),
   },
   {
-    path: '/app-vite*',
+    // 因为主应用为history路由，appname-vite子应用是hash路由，所以不需要设置基础路由，这里正常设置
+    path: '/app-vite',
     name: 'vite',
     component: () => import(/* webpackChunkName: "vite" */ './pages/vite.vue'),
   },

@@ -12,7 +12,7 @@ micro-app-demo中所有项目都是使用官方脚手架创建的，它们足够
 │   ├── child-nuxtjs2          // 子应用 nuxtjs2
 │   ├── child-react16          // 子应用 react16
 │   ├── child-react17          // 子应用 react17
-│   ├── child-sidebar          // 子应用 sidebar
+│   ├── child-sidebar          // 子应用 sidebar，公共侧边栏
 │   ├── child-vite-vue3        // 子应用 vite
 │   ├── child-vue2             // 子应用 vue2
 │   └── child-vue3             // 子应用 vue3
@@ -137,3 +137,4 @@ yarn dev:main-nuxtjs2
 
 ## 补充
 - 1、如果你在安装依赖或启动项目时发生错误，可以尝试单独进入每个项目执行操作。
+- 2、因为每个主应用都有侧边栏，一次次写太麻烦，所以将侧边栏单独分离出来作为子应用，也就是 `child-sidebar`，实际项目中不需要这样做，侧边栏一般放到主应用。

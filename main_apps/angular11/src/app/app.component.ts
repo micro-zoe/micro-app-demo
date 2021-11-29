@@ -26,12 +26,12 @@ export class AppComponent {
       if (!getActiveApps().includes(appName)) {
         // 主应用跳转
         this.ngZone.run(() => {
-          // vite子应用为hash路由，这里通过fragment设置hash值
+          // child-vite 和 child-react17子应用为hash路由，这里通过fragment设置hash值
           this.router.navigate([path], { fragment: hash ?? null })
         })
       } else {
         let childPath = null
-        // vite子应用是hash路由，hash值就是它的页面地址，这里单独处理
+        // child-vite 和 child-react17子应用是hash路由，hash值就是它的页面地址，这里单独处理
         if (hash) {
           childPath = hash
         } else {

@@ -142,8 +142,11 @@ export default {
       const pathArr = location.pathname.match(/\/app-.+/)
       this.activeIndex = pathArr ? pathArr[0].replace(/\/$/, '') : '/'
 
-      // 兼容vite子应用，只有它是hash路由
-      if (this.activeIndex === '/app-vite' && location.hash.includes('page2')) {
+      // 兼容 child-vite 和 child-react17 子应用，因为它们是hash路由
+      if (
+        (this.activeIndex === '/app-vite' || this.activeIndex === '/app-react17') &&
+        location.hash.includes('page2')
+      ) {
         this.activeIndex += location.hash.replace(/^#/, '')
       }
 
@@ -160,11 +163,12 @@ export default {
       this.activeIndex = index
 
       if (this.microAppData) {
-        // 因为只有vite子应用是hash路由，所以需要传递hash值
+        // 因为 child-vite 和 child-react17 子应用是hash路由，所以需要传递hash值
         let hash = null
-        if (index === '/app-vite/page2') {
-          index = '/app-vite'
-          hash = '/page2'
+        if (index === '/app-vite/page2' || index === '/app-react17/page2') {
+          const pathArr = index.split('/')
+          index = '/' + pathArr[1]
+          hash = '/' + pathArr[2]
         }
 
         // 获取子应用appName
