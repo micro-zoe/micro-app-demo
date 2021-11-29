@@ -7,24 +7,24 @@ micro-app-demo中所有项目都是使用官方脚手架创建的，它们足够
 ```
 .
 ├── child_apps
-│   ├── child-angular11        // 子应用 angular11
-│   ├── child-nextjs11         // 子应用 nextjs11
-│   ├── child-nuxtjs2          // 子应用 nuxtjs2
-│   ├── child-react16          // 子应用 react16
-│   ├── child-react17          // 子应用 react17
+│   ├── child-angular11        // 子应用 angular11 (history路由)
+│   ├── child-nextjs11         // 子应用 nextjs11 (history路由)
+│   ├── child-nuxtjs2          // 子应用 nuxtjs2 (history路由) 
+│   ├── child-react16          // 子应用 react16 (history路由)
+│   ├── child-react17          // 子应用 react17 (hash路由)
 │   ├── child-sidebar          // 子应用 sidebar，公共侧边栏
-│   ├── child-vite-vue3        // 子应用 vite
-│   ├── child-vue2             // 子应用 vue2
-│   └── child-vue3             // 子应用 vue3
+│   ├── child-vite-vue3        // 子应用 vite (hash路由)
+│   ├── child-vue2             // 子应用 vue2 (history路由)
+│   └── child-vue3             // 子应用 vue3 (history路由)
 ├── main_apps
-│   ├── angular11              // 主应用 angular11
-│   ├── nextjs11               // 主应用 nextjs11
-│   ├── nuxtjs2                // 主应用 nuxtjs2
-│   ├── react16                // 主应用 react16
-│   ├── react17                // 主应用 react17
-│   ├── vite-vue3              // 主应用 vite
-│   ├── vue2                   // 主应用 vue2
-│   └── vue3                   // 主应用 vue3
+│   ├── angular11              // 主应用 angular11 (history路由)
+│   ├── nextjs11               // 主应用 nextjs11 (history路由)
+│   ├── nuxtjs2                // 主应用 nuxtjs2 (history路由)
+│   ├── react16                // 主应用 react16 (history路由)
+│   ├── react17                // 主应用 react17 (history路由)
+│   ├── vite-vue3              // 主应用 vite (history路由)
+│   ├── vue2                   // 主应用 vue2 (history路由)
+│   └── vue3                   // 主应用 vue3 (history路由)
 ├── package.json
 └── yarn.lock
 
