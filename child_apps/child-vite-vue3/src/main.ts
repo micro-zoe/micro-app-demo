@@ -86,7 +86,7 @@ function handleMicroData (router: Router) {
 // fixBugForVueRouter4(router)
 
 // // 监听卸载操作
-// window.addEventListener("unmount", function () {
+// window.addEventListener('unmount', function () {
 //   app.unmount()
 //   // 卸载所有数据监听函数
 //   window.eventCenterForAppNameVite?.clearDataListener()

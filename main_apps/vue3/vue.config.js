@@ -21,7 +21,18 @@ module.exports = {
       jsonpFunction: `webpackJsonp-main-vue3`,
     }
   },
-  // chainWebpack: config => {
-  //   config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
-  // },
+  chainWebpack: config => {
+    // config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+
+    config.module
+    .rule('vue')
+    .use('vue-loader')
+    .tap(options => {
+      options.compilerOptions = {
+        ...(options.compilerOptions || {}),
+        isCustomElement: (tag) => /^micro-app/.test(tag),
+      };
+      return options
+    })
+  },
 }

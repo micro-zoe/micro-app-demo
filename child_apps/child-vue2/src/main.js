@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   mode: 'history',
   // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
-  base: window.__MICRO_APP_BASE_ROUTE__ || '/child-vue2',
+  base: window.__MICRO_APP_BASE_ROUTE__ || process.env.BASE_URL,
   routes,
 })
 
@@ -48,7 +48,7 @@ function handleMicroData () {
 // handleMicroData()
 
 // // 监听卸载操作
-// window.addEventListener("unmount", function () {
+// window.addEventListener('unmount', function () {
 //   app.$destroy()
 //   console.log('微应用child-vue2卸载了')
 // })

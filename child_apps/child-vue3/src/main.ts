@@ -84,7 +84,7 @@ function fixBugForVueRouter4 (router: Router) {
 // fixBugForVueRouter4(router)
 
 // // 监听卸载操作
-// window.addEventListener("unmount", function () {
+// window.addEventListener('unmount', function () {
 //   app.unmount()
 //   console.log('微应用child-vue3卸载了')
 // })
@@ -97,7 +97,7 @@ let history: RouterHistory | null = null
 // 将渲染操作放入 mount 函数
 function mount () {
   // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
-  history = createWebHistory(window.__MICRO_APP_BASE_ROUTE__ || '/child-vue3')
+  history = createWebHistory(window.__MICRO_APP_BASE_ROUTE__ || process.env.BASE_URL)
   router = createRouter({
     history,
     routes,

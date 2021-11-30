@@ -41,20 +41,6 @@ microApp.start({
           return code
         }
       }],
-      // nuxtjs: [{
-      //   loader (code) {
-      //     if (process.env.NODE_ENV === 'development') {
-      //       const hmrPath = '/nuxtjs/__webpack_hmr/client'
-      //       const encodeHmrPath = encodeURIComponent(hmrPath)
-      //       if (code.indexOf(encodeHmrPath) > -1) {
-      //         code = code.replaceAll(new RegExp(encodeHmrPath, 'g'), () => {
-      //           return encodeURIComponent(`http://localhost:4003${hmrPath}`)
-      //         })
-      //       }
-      //     }
-      //     return code
-      //   }
-      // }]
     }
   }
 })
@@ -62,7 +48,7 @@ microApp.start({
 const router = new VueRouter({
   mode: 'history',
   // 设置主应用基础路由为main-vue2(用于后续部署)，则子应用基础路由(baseroute)为/main-vue2/xxx
-  base: '/main-vue2',
+  base: process.env.BASE_URL,
   routes,
 })
 

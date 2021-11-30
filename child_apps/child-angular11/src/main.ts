@@ -50,7 +50,7 @@ function handleMicroData () {
 // handleMicroData()
 
 // // 监听卸载操作
-// window.addEventListener("unmount", function () {
+// window.addEventListener('unmount', function () {
 //   app.destroy();
 //   app = null;
 //   console.log('微应用child-angular11卸载了');

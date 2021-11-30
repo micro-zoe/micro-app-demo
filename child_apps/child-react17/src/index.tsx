@@ -45,7 +45,7 @@ function handleMicroData () {
 // handleMicroData()
 
 // // 监听卸载操作
-// window.addEventListener("unmount", function () {
+// window.addEventListener('unmount', function () {
 //   ReactDOM.unmountComponentAtNode(document.getElementById('react17-root')!);
 //   console.log('微应用child-react17卸载了');
 // })
