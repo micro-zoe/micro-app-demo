@@ -10,6 +10,7 @@ const handle = app.getRequestHandler()
 app.prepare().then(() => {
   const server = express()
 
+  // 设置跨域支持
   server.all('*', (req, res) => {
     res.setHeader('access-control-allow-origin', '*')
     return handle(req, res)

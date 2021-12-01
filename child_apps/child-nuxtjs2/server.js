@@ -18,6 +18,7 @@ if (config.dev) {
   builder.build()
 }
 
+// 设置跨域支持
 app.all('*', (req, res, next) => {
 	res.header("Access-Control-Allow-Origin", '*')
   next()

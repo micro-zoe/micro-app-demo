@@ -29,9 +29,8 @@ if (process.env.NODE_ENV === 'production') {
 //     config[key] = `http://127.0.0.1:8080`
 //   })
 
-//   const { protocol, hostname } = location
-//   config.nextjs = `${protocol}//${hostname}:4002`
-//   config.nuxtjs = `${protocol}//${hostname}:4003`
+//   config.nextjs = `http://localhost:4002`
+//   config.nuxtjs = `http://localhost:4003`
 // }
 
 export default config

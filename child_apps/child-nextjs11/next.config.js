@@ -18,8 +18,8 @@ module.exports = {
   distDir: process.env.DISTDIR || '.next',
   webpack: (config) => {
     Object.assign(config.output, {
-      chunkLoadingGlobal: 'webpackJsonp_child_myapp', // webpack5.x
-      // jsonpFunction: 'webpackJsonp_child_myapp', // webpack4.x
+      chunkLoadingGlobal: 'webpackJsonp_child_nextjs11', // webpack5
+      // jsonpFunction: 'webpackJsonp_child_nextjs11', // webpack4
       globalObject: 'window',
     })
     return config

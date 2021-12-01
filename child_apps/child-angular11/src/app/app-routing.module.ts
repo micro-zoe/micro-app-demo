@@ -25,4 +25,5 @@ const routes: Routes = [
     useValue: window.__MICRO_APP_BASE_ROUTE__ || '/child-angular11',
   }]
 })
+
 export class AppRoutingModule { }
