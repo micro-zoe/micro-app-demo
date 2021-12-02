@@ -47,7 +47,7 @@ const Vue3: NextPage = () => {
         show && (
           <micro-app
             name='appname-vue3'
-            url={`${config.vue3}/child-vue3/`}
+            url={`${config.vue3}/child/vue3/`}
             baseroute='/app-vue3'
             data={microAppData}
             onCreated={handleCreate}

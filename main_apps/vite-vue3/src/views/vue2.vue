@@ -22,7 +22,7 @@ export default {
   name: 'vue2',
   data () {
     return {
-      url: `${config.vue2}/child-vue2/`,
+      url: `${config.vue2}/child/vue2/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

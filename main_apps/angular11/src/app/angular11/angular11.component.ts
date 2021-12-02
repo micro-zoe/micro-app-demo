@@ -10,7 +10,7 @@ export class Angular11Component implements OnInit {
 
   constructor() {}
 
-  url = `${config.angular11}/child-angular11/`
+  url = `${config.angular11}/child/angular11/`
 
   microAppData = {msg: '来自基座的数据'}
 

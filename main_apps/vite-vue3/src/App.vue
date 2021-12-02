@@ -12,7 +12,7 @@ import config from './config'
 
 const router = useRouter()
 
-const url = `${config.sidebar}/child-sidebar/`
+const url = `${config.sidebar}/child/sidebar/`
 
 // 👇 主应用向sidebar子应用下发一个名为pushState的方法
 const sidebarData = {

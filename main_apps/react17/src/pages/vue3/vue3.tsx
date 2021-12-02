@@ -39,7 +39,7 @@ const Vue3 = () => {
     <div>
       <micro-app
         name='appname-vue3'
-        url={`${config.vue3}/child-vue3/`}
+        url={`${config.vue3}/child/vue3/`}
         baseroute='/main-react17/app-vue3'
         data={microAppData}
         onCreated={handleCreate}

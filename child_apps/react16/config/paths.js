@@ -21,7 +21,7 @@ const publicUrlOrPath = getPublicUrlOrPath(
   process.env.PUBLIC_URL
 );
 
-const buildPath = process.env.BUILD_PATH || 'child-react16';
+const buildPath = process.env.BUILD_PATH || 'react16';
 
 const moduleFileExtensions = [
   'web.mjs',
@@ -67,7 +67,7 @@ module.exports = {
   proxySetup: resolveApp('src/setupProxy.js'),
   appNodeModules: resolveApp('node_modules'),
   swSrc: resolveModule(resolveApp, 'src/service-worker'),
-  publicUrlOrPath: '/child-react16/',
+  publicUrlOrPath: '/child/react16/',
 };
 
 

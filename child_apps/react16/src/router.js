@@ -32,7 +32,7 @@ function App () {
 
   return (
     // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
-    <BrowserRouter basename={window.__MICRO_APP_BASE_ROUTE__ || '/child-react16'}>
+    <BrowserRouter basename={window.__MICRO_APP_BASE_ROUTE__ || '/child/react16'}>
       <div id='public-links' onClick={onRouteChange}>
         <Link to="/" page-path=''>Home</Link>&ensp;|&ensp;
         <Link to="/page2" page-path='/page2'>Page2</Link>

@@ -11,7 +11,7 @@ import config from '../config'
 export class AppComponent {
   constructor(private router: Router, private ngZone: NgZone) {}
 
-  url = `${config.sidebar}/child-sidebar/`
+  url = `${config.sidebar}/child/sidebar/`
 
   // 👇 主应用向sidebar子应用下发一个名为pushState的方法
   sidebarData = {

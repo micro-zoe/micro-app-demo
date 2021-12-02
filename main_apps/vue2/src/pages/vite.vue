@@ -27,7 +27,7 @@ export default {
   name: 'vite',
   data () {
     return {
-      url: `${config.vite}/child-vite/`,
+      url: `${config.vite}/child/vite/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

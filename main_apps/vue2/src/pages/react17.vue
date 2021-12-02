@@ -21,7 +21,7 @@ export default {
   name: 'react17',
   data () {
     return {
-      url: `${config.react17}/child-react17/`,
+      url: `${config.react17}/child/react17/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

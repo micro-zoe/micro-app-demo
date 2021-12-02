@@ -41,7 +41,7 @@ const Angular11 = () => {
     <div>
       <micro-app
         name='appname-angular11'
-        url={`${config.angular11}/child-angular11/`}
+        url={`${config.angular11}/child/angular11/`}
         baseroute='/main-react16/app-angular11'
         data={microAppData}
         onCreated={handleCreate}

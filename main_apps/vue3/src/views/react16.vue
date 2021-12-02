@@ -22,7 +22,7 @@ export default {
   name: 'react16',
   data () {
     return {
-      url: `${config.react16}/child-react16/`,
+      url: `${config.react16}/child/react16/`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

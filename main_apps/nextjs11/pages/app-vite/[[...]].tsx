@@ -54,7 +54,7 @@ const Vite: NextPage = () => {
         show && (
           <micro-app
             name='appname-vite'
-            url={`${config.vite}/child-vite/`}
+            url={`${config.vite}/child/vite/`}
             inline
             disablesandbox
             data={microAppData}

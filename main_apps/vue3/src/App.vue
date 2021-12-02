@@ -14,7 +14,7 @@ export default defineComponent({
   name: 'App',
   data () {
     return {
-      url: `${config.sidebar}/child-sidebar/`,
+      url: `${config.sidebar}/child/sidebar/`,
       // 👇 主应用向sidebar子应用下发一个名为pushState的方法
       sidebarData: {
         // 子应用sidebar通过pushState控制主应用跳转

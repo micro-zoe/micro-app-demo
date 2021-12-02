@@ -39,7 +39,7 @@ const React16 = () => {
     <div>
       <micro-app
         name='appname-react16'
-        url={`${config.react16}/child-react16/`}
+        url={`${config.react16}/child/react16/`}
         baseroute='/main-react17/app-react16'
         data={microAppData}
         onCreated={handleCreate}

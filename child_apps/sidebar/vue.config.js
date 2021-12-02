@@ -1,11 +1,11 @@
 module.exports = {
-  publicPath: '/child-vue3/',
-  outputDir: 'child-vue3',
+  publicPath: '/child/sidebar/',
+  outputDir: 'sidebar',
   productionSourceMap: false,
   devServer: {
-    hot: false,
+    hot: true,
     disableHostCheck: true,
-    port: 4009,
+    port: 4006,
     open: false,
     overlay: {
       warnings: false,
@@ -18,6 +18,5 @@ module.exports = {
   lintOnSave: false,
   // 自定义webpack配置
   configureWebpack: {
-
   },
 }

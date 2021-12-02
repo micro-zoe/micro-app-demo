@@ -41,7 +41,7 @@ const SideBar = () => {
     microApp.setData('appname-sidebar', { pushState })
   })
 
-  return <micro-app name='appname-sidebar' url={`${config.sidebar}/child-sidebar/`}></micro-app>
+  return <micro-app name='appname-sidebar' url={`${config.sidebar}/child/sidebar/`}></micro-app>
 }
 
 export default SideBar
