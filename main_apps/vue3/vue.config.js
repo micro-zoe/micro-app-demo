@@ -1,8 +1,8 @@
 // const path = require('path')
 
 module.exports = {
-  publicPath: '/main-vue3/',
   outputDir: 'main-vue3',
+  publicPath: '/main-vue3/',
   productionSourceMap: false,
   devServer: {
     hot: false,

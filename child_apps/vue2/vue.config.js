@@ -1,6 +1,6 @@
 module.exports = {
-  publicPath: '/child/vue2/',
   outputDir: 'vue2',
+  publicPath: '/child/vue2/',
   productionSourceMap: false,
   devServer: {
     hot: false,
