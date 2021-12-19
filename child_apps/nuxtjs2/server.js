@@ -3,7 +3,6 @@ const { Nuxt, Builder } = require('nuxt')
 
 const app = express()
 
-const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 4003
 
 // Import and set Nuxt options
@@ -28,6 +27,6 @@ app.all('*', (req, res, next) => {
 app.use(nuxt.render)
 
 // Start express server
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`Ready on http://localhost:${port}${config.router.base}`)
 })

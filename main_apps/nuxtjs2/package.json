@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "node server.js",
     "build": "nuxt build",
     "start": "cross-env NODE_ENV=production PORT=7000 pm2 start server.js --name 'main-nuxtjs2'",
     "generate": "nuxt generate",
