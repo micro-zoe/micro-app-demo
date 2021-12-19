@@ -61,7 +61,7 @@ export default defineConfig({
   server: {
     port: 4007,
   },
-  base: `${process.env.NODE_ENV === 'production' ? 'http://127.0.0.1:8080' : ''}/child/vite/`,
+  base: `${process.env.NODE_ENV === 'production' ? 'http://www.micro-zoe.com' : ''}/child/vite/`,
   build: {
     outDir: 'vite',
   },

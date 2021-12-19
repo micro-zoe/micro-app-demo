@@ -1,6 +1,6 @@
 import './public-path'
 import { createApp, App as AppInstance } from 'vue'
-import { createRouter, createWebHistory, Router, RouterHistory } from 'vue-router'
+import { createRouter, createWebHistory, Router, RouterHistory, RouterOptions } from 'vue-router'
 import App from './App.vue'
 import routes from './router'
 
@@ -101,9 +101,9 @@ function mount () {
   router = createRouter({
     history,
     routes,
-  })
+  }) as Router
 
-
+  // @ts-ignore
   app = createApp(App)
   app.use(router)
   app.mount('#vue3-app')
