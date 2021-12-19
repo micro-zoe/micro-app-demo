@@ -3,7 +3,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 // 每个主应用的baseroute都是不同的，根据 BASE_ROUTE 动态设置baseroute的值
 const baseRoute = process.env.BASE_ROUTE || '/app-nextjs'
 // 根据baseroute设置资源前缀
-const assetPrefix = isProduction ? `http://localhost:${process.env.PORT || '4002'}${baseRoute}` : `http://localhost:4002${baseRoute}`
+const assetPrefix = isProduction ? `http://www.micro-zoe.com:${process.env.PORT || '4002'}${baseRoute}` : `http://localhost:4002${baseRoute}`
 
 /** @type {import('next').NextConfig} */
 module.exports = {

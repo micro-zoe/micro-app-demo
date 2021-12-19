@@ -16,12 +16,12 @@ const config: Record<string, string> = {
 if (process.env.NODE_ENV === 'production') {
   // 基座应用和子应用部署在同一个域名下，这里使用location.origin进行补全
   Object.keys(config).forEach((key) => {
-    config[key] = 'http://127.0.0.1:8080'
+    config[key] = 'http://www.micro-zoe.com'
   })
 
   // 在部署后，nextjs和nuxtjs依然和开发环境保持一致，绑定4002和4003端口，这里单独处理
-  config.nextjs = `http://localhost:4002`
-  config.nuxtjs = `http://localhost:4003`
+  config.nextjs = `http://www.micro-zoe.com:4002`
+  config.nuxtjs = `http://www.micro-zoe.com:4003`
 }
 
 // if (true) {

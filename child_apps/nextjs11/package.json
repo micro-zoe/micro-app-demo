@@ -17,26 +17,26 @@
     "build:main-vite": "cross-env PORT=5006 BASE_ROUTE='/main-vite/app-nextjs' DISTDIR='/build/vite' next build",
     "build:main-vue2": "cross-env PORT=5007 BASE_ROUTE='/main-vue2/app-nextjs' DISTDIR='/build/vue2' next build",
     "build:main-vue3": "cross-env PORT=5008 BASE_ROUTE='/main-vue3/app-nextjs' DISTDIR='/build/vue3' next build",
-    "start": "cross-env NODE_ENV=production node server.js",
-    "start:main-angular11": "cross-env NODE_ENV=production PORT=5001 BASE_ROUTE='/main-angular11/app-nextjs' DISTDIR='/build/angular11' node server.js",
-    "start:main-react16": "cross-env NODE_ENV=production PORT=5004 BASE_ROUTE='/main-react16/app-nextjs' DISTDIR='/build/react16' node server.js",
-    "start:main-react17": "cross-env NODE_ENV=production PORT=5005 BASE_ROUTE='/main-react17/app-nextjs' DISTDIR='/build/react17' node server.js",
-    "start:main-vite": "cross-env NODE_ENV=production PORT=5006 BASE_ROUTE='/main-vite/app-nextjs' DISTDIR='/build/vite' node server.js",
-    "start:main-vue2": "cross-env NODE_ENV=production PORT=5007 BASE_ROUTE='/main-vue2/app-nextjs' DISTDIR='/build/vue2' node server.js",
-    "start:main-vue3": "cross-env NODE_ENV=production PORT=5008 BASE_ROUTE='/main-vue3/app-nextjs' DISTDIR='/build/vue3' node server.js",
+    "start": "cross-env NODE_ENV=production pm2 start server.js --name 'child-nextjs11:default'",
+    "start:main-angular11": "cross-env NODE_ENV=production PORT=5001 BASE_ROUTE='/main-angular11/app-nextjs' DISTDIR='/build/angular11' pm2 start server.js --name 'child-nextjs11:main-angular11'",
+    "start:main-react16": "cross-env NODE_ENV=production PORT=5004 BASE_ROUTE='/main-react16/app-nextjs' DISTDIR='/build/react16' pm2 start server.js --name 'child-nextjs11:main-react16'",
+    "start:main-react17": "cross-env NODE_ENV=production PORT=5005 BASE_ROUTE='/main-react17/app-nextjs' DISTDIR='/build/react17' pm2 start server.js --name 'child-nextjs11:main-react17'",
+    "start:main-vite": "cross-env NODE_ENV=production PORT=5006 BASE_ROUTE='/main-vite/app-nextjs' DISTDIR='/build/vite' pm2 start server.js --name 'child-nextjs11:main-vite'",
+    "start:main-vue2": "cross-env NODE_ENV=production PORT=5007 BASE_ROUTE='/main-vue2/app-nextjs' DISTDIR='/build/vue2' pm2 start server.js --name 'child-nextjs11:main-vue2'",
+    "start:main-vue3": "cross-env NODE_ENV=production PORT=5008 BASE_ROUTE='/main-vue3/app-nextjs' DISTDIR='/build/vue3' pm2 start server.js --name 'child-nextjs11:main-vue3'",
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "11.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "next": "^11.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@types/react": "17.0.18",
-    "cross-env": "~7.0.3",
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.1.0",
-    "express": "~4.17.1",
-    "typescript": "4.3.5"
+    "@types/react": "^17.0.18",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.0",
+    "express": "^4.17.1",
+    "typescript": "^4.3.5"
   }
 }

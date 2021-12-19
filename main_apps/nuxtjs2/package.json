@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "cross-env PORT=7000 nuxt start",
+    "start": "cross-env NODE_ENV=production PORT=7000 pm2 start server.js --name 'main-nuxtjs2'",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "prepare": "husky install",
@@ -30,7 +30,7 @@
     "eslint": "^7.29.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
-    "express": "4.17.1",
+    "express": "^4.17.1",
     "husky": "^6.0.0"
   }
 }
