@@ -4,7 +4,7 @@ import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
 import config from '../../config'
 
-const Nextjs = () => {
+const Nextjs11 = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
 
   function handleCreate () {
@@ -38,8 +38,8 @@ const Nextjs = () => {
   return (
     <div>
       <micro-app
-        name='appname-nextjs'
-        url={`${config.nextjs}/main-react17/app-nextjs`}
+        name='appname-nextjs11'
+        url={`${config.nextjs11}/main-react17/app-nextjs11`}
         ssr
         disableScopecss
         data={microAppData}
@@ -54,4 +54,4 @@ const Nextjs = () => {
   )
 }
 
-export default Nextjs
+export default Nextjs11

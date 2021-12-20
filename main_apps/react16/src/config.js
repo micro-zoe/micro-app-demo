@@ -2,8 +2,8 @@
 // 开发环境地址
 const config = {
   angular11: 'http://localhost:4001',
-  nextjs: 'http://localhost:4002',
-  nuxtjs: 'http://localhost:4003',
+  nextjs11: 'http://localhost:4002',
+  nuxtjs2: 'http://localhost:4003',
   react16: 'http://localhost:4004',
   react17: 'http://localhost:4005',
   sidebar: 'http://localhost:4006',
@@ -19,10 +19,10 @@ if (process.env.NODE_ENV === 'production') {
     config[key] = window.location.origin
   })
 
-  // 在部署后，nextjs和nuxtjs依然和开发环境保持一致，绑定5004和6004端口，这里单独处理
+  // 在部署后，nextjs11和nuxtjs2依然和开发环境保持一致，绑定5004和6004端口，这里单独处理
   const { protocol, hostname } = window.location
-  config.nextjs = `${protocol}//${hostname}:5004`
-  config.nuxtjs = `${protocol}//${hostname}:6004`
+  config.nextjs11 = `${protocol}//${hostname}:5004`
+  config.nuxtjs2 = `${protocol}//${hostname}:6004`
 }
 
 // if (true) {
@@ -31,8 +31,8 @@ if (process.env.NODE_ENV === 'production') {
 //   })
 
 //   const { protocol, hostname } = location
-//   config.nextjs = `${protocol}//${hostname}:5004`
-//   config.nuxtjs = `${protocol}//${hostname}:6004`
+//   config.nextjs11 = `${protocol}//${hostname}:5004`
+//   config.nuxtjs2 = `${protocol}//${hostname}:6004`
 // }
 
 export default config

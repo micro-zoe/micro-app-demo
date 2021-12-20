@@ -35,10 +35,8 @@ micro-app-demo中所有项目都是使用官方脚手架创建的，它们足够
 
 ## 1、安装依赖
 
-我们使用了yarn的workspaces功能，所以必须使用yarn安装依赖。
-
 ```bash
-yarn 
+yarn bootstrap
 ```
 
 ## 2、运行项目

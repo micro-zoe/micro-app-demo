@@ -3,8 +3,8 @@ import { environment } from './environments/environment';
 // 开发环境地址
 const config = {
   angular11: 'http://localhost:4001',
-  nextjs: 'http://localhost:4002',
-  nuxtjs: 'http://localhost:4003',
+  nextjs11: 'http://localhost:4002',
+  nuxtjs2: 'http://localhost:4003',
   react16: 'http://localhost:4004',
   react17: 'http://localhost:4005',
   sidebar: 'http://localhost:4006',
@@ -20,10 +20,10 @@ if (environment.production) {
     config[key] = location.origin
   })
 
-  // 在部署后，nextjs和nuxtjs子应用绑定的端口分别为5001、6001，这里单独处理
+  // 在部署后，nextjs11和nuxtjs2子应用绑定的端口分别为5001、6001，这里单独处理
   const { protocol, hostname } = location
-  config.nextjs = `${protocol}//${hostname}:5001`
-  config.nuxtjs = `${protocol}//${hostname}:6001`
+  config.nextjs11 = `${protocol}//${hostname}:5001`
+  config.nuxtjs2 = `${protocol}//${hostname}:6001`
 }
 
 // if (true) {
@@ -32,8 +32,8 @@ if (environment.production) {
 //   })
 
 //   const { protocol, hostname } = location
-//   config.nextjs = `${protocol}//${hostname}:5001`
-//   config.nuxtjs = `${protocol}//${hostname}:6001`
+//   config.nextjs11 = `${protocol}//${hostname}:5001`
+//   config.nuxtjs2 = `${protocol}//${hostname}:6001`
 // }
 
 export default config

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NextjsComponent } from './nextjs.component';
+import { Nuxtjs2Component } from './nuxtjs2.component';
 
-describe('NextjsComponent', () => {
-  let component: NextjsComponent;
-  let fixture: ComponentFixture<NextjsComponent>;
+describe('Nuxtjs2Component', () => {
+  let component: Nuxtjs2Component;
+  let fixture: ComponentFixture<Nuxtjs2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NextjsComponent ]
+      declarations: [ Nuxtjs2Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NextjsComponent);
+    fixture = TestBed.createComponent(Nuxtjs2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

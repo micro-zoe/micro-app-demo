@@ -5,8 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { Angular11Component } from './angular11/angular11.component';
-import { NextjsComponent } from './nextjs/nextjs.component';
-import { NuxtjsComponent } from './nuxtjs/nuxtjs.component';
+import { Nextjs11Component } from './nextjs11/nextjs11.component';
+import { Nuxtjs2Component } from './nuxtjs2/nuxtjs2.component';
 import { React16Component } from './react16/react16.component';
 import { React17Component } from './react17/react17.component';
 import { ViteComponent } from './vite/vite.component';
@@ -18,8 +18,8 @@ import { Vue3Component } from './vue3/vue3.component';
     AppComponent,
     HomeComponent,
     Angular11Component,
-    NextjsComponent,
-    NuxtjsComponent,
+    Nextjs11Component,
+    Nuxtjs2Component,
     React16Component,
     React17Component,
     ViteComponent,

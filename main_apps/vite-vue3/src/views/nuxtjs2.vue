@@ -1,10 +1,9 @@
 <template>
   <div>
     <micro-app
-      name='appname-nextjs'
+      name='appname-nuxtjs2'
       :url='url'
       ssr
-      disableScopecss
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -20,24 +19,24 @@
 import config from '../config'
 
 export default {
-  name: 'nextjs',
+  name: 'nuxtjs2',
   data () {
     return {
-      url: `${config.nextjs}/main-vue3/app-nextjs`,
+      url: `${config.nuxtjs2}/main-vite/app-nuxtjs2`,
       microAppData: {msg: '来自基座的数据'}
     }
   },
   methods: {
     handleCreate (): void {
-      console.log('child-nextjs 创建了')
+      console.log('child-nuxtjs2 创建了')
     },
 
     handleBeforeMount (): void {
-      console.log('child-nextjs 即将被渲染')
+      console.log('child-nuxtjs2 即将被渲染')
     },
 
     handleMount (): void {
-      console.log('child-nextjs 已经渲染完成')
+      console.log('child-nuxtjs2 已经渲染完成')
 
       setTimeout(() => {
         // @ts-ignore
@@ -46,15 +45,15 @@ export default {
     },
 
     handleUnmount (): void {
-      console.log('child-nextjs 卸载了')
+      console.log('child-nuxtjs2 卸载了')
     },
 
     handleError (): void {
-      console.log('child-nextjs 加载出错了')
+      console.log('child-nuxtjs2 加载出错了')
     },
 
     handleDataChange (e: CustomEvent): void {
-      console.log('来自子应用 child-nextjs 的数据:', e.detail.data)
+      console.log('来自子应用 child-nuxtjs2 的数据:', e.detail.data)
     },
   }
 }

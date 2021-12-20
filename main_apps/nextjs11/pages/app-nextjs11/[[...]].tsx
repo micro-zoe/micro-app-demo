@@ -5,20 +5,20 @@ import { useState, useEffect } from 'react'
 import type { NextPage } from 'next'
 import config from '../../lib/config'
 
-const Nuxtjs: NextPage = () => {
+const Nextjs11: NextPage = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
   const [show, changeShow] = useState(false)
 
   function handleCreate (): void {
-    console.log('child-nuxtjs 创建了')
+    console.log('child-nextjs11 创建了')
   }
 
   function handleBeforeMount (): void {
-    console.log('child-nuxtjs 即将被渲染')
+    console.log('child-nextjs11 即将被渲染')
   }
 
   function handleMount (): void {
-    console.log('child-nuxtjs 已经渲染完成')
+    console.log('child-nextjs11 已经渲染完成')
 
     setTimeout(() => {
       changeMicroAppData({msg: '来自基座的新数据'})
@@ -26,15 +26,15 @@ const Nuxtjs: NextPage = () => {
   }
 
   function handleUnmount (): void {
-    console.log('child-nuxtjs 卸载了')
+    console.log('child-nextjs11 卸载了')
   }
 
   function handleError (): void {
-    console.log('child-nuxtjs 加载出错了')
+    console.log('child-nextjs11 加载出错了')
   }
 
   function handleDataChange (e: CustomEvent): void {
-    console.log('来自子应用 child-nuxtjs 的数据:', e.detail.data)
+    console.log('来自子应用 child-nextjs11 的数据:', e.detail.data)
   }
 
   useEffect(() => {
@@ -46,9 +46,10 @@ const Nuxtjs: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-nuxtjs'
-            url={`${config.nuxtjs}/app-nuxtjs`}
+            name='appname-nextjs11'
+            url={`${config.nextjs11}/app-nextjs11`}
             ssr
+            disableScopecss
             data={microAppData}
             onCreated={handleCreate}
             onBeforemount={handleBeforeMount}
@@ -63,4 +64,4 @@ const Nuxtjs: NextPage = () => {
   )
 }
 
-export default Nuxtjs
+export default Nextjs11

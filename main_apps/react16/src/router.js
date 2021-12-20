@@ -3,8 +3,8 @@ import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './pages/home/home'
 import SideBar from './components/sidebar'
 const Angular11 = lazy(() => import(/* webpackChunkName: "angular11" */ './pages/angular11/angular11'))
-const Nextjs = lazy(() => import(/* webpackChunkName: "nextjs" */ './pages/nextjs/nextjs'))
-const Nuxtjs = lazy(() => import(/* webpackChunkName: "nuxtjs" */ './pages/nuxtjs/nuxtjs'))
+const Nextjs11 = lazy(() => import(/* webpackChunkName: "nextjs11" */ './pages/nextjs11/nextjs11'))
+const Nuxtjs2 = lazy(() => import(/* webpackChunkName: "nuxtjs2" */ './pages/nuxtjs2/nuxtjs2'))
 const React16 = lazy(() => import(/* webpackChunkName: "react16" */ './pages/react16/react16'))
 const React17 = lazy(() => import(/* webpackChunkName: "react17" */ './pages/react17/react17'))
 const Vite = lazy(() => import(/* webpackChunkName: "vite" */ './pages/vite/vite'))
@@ -26,14 +26,14 @@ function App () {
               <Angular11 />
             </Suspense>
           </Route>
-          <Route path="/app-nextjs">
+          <Route path="/app-nextjs11">
             <Suspense fallback={<div>Loading...</div>}>
-              <Nextjs />
+              <Nextjs11 />
             </Suspense>
           </Route>
-          <Route path="/app-nuxtjs">
+          <Route path="/app-nuxtjs2">
             <Suspense fallback={<div>Loading...</div>}>
-              <Nuxtjs />
+              <Nuxtjs2 />
             </Suspense>
           </Route>
           <Route path="/app-react16">

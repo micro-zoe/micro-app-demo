@@ -3,8 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { Angular11Component } from './angular11/angular11.component';
-import { NextjsComponent } from './nextjs/nextjs.component';
-import { NuxtjsComponent } from './nuxtjs/nuxtjs.component';
+import { Nextjs11Component } from './nextjs11/nextjs11.component';
+import { Nuxtjs2Component } from './nuxtjs2/nuxtjs2.component';
 import { React16Component } from './react16/react16.component';
 import { React17Component } from './react17/react17.component';
 import { ViteComponent } from './vite/vite.component';
@@ -21,17 +21,17 @@ const routes: Routes = [
     }]
   },
   {
-    path: 'app-nextjs',
+    path: 'app-nextjs11',
     children: [{
       path: '**',
-      component: NextjsComponent
+      component: Nextjs11Component
     }]
   },
   {
-    path: 'app-nuxtjs',
+    path: 'app-nuxtjs2',
     children: [{
       path: '**',
-      component: NuxtjsComponent
+      component: Nuxtjs2Component
     }]
   },
   {

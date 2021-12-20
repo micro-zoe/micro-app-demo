@@ -4,7 +4,7 @@ import jsxCustomEvent from '@micro-zoe/micro-app/polyfill/jsx-custom-event'
 import { useState } from 'react'
 import config from '../../config'
 
-const Nuxtjs = () => {
+const Nuxtjs2 = () => {
   const [microAppData, changeMicroAppData] = useState({msg: '来自基座的数据'})
 
   function handleCreate () {
@@ -38,8 +38,8 @@ const Nuxtjs = () => {
   return (
     <div>
       <micro-app
-        name='appname-nuxtjs'
-        url={`${config.nuxtjs}/main-react16/app-nuxtjs`}
+        name='appname-nuxtjs2'
+        url={`${config.nuxtjs2}/main-react16/app-nuxtjs2`}
         ssr
         data={microAppData}
         onCreated={handleCreate}
@@ -53,4 +53,4 @@ const Nuxtjs = () => {
   )
 }
 
-export default Nuxtjs
+export default Nuxtjs2

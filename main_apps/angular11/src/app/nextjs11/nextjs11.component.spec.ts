@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NuxtjsComponent } from './nuxtjs.component';
+import { Nextjs11Component } from './nextjs11.component';
 
-describe('NuxtjsComponent', () => {
-  let component: NuxtjsComponent;
-  let fixture: ComponentFixture<NuxtjsComponent>;
+describe('Nextjs11Component', () => {
+  let component: Nextjs11Component;
+  let fixture: ComponentFixture<Nextjs11Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NuxtjsComponent ]
+      declarations: [ Nextjs11Component ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NuxtjsComponent);
+    fixture = TestBed.createComponent(Nextjs11Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

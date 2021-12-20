@@ -1,10 +1,12 @@
 <template>
   <div>
     <micro-app
-      name='appname-nuxtjs'
+      v-if='show'
+      name='appname-nextjs11'
       :url='url'
-      ssr
       :data='microAppData'
+      ssr
+      disableScopecss
       @created='handleCreate'
       @beforemount='handleBeforeMount'
       @mounted='handleMount'
@@ -16,27 +18,31 @@
 </template>
 
 <script lang="ts">
-import config from '../config'
+import config from '../../lib/config'
 
 export default {
-  name: 'nuxtjs',
+  name: 'nextjs11',
   data () {
     return {
-      url: `${config.nuxtjs}/main-vue3/app-nuxtjs`,
+      show: false,
+      url: `${config.nextjs11}/app-nextjs11`,
       microAppData: {msg: '来自基座的数据'}
     }
   },
+  mounted () {
+    this.show = true
+  },
   methods: {
     handleCreate (): void {
-      console.log('child-nuxtjs 创建了')
+      console.log('child-nextjs11 创建了')
     },
 
     handleBeforeMount (): void {
-      console.log('child-nuxtjs 即将被渲染')
+      console.log('child-nextjs11 即将被渲染')
     },
 
     handleMount (): void {
-      console.log('child-nuxtjs 已经渲染完成')
+      console.log('child-nextjs11 已经渲染完成')
 
       setTimeout(() => {
         // @ts-ignore
@@ -45,18 +51,18 @@ export default {
     },
 
     handleUnmount (): void {
-      console.log('child-nuxtjs 卸载了')
+      console.log('child-nextjs11 卸载了')
     },
 
     handleError (): void {
-      console.log('child-nuxtjs 加载出错了')
+      console.log('child-nextjs11 加载出错了')
     },
 
     handleDataChange (e: CustomEvent): void {
-      console.log('来自子应用 child-nuxtjs 的数据:', e.detail.data)
+      console.log('来自子应用 child-nextjs11 的数据:', e.detail.data)
     },
   }
-}
+} as any
 </script>
 
 <style>

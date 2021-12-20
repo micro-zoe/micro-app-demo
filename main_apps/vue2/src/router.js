@@ -16,14 +16,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "angular11" */ './pages/angular11.vue'),
   },
   {
-    path: '/app-nextjs*',
-    name: 'app-nextjs',
-    component: () => import(/* webpackChunkName: "nextjs" */ './pages/nextjs.vue'),
+    path: '/app-nextjs11*',
+    name: 'app-nextjs11',
+    component: () => import(/* webpackChunkName: "nextjs11" */ './pages/nextjs11.vue'),
   },
   {
-    path: '/app-nuxtjs*',
-    name: 'app-nuxtjs',
-    component: () => import(/* webpackChunkName: "nuxtjs" */ './pages/nuxtjs.vue'),
+    path: '/app-nuxtjs2*',
+    name: 'app-nuxtjs2',
+    component: () => import(/* webpackChunkName: "nuxtjs2" */ './pages/nuxtjs2.vue'),
   },
   {
     path: '/app-react16*',

@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-nextjs'
+      name='appname-nextjs11'
       :url='url'
       ssr
       disableScopecss
@@ -16,44 +16,45 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import config from '../config'
 
 export default {
-  name: 'nextjs',
+  name: 'nextjs11',
   data () {
     return {
-      url: `${config.nextjs}/main-vue2/app-nextjs`,
+      url: `${config.nextjs11}/main-vite/app-nextjs11`,
       microAppData: {msg: '来自基座的数据'}
     }
   },
   methods: {
-    handleCreate () {
-      console.log('child-nextjs 创建了')
+    handleCreate (): void {
+      console.log('child-nextjs11 创建了')
     },
 
-    handleBeforeMount () {
-      console.log('child-nextjs 即将被渲染')
+    handleBeforeMount (): void {
+      console.log('child-nextjs11 即将被渲染')
     },
 
-    handleMount () {
-      console.log('child-nextjs 已经渲染完成')
+    handleMount (): void {
+      console.log('child-nextjs11 已经渲染完成')
 
       setTimeout(() => {
+        // @ts-ignore
         this.microAppData = {msg: '来自基座的新数据'}
       }, 2000)
     },
 
-    handleUnmount () {
-      console.log('child-nextjs 卸载了')
+    handleUnmount (): void {
+      console.log('child-nextjs11 卸载了')
     },
 
-    handleError () {
-      console.log('child-nextjs 加载出错了')
+    handleError (): void {
+      console.log('child-nextjs11 加载出错了')
     },
 
-    handleDataChange (e) {
-      console.log('来自子应用 child-nextjs 的数据:', e.detail.data)
+    handleDataChange (e: CustomEvent): void {
+      console.log('来自子应用 child-nextjs11 的数据:', e.detail.data)
     },
   }
 }

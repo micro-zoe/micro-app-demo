@@ -76,25 +76,25 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-nextjs">
+      <el-submenu index="appname-nextjs11">
         <template slot="title">
-          <span class='submenu-text'>child-nextjs</span>
+          <span class='submenu-text'>child-nextjs11</span>
         </template>
-        <el-menu-item index="/app-nextjs">
+        <el-menu-item index="/app-nextjs11">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-nextjs/page2">
+        <el-menu-item index="/app-nextjs11/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-nuxtjs">
+      <el-submenu index="appname-nuxtjs2">
         <template slot="title">
-          <span class='submenu-text'>child-nuxtjs</span>
+          <span class='submenu-text'>child-nuxtjs2</span>
         </template>
-        <el-menu-item index="/app-nuxtjs">
+        <el-menu-item index="/app-nuxtjs2">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-nuxtjs/page2">
+        <el-menu-item index="/app-nuxtjs2/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
@@ -154,14 +154,11 @@ export default {
       if (this.activeIndex !== '/') {
         this.activeIndex = this.activeIndex.replace(/\/$/, '')
       }
+
+      return this.activeIndex
     },
     // 用户点击菜单时控制基座应用跳转
     select (index, indexPath) {
-      // 防止重复跳转同一页面
-      if (this.activeIndex === index) return
-
-      this.activeIndex = index
-
       if (this.microAppData) {
         // 因为 child-vite 和 child-react17 子应用是hash路由，所以需要传递hash值
         let hash = null

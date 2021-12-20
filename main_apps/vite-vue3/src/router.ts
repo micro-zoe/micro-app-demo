@@ -13,14 +13,14 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('./views/angular11.vue'),
   },
   {
-    path: '/app-nextjs/:page*',
-    name: 'app-nextjs',
-    component: () => import('./views/nextjs.vue'),
+    path: '/app-nextjs11/:page*',
+    name: 'app-nextjs11',
+    component: () => import('./views/nextjs11.vue'),
   },
   {
-    path: '/app-nuxtjs/:page*',
-    name: 'app-nuxtjs',
-    component: () => import('./views/nuxtjs.vue'),
+    path: '/app-nuxtjs2/:page*',
+    name: 'app-nuxtjs2',
+    component: () => import('./views/nuxtjs2.vue'),
   },
   {
     path: '/app-react16/:page*',
