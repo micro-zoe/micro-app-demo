@@ -26,7 +26,6 @@
     "start:main-vue3": "cross-env NODE_ENV=production PORT=6008 BASE_ROUTE='/main-vue3/app-nuxtjs2' DISTDIR='build/vue3' pm2 start server.js --name 'child-nuxtjs2:main-vue3'",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "prepare": "husky install",
     "lint": "yarn lint:js"
   },
   "dependencies": {
@@ -47,7 +46,6 @@
     "eslint": "^7.29.0",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
-    "express": "4.17.1",
-    "husky": "^6.0.0"
+    "express": "4.17.1"
   }
 }
