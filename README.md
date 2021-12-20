@@ -75,6 +75,7 @@ yarn dev:main-vue2
 
 此时分别运行 `main_apps/vue2` 以及 `child_apps` 文件夹下的所有子应用。
 
+线上地址：http://www.micro-zoe.com/main-vue2/
 
 **4、启动 vue3 主应用**
 
@@ -120,6 +121,7 @@ yarn dev:main-nextjs11
 
 此时分别运行 `main_apps/nextjs11` 以及 `child_apps` 文件夹下的所有子应用。
 
+线上地址：http://nextjs11.micro-zoe.com/
 
 **8、启动 nuxtjs2 主应用**
 
@@ -131,6 +133,7 @@ yarn dev:main-nuxtjs2
 
 此时分别运行 `main_apps/nuxtjs2` 以及 `child_apps` 文件夹下的所有子应用。
 
+线上地址：http://nuxtjs2.micro-zoe.com/
 
 ## 效果如下：
 ![](./example.png)
