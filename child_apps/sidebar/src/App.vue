@@ -123,15 +123,10 @@ export default {
       this.microAppData = window.microApp.getData()
 
       // 全局数据监听，监听来自其它子应用页面跳转，控制侧边栏的菜单展示
-      // 因为是子应用之间无法直接通信，这里采用全局数据通信
+      // 因为子应用之间无法直接通信，这里采用全局数据通信
       window.microApp.addGlobalDataListener((data) => {
-        if (typeof data.activePage === 'string') {
-          // 取activeIndex的基础路由部分，如：'/app-vue2/page2'基础路由为'/app-vue2'
-          const basePath = this.activeIndex.split('/').splice(0, 2).join('/')
-
-          // 根据其它子应用传递的页面地址，补全activeIndex
-          this.activeIndex = basePath + data.activePage
-        }
+        console.log('全局数据:', data)
+        this.getActiveIndex()
       })
     }
   },

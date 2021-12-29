@@ -22,11 +22,10 @@ const NavigatorFromBaseApp = () => {
 
 function App () {
   // 子应用内部跳转时，通知侧边栏改变菜单状态
-  function onRouteChange (e) {
+  function onRouteChange () {
     if (window.__MICRO_APP_ENVIRONMENT__) {
-      const activePage = e.target.getAttribute('page-path')
       // 发送全局数据，通知侧边栏修改菜单展示
-      window.microApp.setGlobalData({ activePage })
+      window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
     }
   }
 
@@ -34,8 +33,8 @@ function App () {
     // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
     <BrowserRouter basename={window.__MICRO_APP_BASE_ROUTE__ || '/child/react16'}>
       <div id='public-links' onClick={onRouteChange}>
-        <Link to="/" page-path=''>Home</Link>&ensp;|&ensp;
-        <Link to="/page2" page-path='/page2'>Page2</Link>
+        <Link to="/">Home</Link>&ensp;|&ensp;
+        <Link to="/page2">Page2</Link>
       </div>
       <NavigatorFromBaseApp />
       <Switch>

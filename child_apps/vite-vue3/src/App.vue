@@ -1,8 +1,8 @@
 <template>
   <div>
     <div id='public-links' @click="onRouteChange">
-      <router-link to="/" page-path=''>Home</router-link> |
-      <router-link to="/page2" page-path='/page2'>Page2</router-link>
+      <router-link to="/">Home</router-link> |
+      <router-link to="/page2">Page2</router-link>
     </div>
     <router-view></router-view>
   </div>
@@ -10,11 +10,10 @@
 
 <script lang="ts" setup>
 // 子应用内部跳转时，通知侧边栏改变菜单状态
-const onRouteChange = (e: any) => {
+const onRouteChange = () => {
   if (window.eventCenterForAppNameVite) {
-    const activePage = e.target.getAttribute('page-path')
     // 发送全局数据，通知侧边栏修改菜单展示
-    window.eventCenterForAppNameVite.setGlobalData({ activePage })
+    window.eventCenterForAppNameVite.setGlobalData({ name: 'child-vite' })
   }
 }
 </script>

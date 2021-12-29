@@ -8,6 +8,7 @@ declare global {
   interface Window {
     microApp: any
     __MICRO_APP_ENVIRONMENT__: string
+    __MICRO_APP_NAME__: string
   }
 }
 
@@ -17,9 +18,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   // 子应用内部跳转时，通知侧边栏改变菜单状态
   function onRouteChange (e: any): void {
     if (window.__MICRO_APP_ENVIRONMENT__) {
-      const activePage = e.target.getAttribute('page-path')
-      // 发送全局数据，通知侧边栏修改菜单展示
-      window.microApp.setGlobalData({ activePage })
+     // 发送全局数据，通知侧边栏修改菜单展示
+     window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
     }
   }
 
@@ -57,8 +57,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
       <div id='public-links' onClick={onRouteChange}>
-        <Link href="/"><a page-path=''>Home</a></Link>&ensp;|&ensp;
-        <Link href="/page2"><a page-path='/page2'>Page2</a></Link>
+        <Link href="/"><a>Home</a></Link>&ensp;|&ensp;
+        <Link href="/page2"><a>Page2</a></Link>
       </div>
       <Component {...pageProps} />
     </div>
