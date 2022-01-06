@@ -28,14 +28,16 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "react16" */ '../views/react16.vue'),
   },
   {
-    // 因为主应用为history路由，appname-react17子应用是hash路由，所以不需要设置基础路由，这里正常设置
-    path: '/app-react17',
+    // 因为主应用为history路由，appname-react17子应用是hash路由，这里配置略微不同
+    // 已解决带参数时页面丢失的问题
+    path: '/app-react17:page*',
     name: 'app-react17',
     component: () => import(/* webpackChunkName: "react17" */ '../views/react17.vue'),
   },
   {
-    // 因为主应用为history路由，appname-vite子应用是hash路由，所以不需要设置基础路由，这里正常设置
-    path: '/app-vite',
+    // 因为主应用为history路由，appname-vite子应用是hash路由，这里配置略微不同
+    // 已解决带参数时页面丢失的问题
+    path: '/app-vite:page*',
     name: 'vite',
     component: () => import(/* webpackChunkName: "vite" */ '../views/vite.vue'),
   },

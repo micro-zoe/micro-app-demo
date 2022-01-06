@@ -137,12 +137,16 @@ export default {
       const pathArr = location.pathname.match(/\/app-.+/)
       this.activeIndex = pathArr ? pathArr[0].replace(/\/$/, '') : '/'
 
+      let hash = ''
+      if (location.hash) {
+        hash = location.hash.split('?')[0]
+      }
       // 兼容 child-vite 和 child-react17 子应用，因为它们是hash路由
       if (
         (this.activeIndex === '/app-vite' || this.activeIndex === '/app-react17') &&
-        location.hash.includes('page2')
+        hash.includes('page2')
       ) {
-        this.activeIndex += location.hash.replace(/^#/, '')
+        this.activeIndex += hash.replace(/^#/, '')
       }
 
       // 去除斜线后缀，如：/app-vue2/ 转换为 /app-vue2

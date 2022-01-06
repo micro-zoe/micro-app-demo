@@ -115,7 +115,7 @@ function mount () {
 
   handleMicroData(router)
 
-  fixBugForVueRouter4(router)
+  // fixBugForVueRouter4(router)
 }
 
 // 将卸载操作放入 unmount 函数
