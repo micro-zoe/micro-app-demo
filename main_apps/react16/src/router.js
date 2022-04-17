@@ -10,6 +10,7 @@ const React17 = lazy(() => import(/* webpackChunkName: "react17" */ './pages/rea
 const Vite = lazy(() => import(/* webpackChunkName: "vite" */ './pages/vite/vite'))
 const Vue2 = lazy(() => import(/* webpackChunkName: "vue2" */ './pages/vue2/vue2'))
 const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3'))
+const UMI = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/umi/umi'))
 
 function App () {
   return (
@@ -44,6 +45,11 @@ function App () {
           <Route path="/app-react17">
             <Suspense fallback={<div>Loading...</div>}>
               <React17 />
+            </Suspense>
+          </Route>
+          <Route path="/app-umi">
+            <Suspense fallback={<div>Loading...</div>}>
+              <UMI />
             </Suspense>
           </Route>
           <Route path="/app-vite">
