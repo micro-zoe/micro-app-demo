@@ -94,8 +94,19 @@
         <el-menu-item index="/app-nuxtjs2">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-nuxtjs2/page2">
+        <el-menu-item index="/app-nuxtjs2/page2">  
           <span class='menu-item-text'>page2</span>
+        </el-menu-item>
+      </el-submenu>
+      <el-submenu index="appname-umi">
+        <template slot="title">
+          <span class='submenu-text'>child-umi</span>
+        </template>
+        <el-menu-item index="/app-umi/welcome">
+          <span class='menu-item-text'>welcome</span>
+        </el-menu-item>
+        <el-menu-item index="/app-umi/list">
+          <span class='menu-item-text'>list</span>
         </el-menu-item>
       </el-submenu>
     </el-menu>
