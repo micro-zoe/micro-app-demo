@@ -1,4 +1,4 @@
-// const path = require('path')
+const path = require('path')
 
 module.exports = {
   outputDir: 'main-vue3',
@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    // config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+    config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
 
     config.module
     .rule('vue')

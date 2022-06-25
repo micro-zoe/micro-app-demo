@@ -42,14 +42,18 @@ const routes: Routes = [
     }]
   },
   {
-    // 因为主应用为history路由，appname-react17子应用是hash路由，所以不需要设置基础路由，这里正常设置
     path: 'app-react17',
-    component: React17Component
+    children: [{
+      path: '**',
+      component: React17Component
+    }]
   },
   {
-    // 因为主应用为history路由，appname-vite子应用是hash路由，所以不需要设置基础路由，这里正常设置
     path: 'app-vite',
-    component: ViteComponent
+    children: [{
+      path: '**',
+      component: ViteComponent
+    }]
   },
   {
     path: 'app-vue2',

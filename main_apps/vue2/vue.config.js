@@ -1,4 +1,4 @@
-// const path = require('path')
+const path = require('path')
 
 module.exports = {
   outputDir: 'main-vue2',
@@ -21,8 +21,8 @@ module.exports = {
       jsonpFunction: `webpackJsonp-main-vue2`,
     }
   },
-  // chainWebpack: config => {
-  //   config.resolve.alias
-  //     .set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
-  // },
+  chainWebpack: config => {
+    config.resolve.alias
+      .set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+  },
 }

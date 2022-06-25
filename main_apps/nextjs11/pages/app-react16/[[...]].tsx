@@ -46,7 +46,7 @@ const React16: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-react16'
+            name='react16'
             url={`${config.react16}/child/react16/`}
             baseroute='/app-react16'
             data={microAppData}

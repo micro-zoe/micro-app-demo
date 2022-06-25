@@ -8,12 +8,15 @@ import config from '../lib/config'
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
+
   useEffect(() => {
+  // @ts-ignore
+  window.router = router
     // 注册microApp
     microApp.start({
       plugins: {
         modules: {
-          'appname-vite': [
+          'vite': [
             {
               loader(code: string) {
                 if (process.env.NODE_ENV === 'development') {
@@ -27,74 +30,80 @@ function MyApp({ Component, pageProps }: AppProps) {
               }
             }
           ],
-          // 解决create-react-app中sockjs-node报错的问题
-          'appname-react16': [{
-            loader(code: string) {
-              if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
-                code = code.replace('window.location.port', '4004')
-              }
-              return code
-            }
-          }],
-          // 解决create-react-app中sockjs-node报错的问题
-          'appname-react17': [{
-            loader(code: string) {
-              if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
-                code = code.replace('window.location.port', '4005')
-              }
-              return code
-            }
-          }],
         }
       }
     })
 
     // 子应用sidebar通过pushState控制主应用跳转
-    function pushState (appName: string, path: string, hash: string) {
+    function pushState (appName: string, parentPath: string, childPath: string) {
+      console.log(1111111, appName, parentPath, childPath, router)
       /**
-       * 当子应用还未渲染，通过基座控制路由跳转，子应用在初始化时会自己根据url渲染对应的页面
-       * 当子应用已经渲染，则直接控制子应用进行内部跳转
-       *
-       * getActiveApps: 用于获取正在运行的子应用
-      */
-      if (!getActiveApps().includes(appName)) {
-        // child-vite 和 child-react17子应用为hash路由，这里拼接一下hash值
-        hash && (path += `#${hash}`)
-        // 主应用跳转
-        router.push(path)
+       * ******************************** 注意！********************************
+       * 这里展示了如何通过基座的侧边栏控制子应用渲染指定的页面
+       * 案例中嵌入了 vue2、vue3、react、vite、angular、next.js、nuxt.js 等多种子应用
+       * 其中vite和next.js的跳转方式与其它子应用不同，所以单独处理
+       * **********************************************************************
+       */
+      // 首页没有子应用，执行正常跳转即可
+      if (appName === '/') {
+        router.push('/')
+      } else if (appName === 'vite') {
+        // this.handleVite(appName, parentPath, childPath)
       } else {
-        let childPath = null
-        // child-vite 和 child-react17子应用是hash路由，hash值就是它的页面地址，这里单独处理
-        if (hash) {
-          childPath = hash
-        } else {
-          // path的值形式如：/app-vue2/page2，这里/app-vue2是子应用的基础路由，/page2才是页面地址，所以我们需要将/app-vue2部分删除
-          childPath = path.replace(/^\/app-[^/]+/, '')
-          !childPath && (childPath = '/') // 防止地址为空
-        }
+        /**
+         * 基座地址变化或者子应用地址变化，执行跳转操作
+         * microApp.router.current: 用于获取当前子应用的路由信息
+         */
+        if (
+          location.pathname !== parentPath || // 基座地址变化
+          // @ts-ignore
+          microApp.router.current.get(appName).fullPath !== childPath // 子应用地址变化
+        ) {
+          let afterJump = Promise.resolve(true)
+          let type = 'replace'
+          if (location.pathname !== parentPath) {
+            afterJump = router.push(parentPath) // 基座跳转后，使用 microApp.router.replace 控制子应用跳转
+          } else {
+            type = 'push' // 基座地址不变，子应用地址变化，使用 microApp.router.push 控制子应用跳转
+          }
 
-        // 主应用通过下发data数据控制子应用跳转
-        microApp.setData(appName, { path: childPath })
+          // 判断子应用是否存在
+          if (getActiveApps().includes(appName)) {
+            afterJump.then(() => {
+              // 子应用存在，控制子应用跳转
+              console.log(444444, window.location.href)
+              // @ts-ignore
+              microApp.router[type]({
+                name: appName,
+                path: childPath,
+              })
+            })
+          } else {
+            // 子应用不存在，设置defaultPage，控制子应用初次渲染时的默认页面
+            // @ts-ignore
+            microApp.router.setDefaultPage(appName, childPath)
+          }
+        }
       }
     }
 
     // 👇 主应用向sidebar子应用下发一个名为pushState的方法
-    microApp.setData('appname-sidebar', { pushState })
+    microApp.setData('sidebar', { pushState })
 
     /**
      * BUG FIX
      * 在next11下，子应用内部跳转，基座无法监听，导致点击浏览器前进、后退按钮，无法回退到正确的子应用页面
      * 我们通过监听popstate事件，在地址变化时重新替换为next路由来解决这个问题
      */
-    window.addEventListener('popstate', () => {
-      const { href, origin } = window.location
-      router.replace(href.replace(origin, ''))
-    })
+    // window.addEventListener('popstate', () => {
+    //   const { href, origin } = window.location
+    //   router.replace(href.replace(origin, ''))
+    // })
   }, [])
 
   return (
     <div id='next-root'>
-      <micro-app name='appname-sidebar' url={`${config.sidebar}/child/sidebar`}></micro-app>
+      <micro-app name='sidebar' url={`${config.sidebar}/child/sidebar`} disable-memory-router></micro-app>
       <div id='router-container'>
         <Component {...pageProps} />
       </div>

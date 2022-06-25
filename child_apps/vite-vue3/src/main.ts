@@ -133,7 +133,7 @@ function unmount () {
 // 微前端环境下，注册mount和unmount方法
 if (window.__MICRO_APP_BASE_APPLICATION__) {
   // @ts-ignore
-  window['micro-app-appname-vite'] = { mount, unmount }
+  window['micro-app-vite'] = { mount, unmount }
 } else {
   // 非微前端环境直接渲染
   mount()

@@ -41,8 +41,8 @@ const Vite: NextPage = () => {
   useEffect(() => {
     // @ts-ignore
     if (!window.eventCenterForAppNameVite) {
-      // @ts-ignore 因为vite子应用关闭了沙箱，我们需要为子应用appname-vite创建EventCenterForMicroApp对象来实现数据通信
-      window.eventCenterForAppNameVite = new EventCenterForMicroApp('appname-vite')
+      // @ts-ignore 因为vite子应用关闭了沙箱，我们需要为子应用vite创建EventCenterForMicroApp对象来实现数据通信
+      window.eventCenterForAppNameVite = new EventCenterForMicroApp('vite')
     }
 
     changeShow(true)
@@ -53,7 +53,7 @@ const Vite: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-vite'
+            name='vite'
             url={`${config.vite}/child/vite/`}
             inline
             disablesandbox

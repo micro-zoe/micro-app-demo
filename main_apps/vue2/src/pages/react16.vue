@@ -1,9 +1,8 @@
 <template>
   <div>
     <micro-app
-      name='appname-react16'
+      name='react16'
       :url='url'
-      baseroute='/main-vue2/app-react16'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'

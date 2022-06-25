@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import { HashRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
 import Home from './pages/home/home'
 
 const Page2 = lazy(() => import(/* webpackChunkName: "page2" */ './pages/page2/page2'))
@@ -31,7 +31,7 @@ function App () {
 
   return (
     // 因为child-react17子应用是hash路由，主应用为history路由，所以不需要设置基础路由__MICRO_APP_BASE_ROUTE__
-    <HashRouter>
+    <HashRouter basename='/child/react17'>
       <div id='public-links' onClick={onRouteChange}>
         <Link to="/">Home</Link>&ensp;|&ensp;
         <Link to="/page2">Page2</Link>

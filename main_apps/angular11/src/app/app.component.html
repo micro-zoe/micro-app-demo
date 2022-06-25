@@ -1,6 +1,6 @@
 <div id="app">
   <!-- child_apps/child-sidebar -->
-  <micro-app name='appname-sidebar' [attr.url]='url' [data]="sidebarData"></micro-app>
+  <micro-app name='sidebar' [attr.url]='url' [data]="sidebarData" disable-memory-router></micro-app>
   <div id='router-container'>
     <router-outlet></router-outlet>
   </div>

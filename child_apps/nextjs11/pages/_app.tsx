@@ -26,7 +26,43 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     console.log('微应用child-nextjs渲染了');
 
+    // const rawReplaceState = window.history.replaceState
+    // window.history.replaceState = function replaceState(state, title, url) {
+    //   console.log(9999999999999)
+    //   if (window.history.state?.microAppState && !state?.microAppState) {
+    //     state = Object.assign({}, state, { microAppState: window.history.state.microAppState })
+    //     console.log(666666, url)
+    //   }
+    //   rawReplaceState.call(window.history, state, title, url)
+    //   // console.log(2, window.history.state)
+    // }
 
+    // window.onpopstate = (e) => {
+    //   console.log(e)
+    // }
+    // console.log('跳转前', router)
+    // // @ts-ignore
+    // window.router = router
+    // setTimeout(() => {
+    //   const state = Object.assign({microAppState: {a: 1}}, window.history.state)
+    //   window.history.replaceState(state, '', '?abc=222222')
+    //   setTimeout(() => {
+    //     // const microAppState = state.microAppState
+    //     // window.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+    //     // if (!window.history.state.microAppState) {
+    //     //   console.log(555555555)
+    //     //   window.history.state.microAppState = microAppState
+    //     //   // window.history.replaceState(window.history.state, '', window.location.href)
+    //     // }
+    //     console.log('跳转后', router)
+    //   }, 1000);
+    // }, 5000)
+
+    router.beforePopState(({ url, as, options }) => {
+      console.log(4444444, url, as)
+
+      return true
+    })
     // 是否是微前端环境
     if (window.__MICRO_APP_ENVIRONMENT__) {
       // 主动获取基座下发的数据

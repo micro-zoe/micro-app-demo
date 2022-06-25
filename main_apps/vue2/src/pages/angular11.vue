@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-angular11'
+      name='angular11'
       :url='url'
       baseroute='/main-vue2/app-angular11'
       :data='microAppData'

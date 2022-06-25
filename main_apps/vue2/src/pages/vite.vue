@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-vite'
+      name='vite'
       :url='url'
       inline
       disablesandbox
@@ -20,8 +20,8 @@
 import { EventCenterForMicroApp } from '@micro-zoe/micro-app'
 import config from '../config'
 
-// 因为vite子应用关闭了沙箱，我们需要为子应用appname-vite创建EventCenterForMicroApp对象来实现数据通信
-window.eventCenterForAppNameVite = new EventCenterForMicroApp('appname-vite')
+// 因为vite子应用关闭了沙箱，我们需要为子应用vite创建EventCenterForMicroApp对象来实现数据通信
+window.eventCenterForAppNameVite = new EventCenterForMicroApp('vite')
 
 export default {
   name: 'vite',

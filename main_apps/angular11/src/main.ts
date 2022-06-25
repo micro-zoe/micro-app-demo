@@ -13,7 +13,7 @@ microApp.start({
   plugins: {
     modules: {
       // 适配vite
-      'appname-vite': [
+      'vite': [
         {
           loader(code: string) {
             if (!environment.production) {
@@ -27,24 +27,6 @@ microApp.start({
           }
         }
       ],
-      // 解决create-react-app中sockjs-node报错的问题
-      'appname-react16': [{
-        loader(code: string) {
-          if (!environment.production && code.indexOf('sockjs-node') > -1) {
-            code = code.replace('window.location.port', '4004')
-          }
-          return code
-        }
-      }],
-      // 解决create-react-app中sockjs-node报错的问题
-      'appname-react17': [{
-        loader(code: string) {
-          if (!environment.production && code.indexOf('sockjs-node') > -1) {
-            code = code.replace('window.location.port', '4005')
-          }
-          return code
-        }
-      }],
     }
   }
 })

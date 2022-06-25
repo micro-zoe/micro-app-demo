@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-nuxtjs2'
+      name='nuxtjs2'
       :url='url'
       ssr
       :data='microAppData'
@@ -22,7 +22,7 @@ export default {
   name: 'nuxtjs2',
   data () {
     return {
-      url: `${config.nuxtjs2}/main-vue2/app-nuxtjs2`,
+      url: `${config.nuxtjs2}/nuxtjs2`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

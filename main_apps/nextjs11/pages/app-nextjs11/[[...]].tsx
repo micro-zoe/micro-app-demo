@@ -46,8 +46,8 @@ const Nextjs11: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-nextjs11'
-            url={`${config.nextjs11}/app-nextjs11`}
+            name='nextjs11'
+            url={`${config.nextjs11}/nextjs11`}
             ssr
             disableScopecss
             data={microAppData}

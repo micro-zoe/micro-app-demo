@@ -1,9 +1,10 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
-// 每个主应用的baseroute都是不同的，根据 BASE_ROUTE 动态设置baseroute的值
-const baseRoute = process.env.BASE_ROUTE || '/app-nuxtjs2'
-// 根据baseroute设置资源前缀
-const assetPrefix = isProduction ? `http://www.micro-zoe.com:${process.env.PORT || '4003'}${baseRoute}` : `http://localhost:4003${baseRoute}`
+const port = parseInt(process.env.PORT, 10) || 4003
+const basePath = '/nuxtjs2'
+
+// 设置资源前缀，用于补全静态资源地址
+const assetPrefix = isProduction ? `http://www.micro-zoe.com:${port}${basePath}` : `http://localhost:${port}${basePath}`
 
 module.exports = {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -48,12 +49,9 @@ module.exports = {
     assetPrefix,
   },
 
-  // 为不同的主应用构建单独的包
-  buildDir: process.env.DISTDIR || '.nuxt',
-
   // 设置基础路由
   router: {
-    base: baseRoute,
+    base: basePath,
   },
 
   telemetry: false,

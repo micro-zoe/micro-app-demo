@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-nextjs11'
+      name='nextjs11'
       :url='url'
       ssr
       disableScopecss
@@ -23,7 +23,7 @@ export default {
   name: 'nextjs11',
   data () {
     return {
-      url: `${config.nextjs11}/main-vue3/app-nextjs11`,
+      url: `${config.nextjs11}/nextjs11`,
       microAppData: {msg: '来自基座的数据'}
     }
   },

@@ -1,6 +1,6 @@
 <template>
   <div id="sidebar-app">
-    <h4>导航</h4>
+    <h4>侧边栏</h4>
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="activeIndex"
@@ -10,18 +10,18 @@
         <span slot="title">首页</span>
       </el-menu-item>
       <!-- 菜单(el-submenu) index为子应用名称，子菜单(el-menu-item) index为路由地址 -->
-      <el-submenu index="appname-vue2">
+      <el-submenu index="vue2">
         <template slot="title">
           <span class='submenu-text'>child-vue2</span>
         </template>
         <el-menu-item index="/app-vue2">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vue2/page2">
+        <el-menu-item index="/app-vue2/page2?query=123">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-vue3">
+      <el-submenu index="vue3">
         <template slot="title">
           <span class='submenu-text'>child-vue3</span>
         </template>
@@ -32,18 +32,18 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-vite">
+      <el-submenu index="vite">
         <template slot="title">
           <span class='submenu-text'>child-vite</span>
         </template>
         <el-menu-item index="/app-vite">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vite/page2">
+        <el-menu-item index="/app-vite#/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-react16">
+      <el-submenu index="react16">
         <template slot="title">
           <span class='submenu-text'>child-react16</span>
         </template>
@@ -54,7 +54,7 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-react17">
+      <el-submenu index="react17">
         <template slot="title">
           <span class='submenu-text'>child-react17</span>
         </template>
@@ -65,7 +65,7 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-angular11">
+      <el-submenu index="angular11">
         <template slot="title">
           <span class='submenu-text'>child-angular11</span>
         </template>
@@ -76,7 +76,7 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-nextjs11">
+      <el-submenu index="nextjs11">
         <template slot="title">
           <span class='submenu-text'>child-nextjs11</span>
         </template>
@@ -87,7 +87,7 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="appname-nuxtjs2">
+      <el-submenu index="nuxtjs2">
         <template slot="title">
           <span class='submenu-text'>child-nuxtjs2</span>
         </template>
@@ -103,6 +103,26 @@
 </template>
 
 <script>
+
+// 每一个基座路由path对应的子应用的path
+const routeSheet = {
+  '/app-vue2': '/child/vue2/',
+  '/app-vue2/page2?query=123': '/child/vue2/page2',
+  '/app-vue3': '/child/vue3/',
+  '/app-vue3/page2': '/child/vue3/page2',
+  '/app-vite': '/',
+  '/app-vite#/page2': '/page2',
+  '/app-react16': '/child/react16/',
+  '/app-react16/page2': '/child/react16/page2',
+  '/app-react17': '/child/react17/#/',
+  '/app-react17/page2': '/child/react17#/page2',
+  '/app-angular11': '/child/angular11/',
+  '/app-angular11/page2': '/child/angular11/page2',
+  '/app-nextjs11': '/nextjs11',
+  '/app-nextjs11/page2': '/nextjs11/page2',
+  '/app-nuxtjs2': '/nuxtjs2/',
+  '/app-nuxtjs2/page2': '/nuxtjs2/page2',
+}
 
 export default {
   name: 'App',
@@ -133,7 +153,7 @@ export default {
   methods: {
     // 根据url地址获取选中菜单
     getActiveIndex () {
-      // location.pathname的值通常为：/main-angular11/app-vue2/page2，我们只取`/app-vue2/page2`
+      // location.pathname的值通常为：/main-angular11/app-vue2/page2?query=123，我们只取`/app-vue2/page2?query=123`
       const pathArr = location.pathname.match(/\/app-.+/)
       this.activeIndex = pathArr ? pathArr[0].replace(/\/$/, '') : '/'
 
@@ -158,20 +178,15 @@ export default {
     },
     // 用户点击菜单时控制基座应用跳转
     select (index, indexPath) {
-      if (this.microAppData) {
-        // 因为 child-vite 和 child-react17 子应用是hash路由，所以需要传递hash值
-        let hash = null
-        if (index === '/app-vite/page2' || index === '/app-react17/page2') {
-          const pathArr = index.split('/')
-          index = '/' + pathArr[1]
-          hash = '/' + pathArr[2]
-        }
-
+      if (window.__MICRO_APP_ENVIRONMENT__) {
         // 获取子应用appName
         const appName = indexPath[0]
 
+        // 重置元素绑定，防止基座跳转报错
+        window.microApp.removeDomScope()
+
         // 控制基座跳转页面，并渲染子应用
-        this.microAppData.pushState(appName, index, hash)
+        this.microAppData.pushState(appName, index, routeSheet[index])
       }
     },
   }

@@ -48,7 +48,7 @@ const Angular11: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-angular11'
+            name='angular11'
             url={`${config.angular11}/child/angular11/`}
             baseroute='/app-angular11'
             data={microAppData}

@@ -1,16 +1,9 @@
 <template>
   <div>
     <micro-app
-      name='appname-vue2'
+      name='vue2'
       :url='url'
-      baseroute='/main-vue2/app-vue2'
-      :data='microAppData'
-      @created='handleCreate'
-      @beforemount='handleBeforeMount'
-      @mounted='handleMount'
-      @unmount='handleUnmount'
-      @error='handleError'
-      @datachange='handleDataChange'
+
     ></micro-app>
   </div>
 </template>

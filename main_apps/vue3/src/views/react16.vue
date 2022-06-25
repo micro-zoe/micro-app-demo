@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-react16'
+      name='react16'
       :url='url'
       baseroute='/main-vue3/app-react16'
       :data='microAppData'

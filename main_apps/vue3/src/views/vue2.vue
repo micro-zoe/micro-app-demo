@@ -1,7 +1,7 @@
 <template>
   <div>
     <micro-app
-      name='appname-vue2'
+      name='vue2'
       :url='url'
       baseroute='/main-vue3/app-vue2'
       :data='microAppData'

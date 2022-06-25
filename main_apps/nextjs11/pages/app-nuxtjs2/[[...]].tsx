@@ -46,8 +46,8 @@ const Nuxtjs2: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-nuxtjs2'
-            url={`${config.nuxtjs2}/app-nuxtjs2`}
+            name='nuxtjs2'
+            url={`${config.nuxtjs2}/nuxtjs2`}
             ssr
             data={microAppData}
             onCreated={handleCreate}

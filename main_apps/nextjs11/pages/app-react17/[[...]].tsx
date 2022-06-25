@@ -46,7 +46,7 @@ const React17: NextPage = () => {
       {
         show && (
           <micro-app
-            name='appname-react17'
+            name='react17'
             url={`${config.react17}/child/react17/`}
             data={microAppData}
             onCreated={handleCreate}
