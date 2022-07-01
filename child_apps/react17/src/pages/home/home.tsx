@@ -8,7 +8,7 @@ function Home () {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          子应用 -- react@{React.version}
+          子应用123 -- react@{React.version}
         </p>
         <a
           className="App-link"

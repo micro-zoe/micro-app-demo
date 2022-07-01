@@ -138,4 +138,3 @@ if (window.__MICRO_APP_BASE_APPLICATION__) {
   // 非微前端环境直接渲染
   mount()
 }
-

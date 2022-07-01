@@ -38,7 +38,7 @@ const React16 = () => {
   return (
     <div>
       <micro-app
-        name='appname-react16'
+        name='react16'
         url={`${config.react16}/child/react16/`}
         baseroute='/main-react17/app-react16'
         data={microAppData}
@@ -48,6 +48,7 @@ const React16 = () => {
         onUnmount={handleUnmount}
         onError={handleError}
         onDataChange={handleDataChange}
+        inline
       ></micro-app>
     </div>
   )

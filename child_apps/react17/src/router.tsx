@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import { BrowserRouter, HashRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
+import { HashRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
 import Home from './pages/home/home'
 
 const Page2 = lazy(() => import(/* webpackChunkName: "page2" */ './pages/page2/page2'))

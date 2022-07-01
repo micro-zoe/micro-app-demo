@@ -5,7 +5,7 @@ module.exports = {
   publicPath: '/main-vue2/',
   productionSourceMap: false,
   devServer: {
-    hot: false,
+    hot: true,
     disableHostCheck: true,
     port: 3000,
     open: true,

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { HashRouter, Switch, Route, Redirect } from 'react-router-dom'
 import Home from './pages/home/home'
 import SideBar from './components/sidebar'
 const Angular11 = lazy(() => import(/* webpackChunkName: "angular11" */ './pages/angular11/angular11'))
@@ -14,7 +14,7 @@ const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3
 function App () {
   return (
     // 设置主应用基础路由为main-react17(用于后续部署)，则子应用基础路由(baseroute)为/main-react17/xxx
-    <BrowserRouter basename='/main-react17'>
+    <HashRouter basename='/main-react17'>
       <SideBar />
       <div id='router-container'>
         <Switch>
@@ -64,7 +64,7 @@ function App () {
           <Redirect to='/' />
         </Switch>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 

@@ -104,22 +104,30 @@
 
 <script>
 
-// 每一个基座路由path对应的子应用的path
+// 每一个基座路由地址对应的子应用的地址
 const routeSheet = {
+  // 子应用vue2
   '/app-vue2': '/child/vue2/',
   '/app-vue2/page2?query=123': '/child/vue2/page2',
+  // 子应用vue3
   '/app-vue3': '/child/vue3/',
   '/app-vue3/page2': '/child/vue3/page2',
+  // 子应用vite (hash路由)
   '/app-vite': '/',
   '/app-vite#/page2': '/page2',
+  // 子应用react16
   '/app-react16': '/child/react16/',
   '/app-react16/page2': '/child/react16/page2',
+  // 子应用react17 (hash路由)
   '/app-react17': '/child/react17/#/',
   '/app-react17/page2': '/child/react17#/page2',
+  // 子应用angular11
   '/app-angular11': '/child/angular11/',
   '/app-angular11/page2': '/child/angular11/page2',
-  '/app-nextjs11': '/nextjs11',
-  '/app-nextjs11/page2': '/nextjs11/page2',
+  // 子应用next.js
+  '/app-nextjs11': '/',
+  '/app-nextjs11/page2': '/page2',
+  // 子应用nuxt.js
   '/app-nuxtjs2': '/nuxtjs2/',
   '/app-nuxtjs2/page2': '/nuxtjs2/page2',
 }

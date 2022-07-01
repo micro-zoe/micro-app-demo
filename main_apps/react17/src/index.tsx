@@ -8,7 +8,7 @@ import microApp from '@micro-zoe/micro-app'
 microApp.start({
   plugins: {
     modules: {
-      'appname-vite': [
+      'vite': [
         {
           loader(code) {
             if (process.env.NODE_ENV === 'development') {
@@ -22,24 +22,6 @@ microApp.start({
           }
         }
       ],
-      // 解决create-react-app中sockjs-node报错的问题
-      'appname-react16': [{
-        loader(code) {
-          if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
-            code = code.replace('window.location.port', '4004')
-          }
-          return code
-        }
-      }],
-      // 解决create-react-app中sockjs-node报错的问题
-      'appname-react17': [{
-        loader(code) {
-          if (process.env.NODE_ENV === 'development' && code.indexOf('sockjs-node') > -1) {
-            code = code.replace('window.location.port', '4005')
-          }
-          return code
-        }
-      }],
     }
   }
 })

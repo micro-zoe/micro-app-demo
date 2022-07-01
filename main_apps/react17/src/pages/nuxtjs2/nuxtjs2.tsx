@@ -38,8 +38,8 @@ const Nuxtjs2 = () => {
   return (
     <div>
       <micro-app
-        name='appname-nuxtjs2'
-        url={`${config.nuxtjs2}/main-react17/app-nuxtjs2`}
+        name='nuxtjs2'
+        url={`${config.nuxtjs2}/nuxtjs2`}
         ssr
         data={microAppData}
         onCreated={handleCreate}

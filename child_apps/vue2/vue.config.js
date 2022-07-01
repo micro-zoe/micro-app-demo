@@ -3,7 +3,7 @@ module.exports = {
   publicPath: '/child/vue2/',
   productionSourceMap: false,
   devServer: {
-    hot: false,
+    hot: true,
     disableHostCheck: true,
     port: 4008,
     open: false,

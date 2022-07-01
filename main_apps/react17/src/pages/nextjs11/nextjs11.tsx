@@ -38,8 +38,8 @@ const Nextjs11 = () => {
   return (
     <div>
       <micro-app
-        name='appname-nextjs11'
-        url={`${config.nextjs11}/main-react17/app-nextjs11`}
+        name='nextjs11'
+        url={`${config.nextjs11}/nextjs11`}
         ssr
         disableScopecss
         data={microAppData}

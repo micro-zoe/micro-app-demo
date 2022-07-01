@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.12.3",
-    "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.7",
     "@svgr/webpack": "5.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -53,7 +53,7 @@
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
     "react-dom": "16.13.0",
-    "react-refresh": "^0.8.3",
+    "react-refresh": "0.14.0",
     "react-router-dom": "5.1.2",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
@@ -148,5 +148,11 @@
     "presets": [
       "react-app"
     ]
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.9"
+  },
+  "overrides": {
+    "react-error-overlay": "6.0.9"
   }
 }

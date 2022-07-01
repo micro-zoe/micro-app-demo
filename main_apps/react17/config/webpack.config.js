@@ -334,8 +334,8 @@ module.exports = function (webpackEnv) {
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
         ...(modules.webpackAliases || {}),
-        // "@micro-zoe/micro-app/polyfill":  path.join(__dirname, '../../../../micro-app/polyfill'),
-        // "@micro-zoe/micro-app":  path.join(__dirname, '../../../../micro-app/lib/index.esm.js'),
+        "@micro-zoe/micro-app/polyfill":  path.join(__dirname, '../../../../micro-app/polyfill'),
+        "@micro-zoe/micro-app":  path.join(__dirname, '../../../../micro-app/lib/index.esm.js'),
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding

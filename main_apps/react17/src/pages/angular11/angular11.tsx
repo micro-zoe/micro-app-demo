@@ -40,7 +40,7 @@ const Angular11 = () => {
   return (
     <div>
       <micro-app
-        name='appname-angular11'
+        name='angular11'
         url={`${config.angular11}/child/angular11/`}
         baseroute='/main-react17/app-angular11'
         data={microAppData}
