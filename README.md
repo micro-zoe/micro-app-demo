@@ -3,7 +3,7 @@ micro-app-demo 作为 [micro-app](https://github.com/micro-zoe/micro-app) 的案
 
 micro-app-demo中所有项目都是使用官方脚手架创建的，它们足够精简，你完全可以将其中的demo作为基础进一步开发自己的项目。
 
-**线上地址：**http://www.micro-zoe.com/main-vue2/
+**线上地址：** http://www.micro-zoe.com/main-vue2/
 
 # 目录结构
 ```
