@@ -3,6 +3,8 @@ micro-app-demo 作为 [micro-app](https://github.com/micro-zoe/micro-app) 的案
 
 micro-app-demo中所有项目都是使用官方脚手架创建的，它们足够精简，你完全可以将其中的demo作为基础进一步开发自己的项目。
 
+**线上地址：**http://www.micro-zoe.com/main-vue2/
+
 # 目录结构
 ```
 .
@@ -75,8 +77,6 @@ yarn dev:main-vue2
 
 此时分别运行 `main_apps/vue2` 以及 `child_apps` 文件夹下的所有子应用。
 
-线上地址：http://www.micro-zoe.com/main-vue2/
-
 **4、启动 vue3 主应用**
 
 ```bash
@@ -121,8 +121,6 @@ yarn dev:main-nextjs11
 
 此时分别运行 `main_apps/nextjs11` 以及 `child_apps` 文件夹下的所有子应用。
 
-线上地址：http://nextjs11.micro-zoe.com/
-
 **8、启动 nuxtjs2 主应用**
 
 ```bash
@@ -132,8 +130,6 @@ yarn dev:main-nuxtjs2
 访问：`http://localhost:3000/`
 
 此时分别运行 `main_apps/nuxtjs2` 以及 `child_apps` 文件夹下的所有子应用。
-
-线上地址：http://nuxtjs2.micro-zoe.com/
 
 ## 效果如下：
 ![](./example.png)
