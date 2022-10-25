@@ -10,6 +10,7 @@ const React17 = lazy(() => import(/* webpackChunkName: "react17" */ './pages/rea
 const Vite = lazy(() => import(/* webpackChunkName: "vite" */ './pages/vite/vite'))
 const Vue2 = lazy(() => import(/* webpackChunkName: "vue2" */ './pages/vue2/vue2'))
 const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3'))
+const Purejs = lazy(() => import(/* webpackChunkName: "purejs" */ './pages/purejs/purejs'))
 
 function App () {
   return (
@@ -59,6 +60,11 @@ function App () {
           <Route path="/app-vue3">
             <Suspense fallback={<div>Loading...</div>}>
               <Vue3 />
+            </Suspense>
+          </Route>
+          <Route path="/app-purejs">
+            <Suspense fallback={<div>Loading...</div>}>
+              <Purejs />
             </Suspense>
           </Route>
           <Redirect to='/' />

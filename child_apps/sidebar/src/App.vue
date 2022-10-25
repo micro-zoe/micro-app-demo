@@ -98,6 +98,10 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
+      <el-menu-item index="/app-purejs">
+        <span slot="title">purejs</span>
+      </el-menu-item>
+
     </el-menu>
   </div>
 </template>

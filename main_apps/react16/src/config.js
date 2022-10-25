@@ -10,6 +10,7 @@ const config = {
   vite: 'http://localhost:4007',
   vue2: 'http://localhost:4008',
   vue3: 'http://localhost:4009',
+  purejs: 'http://localhost:4010',
 }
 
 // 线上环境地址
