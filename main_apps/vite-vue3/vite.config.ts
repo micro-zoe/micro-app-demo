@@ -19,7 +19,7 @@ export default defineConfig({
     fs: {
       allow: [
         searchForWorkspaceRoot(process.cwd()),
-        '/mygit/micro-zoe/micro-app/'
+        '../../../micro-app/'
       ]
     }
   },

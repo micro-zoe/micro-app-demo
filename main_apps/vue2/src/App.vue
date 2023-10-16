@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <micro-app name='sidebar' :url='url' :data='sidebarData' disable-memory-router></micro-app>
+    <SideBar />
     <router-view id='router-container' />
   </div>
 </template>
@@ -8,9 +8,13 @@
 <script>
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 import config from './config'
+import SideBar from './components/sidebar.vue'
 
 export default {
   name: 'App',
+  components: {
+    SideBar,
+  },
   data () {
     return {
       url: `${config.sidebar}/child/sidebar/`,

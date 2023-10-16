@@ -4,7 +4,16 @@
       <router-link to="/" page-path=''>Home</router-link> |
       <router-link to="/page2" page-path='/page2'>Page2</router-link>
     </div>
-    <router-view />
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transition || 'fade'" mode="out-in">
+        <keep-alive>
+          <component
+            :is="Component"
+            :key="route.meta.usePathKey ? route.path : undefined"
+          />
+        </keep-alive>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -30,5 +39,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

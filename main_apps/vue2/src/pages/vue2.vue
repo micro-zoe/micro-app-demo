@@ -3,7 +3,8 @@
     <micro-app
       name='vue2'
       :url='url'
-
+      router-mode='custom'
+      baseroute='/main-vue2/app-vue2'
     ></micro-app>
   </div>
 </template>

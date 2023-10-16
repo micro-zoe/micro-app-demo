@@ -1,10 +1,11 @@
 <template>
-  <div id="sidebar-app">
+  <div id="sidebar">
     <h4>侧边栏</h4>
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="activeIndex"
-      @select="select"
+      :router='true'
+      @select="handleSelect"
     >
       <el-menu-item index="/">
         <span slot="title">首页</span>
@@ -17,8 +18,8 @@
         <el-menu-item index="/app-vue2">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vue2?vue2=%2Fchild%2Fvue2%2Fpage2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-vue2/element-ui">
+          <span class='menu-item-text'>element-ui</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="vue3">
@@ -87,7 +88,7 @@
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="nuxtjs2">
+      <el-submenu index="nuxtjs2">/
         <template slot="title">
           <span class='submenu-text'>child-nuxtjs2</span>
         </template>
@@ -103,34 +104,7 @@
 </template>
 
 <script>
-
-// 每一个基座路由地址对应的子应用的地址
-const routeSheet = {
-  // 子应用vue2
-  '/app-vue2': '/child/vue2/',
-  '/app-vue2/page2?query=123': '/child/vue2/page2',
-  // 子应用vue3
-  '/app-vue3': '/child/vue3/',
-  '/app-vue3/page2': '/child/vue3/page2',
-  // 子应用vite (hash路由)
-  '/app-vite': '/',
-  '/app-vite#/page2': '/page2',
-  // 子应用react16
-  '/app-react16': '/child/react16/',
-  '/app-react16/page2': '/child/react16/page2',
-  // 子应用react17 (hash路由)
-  '/app-react17': '/child/react17/#/',
-  '/app-react17/page2': '/child/react17#/page2',
-  // 子应用angular11
-  '/app-angular11': '/child/angular11/',
-  '/app-angular11/page2': '/child/angular11/page2',
-  // 子应用next.js
-  '/app-nextjs11': '/',
-  '/app-nextjs11/page2': '/page2',
-  // 子应用nuxt.js
-  '/app-nuxtjs2': '/nuxtjs2/',
-  '/app-nuxtjs2/page2': '/nuxtjs2/page2',
-}
+import microApp from '@micro-zoe/micro-app'
 
 export default {
   name: 'App',
@@ -139,69 +113,41 @@ export default {
       activeIndex: '/', // 当前激活菜单的 index
     }
   },
-  created () {
-    this.getActiveIndex()
-    // 监听浏览器前进后退按钮，激活对应菜单
-    window.addEventListener('popstate', () => this.getActiveIndex())
-
-    // 判断微前端环境
-    if (window.__MICRO_APP_ENVIRONMENT__) {
-      // 获取基座下发的数据
-      this.microAppData = window.microApp.getData()
-
-      // 全局数据监听，监听来自其它子应用页面跳转，控制侧边栏的菜单展示
-      // 因为子应用之间无法直接通信，这里采用全局数据通信
-      window.microApp.addGlobalDataListener((data) => {
-        console.log('全局数据:', data)
-        this.getActiveIndex()
-      })
-    }
-  },
   methods: {
-    // 根据url地址获取选中菜单
-    getActiveIndex () {
-      // location.pathname的值通常为：/main-angular11/app-vue2/page2?query=123，我们只取`/app-vue2/page2?query=123`
-      const pathArr = location.pathname.match(/\/app-.+/)
-      this.activeIndex = pathArr ? pathArr[0].replace(/\/$/, '') : '/'
-
-      let hash = ''
-      if (location.hash) {
-        hash = location.hash.split('?')[0]
-      }
-      // 兼容 child-vite 和 child-react17 子应用，因为它们是hash路由
-      if (
-        (this.activeIndex === '/app-vite' || this.activeIndex === '/app-react17') &&
-        hash.includes('page2')
-      ) {
-        this.activeIndex += hash.replace(/^#/, '')
-      }
-
-      // 去除斜线后缀，如：/app-vue2/ 转换为 /app-vue2
-      if (this.activeIndex !== '/') {
-        this.activeIndex = this.activeIndex.replace(/\/$/, '')
-      }
-
-      return this.activeIndex
-    },
     // 用户点击菜单时控制基座应用跳转
-    select (index, indexPath) {
-      if (window.__MICRO_APP_ENVIRONMENT__) {
-        // 获取子应用appName
-        const appName = indexPath[0]
+    handleSelect (index, indexPath) {
+      // 获取子应用appName
+      const appName = indexPath[0]
+      // 子应用跳转地址需要补充前缀
+      const childPath = '/main-vue2' + indexPath[1]
 
-        // 重置元素绑定，防止基座跳转报错
-        window.microApp.removeDomScope()
-
-        // 控制基座跳转页面，并渲染子应用
-        this.microAppData.pushState(appName, index, routeSheet[index])
+      if (
+        index !== '/' &&
+        this.$route.path !== indexPath[1] &&
+        microApp.getActiveApps().includes(appName)
+      ) {
+        /**
+         * 子应用存在，控制子应用跳转
+         * 注意：
+         *  1. 等到基座路由跳转结束后再控制子应用跳转
+         */
+        Promise.resolve().then(() => microApp.router.replace({
+          name: appName,
+          path: childPath,
+        }))
       }
     },
+  },
+  watch: {
+    $route () {
+      this.activeIndex = this.$route.path
+    }
   }
 }
 </script>
 
 <style>
-#sidebar-app {
+#sidebar {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

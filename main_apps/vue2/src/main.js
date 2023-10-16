@@ -3,29 +3,11 @@ import App from './App.vue'
 import routes from './router'
 import VueRouter from 'vue-router'
 import microApp from '@micro-zoe/micro-app'
+import { Menu, Submenu, MenuItem } from 'element-ui';
 
 Vue.config.productionTip = false
 
-microApp.start({
-  plugins: {
-    modules: {
-      'vite': [
-        {
-          loader(code) {
-            if (process.env.NODE_ENV === 'development') {
-              // 这里 /basename/ 需要和子应用vite.config.js中base的配置保持一致
-              code = code.replace(/(from|import)(\s*['"])(\/child\/vite\/)/g, all => {
-                return all.replace('/child/vite/', 'http://localhost:4007/child/vite/')
-              })
-            }
-
-            return code
-          }
-        }
-      ],
-    }
-  }
-})
+microApp.start()
 
 const router = new VueRouter({
   mode: 'history',
@@ -33,6 +15,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 })
+
+Vue.use(Menu)
+Vue.use(Submenu)
+Vue.use(MenuItem)
 
 new Vue({
   router,

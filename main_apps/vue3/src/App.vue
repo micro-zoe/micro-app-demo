@@ -1,7 +1,18 @@
 <template>
   <div id="app-container">
     <micro-app name='sidebar' :url='url' :data='sidebarData' disable-memory-router></micro-app>
-    <router-view id='router-container' />
+    <router-view id='router-container' v-slot="{ Component, route }">
+      <transition :name="route.meta.transition || 'fade'" mode="out-in">
+        <keep-alive>
+          <div>key: {{$route.name}}</div>
+          <!-- 当key值变化时，会导致整个应用重新渲染 -->
+          <component
+            :is="Component"
+            :key="$route.name"
+          />
+        </keep-alive>
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -24,7 +35,7 @@ export default defineComponent({
          * @param childPath 子应用的跳转地址
          */
         pushState: (appName: string, parentPath: string, childPath: string) => {
-          console.log(1111111, appName, parentPath, childPath, this.$route, microApp.router.current)
+          // console.log(1111111, appName, parentPath, childPath, this.$route, microApp.router.current)
           /**
            * ******************************** 注意！********************************
            * 这里展示了如何通过基座的侧边栏控制子应用渲染指定的页面
@@ -59,7 +70,7 @@ export default defineComponent({
               if (getActiveApps().includes(appName)) {
                 afterJump.then(() => {
                   // 子应用存在，控制子应用跳转
-                  console.log(444444, window.location.href)
+                  // console.log(444444, window.location.href)
                   // @ts-ignore
                   microApp.router[type]({
                     name: appName,

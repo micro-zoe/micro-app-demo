@@ -3,8 +3,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import routes from './router'
 import VueRouter from 'vue-router'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.config.productionTip = false
+Vue.use(ElementUI)
 
 const router = new VueRouter({
   mode: 'history',
@@ -23,11 +26,6 @@ function handleMicroData () {
     // 监听基座下发的数据变化
     window.microApp.addDataListener((data) => {
       console.log('child-vue2 addDataListener:', data)
-
-      // 当基座下发path时进行跳转
-      if (data.path && data.path !== router.currentRoute.path) {
-        router.push(data.path)
-      }
     })
 
     // 向基座发送数据

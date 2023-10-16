@@ -47,6 +47,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'app-vue3',
     component: () => import(/* webpackChunkName: "vue3" */ '../views/vue3.vue'),
   },
+  // {
+  //   path: '/app-vue3/page2',
+  //   name: 'app-vue3/page2',
+  //   component: () => import(/* webpackChunkName: "vue3" */ '../views/vue3.vue'),
+  // },
+  // {
+  //   path: '/app-vue3',
+  //   name: 'app-vue3',
+  //   component: () => import(/* webpackChunkName: "vue3" */ '../views/vue3.vue'),
+  // },
 ]
 
 const router = createRouter({

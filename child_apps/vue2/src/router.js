@@ -11,9 +11,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/page2',
-    name: 'page2',
-    component: () => import(/* webpackChunkName: "page2" */ './pages/page2.vue'),
+    path: '/element-ui',
+    name: 'element-ui',
+    component: () => import(/* webpackChunkName: "element-ui" */ './pages/element-ui.vue'),
   },
 ];
 

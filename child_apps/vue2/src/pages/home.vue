@@ -11,7 +11,7 @@ import HelloWorld from '../components/HelloWorld.vue'
 import Vue from 'vue'
 
 export default {
-  name: 'page1',
+  name: 'Home',
   data () {
     return {
       version: Vue.version,
