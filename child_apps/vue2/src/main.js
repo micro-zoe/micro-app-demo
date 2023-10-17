@@ -4,10 +4,14 @@ import App from './App.vue'
 import routes from './router'
 import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
+import Antd from 'ant-design-vue'
 import 'element-ui/lib/theme-chalk/index.css'
+import 'ant-design-vue/dist/antd.css'
+
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(Antd)
 
 const router = new VueRouter({
   mode: 'history',
@@ -80,3 +84,7 @@ if (window.__MICRO_APP_ENVIRONMENT__) {
   // 非微前端环境直接渲染
   mount()
 }
+
+// window.addEventListener('popstate', () => {
+//   console.log('子应用 popstate')
+// })

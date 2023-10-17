@@ -1,25 +1,28 @@
 <template>
   <div id="sidebar">
-    <h4>侧边栏</h4>
+    <h3 :abc="activeIndex">侧边栏</h3>
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="activeIndex"
-      :router='true'
       @select="handleSelect"
+      router
     >
       <el-menu-item index="/">
-        <span slot="title">首页</span>
+        <span slot="title" class='submenu-text'>首页</span>
       </el-menu-item>
       <!-- 菜单(el-submenu) index为子应用名称，子菜单(el-menu-item) index为路由地址 -->
       <el-submenu index="vue2">
         <template slot="title">
           <span class='submenu-text'>child-vue2</span>
         </template>
-        <el-menu-item index="/app-vue2">
+        <el-menu-item index="/app-vue2/">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
         <el-menu-item index="/app-vue2/element-ui">
           <span class='menu-item-text'>element-ui</span>
+        </el-menu-item>
+        <el-menu-item index="/app-vue2/ant-design-vue">
+          <span class='menu-item-text'>ant-design-vue</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="vue3">
@@ -113,23 +116,27 @@ export default {
       activeIndex: '/', // 当前激活菜单的 index
     }
   },
+  created () {
+    this.$router.onReady(() => {
+      this.activeIndex = this.$route.path
+    })
+  },
   methods: {
-    // 用户点击菜单时控制基座应用跳转
+    /**
+     * 基座控制子应用跳转分为两个步骤：1、基座跳转 2、子应用跳转
+     * 基座跳转后浏览器地址改变，此时子应用并不会响应浏览器的变化，需要主动控制子应用进行内部跳转
+     */
     handleSelect (index, indexPath) {
-      // 获取子应用appName
-      const appName = indexPath[0]
-      // 子应用跳转地址需要补充前缀
-      const childPath = '/main-vue2' + indexPath[1]
-
+      const appName = indexPath[0] // 获取子应用appName
+      const childPath = '/main-vue2' + indexPath[1] // 子应用跳转地址为：基座前缀 + 跳转地址
       if (
-        index !== '/' &&
-        this.$route.path !== indexPath[1] &&
-        microApp.getActiveApps().includes(appName)
+        index !== '/' && // 非基座首页
+        this.$route.path !== indexPath[1] && // 防止重复跳转
+        microApp.getActiveApps().includes(appName) // 子应用活跃状态
       ) {
         /**
-         * 子应用存在，控制子应用跳转
-         * 注意：
-         *  1. 等到基座路由跳转结束后再控制子应用跳转
+         * 基座跳转后浏览器url已经改变，但子应用并不会响应，需要使用microApp.router.replace控制子应用跳转
+         * TODO: 优化路由跳转方式，去除异步操作异步执行是为了确保基座跳转后再控制子应用跳转
          */
         Promise.resolve().then(() => microApp.router.replace({
           name: appName,
@@ -158,25 +165,28 @@ export default {
   border-right: 1px solid rgb(230, 230, 230);
 }
 
-h4 {
+#sidebar h4 {
   font-weight: revert;
 }
 
-.el-menu-item {
+#sidebar .el-menu-item {
   font-size: 16px;
 }
 
-.el-menu {
+#sidebar .el-menu {
   width: 200px;
   border-right: none;
 }
 
-.submenu-text {
+#sidebar .submenu-text {
   font-size: 16px;
+  font-weight: 500;
   user-select: none;
+  color: #303133;
+  font-family: "Helvetica Neue", tahoma, Arial, Verdana, "Microsoft YaHei", "宋体", sans-serif;
 }
 
-.menu-item-text {
+#sidebar .menu-item-text {
   font-size: 14px;
   user-select: none;
 }

@@ -15,6 +15,11 @@ const routes = [
     name: 'element-ui',
     component: () => import(/* webpackChunkName: "element-ui" */ './pages/element-ui.vue'),
   },
+  {
+    path: '/ant-design-vue',
+    name: 'ant-design-vue',
+    component: () => import(/* webpackChunkName: "ant-design-vue" */ './pages/ant-design-vue.vue'),
+  },
 ];
 
 export default routes;

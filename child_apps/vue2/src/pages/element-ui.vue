@@ -1,35 +1,6 @@
 <template>
   <div class='element-ui-page'>
-    <h1>选择器</h1>
-    <el-select v-model="selectValue" placeholder="请选择">
-      <el-option
-        v-for="item in selectOptions"
-        :key="item.value"
-        :label="item.label"
-        :value="item.value">
-      </el-option>
-    </el-select>
-    <br />
-    <br />
-    <h1>下拉菜单</h1>
-    <el-dropdown trigger="click">
-      <span class="el-dropdown-link">
-        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
-      </span>
-      <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
-        <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
-      </el-dropdown-menu>
-    </el-dropdown>
-    <br />
-    <br />
-    <h1>颜色选择器</h1>
-    <div class="block">
-      <el-color-picker v-model="color1"></el-color-picker>
-    </div>
+    <h1>Form 表单</h1>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name">
         <el-input v-model="ruleForm.name"></el-input>
@@ -88,8 +59,300 @@
         <el-button type="primary" @click="centerDialogVisible = false">确 定</el-button>
       </span>
     </el-dialog>
+    <br />
+    <br />
+    <h1>选择器</h1>
+    <el-select v-model="selectValue" placeholder="请选择">
+      <el-option
+        v-for="item in selectOptions"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
+    <br />
+    <br />
+    <h1>下拉菜单</h1>
+    <el-dropdown trigger="click">
+      <span class="el-dropdown-link">
+        下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-circle-plus-outline">螺蛳粉</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
+        <el-dropdown-item icon="el-icon-circle-check">蚵仔煎</el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+    <br />
+    <br />
+    <h1>颜色选择器</h1>
+    <div class="block">
+      <el-color-picker v-model="color1"></el-color-picker>
+    </div>
+    <br />
+    <br />
+    <h1>Table 表格</h1>
+    <el-table
+      :data="tableData"
+      border
+      style="width: 100%">
+      <el-table-column
+        fixed
+        prop="date"
+        label="日期"
+        width="150">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="province"
+        label="省份"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="city"
+        label="市区"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址"
+        width="300">
+      </el-table-column>
+      <el-table-column
+        prop="zip"
+        label="邮编"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        fixed="right"
+        label="操作"
+        width="100">
+        <template slot-scope="scope">
+          <el-button @click="handleClickElTable(scope.row)" type="text" size="small">查看</el-button>
+          <el-button type="text" size="small">编辑</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <br />
+    <br />
+    <h1>Progress 进度条</h1>
+    <el-progress type="circle" :percentage="0"></el-progress>
+    <el-progress type="circle" :percentage="25"></el-progress>
+    <el-progress type="circle" :percentage="100" status="success"></el-progress>
+    <el-progress type="circle" :percentage="70" status="warning"></el-progress>
+    <el-progress type="circle" :percentage="50" status="exception"></el-progress>
+    <br />
+    <br />
+    <h1>Badge 标记</h1>
+    <el-badge :value="12" class="item">
+      <el-button size="small">评论</el-button>
+    </el-badge>
+    <el-badge :value="3" class="item">
+      <el-button size="small">回复</el-button>
+    </el-badge>
+    <el-badge :value="1" class="item" type="primary">
+      <el-button size="small">评论</el-button>
+    </el-badge>
+    <el-badge :value="2" class="item" type="warning">
+      <el-button size="small">回复</el-button>
+    </el-badge>
 
+    <el-dropdown trigger="click">
+      <span class="el-dropdown-link">
+        点我查看<i class="el-icon-caret-bottom el-icon--right"></i>
+      </span>
+      <el-dropdown-menu slot="dropdown">
+        <el-dropdown-item class="clearfix">
+          评论
+          <el-badge class="mark" :value="12" />
+        </el-dropdown-item>
+        <el-dropdown-item class="clearfix">
+          回复
+          <el-badge class="mark" :value="3" />
+        </el-dropdown-item>
+      </el-dropdown-menu>
+    </el-dropdown>
+    <br />
+    <br />
+    <h1>Alert 警告</h1>
+    <el-alert
+      title="成功提示的文案"
+      type="success"
+      show-icon>
+    </el-alert>
+    <el-alert
+      title="消息提示的文案"
+      type="info"
+      show-icon>
+    </el-alert>
+    <el-alert
+      title="警告提示的文案"
+      type="warning"
+      show-icon>
+    </el-alert>
+    <el-alert
+      title="错误提示的文案"
+      type="error"
+      show-icon>
+    </el-alert>
+    <br />
+    <br />
+    <h1>Message 消息提示</h1>
+    <el-button :plain="true" @click="messageOpen1">消息</el-button>
+    <el-button :plain="true" @click="messageOpen2">成功</el-button>
+    <el-button :plain="true" @click="messageOpen3">警告</el-button>
+    <el-button :plain="true" @click="messageOpen4">错误</el-button>
+    <br />
+    <br />
+    <h1>MessageBox 弹框</h1>
+    <el-button type="text" @click="MessageBoxOpen">点击打开 Message Box</el-button>
+    <br />
+    <br />
+    <h1>Dialog 对话框</h1>
+    <el-button type="text" @click="dialogVisible = true">点击打开 Dialog</el-button>
+    <el-dialog
+      title="提示"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleCloseDialog">
+      <span>这是一段信息</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+      </span>
+    </el-dialog>
+    <br />
+    <br />
+    <h1>Notification 通知</h1>
+    <el-button
+      plain
+      @click="notifyOpen1">
+      成功
+    </el-button>
+    <el-button
+      plain
+      @click="notifyOpen2">
+      警告
+    </el-button>
+    <el-button
+      plain
+      @click="notifyOpen3">
+      消息
+    </el-button>
+    <el-button
+      plain
+      @click="notifyOpen4">
+      错误
+    </el-button>
+    <br />
+    <br />
+    <h1>Popover 弹出框</h1>
+    <el-popover
+      placement="top-start"
+      title="标题"
+      width="200"
+      trigger="hover"
+      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+      <el-button slot="reference" style="margin-left: 10px;">hover 激活</el-button>
+    </el-popover>
 
+    <el-popover
+      placement="bottom"
+      title="标题"
+      width="200"
+      trigger="click"
+      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+      <el-button slot="reference" style="margin-left: 10px;">click 激活</el-button>
+    </el-popover>
+
+    <el-popover
+      ref="popover"
+      placement="right"
+      title="标题"
+      width="200"
+      trigger="focus"
+      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。">
+    </el-popover>
+    <el-button v-popover:popover style="margin-left: 10px;">focus 激活</el-button>
+
+    <el-popover
+      placement="bottom"
+      title="标题"
+      width="200"
+      trigger="manual"
+      content="这是一段内容,这是一段内容,这是一段内容,这是一段内容。"
+      v-model="popoverVisible">
+      <el-button slot="reference" @click="popoverVisible = !popoverVisible" style="margin-left: 10px;">手动激活</el-button>
+    </el-popover>
+    <br />
+    <br />
+    <h1>Popconfirm 气泡确认框</h1>
+    <el-popconfirm title="这是一段内容确定删除吗？">
+      <el-button slot="reference">删除</el-button>
+    </el-popconfirm>
+    <br />
+    <br />
+    <h1>Skeleton 骨架屏</h1>
+    <div style="width: 400px">
+      <p>
+        <el-button @click="setLoading">点我重新加载</el-button>
+      </p>
+      <el-skeleton style="width:400px" :loading="skeletonLoading" animated :count="3">
+        <template slot="template">
+          <el-skeleton-item
+            variant="image"
+            style="width: 400px; height: 267px;"
+          />
+          <div style="padding: 14px;">
+            <el-skeleton-item variant="h3" style="width: 50%;" />
+            <div
+              style="display: flex; align-items: center; justify-items: space-between; margin-top: 16px; height: 16px;"
+            >
+              <el-skeleton-item variant="text" style="margin-right: 16px;" />
+              <el-skeleton-item variant="text" style="width: 30%;" />
+            </div>
+          </div>
+        </template>
+        <template>
+          <el-card
+            :body-style="{ padding: '0px', marginBottom: '1px' }"
+            v-for="item in skeletonLists"
+            :key="item.name"
+          >
+            <img :src="item.imgUrl" class="image multi-content" />
+            <div style="padding: 14px;">
+              <span>{{ item.name }}</span>
+              <div class="bottom card-header">
+                <span class="time">{{ currentDate }}</span>
+                <el-button type="text" class="button">操作按钮</el-button>
+              </div>
+            </div>
+          </el-card>
+        </template>
+      </el-skeleton>
+    </div>
+    <br />
+    <br />
+    <h1>Carousel 走马灯</h1>
+    <el-carousel indicator-position="outside">
+      <el-carousel-item v-for="item in 4" :key="item">
+        <h3>{{ item }}</h3>
+      </el-carousel-item>
+    </el-carousel>
+    <br />
+    <br />
+    <h1>Pagination 分页</h1>
+    <el-pagination
+      background
+      layout="prev, pager, next"
+      :total="1000">
+    </el-pagination>
   </div>
 </template>
 
@@ -154,6 +417,40 @@ export default {
       }],
       selectValue: '',
       color1: '#409EFF',
+      tableData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1518 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1517 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1519 弄',
+        zip: 200333
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        province: '上海',
+        city: '普陀区',
+        address: '上海市普陀区金沙江路 1516 弄',
+        zip: 200333
+      }],
+      skeletonLoading: true,
+      currentDate: '2021-06-01',
+      skeletonLists: [],
+      dialogVisible: false,
+      popoverVisible: false,
     };
   },
   created () {
@@ -164,6 +461,25 @@ export default {
     if (!window.umdGlobalKey) {
       alert('umdGlobalKey missing')
     }
+
+    this.skeletonLoading = false
+    this.skeletonLists = [
+      {
+        imgUrl:
+          'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
+        name: '鹿',
+      },
+      {
+        imgUrl:
+          'https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg',
+        name: '马',
+      },
+      {
+        imgUrl:
+          'https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg',
+        name: '山狮',
+      },
+    ]
   },
   beforeDestroy () {
     console.log('--beforeDestroy--')
@@ -182,13 +498,129 @@ export default {
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
+    handleClickElTable(row) {
+      console.log(row);
+    },
+    setLoading() {
+      this.skeletonLoading = true
+      setTimeout(() => (this.skeletonLoading = false), 2000)
+    },
+    messageOpen1() {
+      this.$message({
+        showClose: true,
+        message: '这是一条消息提示'
+      });
+    },
+    messageOpen2() {
+      this.$message({
+        showClose: true,
+        message: '恭喜你，这是一条成功消息',
+        type: 'success'
+      });
+    },
+    messageOpen3() {
+      this.$message({
+        showClose: true,
+        message: '警告哦，这是一条警告消息',
+        type: 'warning'
+      });
+    },
+    messageOpen4() {
+      this.$message({
+        showClose: true,
+        message: '错了哦，这是一条错误消息',
+        type: 'error'
+      });
+    },
+    MessageBoxOpen() {
+      this.$alert('这是一段内容', '标题名称', {
+        confirmButtonText: '确定',
+        callback: action => {
+          this.$message({
+            type: 'info',
+            message: `action: ${ action }`
+          });
+        }
+      });
+    },
+    notifyOpen1() {
+      this.$notify({
+        title: '成功',
+        message: '这是一条成功的提示消息',
+        type: 'success'
+      });
+    },
+
+    notifyOpen2() {
+      this.$notify({
+        title: '警告',
+        message: '这是一条警告的提示消息',
+        type: 'warning'
+      });
+    },
+
+    notifyOpen3() {
+      this.$notify.info({
+        title: '消息',
+        message: '这是一条消息的提示消息'
+      });
+    },
+
+    notifyOpen4() {
+      this.$notify.error({
+        title: '错误',
+        message: '这是一条错误的提示消息'
+      });
+    },
+    handleCloseDialog(done) {
+      this.$confirm('确认关闭？')
+        .then(_ => {
+          done();
+        })
+        .catch(_ => {});
+    }
   }
 }
 </script>
 
 <style>
 .element-ui-page {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.demo-ruleForm {
   width: 500px;
   margin: 0 auto;
+}
+
+.element-ui-page .item {
+  margin-top: 10px;
+  margin-right: 40px;
+}
+
+.image.multi-content {
+  width: 400px;
+  height: 267px;
+}
+
+.element-ui-page .el-alert {
+  margin: 20px 0 0;
+}
+
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 18px;
+  opacity: 0.75;
+  line-height: 300px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n+1) {
+  background-color: #d3dce6;
 }
 </style>

@@ -3,7 +3,7 @@ import App from './App.vue'
 import routes from './router'
 import VueRouter from 'vue-router'
 import microApp from '@micro-zoe/micro-app'
-import { Menu, Submenu, MenuItem } from 'element-ui';
+import { Menu, Submenu, MenuItem, Button } from 'element-ui';
 
 Vue.config.productionTip = false
 
@@ -19,8 +19,13 @@ const router = new VueRouter({
 Vue.use(Menu)
 Vue.use(Submenu)
 Vue.use(MenuItem)
+Vue.use(Button)
 
 new Vue({
   router,
   render: h => h(App),
 }).$mount('#app')
+
+// window.addEventListener('popstate', () => {
+//   console.log('基座 popstate')
+// })
