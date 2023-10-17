@@ -69,8 +69,12 @@ const SideBar = () => {
 
   // 👇 跟随路由更新侧边栏
   useLayoutEffect(() => {
+    // 当前路由地址
+    const pathname = history.location.pathname.endsWith('/')
+      ? history.location.pathname.substr(0, history.location.pathname.length - 1)
+      : history.location.pathname
+    const keys = matchSidebarItemKeys(pathname)
     // 当前激活选项
-    const keys = matchSidebarItemKeys(history.location.pathname)
     setSelectedKeys(keys)
     // 当前展开项
     setOpenKeys(keys?.slice(0, keys.length - 1))
@@ -89,8 +93,11 @@ const SideBar = () => {
     // 子应用跳转地址需要补充前缀
     const childPath = '/main-react16' + mainPath
     // 👇 主应用切换路由
-    history.push(mainPath)
-
+    if (currentPath !== mainPath) {
+      console.log(mainPath)
+      history.push(mainPath)
+    }
+    // 👇 子应用切换路由
     if (
       index !== '/' &&
       currentPath !== mainPath &&
