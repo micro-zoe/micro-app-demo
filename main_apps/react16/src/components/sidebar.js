@@ -80,17 +80,20 @@ const SideBar = () => {
   const onClick = (e) => {
     const index = e.key
     const indexPath = [...e.keyPath].reverse()
+    const currentPath = history.location.pathname
 
     // 获取子应用appName
     const appName = indexPath[0]
-    // 子应用跳转地址
-    const childPath = indexPath[indexPath.length - 1]
+    // 主应用跳转地址
+    const mainPath = indexPath[indexPath.length - 1]
+    // 子应用跳转地址需要补充前缀
+    const childPath = '/main-react16' + mainPath
     // 👇 主应用切换路由
-    history.push(childPath)
+    history.push(mainPath)
 
     if (
       index !== '/' &&
-      history.location.pathname !== indexPath[1] &&
+      currentPath !== mainPath &&
       microApp.getActiveApps().includes(appName)
     ) {
       /**
