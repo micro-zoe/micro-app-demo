@@ -79,7 +79,7 @@ const SideBar = () => {
       location.pathname.endsWith('/')
         ? location.pathname.substr(0, location.pathname.length - 1)
         : location.pathname
-      }${location.hash}`
+      }${location.hash.replace(/\?.*/, '')}`
     const keys = matchSidebarItemKeys(fullPath)
     // 当前激活选项
     setSelectedKeys(keys || [])
