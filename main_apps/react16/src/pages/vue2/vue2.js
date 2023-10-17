@@ -38,8 +38,9 @@ const Vue2 = () => {
   return (
     <div>
       <micro-app
-        name='appname-vue2'
+        name='vue2'
         url={`${config.vue2}/child/vue2/`}
+        router-mode='custom'
         baseroute='/main-react16/app-vue2'
         data={microAppData}
         onCreated={handleCreate}
