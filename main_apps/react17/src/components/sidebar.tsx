@@ -123,7 +123,7 @@ const SideBar = () => {
     const childPath = '/main-react17' + mainPath
     // 👇 主应用切换路由
     if (currentPath !== mainPath) {
-      history.push(mainPath)
+      history.push(`${mainPath}?${querystringify.stringify({ [appName]: childPath })}`)
     }
     // 👇 子应用切换路由
     if (
