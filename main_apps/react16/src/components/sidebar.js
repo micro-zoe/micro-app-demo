@@ -23,7 +23,7 @@ const sidebarItems = [
   ] },
   { key: 'react16', label: 'child-react16', icon: <AppstoreOutlined />, children: [
     { key: '/app-react16', label: 'home' },
-    { key: '/app-react16/page2', label: 'page2' },
+    { key: '/app-react16/ant-design', label: 'ant design' },
   ] },
   { key: 'react17', label: 'child-react17', icon: <AppstoreOutlined />, children: [
     { key: '/app-react17', label: 'home' },
