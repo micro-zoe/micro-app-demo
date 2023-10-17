@@ -54,8 +54,8 @@
         <el-menu-item index="/app-react16">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-react16/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-react16/ant-design">
+          <span class='menu-item-text'>ant design</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="react17">

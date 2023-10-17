@@ -3,6 +3,8 @@
     <micro-app
       name='react16'
       :url='url'
+      router-mode='custom'
+      baseroute='/main-vue2/app-react16'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
