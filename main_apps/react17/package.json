@@ -8,6 +8,7 @@
     "test": "node scripts/test.js"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@babel/core": "7.12.3",
     "@micro-zoe/micro-app": "latest",
     "@pmmmwh/react-refresh-webpack-plugin": "0.5.7",
@@ -22,6 +23,7 @@
     "@types/react-router-dom": "5.3.3",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
+    "antd": "^5.10.1",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
@@ -60,6 +62,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-safe-parser": "5.0.2",
     "prompts": "2.4.0",
+    "querystringify": "^2.2.0",
     "react": "^17.0.2",
     "react-app-polyfill": "^2.0.0",
     "react-dev-utils": "^11.0.3",
@@ -162,5 +165,8 @@
   },
   "overrides": {
     "react-error-overlay": "6.0.9"
+  },
+  "devDependencies": {
+    "@types/querystringify": "^2.0.0"
   }
 }
