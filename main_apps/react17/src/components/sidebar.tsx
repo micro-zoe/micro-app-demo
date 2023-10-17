@@ -1,72 +1,146 @@
-import { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
-import microApp, { getActiveApps } from '@micro-zoe/micro-app'
-import config from '../config'
+import React, { useLayoutEffect, useState } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
+import { Menu, MenuProps } from 'antd';
+import { AppstoreOutlined } from '@ant-design/icons';
+import microApp from '@micro-zoe/micro-app'
 
-const SideBar = () => {
-  const history = useHistory()
-  // @ts-ignore
-  window.router = history
+const sidebarItems: MenuProps['items'] = [
+  { type: 'divider' },
+  { key: '/', label: '首页', icon: <AppstoreOutlined /> },
+  { type: 'divider' },
+  // 👇 一级菜单 key 为子应用名称，二级菜单 key 为路由地址
+  { key: 'vue2', label: 'child-vue2', icon: <AppstoreOutlined />, children: [
+    { key: '/app-vue2', label: 'home' },
+    { key: '/app-vue2/element-ui', label: 'element-ui' },
+  ] },
+  { key: 'vue3', label: 'child-vue3', icon: <AppstoreOutlined />, children: [
+    { key: '/app-vue3', label: 'home' },
+    { key: '/app-vue3/page2', label: 'page2' },
+  ] },
+  { key: 'vite', label: 'child-vite', icon: <AppstoreOutlined />, children: [
+    { key: '/app-vite', label: 'home' },
+    { key: '/app-vite#/page2', label: 'page2' },
+  ] },
+  { key: 'react16', label: 'child-react16', icon: <AppstoreOutlined />, children: [
+    { key: '/app-react16', label: 'home' },
+    { key: '/app-react16/ant-design', label: 'ant design' },
+  ] },
+  { key: 'react17', label: 'child-react17', icon: <AppstoreOutlined />, children: [
+    { key: '/app-react17#/', label: 'home' },
+    { key: '/app-react17#/child/react17/page2', label: 'page2' },
+  ] },
+  { key: 'angular11', label: 'child-angular11', icon: <AppstoreOutlined />, children: [
+    { key: '/app-angular11', label: 'home' },
+    { key: '/app-angular11/page2', label: 'page2' },
+  ] },
+  { key: 'nextjs11', label: 'child-nextjs11', icon: <AppstoreOutlined />, children: [
+    { key: '/app-nextjs11', label: 'home' },
+    { key: '/app-nextjs11/page2', label: 'page2' },
+  ] },
+  { key: 'nuxtjs2', label: 'child-nuxtjs2', icon: <AppstoreOutlined />, children: [
+    { key: '/app-nuxtjs2', label: 'home' },
+    { key: '/app-nuxtjs2/page2', label: 'page2' },
+  ] },
+];
 
-  // 子应用sidebar通过pushState控制主应用跳转
-  function pushState (appName: string, parentPath: string, childPath: string) {
-    console.log(1111111, appName, parentPath, childPath, history)
-    /**
-     * ******************************** 注意！********************************
-     * 这里展示了如何通过基座的侧边栏控制子应用渲染指定的页面
-     * 案例中嵌入了 vue2、vue3、react、vite、angular、next.js、nuxt.js 等多种子应用
-     * 其中vite和next.js的跳转方式与其它子应用不同，所以单独处理
-     * **********************************************************************
-     */
-    // 首页没有子应用，执行正常跳转即可
-    if (appName === '/') {
-      history.push('/')
-    } else if (appName === 'vite') {
-      // this.handleVite(appName, parentPath, childPath)
-    } else {
-      /**
-       * 基座地址变化或者子应用地址变化，执行跳转操作
-       * microApp.router.current: 用于获取当前子应用的路由信息
-       */
-      if (
-        history.location.pathname !== parentPath || // 基座地址变化
-        // @ts-ignore
-        microApp.router.current.get(appName).fullPath !== childPath // 子应用地址变化
-      ) {
-        let afterJump = Promise.resolve(true)
-        let type = 'replace'
-        if (history.location.pathname !== parentPath) {
-          history.push(parentPath) // 基座跳转后，使用 microApp.router.replace 控制子应用跳转
-        } else {
-          type = 'push' // 基座地址不变，子应用地址变化，使用 microApp.router.push 控制子应用跳转
-        }
-
-        // 判断子应用是否存在
-        if (getActiveApps().includes(appName)) {
-          afterJump.then(() => {
-            // 子应用存在，控制子应用跳转
-            console.log(444444, window.location.href)
-            // @ts-ignore
-            microApp.router[type]({
-              name: appName,
-              path: childPath,
-            })
-          })
-        } else {
-          // 子应用不存在，设置defaultPage，控制子应用初次渲染时的默认页面
-          // @ts-ignore
-          microApp.router.setDefaultPage(appName, childPath)
+const matchSidebarItemKeys = (key: string) => {
+  const iter = (menus: NonNullable<MenuProps['items']>, keys: string[]): string[] | undefined => {
+    for (const menu of menus) {
+      if (!menu) {
+        continue;
+      }
+      if (menu.key === key) {
+        return [...keys, menu.key]
+      }
+      if (typeof menu.key === 'string' && 'children' in menu && menu.children) {
+        const res = iter(menu.children, [...keys, menu.key])
+        if (res) {
+          return res
         }
       }
     }
   }
+  return iter(sidebarItems, [])
+}
 
-  useEffect(() => {
-    // 👇 主应用向sidebar子应用下发一个名为pushState的方法
-    microApp.setData('sidebar', { pushState })
-  })
 
-  return <micro-app name='sidebar' url={`${config.sidebar}/child/sidebar/`} disable-memory-router></micro-app>
+const SideBar = () => {
+  const history = useHistory()
+  const location = useLocation()
+
+  const [selectedKeys, setSelectedKeys] = useState<string[]>(['/'])
+  const [openKeys, setOpenKeys] = useState<string[]>([])
+
+  // 👇 跟随路由更新侧边栏
+  useLayoutEffect(() => {
+    // 当前路由地址
+    const fullPath = `${
+      location.pathname.endsWith('/')
+        ? location.pathname.substr(0, location.pathname.length - 1)
+        : location.pathname
+      }${location.hash}`
+    const keys = matchSidebarItemKeys(fullPath)
+    // 当前激活选项
+    setSelectedKeys(keys || [])
+    // 当前展开项
+    setOpenKeys(keys?.slice(0, keys.length - 1) || [])
+  }, [location.pathname, location.hash])
+
+  // 用户点击菜单时控制基座应用跳转
+  const onClick: MenuProps['onClick'] = (e) => {
+    const index = e.key
+    const indexPath = [...e.keyPath].reverse()
+    const currentPath = location.pathname
+
+    // 获取子应用appName
+    const appName = indexPath[0]
+    // 主应用跳转地址
+    const mainPath = indexPath[indexPath.length - 1]
+    // 子应用跳转地址需要补充前缀
+    const childPath = '/main-react17' + mainPath
+    // 👇 主应用切换路由
+    if (currentPath !== mainPath) {
+      history.push(mainPath)
+    }
+    // 👇 子应用切换路由
+    if (
+      index !== '/' &&
+      currentPath !== mainPath &&
+      microApp.getActiveApps().includes(appName)
+    ) {
+      /**
+       * 子应用存在，控制子应用跳转
+       * 注意：
+       *  1. 等到基座路由跳转结束后再控制子应用跳转
+       */
+      Promise.resolve().then(() => microApp.router.replace({
+        name: appName,
+        path: childPath,
+      }))
+    }
+  };
+
+  return (
+    <div id="sidebar_wrapper" style={{ width: '256px' }}>
+      <div id="sidebar" style={{ position: 'fixed', top: '0', left: '0', bottom: '0', height: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <h4 style={{ borderRight: '1px solid #f0f0f0', margin: '0', padding: '20px 0' }}>侧边栏</h4>
+        <Menu
+          onClick={onClick}
+          style={{
+            width: 256,
+            flex: '1 1 auto',
+            overflowY: 'auto',
+            overflowX: 'hidden',
+          }}
+          openKeys={openKeys}
+          selectedKeys={selectedKeys}
+          mode="inline"
+          items={sidebarItems}
+          onOpenChange={(keys) => { setOpenKeys(keys) }}
+        />
+      </div>
+    </div>
+  )
 }
 
 export default SideBar
