@@ -26,8 +26,8 @@ const sidebarItems = [
     { key: '/app-react16/ant-design', label: 'ant design' },
   ] },
   { key: 'react17', label: 'child-react17', icon: <AppstoreOutlined />, children: [
-    { key: '/app-react17', label: 'home' },
-    { key: '/app-react17/page2', label: 'page2' },
+    { key: '/app-react17#/', label: 'home' },
+    { key: '/app-react17#/child/react17/page2', label: 'page2' },
   ] },
   { key: 'angular11', label: 'child-angular11', icon: <AppstoreOutlined />, children: [
     { key: '/app-angular11', label: 'home' },
@@ -70,15 +70,17 @@ const SideBar = () => {
   // 👇 跟随路由更新侧边栏
   useLayoutEffect(() => {
     // 当前路由地址
-    const pathname = history.location.pathname.endsWith('/')
-      ? history.location.pathname.substr(0, history.location.pathname.length - 1)
-      : history.location.pathname
-    const keys = matchSidebarItemKeys(pathname)
+    const fullPath = `${
+      history.location.pathname.endsWith('/')
+        ? history.location.pathname.substr(0, history.location.pathname.length - 1)
+        : history.location.pathname
+      }${history.location.hash}`
+    const keys = matchSidebarItemKeys(fullPath)
     // 当前激活选项
     setSelectedKeys(keys)
     // 当前展开项
     setOpenKeys(keys?.slice(0, keys.length - 1))
-  }, [history.location.pathname])
+  }, [history.location.pathname, history.location.hash])
 
   // 用户点击菜单时控制基座应用跳转
   const onClick = (e) => {
@@ -94,7 +96,6 @@ const SideBar = () => {
     const childPath = '/main-react16' + mainPath
     // 👇 主应用切换路由
     if (currentPath !== mainPath) {
-      console.log(mainPath)
       history.push(mainPath)
     }
     // 👇 子应用切换路由
