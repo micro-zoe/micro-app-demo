@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
 import Home from './pages/home/home'
 
-const Page2 = lazy(() => import(/* webpackChunkName: "page2" */ './pages/page2/page2'))
+const AntDesignPage = lazy(() => import(/* webpackChunkName: "page2" */ './pages/ant-design/ant-design'))
 
 // 此组件用于监听基座下发的跳转指令
 const NavigatorFromBaseApp = () => {
@@ -34,16 +34,16 @@ function App () {
     <BrowserRouter basename={window.__MICRO_APP_BASE_ROUTE__ || '/child/react16'}>
       <div id='public-links' onClick={onRouteChange}>
         <Link to="/">Home</Link>&ensp;|&ensp;
-        <Link to="/page2">Page2</Link>
+        <Link to="/ant-design">And Design</Link>
       </div>
       <NavigatorFromBaseApp />
       <Switch>
         <Route path="/" exact>
           <Home />
         </Route>
-        <Route path="/page2">
+        <Route path="/ant-design">
           <Suspense fallback={<div>Loading...</div>}>
-            <Page2 />
+            <AntDesignPage />
           </Suspense>
         </Route>
         <Redirect to='/' />
