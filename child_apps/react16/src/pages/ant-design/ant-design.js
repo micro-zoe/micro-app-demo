@@ -32,7 +32,7 @@ const normFile = (e) => {
   return e?.fileList;
 };
 
-const Page2 = () => {
+const AntDesignPage = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
@@ -196,4 +196,4 @@ const Page2 = () => {
   );
 }
 
-export default Page2
+export default AntDesignPage

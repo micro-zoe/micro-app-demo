@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Switch, Route, Redirect, Link, useHistory } from 'react-router-dom'
 import Home from './pages/home/home'
 
-const AntDesignPage = lazy(() => import(/* webpackChunkName: "page2" */ './pages/ant-design/ant-design'))
+const AntDesignPage = lazy(() => import(/* webpackChunkName: "ant-design" */ './pages/ant-design/ant-design'))
 
 // 此组件用于监听基座下发的跳转指令
 const NavigatorFromBaseApp = () => {
