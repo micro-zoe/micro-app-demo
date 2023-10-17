@@ -73,7 +73,7 @@ const SideBar = () => {
     const keys = matchSidebarItemKeys(history.location.pathname)
     setSelectedKeys(keys)
     // 当前展开项
-    setOpenKeys(keys.slice(0, keys.length - 1))
+    setOpenKeys(keys?.slice(0, keys.length - 1))
   }, [history.location.pathname])
 
   // 用户点击菜单时控制基座应用跳转
