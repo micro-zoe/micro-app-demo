@@ -25,7 +25,13 @@ function App () {
   function onRouteChange () {
     if (window.__MICRO_APP_ENVIRONMENT__) {
       // 发送全局数据，通知侧边栏修改菜单展示
-      window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
+      window.microApp.setGlobalData({
+        name: window.__MICRO_APP_NAME__,
+        routePath: window.location.pathname.startsWith(window.__MICRO_APP_BASE_ROUTE__)
+          ? window.location.pathname.substring(window.__MICRO_APP_BASE_ROUTE__.length)
+          : window.location.pathname,
+        routerType: 'history',
+      })
     }
   }
 
