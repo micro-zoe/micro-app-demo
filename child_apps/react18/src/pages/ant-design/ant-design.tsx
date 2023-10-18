@@ -44,7 +44,7 @@ const onFinish = (values: any) => {
 const AntDesignPage = () => {
   return (
     <div>
-      <h1>child-react17-ant-design-5.x</h1>
+      <h1>child-react18-ant-design-5.x</h1>
       <Form
         name="validate_other"
         {...formItemLayout}
