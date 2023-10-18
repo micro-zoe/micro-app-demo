@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 import { Menu } from 'antd';
 import { AppstoreOutlined } from '@ant-design/icons';
 import microApp from '@micro-zoe/micro-app'
@@ -63,6 +63,7 @@ const matchSidebarItemKeys = (key) => {
 
 const SideBar = () => {
   const history = useHistory()
+  const location = useLocation()
 
   const [selectedKeys, setSelectedKeys] = useState(['/'])
   const [openKeys, setOpenKeys] = useState([])
@@ -71,16 +72,16 @@ const SideBar = () => {
   useLayoutEffect(() => {
     // 当前路由地址
     const fullPath = `${
-      history.location.pathname.endsWith('/')
-        ? history.location.pathname.substr(0, history.location.pathname.length - 1)
-        : history.location.pathname
-      }${history.location.hash}`
+      location.pathname.endsWith('/')
+        ? location.pathname.substr(0, location.pathname.length - 1)
+        : location.pathname
+      }${location.hash.replace(/\?.*/, '')}`
     const keys = matchSidebarItemKeys(fullPath)
     // 当前激活选项
     setSelectedKeys(keys)
     // 当前展开项
     setOpenKeys(keys?.slice(0, keys.length - 1))
-  }, [history.location.pathname, history.location.hash])
+  }, [location.pathname, location.hash])
 
   // 用户点击菜单时控制基座应用跳转
   const onClick = (e) => {
