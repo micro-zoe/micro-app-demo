@@ -58,15 +58,15 @@
           <span class='menu-item-text'>ant design</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="react17">
+      <el-submenu index="react18">
         <template slot="title">
-          <span class='submenu-text'>child-react17</span>
+          <span class='submenu-text'>child-react18</span>
         </template>
-        <el-menu-item index="/app-react17">
+        <el-menu-item index="/app-react18/">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-react17/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-react18/ant-design">
+          <span class='menu-item-text'>ant design</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="angular11">

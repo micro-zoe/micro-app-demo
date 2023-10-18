@@ -31,10 +31,9 @@ const routes = [
     component: () => import(/* webpackChunkName: "react16" */ './pages/react16.vue'),
   },
   {
-    // 因为主应用为history路由，react17子应用是hash路由，所以不需要设置基础路由，这里正常设置
-    path: '/app-react17*',
-    name: 'app-react17',
-    component: () => import(/* webpackChunkName: "react17" */ './pages/react17.vue'),
+    path: '/app-react18*',
+    name: 'app-react18',
+    component: () => import(/* webpackChunkName: "react18" */ './pages/react18.vue'),
   },
   {
     // 因为主应用为history路由，vite子应用是hash路由，所以不需要设置基础路由，这里正常设置
