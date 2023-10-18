@@ -62,7 +62,7 @@
         <template slot="title">
           <span class='submenu-text'>child-react18</span>
         </template>
-        <el-menu-item index="/app-react18/">
+        <el-menu-item index="/app-react18">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
         <el-menu-item index="/app-react18/ant-design">
