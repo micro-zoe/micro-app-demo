@@ -1,8 +1,7 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu, MenuProps } from 'antd';
 import { AppstoreOutlined } from '@ant-design/icons';
-import querystringify from 'querystringify';
 import microApp from '@micro-zoe/micro-app'
 
 const sidebarItems: MenuProps['items'] = [
@@ -87,28 +86,6 @@ const SideBar = () => {
     setOpenKeys(keys?.slice(0, keys.length - 1) || [])
   }, [location.pathname, location.hash])
 
-  // 👇 跟随子页面路由更新侧边栏
-  useEffect(() => {
-    const onHashChange = () => {
-      const fullPath = window.location.hash.substring(1);
-      if (fullPath.startsWith('/main-react18/')) {
-        // 如果当前激活的 app 虚拟路由符合基座路由特征并且与基座路由不一致，更新基座路由
-        const mainPath = fullPath.split('?')[0]
-        const querystring = fullPath.substring(mainPath.length)
-        const query = querystringify.parse(querystring) as Record<string, string>
-        const appName = selectedKeys[0]
-        const childPath = query[appName]
-        if (childPath && childPath !== mainPath) {
-          navigate(`${childPath.substring('/main-react18'.length)}${querystring}`)
-        }
-      }
-    };
-    window.addEventListener("hashchange", onHashChange);
-    return () => {
-      window.removeEventListener("hashchange", onHashChange);
-    };
-  }, [selectedKeys, navigate]);
-
   // 用户点击菜单时控制基座应用跳转
   const onClick: MenuProps['onClick'] = (e) => {
     const index = e.key
@@ -123,7 +100,7 @@ const SideBar = () => {
     const childPath = '/main-react18' + mainPath
     // 👇 主应用切换路由
     if (currentPath !== mainPath) {
-      navigate(`${mainPath}?${querystringify.stringify({ [`app-${appName}`]: childPath })}`)
+      navigate(mainPath)
     }
     // 👇 子应用切换路由
     if (
