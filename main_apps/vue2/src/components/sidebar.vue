@@ -121,25 +121,7 @@ export default {
       this.activeIndex = this.$route.path
     })
   },
-  mounted() {
-    microApp.addGlobalDataListener(this.onGlobalDataEvent)
-  },
-  unmounted() {
-    microApp.removeGlobalDataListener(this.onGlobalDataEvent)
-  },
   methods: {
-    onGlobalDataEvent(data) {
-      if (
-        typeof data.name === 'string'
-        && typeof data.routePath === 'string'
-        && typeof data.routerType === 'string'
-      ) {
-        if (data.routerType === 'history') {
-          // 主应用跳转地址需要补全前缀
-          this.$router.push({ path: `/app-${data.name}${data.routePath}` })
-        }
-      }
-    },
     /**
      * 基座控制子应用跳转分为两个步骤：1、基座跳转 2、子应用跳转
      * 基座跳转后浏览器地址改变，此时子应用并不会响应浏览器的变化，需要主动控制子应用进行内部跳转

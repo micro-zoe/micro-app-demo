@@ -25,14 +25,11 @@ function App () {
   // 子应用内部跳转时，通知侧边栏改变菜单状态
   function onRouteChange (): void {
     if (window.__MICRO_APP_ENVIRONMENT__) {
-      // 发送全局数据，通知侧边栏修改菜单展示
-      window.microApp.setGlobalData({
-        name: window.__MICRO_APP_NAME__,
-        routePath: window.location.pathname.startsWith(window.__MICRO_APP_BASE_ROUTE__)
-          ? window.location.pathname.substring(window.__MICRO_APP_BASE_ROUTE__.length)
-          : window.location.pathname,
-        routerType: 'history',
-      })
+      /**
+       * 子应用跳转后向主应用发送 PopStateEvent 事件，使主应用响应路由变化，触发侧边栏高亮
+       * NOTE: 实际项目中并不一定需要，根据实际情况而定
+       */
+      window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
     }
   }
 

@@ -6,6 +6,7 @@ import Router from './router';
 declare global {
   interface Window {
     microApp: any
+    rawWindow: Window
     __MICRO_APP_NAME__: string
     __MICRO_APP_ENVIRONMENT__: string
     __MICRO_APP_BASE_ROUTE__: string
