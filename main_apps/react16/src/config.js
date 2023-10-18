@@ -5,7 +5,7 @@ const config = {
   nextjs11: 'http://localhost:4002',
   nuxtjs2: 'http://localhost:4003',
   react16: 'http://localhost:4004',
-  react17: 'http://localhost:4005',
+  react18: 'http://localhost:4005',
   vite: 'http://localhost:4007',
   vue2: 'http://localhost:4008',
   vue3: 'http://localhost:4009',
