@@ -1,5 +1,5 @@
 import React, { lazy, Suspense, useEffect } from 'react'
-import { HashRouter, Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import Home from './pages/home/home'
 
 const AntDesignPage = lazy(() => import(/* webpackChunkName: "ant-design" */ './pages/ant-design/ant-design'))
@@ -32,7 +32,7 @@ function App () {
 
   const BASE_ROUTE = window.__MICRO_APP_BASE_ROUTE__ || '/child/react18'
   return (
-    <HashRouter basename={BASE_ROUTE}>
+    <BrowserRouter basename={BASE_ROUTE}>
       <div id='public-links' onClick={onRouteChange}>
         <Link to="/">Home</Link>&ensp;|&ensp;
         <Link to="/ant-design">Ant Design 5.x</Link>
@@ -49,7 +49,7 @@ function App () {
         )} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   )
 }
 
