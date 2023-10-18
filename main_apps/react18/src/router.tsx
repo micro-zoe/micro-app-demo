@@ -6,7 +6,7 @@ const Angular11 = lazy(() => import(/* webpackChunkName: "angular11" */ './pages
 const Nextjs11 = lazy(() => import(/* webpackChunkName: "nextjs11" */ './pages/nextjs11/nextjs11'))
 const Nuxtjs2 = lazy(() => import(/* webpackChunkName: "nuxtjs2" */ './pages/nuxtjs2/nuxtjs2'))
 const React16 = lazy(() => import(/* webpackChunkName: "react16" */ './pages/react16/react16'))
-const React17 = lazy(() => import(/* webpackChunkName: "react17" */ './pages/react17/react17'))
+const React18 = lazy(() => import(/* webpackChunkName: "react18" */ './pages/react18/react18'))
 const Vite = lazy(() => import(/* webpackChunkName: "vite" */ './pages/vite/vite'))
 const Vue2 = lazy(() => import(/* webpackChunkName: "vue2" */ './pages/vue2/vue2'))
 const Vue3 = lazy(() => import(/* webpackChunkName: "vue3" */ './pages/vue3/vue3'))
@@ -41,9 +41,9 @@ function App () {
               <React16 />
             </Suspense>
           )} />
-          <Route path="/app-react17/*" element={(
+          <Route path="/app-react18/*" element={(
             <Suspense fallback={<div>Loading...</div>}>
-              <React17 />
+              <React18 />
             </Suspense>
           )} />
           <Route path="/app-vite/*" element={(
