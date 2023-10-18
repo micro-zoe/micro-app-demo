@@ -165,7 +165,7 @@ export default {
   },
   watch: {
     $route () {
-      this.activeIndex = this.$route.path
+      this.activeIndex = this.$route.path.replace(/\/$/ui, '')
     }
   }
 }
