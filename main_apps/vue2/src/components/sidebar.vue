@@ -15,7 +15,7 @@
         <template slot="title">
           <span class='submenu-text'>child-vue2</span>
         </template>
-        <el-menu-item index="/app-vue2/">
+        <el-menu-item index="/app-vue2">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
         <el-menu-item index="/app-vue2/element-ui">
