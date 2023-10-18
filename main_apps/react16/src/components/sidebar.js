@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useHistory, useLocation } from 'react-router-dom'
 import { Menu } from 'antd';
 import { AppstoreOutlined } from '@ant-design/icons';
@@ -68,7 +68,7 @@ const SideBar = () => {
   const [selectedKeys, setSelectedKeys] = useState(['/'])
   const [openKeys, setOpenKeys] = useState([])
 
-  // 👇 跟随路由更新侧边栏
+  // 跟随路由更新侧边栏
   useLayoutEffect(() => {
     // 当前路由地址
     const fullPath = `${
@@ -82,6 +82,22 @@ const SideBar = () => {
     // 当前展开项
     setOpenKeys(keys?.slice(0, keys.length - 1))
   }, [location.pathname, location.hash])
+
+  // 跟随子应用路由跳转
+  useEffect(() => {
+    microApp.addGlobalDataListener((data) => {
+      if (
+        typeof data.name === 'string'
+        && typeof data.routePath === 'string'
+        && typeof data.routerType === 'string'
+      ) {
+        if (data.routerType === 'history') {
+          // 主应用跳转地址需要补全前缀
+          history.push(`/app-${data.name}${data.routePath}`)
+        }
+      }
+    })
+  }, [history])
 
   // 用户点击菜单时控制基座应用跳转
   const onClick = (e) => {
