@@ -21,9 +21,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "PORT=4005 BROWSER=none PUBLIC_URL=child/react18 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "dev": "PORT=4005 BROWSER=none PUBLIC_URL=child/react18 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
   }
 }
