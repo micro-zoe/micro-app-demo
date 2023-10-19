@@ -57,6 +57,7 @@ const AntDesignPage = () => {
         }}
         style={{
           maxWidth: 600,
+          margin: '0 auto',
         }}
       >
         <Form.Item label="Plain Text">
