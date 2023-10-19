@@ -55,7 +55,7 @@
           <span class='menu-item-text'>home</span>
         </el-menu-item>
         <el-menu-item index="/app-react16/ant-design">
-          <span class='menu-item-text'>ant design</span>
+          <span class='menu-item-text'>ant-design</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="react18">
@@ -66,7 +66,7 @@
           <span class='menu-item-text'>home</span>
         </el-menu-item>
         <el-menu-item index="/app-react18/ant-design">
-          <span class='menu-item-text'>ant design</span>
+          <span class='menu-item-text'>ant-design</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="angular11">
@@ -136,7 +136,7 @@ export default {
       ) {
         /**
          * 基座跳转后浏览器url已经改变，但子应用并不会响应，需要使用microApp.router.replace控制子应用跳转
-         * TODO: 优化路由跳转方式，去除异步操作异步执行是为了确保基座跳转后再控制子应用跳转
+         * TODO: 优化路由跳转方式，去除异步操作
          */
         Promise.resolve().then(() => microApp.router.replace({
           name: appName,
