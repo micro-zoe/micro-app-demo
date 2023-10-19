@@ -23,7 +23,7 @@
     "zone.js": "^0.11.8"
   },
   "scripts": {
-    "dev": "PORT=3002 react-scripts start",
+    "dev": "PORT=3002 PUBLIC_URL=main-react18 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
