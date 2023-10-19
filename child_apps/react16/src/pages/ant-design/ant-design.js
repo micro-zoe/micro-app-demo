@@ -14,7 +14,6 @@ import {
   Switch,
   Upload,
 } from 'antd';
-import 'antd/dist/antd.css'
 import './ant-design.css'
 
 const { Option } = Select;

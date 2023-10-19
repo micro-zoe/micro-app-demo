@@ -3,6 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import Router from './router';
+import 'antd/dist/antd.css'
 
 // 与基座的数据交互
 function handleMicroData () {
