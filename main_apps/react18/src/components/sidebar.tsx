@@ -124,7 +124,7 @@ const SideBar = () => {
   };
 
   return (
-    <div id="sidebar_wrapper" style={{ width: '256px' }}>
+    <div id="sidebar_wrapper" style={{ width: '256px', flex: '0 0 auto' }}>
       <div id="sidebar" style={{ position: 'fixed', top: '0', left: '0', bottom: '0', height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <h4 style={{ borderRight: '1px solid #f0f0f0', margin: '0', padding: '20px 0' }}>侧边栏</h4>
         <Menu
