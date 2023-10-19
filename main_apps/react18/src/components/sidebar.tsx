@@ -24,11 +24,11 @@ const sidebarItems: MenuProps['items'] = [
   ] },
   { key: 'react16', label: 'child-react16', icon: <AppstoreOutlined />, children: [
     { key: '/app-react16', label: 'home' },
-    { key: '/app-react16/ant-design', label: 'ant design' },
+    { key: '/app-react16/ant-design', label: 'ant design 4.x' },
   ] },
   { key: 'react18', label: 'child-react18', icon: <AppstoreOutlined />, children: [
     { key: '/app-react18', label: 'home' },
-    { key: '/app-react18/ant-design', label: 'ant design' },
+    { key: '/app-react18/ant-design', label: 'ant design 5.x' },
   ] },
   { key: 'angular11', label: 'child-angular11', icon: <AppstoreOutlined />, children: [
     { key: '/app-angular11', label: 'home' },
