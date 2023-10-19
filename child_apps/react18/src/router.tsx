@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Link, Navigate, useNavigate, useLocation } from 'react-router-dom'
 import Home from './pages/home/home'
+import Navbar from './components/navbar'
 
 const AntDesignPage = lazy(() => import(/* webpackChunkName: "ant-design" */ './pages/ant-design/ant-design'))
 
@@ -22,24 +23,10 @@ const NavigatorFromBaseApp = () => {
 }
 
 function App () {
-  // 子应用内部跳转时，通知侧边栏改变菜单状态
-  function onRouteChange (): void {
-    if (window.__MICRO_APP_ENVIRONMENT__) {
-      /**
-       * 子应用跳转后向主应用发送 PopStateEvent 事件，使主应用响应路由变化，触发侧边栏高亮
-       * NOTE: 实际项目中并不一定需要，根据实际情况而定
-       */
-      window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
-    }
-  }
-
   const BASE_ROUTE = window.__MICRO_APP_BASE_ROUTE__ || '/child/react18'
   return (
     <BrowserRouter basename={BASE_ROUTE}>
-      <div id='public-links' onClick={onRouteChange}>
-        <Link to="/">Home</Link>&ensp;|&ensp;
-        <Link to="/ant-design">Ant Design 5.x</Link>
-      </div>
+      <Navbar />
       <NavigatorFromBaseApp />
       <Routes>
         <Route path="/" element={(
