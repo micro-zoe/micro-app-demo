@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import Router from './router';
 
@@ -32,43 +32,42 @@ function handleMicroData () {
   }
 }
 
+let root: ReturnType<typeof createRoot>
 // ----------分割线---默认模式------两种模式任选其一-----放开注释即可运行------- //
-// ReactDOM.render(
+// root = createRoot(document.getElementById('react18-root')!)
+// root.render((
 //   <React.StrictMode>
 //     <Router />
-//   </React.StrictMode>,
-//   document.getElementById('react18-root')
-// );
-
+//   </React.StrictMode>
+// ))
 // console.log('微应用child-react18渲染了');
 
 // handleMicroData()
 
 // // 监听卸载操作
 // window.addEventListener('unmount', function () {
-//   ReactDOM.unmountComponentAtNode(document.getElementById('react18-root')!);
+//   root.unmount();
 //   console.log('微应用child-react18卸载了');
 // })
 
 // ----------分割线---umd模式------两种模式任选其一-------------- //
 // 将渲染操作放入 mount 函数
 function mount () {
-  ReactDOM.render(
+  root = createRoot(document.getElementById('react18-root')!)
+  root.render((
     <React.StrictMode>
       <Router />
-    </React.StrictMode>,
-    document.getElementById('react18-root')
-  );
-
-  console.log('微应用child-react18渲染了');
+    </React.StrictMode>
+  ))
+  console.log('微应用child-react18渲染了')
 
   handleMicroData()
 }
 
 // 将卸载操作放入 unmount 函数
 function unmount () {
-  ReactDOM.unmountComponentAtNode(document.getElementById('react18-root')!);
-  console.log('微应用child-react18卸载了');
+  root.unmount()
+  console.log('微应用child-react18卸载了')
 }
 
 // 微前端环境下，注册mount和unmount方法
@@ -77,5 +76,5 @@ if (window.__MICRO_APP_ENVIRONMENT__) {
   window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
 } else {
   // 非微前端环境直接渲染
-  mount();
+  mount()
 }
