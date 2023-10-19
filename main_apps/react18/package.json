@@ -2,7 +2,6 @@
   "name": "main-react18",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/main-react18/",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@micro-zoe/micro-app": "^1.0.0-rc.1",
@@ -24,7 +23,7 @@
     "zone.js": "^0.11.8"
   },
   "scripts": {
-    "dev": "PORT=3002 react-app-rewired start",
+    "dev": "PORT=3002 PUBLIC_URL=main-react18 react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject"

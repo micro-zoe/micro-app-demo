@@ -12,6 +12,7 @@ const sidebarItems = [
   { key: 'vue2', label: 'child-vue2', icon: <AppstoreOutlined />, children: [
     { key: '/app-vue2', label: 'home' },
     { key: '/app-vue2/element-ui', label: 'element-ui' },
+    { key: '/app-vue2/ant-design-vue', label: 'ant-design-vue' },
   ] },
   { key: 'vue3', label: 'child-vue3', icon: <AppstoreOutlined />, children: [
     { key: '/app-vue3', label: 'home' },
@@ -23,11 +24,11 @@ const sidebarItems = [
   ] },
   { key: 'react16', label: 'child-react16', icon: <AppstoreOutlined />, children: [
     { key: '/app-react16', label: 'home' },
-    { key: '/app-react16/ant-design', label: 'ant design' },
+    { key: '/app-react16/ant-design', label: 'ant design 4.x' },
   ] },
   { key: 'react18', label: 'child-react18', icon: <AppstoreOutlined />, children: [
     { key: '/app-react18', label: 'home' },
-    { key: '/app-react18/ant-design', label: 'ant design' },
+    { key: '/app-react18/ant-design', label: 'ant design 5.x' },
   ] },
   { key: 'angular11', label: 'child-angular11', icon: <AppstoreOutlined />, children: [
     { key: '/app-angular11', label: 'home' },
@@ -121,7 +122,7 @@ const SideBar = () => {
   };
 
   return (
-    <div id="sidebar_wrapper" style={{ width: '256px' }}>
+    <div id="sidebar_wrapper" style={{ width: '256px', flex: '0 0 auto' }}>
       <div id="sidebar" style={{ position: 'fixed', top: '0', left: '0', bottom: '0', height: '100vh', display: 'flex', flexDirection: 'column' }}>
         <h4 style={{ borderRight: '1px solid #f0f0f0', margin: '0', padding: '20px 0' }}>侧边栏</h4>
         <Menu

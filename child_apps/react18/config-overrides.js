@@ -1,6 +1,11 @@
 /* config-overrides.js */
 
-module.exports = function override(config, env) {
-  config.output.publicPath = '/child/react18/';
-  return config;
+module.exports = {
+  // The Webpack config to use when compiling your react app for development or production.
+  webpack: function override(config, env) {
+    // New config, e.g. config.plugins.push...
+    delete config.output.publicPath
+    // config.output.publicPath = undefined;
+    return config
+  },
 }
