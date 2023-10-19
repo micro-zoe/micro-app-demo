@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#react16-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#public-links {
+  flex: 0 0 auto;
+}
+
+#react16-root > :not(#public-links) {
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
