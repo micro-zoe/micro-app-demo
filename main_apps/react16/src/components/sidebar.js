@@ -12,6 +12,7 @@ const sidebarItems = [
   { key: 'vue2', label: 'child-vue2', icon: <AppstoreOutlined />, children: [
     { key: '/app-vue2', label: 'home' },
     { key: '/app-vue2/element-ui', label: 'element-ui' },
+    { key: '/app-vue2/ant-design-vue', label: 'ant-design-vue' },
   ] },
   { key: 'vue3', label: 'child-vue3', icon: <AppstoreOutlined />, children: [
     { key: '/app-vue3', label: 'home' },
