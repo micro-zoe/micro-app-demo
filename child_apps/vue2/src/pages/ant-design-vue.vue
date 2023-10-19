@@ -190,15 +190,32 @@
     </a-form>
     <br />
     <br />
-    <h1>Checkbox 多选框</h1>
-    <div>
-      <div :style="{ borderBottom: '1px solid #E9E9E9' }">
-        <a-checkbox :indeterminate="indeterminate" :checked="checkAll" @change="onCheckAllChange">
-          Check all
-        </a-checkbox>
-      </div>
-      <br />
-      <a-checkbox-group v-model="checkedList" :options="plainOptions" @change="onChange" />
+    <h1>Alert 警告提示</h1>
+    <div class="alert-container">
+      <a-alert
+        message="Success Tips"
+        description="Detailed description and advices about successful copywriting."
+        type="success"
+        show-icon
+      />
+      <a-alert
+        message="Informational Notes"
+        description="Additional description and informations about copywriting."
+        type="info"
+        show-icon
+      />
+      <a-alert
+        message="Warning"
+        description="This is a warning notice about copywriting."
+        type="warning"
+        show-icon
+      />
+      <a-alert
+        message="Error"
+        description="This is an error message about copywriting."
+        type="error"
+        show-icon
+      />
     </div>
     <br />
     <br />
@@ -284,6 +301,38 @@
     </a-steps>
     <br />
     <br />
+    <h1>Popover 气泡卡片</h1>
+    <div>
+      <a-popover title="Title" trigger="hover">
+        <template slot="content">
+          <p>Content</p>
+          <p>Content</p>
+        </template>
+        <a-button type="primary">
+          Hover me
+        </a-button>
+      </a-popover>
+      <a-popover title="Title" trigger="focus">
+        <template slot="content">
+          <p>Content</p>
+          <p>Content</p>
+        </template>
+        <a-button type="primary">
+          Focus me
+        </a-button>
+      </a-popover>
+      <a-popover title="Title" trigger="click">
+        <template slot="content">
+          <p>Content</p>
+          <p>Content</p>
+        </template>
+        <a-button type="primary">
+          Click me
+        </a-button>
+      </a-popover>
+    </div>
+    <br />
+    <br />
     <h1>TreeSelect 树型选择控件</h1>
     <div class="tree-select-container">
       <a-tree-select
@@ -316,14 +365,164 @@
     </div>
     <br />
     <br />
+    <h1>Table 表格</h1>
+    <div>
+      <a-table :columns="tableColumns" :data-source="tableData">
+        <a slot="name" slot-scope="text">{{ text }}</a>
+        <span slot="customTitle"><a-icon type="smile-o" /> Name</span>
+        <span slot="tags" slot-scope="tags">
+          <a-tag
+            v-for="tag in tags"
+            :key="tag"
+            :color="tag === 'loser' ? 'volcano' : tag.length > 5 ? 'geekblue' : 'green'"
+          >
+            {{ tag.toUpperCase() }}
+          </a-tag>
+        </span>
+        <span slot="action" slot-scope="text, record">
+          <a>Invite 一 {{ record.name }}</a>
+          <a-divider type="vertical" />
+          <a>Delete</a>
+          <a-divider type="vertical" />
+          <a class="ant-dropdown-link"> More actions <a-icon type="down" /> </a>
+        </span>
+      </a-table>
+    </div>
+    <br />
+    <br />
+    <h1>Tree 树形控件</h1>
+    <a-tree
+      checkable
+      :tree-data="treeData"
+      :default-expanded-keys="['0-0-0', '0-0-1']"
+      :default-selected-keys="['0-0-0', '0-0-1']"
+      :default-checked-keys="['0-0-0', '0-0-1']"
+      :replace-fields="replaceFields"
+      @select="onTreeSelect"
+      @check="onTreeCheck"
+    />
+    <br />
+    <br />
+    <h1>Carousel 走马灯</h1>
+    <div class="ant-carousel">
+      <a-carousel arrows>
+        <div
+          slot="prevArrow"
+          slot-scope="props"
+          class="custom-slick-arrow"
+          style="left: 10px;zIndex: 1"
+        >
+          <a-icon type="left-circle" />
+        </div>
+        <div slot="nextArrow" slot-scope="props" class="custom-slick-arrow" style="right: 10px">
+          <a-icon type="right-circle" />
+        </div>
+        <div><h3>1</h3></div>
+        <div><h3>2</h3></div>
+        <div><h3>3</h3></div>
+        <div><h3>4</h3></div>
+      </a-carousel>
+    </div>
+    <br />
+    <br />
+    <h1>Collapse 折叠面板</h1>
+    <div>
+      <a-collapse accordion>
+        <a-collapse-panel key="1" header="This is panel header 1">
+          <p>{{ collapseText }}</p>
+        </a-collapse-panel>
+        <a-collapse-panel key="2" header="This is panel header 2" :disabled="false">
+          <p>{{ collapseText }}</p>
+        </a-collapse-panel>
+        <a-collapse-panel key="3" header="This is panel header 3">
+          <p>{{ collapseText }}</p>
+        </a-collapse-panel>
+      </a-collapse>
+    </div>
+    <br />
+    <br />
     <h1>Pagination 分页</h1>
     <a-pagination :total="500" :item-render="pagItemRender" />
   </div>
 </template>
 
 <script>
-const plainOptions = ['Apple', 'Pear', 'Orange'];
-const defaultCheckedList = ['Apple', 'Orange'];
+const tableColumns = [
+  {
+    dataIndex: 'name',
+    key: 'name',
+    slots: { title: 'customTitle' },
+    scopedSlots: { customRender: 'name' },
+  },
+  {
+    title: 'Age',
+    dataIndex: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    dataIndex: 'address',
+    key: 'address',
+  },
+  {
+    title: 'Tags',
+    key: 'tags',
+    dataIndex: 'tags',
+    scopedSlots: { customRender: 'tags' },
+  },
+  {
+    title: 'Action',
+    key: 'action',
+    scopedSlots: { customRender: 'action' },
+  },
+];
+
+const tableData = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+    tags: ['nice', 'developer'],
+  },
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+    tags: ['loser'],
+  },
+  {
+    key: '3',
+    name: 'Joe Black',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+    tags: ['cool', 'teacher'],
+  },
+];
+
+const treeData = [
+  {
+    name: 'parent 1',
+    key: '0-0',
+    child: [
+      {
+        name: '张晨成',
+        key: '0-0-0',
+        disabled: true,
+        child: [
+          { name: 'leaf', key: '0-0-0-0', disableCheckbox: true },
+          { name: 'leaf', key: '0-0-0-1' },
+        ],
+      },
+      {
+        name: 'parent 1-1',
+        key: '0-0-1',
+        child: [{ key: '0-0-1-0', name: 'zcvc' }],
+      },
+    ],
+  },
+];
 
 export default {
   data: () => ({
@@ -336,12 +535,16 @@ export default {
       marginBottom: '60px',
       boxShadow: '0px -1px 0 0 #e8e8e8 inset',
     },
-    checkedList: defaultCheckedList,
-    indeterminate: true,
-    checkAll: false,
-    plainOptions,
     treeExpandedKeys: [],
     treeExpandedValue: undefined,
+    collapseText: `A dog is a type of domesticated animal.Known for its loyalty and faithfulness,it can be found as a welcome guest in many households across the world.`,
+    tableColumns,
+    tableData,
+    treeData,
+    replaceFields: {
+      children: 'child',
+      title: 'name',
+    },
   }),
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: 'validate_other' });
@@ -370,17 +573,6 @@ export default {
       }
       return originalElement;
     },
-    onChange(checkedList) {
-      this.indeterminate = !!checkedList.length && checkedList.length < plainOptions.length;
-      this.checkAll = checkedList.length === plainOptions.length;
-    },
-    onCheckAllChange(e) {
-      Object.assign(this, {
-        checkedList: e.target.checked ? plainOptions : [],
-        indeterminate: false,
-        checkAll: e.target.checked,
-      });
-    },
     getCurrentStyleCheckBox(current, today) {
       const style = {};
       if (current.date() === 1) {
@@ -391,7 +583,13 @@ export default {
     },
     onTimePickerChange(time, timeString) {
       console.log(time, timeString);
-    }
+    },
+    onTreeSelect(selectedKeys, info) {
+      console.log('selected', selectedKeys, info);
+    },
+    onTreeCheck(checkedKeys, info) {
+      console.log('onCheck', checkedKeys, info);
+    },
   },
 };
 </script>
@@ -422,5 +620,39 @@ export default {
 .tree-select-container {
   width: 200px;
   margin: 0 auto;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 160px;
+  line-height: 160px;
+  background: #364d79;
+  overflow: hidden;
+}
+
+.ant-carousel .custom-slick-arrow {
+  width: 25px;
+  height: 25px;
+  font-size: 25px;
+  color: #fff;
+  background-color: rgba(31, 45, 61, 0.11);
+  opacity: 0.3;
+}
+
+.ant-carousel .custom-slick-arrow:before {
+  display: none;
+}
+
+.ant-carousel .custom-slick-arrow:hover {
+  opacity: 0.5;
+  color: #fff;
+}
+
+.ant-carousel .slick-slide h3 {
+  color: #fff;
+}
+
+.ant-design-vue-page .ant-alert {
+  margin-bottom: 16px;
 }
 </style>

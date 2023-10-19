@@ -2,6 +2,7 @@
   "name": "child-react18",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/child/react18/",
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
     "@testing-library/jest-dom": "^5.17.0",
@@ -21,9 +22,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "dev": "PORT=4005 react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "dev": "PORT=4005 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -43,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
   }
 }
