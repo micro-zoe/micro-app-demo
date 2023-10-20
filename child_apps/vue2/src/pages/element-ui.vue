@@ -1,6 +1,6 @@
 <template>
   <div class='element-ui-page'>
-    <h1>Form 表单</h1>
+    <h1 style="text-align: center;">Form 表单</h1>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name">
         <el-input v-model="ruleForm.name"></el-input>
@@ -91,62 +91,6 @@
     <div class="block">
       <el-color-picker v-model="color1"></el-color-picker>
     </div>
-    <br />
-    <br />
-    <h1>Table 表格</h1>
-    <el-table
-      :data="tableData"
-      border
-      style="width: 100%">
-      <el-table-column
-        fixed
-        prop="date"
-        label="日期"
-        width="150">
-      </el-table-column>
-      <el-table-column
-        prop="name"
-        label="姓名"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="province"
-        label="省份"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="city"
-        label="市区"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        prop="address"
-        label="地址"
-        width="300">
-      </el-table-column>
-      <el-table-column
-        prop="zip"
-        label="邮编"
-        width="120">
-      </el-table-column>
-      <el-table-column
-        fixed="right"
-        label="操作"
-        width="100">
-        <template slot-scope="scope">
-          <el-button @click="handleClickElTable(scope.row)" type="text" size="small">查看</el-button>
-          <el-button type="text" size="small">编辑</el-button>
-        </template>
-      </el-table-column>
-    </el-table>
-    <br />
-    <br />
-    <h1>Progress 进度条</h1>
-    <el-progress type="circle" :percentage="0"></el-progress>
-    <el-progress type="circle" :percentage="25"></el-progress>
-    <el-progress type="circle" :percentage="100" status="success"></el-progress>
-    <el-progress type="circle" :percentage="70" status="warning"></el-progress>
-    <el-progress type="circle" :percentage="50" status="exception"></el-progress>
     <br />
     <br />
     <h1>Badge 标记</h1>
@@ -298,6 +242,141 @@
     </el-popconfirm>
     <br />
     <br />
+    <h1>Drawer 抽屉</h1>
+    <el-radio-group v-model="direction">
+      <el-radio label="ltr">从左往右开</el-radio>
+      <el-radio label="rtl">从右往左开</el-radio>
+      <el-radio label="ttb">从上往下开</el-radio>
+      <el-radio label="btt">从下往上开</el-radio>
+    </el-radio-group>
+
+    <el-button @click="drawer = true" type="primary" style="margin-left: 16px;">
+      点我打开
+    </el-button>
+
+    <el-drawer
+      title="我是标题"
+      :visible.sync="drawer"
+      :direction="direction"
+    >
+      <span>我来啦!</span>
+    </el-drawer>
+    <br />
+    <br />
+    <h1>Calendar 日历</h1>
+    <el-calendar>
+      <!-- 这里使用的是 2.5 slot 语法，对于新项目请使用 2.6 slot 语法-->
+      <template
+        slot="dateCell"
+        slot-scope="{date, data}">
+        <p :class="data.isSelected ? 'is-selected' : ''">
+          {{ data.day.split('-').slice(1).join('-') }} {{ data.isSelected ? '✔️' : ''}}
+        </p>
+      </template>
+    </el-calendar>
+    <br />
+    <br />
+    <h1>Table 表格</h1>
+    <el-table
+      :data="tableData"
+      border
+      style="width: 100%">
+      <el-table-column
+        fixed
+        prop="date"
+        label="日期"
+        width="150">
+      </el-table-column>
+      <el-table-column
+        prop="name"
+        label="姓名"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="province"
+        label="省份"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="city"
+        label="市区"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        prop="address"
+        label="地址"
+        width="300">
+      </el-table-column>
+      <el-table-column
+        prop="zip"
+        label="邮编"
+        width="120">
+      </el-table-column>
+      <el-table-column
+        fixed="right"
+        label="操作"
+        width="100">
+        <template slot-scope="scope">
+          <el-button @click="handleClickElTable(scope.row)" type="text" size="small">查看</el-button>
+          <el-button type="text" size="small">编辑</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <br />
+    <br />
+    <h1>Progress 进度条</h1>
+    <el-progress type="circle" :percentage="0"></el-progress>
+    <el-progress type="circle" :percentage="25"></el-progress>
+    <el-progress type="circle" :percentage="100" status="success"></el-progress>
+    <el-progress type="circle" :percentage="70" status="warning"></el-progress>
+    <el-progress type="circle" :percentage="50" status="exception"></el-progress>
+    <br />
+    <br />
+    <h1>Collapse 折叠面板</h1>
+    <el-collapse v-model="activeCollapseNames">
+      <el-collapse-item title="一致性 Consistency" name="1">
+        <div>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；</div>
+        <div>在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。</div>
+      </el-collapse-item>
+      <el-collapse-item title="反馈 Feedback" name="2">
+        <div>控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；</div>
+        <div>页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。</div>
+      </el-collapse-item>
+      <el-collapse-item title="效率 Efficiency" name="3">
+        <div>简化流程：设计简洁直观的操作流程；</div>
+        <div>清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；</div>
+        <div>帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。</div>
+      </el-collapse-item>
+      <el-collapse-item title="可控 Controllability" name="4">
+        <div>用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；</div>
+        <div>结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。</div>
+      </el-collapse-item>
+    </el-collapse>
+    <br />
+    <br />
+    <h1>Timeline 时间线</h1>
+    <el-timeline>
+      <el-timeline-item timestamp="2018/4/12" placement="top">
+        <el-card>
+          <h4>更新 Github 模板</h4>
+          <p>王小虎 提交于 2018/4/12 20:46</p>
+        </el-card>
+      </el-timeline-item>
+      <el-timeline-item timestamp="2018/4/3" placement="top">
+        <el-card>
+          <h4>更新 Github 模板</h4>
+          <p>王小虎 提交于 2018/4/3 20:46</p>
+        </el-card>
+      </el-timeline-item>
+      <el-timeline-item timestamp="2018/4/2" placement="top">
+        <el-card>
+          <h4>更新 Github 模板</h4>
+          <p>王小虎 提交于 2018/4/2 20:46</p>
+        </el-card>
+      </el-timeline-item>
+    </el-timeline>
+    <br />
+    <br />
     <h1>Skeleton 骨架屏</h1>
     <div style="width: 400px">
       <p>
@@ -347,12 +426,33 @@
     </el-carousel>
     <br />
     <br />
+    <h1>InfiniteScroll 无限滚动</h1>
+    <ul class="infinite-list" v-infinite-scroll="infiniteLoad" style="overflow:auto">
+      <li v-for="i in infiniteCount" class="infinite-list-item">{{ i }}</li>
+    </ul>
+    <br />
+    <br />
     <h1>Pagination 分页</h1>
     <el-pagination
       background
       layout="prev, pager, next"
       :total="1000">
     </el-pagination>
+    <el-backtop target="html" :bottom="100">
+      <div
+        style="{
+          height: 100%;
+          width: 100%;
+          background-color: #f2f5f6;
+          box-shadow: 0 0 6px rgba(0,0,0, .12);
+          text-align: center;
+          line-height: 40px;
+          color: #1989fa;
+        }"
+      >
+        UP
+      </div>
+    </el-backtop>
   </div>
 </template>
 
@@ -451,6 +551,10 @@ export default {
       skeletonLists: [],
       dialogVisible: false,
       popoverVisible: false,
+      infiniteCount: 0,
+      activeCollapseNames: ['1'],
+      drawer: false,
+      direction: 'rtl',
     };
   },
   created () {
@@ -578,7 +682,10 @@ export default {
           done();
         })
         .catch(_ => {});
-    }
+    },
+    infiniteLoad () {
+      this.infiniteCount += 2
+    },
   }
 }
 </script>
@@ -623,4 +730,25 @@ export default {
 .el-carousel__item:nth-child(2n+1) {
   background-color: #d3dce6;
 }
+
+.element-ui-page .infinite-list {
+  height: 300px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.element-ui-page .infinite-list .infinite-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  background: #e8f3fe;
+  margin: 10px;
+  color: #7dbcfc;
+}
+
+.element-ui-page .is-selected {
+    color: #1989FA;
+  }
 </style>

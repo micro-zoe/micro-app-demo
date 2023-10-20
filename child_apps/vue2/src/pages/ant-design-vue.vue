@@ -1,6 +1,6 @@
 <template>
   <div class='ant-design-vue-page'>
-    <h1>Form 表单</h1>
+    <h1 style="text-align: center;">Form 表单</h1>
     <a-form
       id="components-form-demo-validate-other"
       :form="form"
@@ -182,7 +182,7 @@
         </div>
       </a-form-item>
 
-      <a-form-item :wrapper-col="{ span: 12, offset: 6 }">
+      <a-form-item :wrapper-col="{ span: 12, offset: 6 }" style="text-align: center;">
         <a-button type="primary" html-type="submit">
           Submit
         </a-button>
@@ -216,6 +216,51 @@
         type="error"
         show-icon
       />
+    </div>
+    <br />
+    <br />
+    <h1>Message 全局提示</h1>
+    <div>
+      <a-button @click="messageSuccess">
+        Success
+      </a-button>
+      <a-button @click="messageError">
+        Error
+      </a-button>
+      <a-button @click="messageWarning">
+        Warning
+      </a-button>
+    </div>
+    <br />
+    <br />
+    <h1>Notification 通知提醒框</h1>
+    <div>
+      <a-button @click="() => openNotificationWithIcon('success')">
+        Success
+      </a-button>
+      <a-button @click="() => openNotificationWithIcon('info')">
+        Info
+      </a-button>
+      <a-button @click="() => openNotificationWithIcon('warning')">
+        Warning
+      </a-button>
+      <a-button @click="() => openNotificationWithIcon('error')">
+        Error
+      </a-button>
+    </div>
+    <br />
+    <br />
+    <h1>Modal 对话框</h1>
+    <div>
+      <a-button @click="showConfirm">
+        Confirm
+      </a-button>
+      <a-button type="dashed" @click="showDeleteConfirm">
+        Delete
+      </a-button>
+      <a-button type="dashed" @click="showPropsConfirm">
+        With extra props
+      </a-button>
     </div>
     <br />
     <br />
@@ -253,12 +298,43 @@
     </div>
     <br />
     <br />
+    <h1>Drawer 抽屉</h1>
+    <div>
+      <a-radio-group style="margin-right: 8px" :default-value="drawerPlacement" @change="onDrawerChange">
+        <a-radio value="top">
+          top
+        </a-radio>
+        <a-radio value="right">
+          right
+        </a-radio>
+        <a-radio value="bottom">
+          bottom
+        </a-radio>
+        <a-radio value="left">
+          left
+        </a-radio>
+      </a-radio-group>
+      <a-button type="primary" @click="showDrawer">
+        Open
+      </a-button>
+      <a-drawer
+        title="Basic Drawer"
+        :placement="drawerPlacement"
+        :closable="false"
+        :visible="drawerVisible"
+        @close="onDrawerClose"
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </a-drawer>
+    </div>
+    <br />
+    <br />
     <h1>Switch 开关</h1>
     <div>
       <a-switch checked-children="开" un-checked-children="关" default-checked />
-      <br />
       <a-switch checked-children="1" un-checked-children="0" />
-      <br />
       <a-switch default-checked>
         <a-icon slot="checkedChildren" type="check" />
         <a-icon slot="unCheckedChildren" type="close" />
@@ -299,6 +375,16 @@
       <a-step status="process" title="current process" />
       <a-step status="wait" title="wait" disabled />
     </a-steps>
+    <br />
+    <br />
+    <h1>Progress 进度条</h1>
+    <div>
+      <a-progress :percent="30" />
+      <a-progress :percent="50" status="active" />
+      <a-progress :percent="70" status="exception" />
+      <a-progress :percent="100" />
+      <a-progress :percent="50" :show-info="false" />
+    </div>
     <br />
     <br />
     <h1>Popover 气泡卡片</h1>
@@ -360,7 +446,7 @@
     <br />
     <br />
     <h1>Calendar 日历</h1>
-    <div :style="{ width: '300px', margin: '0 auto', border: '1px solid #d9d9d9', borderRadius: '4px' }">
+    <div :style="{ width: '300px', border: '1px solid #d9d9d9', borderRadius: '4px' }">
       <a-calendar :fullscreen="false" />
     </div>
     <br />
@@ -441,8 +527,25 @@
     </div>
     <br />
     <br />
+    <h1>Skeleton 骨架屏</h1>
+    <a-skeleton active />
+    <br />
+    <br />
     <h1>Pagination 分页</h1>
     <a-pagination :total="500" :item-render="pagItemRender" />
+    <br />
+    <br />
+    <h1>BackTop 回到顶部</h1>
+    <div id="components-back-top-demo-custom">
+      <a-back-top>
+        <div class="ant-back-top-inner">
+          UP
+        </div>
+      </a-back-top>
+      Scroll down to see the bottom-right
+      <strong style="color: #1088e9"> blue </strong>
+      button.
+    </div>
   </div>
 </template>
 
@@ -545,6 +648,8 @@ export default {
       children: 'child',
       title: 'name',
     },
+    drawerVisible: false,
+    drawerPlacement: 'left',
   }),
   beforeCreate() {
     this.form = this.$form.createForm(this, { name: 'validate_other' });
@@ -590,6 +695,77 @@ export default {
     onTreeCheck(checkedKeys, info) {
       console.log('onCheck', checkedKeys, info);
     },
+    showDrawer() {
+      this.drawerVisible = true;
+    },
+    onDrawerClose() {
+      this.drawerVisible = false;
+    },
+    onDrawerChange(e) {
+      this.drawerPlacement = e.target.value;
+    },
+    messageSuccess() {
+      this.$message.success('This is a success message');
+    },
+    messageError() {
+      this.$message.error('This is an error message');
+    },
+    messageWarning() {
+      this.$message.warning('This is a warning message');
+    },
+    showConfirm() {
+      this.$confirm({
+        title: 'Do you Want to delete these items?',
+        content: h => <div style="color:red;">Some descriptions</div>,
+        onOk() {
+          console.log('OK');
+        },
+        onCancel() {
+          console.log('Cancel');
+        },
+        class: 'test',
+      });
+    },
+    showDeleteConfirm() {
+      this.$confirm({
+        title: 'Are you sure delete this task?',
+        content: 'Some descriptions',
+        okText: 'Yes',
+        okType: 'danger',
+        cancelText: 'No',
+        onOk() {
+          console.log('OK');
+        },
+        onCancel() {
+          console.log('Cancel');
+        },
+      });
+    },
+    showPropsConfirm() {
+      this.$confirm({
+        title: 'Are you sure delete this task?',
+        content: 'Some descriptions',
+        okText: 'Yes',
+        okType: 'danger',
+        okButtonProps: {
+          props: { disabled: true },
+        },
+        cancelText: 'No',
+        onOk() {
+          console.log('OK');
+        },
+        onCancel() {
+          console.log('Cancel');
+        },
+      });
+    },
+    openNotificationWithIcon(type) {
+      this.$notification[type]({
+        message: 'Notification Title',
+        description:
+          'This is the content of the notification. This is the content of the notification. This is the content of the notification.',
+      });
+    },
   },
 };
 </script>
@@ -599,6 +775,10 @@ export default {
   margin: 0 auto;
 }
 
+.ant-design-vue-page .ant-btn {
+  margin: 0 5px;
+}
+
 #components-form-demo-validate-other .dropbox {
   height: 180px;
   line-height: 1.5;
@@ -606,7 +786,6 @@ export default {
 
 .checkbox-container {
   width: 250px;
-  margin: 0 auto;
 }
 
 .checkbox-container .ant-calendar-picker {
@@ -619,7 +798,6 @@ export default {
 
 .tree-select-container {
   width: 200px;
-  margin: 0 auto;
 }
 
 .ant-carousel .slick-slide {
@@ -654,5 +832,20 @@ export default {
 
 .ant-design-vue-page .ant-alert {
   margin-bottom: 16px;
+}
+
+#components-back-top-demo-custom .ant-back-top {
+  bottom: 100px;
+}
+
+#components-back-top-demo-custom .ant-back-top-inner {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: #1088e9;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
 }
 </style>
