@@ -30,19 +30,16 @@ export default {
       this.activeIndex = this.$route.path
     })
   },
-  mounted() {
-    /**
-     * 子应用跳转后向主应用发送PopStateEvent事件，使主应用响应路由变化，触发侧边栏高亮
-     * NOTE: 实际项目中并不一定需要，根据实际情况而定
-     */
-    this.$router.afterEach(() => {
-      window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
-    })
-  },
   watch: {
     // 监听路由变化
     $route () {
       this.activeIndex = this.$route.path
+      /**
+       * 跳转后向主应用发送PopStateEvent事件，使主应用响应路由变化，触发侧边栏高亮，实际项目中并不一定需要，根据实际情况而定
+       */
+      if (window.__MICRO_APP_ENVIRONMENT__) {
+        window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+      }
     }
   }
 }
@@ -53,7 +50,6 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   padding-bottom: 50px;
 }
