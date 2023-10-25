@@ -1,7 +1,9 @@
 import React from 'react'
 import { Tabs } from 'antd'
-import Form from './components/form'
 import Button from './components/button'
+import Icon from './components/icon'
+import Form from './components/form'
+import Typography from './components/typography'
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -23,6 +25,11 @@ const AntDesignPage = () => {
             label: `Button 按钮`,
             key: 'Button',
             children: <><h1>child-react16-ant-design-4.x: Button</h1><Button /></>,
+          },
+          {
+            label: `Icon 图标`,
+            key: 'Icon',
+            children: <><h1>child-react16-ant-design-4.x: Icon</h1><Icon /></>,
           },
           {
             label: `数据录入`,
