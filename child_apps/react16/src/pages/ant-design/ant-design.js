@@ -32,6 +32,11 @@ const AntDesignPage = () => {
             children: <><h1>child-react16-ant-design-4.x: Icon</h1><Icon /></>,
           },
           {
+            label: `Typography 排版`,
+            key: 'Typography',
+            children: <><h1>child-react16-ant-design-4.x: Button</h1><Typography /></>,
+          },
+          {
             label: `数据录入`,
             key: '数据录入',
             disabled: true,
