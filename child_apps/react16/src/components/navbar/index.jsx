@@ -9,7 +9,7 @@ const items = [
   },
   {
     key: '/ant-design',
-    label: 'Ant Design 5.x',
+    label: 'Ant Design 4.x',
   },
 ]
 
