@@ -4,6 +4,7 @@ import Button from './components/button'
 import Icon from './components/icon'
 import Typography from './components/typography'
 import Divider from './components/divider'
+import Grid from './components/grid'
 import Form from './components/form'
 import './ant-design.css'
 
@@ -46,6 +47,11 @@ const AntDesignPage = () => {
             label: `Divider 分割线`,
             key: 'Divider',
             children: <><h1>child-react16-ant-design-4.x: Divider</h1><Divider /></>,
+          },
+          {
+            label: `Grid 栅格`,
+            key: 'Grid',
+            children: <><h1>child-react16-ant-design-4.x: Grid</h1><Grid /></>,
           },
           {
             label: `数据录入`,
