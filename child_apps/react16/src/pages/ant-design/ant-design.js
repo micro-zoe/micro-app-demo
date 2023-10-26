@@ -2,8 +2,9 @@ import React from 'react'
 import { Tabs } from 'antd'
 import Button from './components/button'
 import Icon from './components/icon'
-import Form from './components/form'
 import Typography from './components/typography'
+import Divider from './components/divider'
+import Form from './components/form'
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -35,6 +36,16 @@ const AntDesignPage = () => {
             label: `Typography 排版`,
             key: 'Typography',
             children: <><h1>child-react16-ant-design-4.x: Button</h1><Typography /></>,
+          },
+          {
+            label: `布局`,
+            key: '布局',
+            disabled: true,
+          },
+          {
+            label: `Divider 分割线`,
+            key: 'Divider',
+            children: <><h1>child-react16-ant-design-4.x: Divider</h1><Divider /></>,
           },
           {
             label: `数据录入`,
