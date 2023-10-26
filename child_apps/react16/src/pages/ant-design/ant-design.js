@@ -5,6 +5,7 @@ import Icon from './components/icon'
 import Typography from './components/typography'
 import Divider from './components/divider'
 import Grid from './components/grid'
+import Layout from './components/layout'
 import Form from './components/form'
 import './ant-design.css'
 
@@ -52,6 +53,11 @@ const AntDesignPage = () => {
             label: `Grid 栅格`,
             key: 'Grid',
             children: <><h1>child-react16-ant-design-4.x: Grid</h1><Grid /></>,
+          },
+          {
+            label: `Layout 布局`,
+            key: 'Layout',
+            children: <><h1>child-react16-ant-design-4.x: Layout</h1><Layout /></>,
           },
           {
             label: `数据录入`,
