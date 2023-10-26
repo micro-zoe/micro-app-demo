@@ -1,8 +1,16 @@
 <template>
   <div id=vue3-app>
-    <div id='public-links' @click="onRouteChange">
-      <router-link to="/" page-path=''>Home</router-link> |
-      <router-link to="/page2" page-path='/page2'>Page2</router-link>
+    <div>
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        router
+      >
+        <el-menu-item index="/">home</el-menu-item>
+        <el-menu-item index="/element-plus-1">element-plus 1.x</el-menu-item>
+        <el-menu-item index="/ant-design-vue-4">ant-design-vue 4.x</el-menu-item>
+      </el-menu>
     </div>
     <router-view v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'" mode="out-in">
@@ -18,14 +26,33 @@
 </template>
 
 <script lang="ts">
+// @ts-nocheck
+import { defineComponent } from 'vue'
 export default {
   name: 'App',
-  methods: {
-    // 子应用内部跳转时，通知侧边栏改变菜单状态
-    onRouteChange () {
+  data () {
+    return {
+      activeIndex: '/',
+    }
+  },
+  created () {
+    // 初始化 activeIndex
+    this.$router.isReady().then(() => {
+      this.activeIndex = this.$route.path
+    })
+  },
+  watch: {
+    // 监听路由变化
+    $route () {
+      
+      /**
+       * 跳转后向主应用发送PopStateEvent事件，使主应用响应路由变化，触发侧边栏高亮，实际项目中并不一定需要，根据实际情况而定
+       */
+      if(this.activeIndex === this.$route.path) {return;}
+      this.activeIndex = this.$route.path
+      
       if (window.__MICRO_APP_ENVIRONMENT__) {
-        // 发送全局数据，通知侧边栏修改菜单展示
-        window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
+        window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
       }
     }
   }

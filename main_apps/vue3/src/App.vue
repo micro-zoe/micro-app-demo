@@ -1,11 +1,9 @@
 <template>
   <div id="app-container">
-    <micro-app name='sidebar' :url='url' :data='sidebarData' disable-memory-router></micro-app>
+    <SideBar />
     <router-view id='router-container' v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'" mode="out-in">
         <keep-alive>
-          <div>key: {{$route.name}}</div>
-          <!-- 当key值变化时，会导致整个应用重新渲染 -->
           <component
             :is="Component"
             :key="$route.name"
@@ -17,6 +15,7 @@
 </template>
 
 <script lang="ts">
+import SideBar from './components/sidebar.vue'
 import { defineComponent } from 'vue'
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 import config from './config'
@@ -108,6 +107,9 @@ export default defineComponent({
         },
       }
     }
+  },
+  components: {
+    SideBar,
   },
 mounted () {
   // @ts-ignore

@@ -22,7 +22,7 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
+    // config.resolve.alias.set("@micro-zoe/micro-app", path.join(__dirname, '../../../micro-app/lib/index.esm.js'))
 
     config.module
     .rule('vue')
