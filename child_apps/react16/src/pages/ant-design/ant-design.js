@@ -6,6 +6,7 @@ import Typography from './components/typography'
 import Divider from './components/divider'
 import Grid from './components/grid'
 import Layout from './components/layout'
+import Space from './components/space'
 import Form from './components/form'
 import './ant-design.css'
 
@@ -58,6 +59,11 @@ const AntDesignPage = () => {
             label: `Layout 布局`,
             key: 'Layout',
             children: <><h1>child-react16-ant-design-4.x: Layout</h1><Layout /></>,
+          },
+          {
+            label: `Space 间距`,
+            key: 'Space',
+            children: <><h1>child-react16-ant-design-4.x: Space</h1><Space /></>,
           },
           {
             label: `数据录入`,
