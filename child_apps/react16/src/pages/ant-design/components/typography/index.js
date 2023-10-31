@@ -1,36 +1,65 @@
-import React from 'react'
-import BasicDemo from './basic'
-import TitleDemo from './title'
-import LinkDemo from './link'
-import EditableDemo from './editable'
-import EllipsisDemo from './ellipsis'
-import SuffixDemo from './suffix'
-import RowsDemo from './rows'
+import React from 'react';
+import TypographyBasicDemo from './basic';
+import TypographyTitleDemo from './title';
+import TypographyTextDemo from './text';
+import TypographyInteractiveDemo from './interactive';
+import TypographyEllipsisDemo from './ellipsis';
+import TypographyEllipsisMiddleDemo from './ellipsis-middle';
+import TypographySuffixDemo from './suffix';
+import './index.css';
 
-const App = () => (
+const TypographyDemo = () => (
   <div className="typography-demo">
     <hr />
-    <h2>Basic</h2>
-    <BasicDemo />
+    <div id="components-typography-demo-basic">
+      <h2>Basic 基本</h2>
+      <div className="code-box-demo">
+        <TypographyBasicDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Title</h2>
-    <TitleDemo />
+    <div id="components-typography-demo-title">
+      <h2>Title 标题组件</h2>
+      <div className="code-box-demo">
+        <TypographyTitleDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Link</h2>
-    <LinkDemo />
+    <div id="components-typography-demo-text">
+      <h2>Text 文本与超链接组件</h2>
+      <div className="code-box-demo">
+        <TypographyTextDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Editable</h2>
-    <EditableDemo />
+    <div id="components-typography-demo-interactive">
+      <h2>Interactive 可交互</h2>
+      <div className="code-box-demo">
+        <TypographyInteractiveDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Ellipsis</h2>
-    <EllipsisDemo />
+    <div id="components-typography-demo-ellipsis">
+      <h2>Ellipsis 省略号</h2>
+      <div className="code-box-demo">
+        <TypographyEllipsisDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Suffix</h2>
-    <SuffixDemo />
+    <div id="components-typography-demo-ellipsis-middle">
+      <h2>EllipsisMiddle 省略中间</h2>
+      <div className="code-box-demo">
+        <TypographyEllipsisMiddleDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Rows</h2>
-    <RowsDemo />
+    <div id="components-typography-demo-suffix">
+      <h2>Suffix 后缀</h2>
+      <div className="code-box-demo">
+        <TypographySuffixDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default TypographyDemo;

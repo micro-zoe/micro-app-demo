@@ -1,3 +1,4 @@
+import './flex-align.css';
 import { Col, Divider, Row } from 'antd';
 import React from 'react';
 const DemoBox = (props) => <p className={`height-${props.value}`}>{props.children}</p>;

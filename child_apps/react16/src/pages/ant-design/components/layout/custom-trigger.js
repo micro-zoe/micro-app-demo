@@ -1,3 +1,4 @@
+import './custom-trigger.css';
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,

@@ -1,6 +1,5 @@
 import { Affix, Button } from 'antd';
 import React, { useState } from 'react';
-import './target.css';
 const App = () => {
   const [container, setContainer] = useState(null);
   return (

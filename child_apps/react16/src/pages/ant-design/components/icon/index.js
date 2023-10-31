@@ -1,28 +1,49 @@
-import React from 'react'
-import BasicDemo from './basic'
-import TwotoneDemo from './twotone'
-import CustomDemo from './custom'
-import IconfontDemo from './iconfont'
-import IconfontsDemo from './iconfonts'
+import React from 'react';
+import IconBasicDemo from './basic';
+import IconTwoToneDemo from './two-tone';
+import IconCustomDemo from './custom';
+import IconIconfontDemo from './iconfont';
+import IconScriptUrlDemo from './script-url';
+import './index.css';
 
-const App = () => (
-  <div className="button-demo">
+const IconDemo = () => (
+  <div className="icon-demo">
     <hr />
-    <h2>Basic</h2>
-    <BasicDemo />
+    <div id="components-icon-demo-basic">
+      <h2>Basic 基本用法</h2>
+      <div className="code-box-demo">
+        <IconBasicDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Twotone</h2>
-    <TwotoneDemo />
+    <div id="components-icon-demo-two-tone">
+      <h2>TwoTone 多色图标</h2>
+      <div className="code-box-demo">
+        <IconTwoToneDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Custom</h2>
-    <CustomDemo />
+    <div id="components-icon-demo-custom">
+      <h2>Custom 自定义图标</h2>
+      <div className="code-box-demo">
+        <IconCustomDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Iconfont</h2>
-    <IconfontDemo />
+    <div id="components-icon-demo-iconfont">
+      <h2>Iconfont 使用 iconfont.cn</h2>
+      <div className="code-box-demo">
+        <IconIconfontDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Iconfonts</h2>
-    <IconfontsDemo />
+    <div id="components-icon-demo-script-url">
+      <h2>ScriptUrl 使用 iconfont.cn 的多个资源</h2>
+      <div className="code-box-demo">
+        <IconScriptUrlDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default IconDemo;

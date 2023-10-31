@@ -1,3 +1,4 @@
+import './responsive.css';
 import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Layout, Menu } from 'antd';
 import React from 'react';

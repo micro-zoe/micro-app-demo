@@ -1,9 +1,8 @@
 import { Layout } from 'antd';
 import React from 'react';
-import './basic.css';
 const { Header, Footer, Sider, Content } = Layout;
 const App = () => (
-  <div id="components-layout-demo-basic">
+  <>
     <Layout>
       <Header>Header</Header>
       <Content>Content</Content>
@@ -36,6 +35,6 @@ const App = () => (
         <Footer>Footer</Footer>
       </Layout>
     </Layout>
-  </div>
+  </>
 );
 export default App;

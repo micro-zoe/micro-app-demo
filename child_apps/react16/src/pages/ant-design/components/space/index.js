@@ -1,48 +1,89 @@
-import React from 'react'
-import BasicDemo from './basic'
-import VerticalDemo from './vertical'
-import SizeDemo from './size'
-import AlignDemo from './align'
-import CustomizeDemo from './customize'
-import WrapDemo from './wrap'
-import SplitDemo from './split'
-import CompactDemo from './compact'
-import CompactbuttonsDemo from './compactbuttons'
-import CompactbuttonsverticalDemo from './compactbuttonsvertical'
+import React from 'react';
+import BaseDemo from './base';
+import VerticalDemo from './vertical';
+import SizeDemo from './size';
+import AlignDemo from './align';
+import CustomizeDemo from './customize';
+import WrapDemo from './wrap';
+import SplitDemo from './split';
+import CompactDemo from './compact';
+import CompactButtonsDemo from './compact-buttons';
+import CompactButtonVerticalDemo from './compact-button-vertical';
+import './index.css';
 
-const App = () => (
+const SpaceDemo = () => (
   <div className="space-demo">
     <hr />
-    <h2>Basic</h2>
-    <BasicDemo />
+    <div id="components-space-demo-base">
+      <h2>Base 基本用法</h2>
+      <div className="code-box-demo">
+        <BaseDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Vertical</h2>
-    <VerticalDemo />
+    <div id="components-space-demo-vertical">
+      <h2>Vertical 垂直间距</h2>
+      <div className="code-box-demo">
+        <VerticalDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Size</h2>
-    <SizeDemo />
+    <div id="components-space-demo-size">
+      <h2>Size 间距大小</h2>
+      <div className="code-box-demo">
+        <SizeDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Align</h2>
-    <AlignDemo />
+    <div id="components-space-demo-align">
+      <h2>Align 对齐</h2>
+      <div className="code-box-demo">
+        <AlignDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Customize</h2>
-    <CustomizeDemo />
+    <div id="components-space-demo-customize">
+      <h2>Customize 自定义尺寸</h2>
+      <div className="code-box-demo">
+        <CustomizeDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Wrap</h2>
-    <WrapDemo />
+    <div id="components-space-demo-wrap">
+      <h2>Wrap 自动换行</h2>
+      <div className="code-box-demo">
+        <WrapDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Split</h2>
-    <SplitDemo />
+    <div id="components-space-demo-split">
+      <h2>Split 分隔符</h2>
+      <div className="code-box-demo">
+        <SplitDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Compact</h2>
-    <CompactDemo />
+    <div id="components-space-demo-compact">
+      <h2>Compact 紧凑布局组合</h2>
+      <div className="code-box-demo">
+        <CompactDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Compactbuttons</h2>
-    <CompactbuttonsDemo />
+    <div id="components-space-demo-compact-buttons">
+      <h2>CompactButtons Button 紧凑布局</h2>
+      <div className="code-box-demo">
+        <CompactButtonsDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Compactbuttonsvertical</h2>
-    <CompactbuttonsverticalDemo />
+    <div id="components-space-demo-compact-button-vertical">
+      <h2>CompactButtonVertical 垂直方向紧凑布局</h2>
+      <div className="code-box-demo">
+        <CompactButtonVerticalDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default SpaceDemo;

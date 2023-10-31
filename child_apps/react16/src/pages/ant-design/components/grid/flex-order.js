@@ -1,3 +1,4 @@
+import './flex-order.css';
 import { Col, Divider, Row } from 'antd';
 import React from 'react';
 const App = () => (

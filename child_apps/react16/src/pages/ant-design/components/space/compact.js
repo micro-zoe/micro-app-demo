@@ -1,3 +1,4 @@
+import './compact.css';
 import { CopyOutlined } from '@ant-design/icons';
 import {
   AutoComplete,

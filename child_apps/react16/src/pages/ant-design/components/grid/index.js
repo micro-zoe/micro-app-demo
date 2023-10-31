@@ -1,57 +1,105 @@
-import React from 'react'
-import BasicDemo from './basic'
-import GutterDemo from './gutter'
-import OffsetDemo from './offset'
-import PullDemo from './pull'
-import JustifyDemo from './justify'
-import AlignDemo from './align'
-import OrderDemo from './order'
-import FlexDemo from './flex'
-import MqDemo from './mq'
-import MqproDemo from './mqpro'
-import GeneratorDemo from './generator'
-import UsebreakpointDemo from './usebreakpoint'
-import './index.css'
+import React from 'react';
+import GridBasicDemo from './basic';
+import GridGutterDemo from './gutter';
+import GridOffsetDemo from './offset';
+import GridSortDemo from './sort';
+import GridFlexDemo from './flex';
+import GridFlexAlignDemo from './flex-align';
+import GridFlexOrderDemo from './flex-order';
+import GridFlexStretchDemo from './flex-stretch';
+import GridResponsiveDemo from './responsive';
+import GridResponsiveMoreDemo from './responsive-more';
+import GridPlaygroundDemo from './playground';
+import GridUseBreakpointDemo from './use-breakpoint';
+import './index.css';
 
-const App = () => (
+const GridDemo = () => (
   <div className="grid-demo">
     <hr />
-    <h2>Basic</h2>
-    <BasicDemo />
+    <div id="components-grid-demo-basic">
+      <h2>Basic 基础栅格</h2>
+      <div className="code-box-demo">
+        <GridBasicDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Gutter</h2>
-    <GutterDemo />
+    <div id="components-grid-demo-gutter">
+      <h2>Gutter 区块间隔</h2>
+      <div className="code-box-demo">
+        <GridGutterDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Offset</h2>
-    <OffsetDemo />
+    <div id="components-grid-demo-offset">
+      <h2>Offset 左右偏移</h2>
+      <div className="code-box-demo">
+        <GridOffsetDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Pull</h2>
-    <PullDemo />
+    <div id="components-grid-demo-sort">
+      <h2>Sort 栅格排序</h2>
+      <div className="code-box-demo">
+        <GridSortDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Justify</h2>
-    <JustifyDemo />
+    <div id="components-grid-demo-flex">
+      <h2>Flex 排版</h2>
+      <div className="code-box-demo">
+        <GridFlexDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Align</h2>
-    <AlignDemo />
+    <div id="components-grid-demo-flex-align">
+      <h2>FlexAlign 对齐</h2>
+      <div className="code-box-demo">
+        <GridFlexAlignDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Order</h2>
-    <OrderDemo />
+    <div id="components-grid-demo-flex-order">
+      <h2>FlexOrder 排序</h2>
+      <div className="code-box-demo">
+        <GridFlexOrderDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Flex</h2>
-    <FlexDemo />
+    <div id="components-grid-demo-flex-stretch">
+      <h2>FlexStretch Flex 填充</h2>
+      <div className="code-box-demo">
+        <GridFlexStretchDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Mq</h2>
-    <MqDemo />
+    <div id="components-grid-demo-responsive">
+      <h2>Responsive 响应式布局</h2>
+      <div className="code-box-demo">
+        <GridResponsiveDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Mqpro</h2>
-    <MqproDemo />
+    <div id="components-grid-demo-responsive-more">
+      <h2>ResponsiveMore 其他属性的响应式</h2>
+      <div className="code-box-demo">
+        <GridResponsiveMoreDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Generator</h2>
-    <GeneratorDemo />
+    <div id="components-grid-demo-playground">
+      <h2>Playground 栅格配置器</h2>
+      <div className="code-box-demo">
+        <GridPlaygroundDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Usebreakpoint</h2>
-    <UsebreakpointDemo />
+    <div id="components-grid-demo-use-breakpoint">
+      <h2>UseBreakpoint useBreakpoint Hook</h2>
+      <div className="code-box-demo">
+        <GridUseBreakpointDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default GridDemo;

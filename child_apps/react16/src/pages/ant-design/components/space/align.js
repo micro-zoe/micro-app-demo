@@ -1,6 +1,6 @@
+import './align.css';
 import { Button, Space } from 'antd';
 import React from 'react';
-import './align.css';
 const App = () => (
   <div className="space-align-container">
     <div className="space-align-block">

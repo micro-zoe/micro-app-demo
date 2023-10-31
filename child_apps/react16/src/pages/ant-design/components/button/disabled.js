@@ -1,6 +1,6 @@
+import './disabled.css';
 import { Button } from 'antd';
 import React from 'react';
-import './disabled.css';
 const App = () => (
   <>
     <Button type="primary">Primary</Button>

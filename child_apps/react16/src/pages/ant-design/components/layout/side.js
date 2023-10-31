@@ -1,3 +1,4 @@
+import './side.css';
 import {
   DesktopOutlined,
   FileOutlined,

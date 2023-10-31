@@ -1,45 +1,81 @@
-import React from 'react'
-import TypeDemo from './type'
-import SizeDemo from './size'
-import LoadingDemo from './loading'
-import GhostDemo from './ghost'
-import BlockDemo from './block'
-import IconDemo from './icon'
-import DisabledDemo from './disabled'
-import DropdownDemo from './dropdown'
-import DangerDemo from './danger'
-import './index.css'
+import React from 'react';
+import ButtonBasicDemo from './basic';
+import ButtonIconDemo from './icon';
+import ButtonSizeDemo from './size';
+import ButtonDisabledDemo from './disabled';
+import ButtonLoadingDemo from './loading';
+import ButtonMultipleDemo from './multiple';
+import ButtonGhostDemo from './ghost';
+import ButtonDangerDemo from './danger';
+import ButtonBlockDemo from './block';
+import './index.css';
 
-const App = () => (
+const ButtonDemo = () => (
   <div className="button-demo">
     <hr />
-    <h2>Type</h2>
-    <TypeDemo />
+    <div id="components-button-demo-basic">
+      <h2>Basic 按钮类型</h2>
+      <div className="code-box-demo">
+        <ButtonBasicDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Size</h2>
-    <SizeDemo />
+    <div id="components-button-demo-icon">
+      <h2>Icon 图标按钮</h2>
+      <div className="code-box-demo">
+        <ButtonIconDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Loading</h2>
-    <LoadingDemo />
+    <div id="components-button-demo-size">
+      <h2>Size 按钮尺寸</h2>
+      <div className="code-box-demo">
+        <ButtonSizeDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Ghost</h2>
-    <GhostDemo />
+    <div id="components-button-demo-disabled">
+      <h2>Disabled 不可用状态</h2>
+      <div className="code-box-demo">
+        <ButtonDisabledDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Block</h2>
-    <BlockDemo />
+    <div id="components-button-demo-loading">
+      <h2>Loading 加载中状态</h2>
+      <div className="code-box-demo">
+        <ButtonLoadingDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Icon</h2>
-    <IconDemo />
+    <div id="components-button-demo-multiple">
+      <h2>Multiple 多个按钮组合</h2>
+      <div className="code-box-demo">
+        <ButtonMultipleDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Disabled</h2>
-    <DisabledDemo />
+    <div id="components-button-demo-ghost">
+      <h2>Ghost 幽灵按钮</h2>
+      <div className="code-box-demo">
+        <ButtonGhostDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Dropdown</h2>
-    <DropdownDemo />
+    <div id="components-button-demo-danger">
+      <h2>Danger 危险按钮</h2>
+      <div className="code-box-demo">
+        <ButtonDangerDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Danger</h2>
-    <DangerDemo />
+    <div id="components-button-demo-block">
+      <h2>Block Block 按钮</h2>
+      <div className="code-box-demo">
+        <ButtonBlockDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default ButtonDemo;

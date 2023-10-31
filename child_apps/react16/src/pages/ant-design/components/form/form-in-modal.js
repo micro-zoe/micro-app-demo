@@ -1,6 +1,6 @@
+import './form-in-modal.css';
 import { Button, Form, Input, Modal, Radio } from 'antd';
 import React, { useState } from 'react';
-import './modal.css';
 const CollectionCreateForm = ({ open, onCreate, onCancel }) => {
   const [form] = Form.useForm();
   return (

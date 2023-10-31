@@ -1,9 +1,9 @@
+import './top.css';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React from 'react';
-import './top.css'
 const { Header, Content, Footer } = Layout;
 const App = () => (
-  <Layout className="layout" id="components-layout-demo-top">
+  <Layout className="layout">
     <Header>
       <div className="logo" />
       <Menu

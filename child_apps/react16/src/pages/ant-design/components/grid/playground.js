@@ -1,6 +1,6 @@
+import './playground.css';
 import { Col, Row, Slider } from 'antd';
 import React, { useState } from 'react';
-import './generator.css';
 const gutters = {};
 const vgutters = {};
 const colCounts = {};

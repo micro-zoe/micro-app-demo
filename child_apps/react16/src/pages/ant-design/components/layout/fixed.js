@@ -1,3 +1,4 @@
+import './fixed.css';
 import { Breadcrumb, Layout, Menu } from 'antd';
 import React from 'react';
 const { Header, Content, Footer } = Layout;

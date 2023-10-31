@@ -1,34 +1,54 @@
+import './flex.css';
 import { Col, Divider, Row } from 'antd';
 import React from 'react';
 const App = () => (
   <>
-    <Divider orientation="left">Percentage columns</Divider>
-    <Row>
-      <Col flex={2}>2 / 5</Col>
-      <Col flex={3}>3 / 5</Col>
-    </Row>
-    <Divider orientation="left">Fill rest</Divider>
-    <Row>
-      <Col flex="100px">100px</Col>
-      <Col flex="auto">Fill Rest</Col>
-    </Row>
-    <Divider orientation="left">Raw flex style</Divider>
-    <Row>
-      <Col flex="1 1 200px">1 1 200px</Col>
-      <Col flex="0 1 300px">0 1 300px</Col>
+    <Divider orientation="left">sub-element align left</Divider>
+    <Row justify="start">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
     </Row>
 
-    <Row wrap={false}>
-      <Col flex="none">
-        <div
-          style={{
-            padding: '0 16px',
-          }}
-        >
-          none
-        </div>
-      </Col>
-      <Col flex="auto">auto with no-wrap</Col>
+    <Divider orientation="left">sub-element align center</Divider>
+    <Row justify="center">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+    </Row>
+
+    <Divider orientation="left">sub-element align right</Divider>
+    <Row justify="end">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+    </Row>
+
+    <Divider orientation="left">sub-element monospaced arrangement</Divider>
+    <Row justify="space-between">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+    </Row>
+
+    <Divider orientation="left">sub-element align full</Divider>
+    <Row justify="space-around">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+    </Row>
+
+    <Divider orientation="left">sub-element align evenly</Divider>
+    <Row justify="space-evenly">
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
+      <Col span={4}>col-4</Col>
     </Row>
   </>
 );

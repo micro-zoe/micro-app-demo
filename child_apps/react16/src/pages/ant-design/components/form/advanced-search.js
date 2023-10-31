@@ -1,7 +1,7 @@
+import './advanced-search.css';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { Button, Col, Form, Input, Row, Select } from 'antd';
 import React, { useState } from 'react';
-import './search.css';
 const { Option } = Select;
 const AdvancedSearchForm = () => {
   const [expand, setExpand] = useState(false);

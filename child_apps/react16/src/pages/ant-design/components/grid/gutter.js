@@ -1,3 +1,4 @@
+import './gutter.css';
 import { Col, Divider, Row } from 'antd';
 import React from 'react';
 const style = {

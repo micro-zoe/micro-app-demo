@@ -1,21 +1,33 @@
-import React from 'react'
-import BasicDemo from './basic'
-import ChangeDemo from './change'
-import TargetDemo from './target'
-import './index.css'
+import React from 'react';
+import AffixBasicDemo from './basic';
+import AffixOnChangeDemo from './on-change';
+import AffixTargetDemo from './target';
+import './index.css';
 
-const App = () => (
+const AffixDemo = () => (
   <div className="affix-demo">
     <hr />
-    <h2>Basic</h2>
-    <BasicDemo />
+    <div id="components-affix-demo-basic">
+      <h2>Basic 基本</h2>
+      <div className="code-box-demo">
+        <AffixBasicDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Change</h2>
-    <ChangeDemo />
+    <div id="components-affix-demo-on-change">
+      <h2>OnChange 固定状态改变的回调</h2>
+      <div className="code-box-demo">
+        <AffixOnChangeDemo />
+      </div>
+    </div>
     <hr />
-    <h2>Target</h2>
-    <TargetDemo />
+    <div id="components-affix-demo-target">
+      <h2>Target 滚动容器</h2>
+      <div className="code-box-demo">
+        <AffixTargetDemo />
+      </div>
+    </div>
     <hr />
   </div>
 );
-export default App;
+export default AffixDemo;
