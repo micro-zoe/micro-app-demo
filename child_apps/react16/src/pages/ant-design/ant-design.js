@@ -9,6 +9,7 @@ import LayoutDemo from './components/layout';
 import SpaceDemo from './components/space';
 import AffixDemo from './components/affix';
 import BreadcrumbDemo from './components/breadcrumb';
+import DropdownDemo from './components/dropdown';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -80,6 +81,11 @@ const AntDesignPage = () => {
             label: 'Breadcrumb 面包屑',
             key: 'Breadcrumb',
             children: <><h1>child-react16-ant-design-4.x: Breadcrumb 面包屑</h1><BreadcrumbDemo /></>,
+          },
+          {
+            label: 'Dropdown 下拉菜单',
+            key: 'Dropdown',
+            children: <><h1>child-react16-ant-design-4.x: Dropdown 下拉菜单</h1><DropdownDemo /></>,
           },
         ]}
       />
