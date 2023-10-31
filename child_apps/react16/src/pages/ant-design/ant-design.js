@@ -12,6 +12,7 @@ import BreadcrumbDemo from './components/breadcrumb';
 import DropdownDemo from './components/dropdown';
 import MenuDemo from './components/menu';
 import PageHeaderDemo from './components/page-header';
+import PaginationDemo from './components/pagination';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -98,6 +99,11 @@ const AntDesignPage = () => {
             label: 'PageHeader 页头',
             key: 'PageHeader',
             children: <><h1>child-react16-ant-design-4.x: PageHeader 页头</h1><PageHeaderDemo /></>,
+          },
+          {
+            label: 'Pagination 分页',
+            key: 'Pagination',
+            children: <><h1>child-react16-ant-design-4.x: Pagination 分页</h1><PaginationDemo /></>,
           },
         ]}
       />
