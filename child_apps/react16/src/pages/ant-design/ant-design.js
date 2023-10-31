@@ -11,6 +11,7 @@ import AffixDemo from './components/affix';
 import BreadcrumbDemo from './components/breadcrumb';
 import DropdownDemo from './components/dropdown';
 import MenuDemo from './components/menu';
+import PageHeaderDemo from './components/page-header';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -92,6 +93,11 @@ const AntDesignPage = () => {
             label: 'Menu 导航菜单',
             key: 'Menu',
             children: <><h1>child-react16-ant-design-4.x: Menu 导航菜单</h1><MenuDemo /></>,
+          },
+          {
+            label: 'PageHeader 页头',
+            key: 'PageHeader',
+            children: <><h1>child-react16-ant-design-4.x: PageHeader 页头</h1><PageHeaderDemo /></>,
           },
         ]}
       />
