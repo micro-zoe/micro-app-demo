@@ -1,14 +1,14 @@
 import React from 'react'
 import { Tabs } from 'antd'
-import Button from './components/button'
-import Icon from './components/icon'
-import Typography from './components/typography'
-import Divider from './components/divider'
-import Grid from './components/grid'
-import Layout from './components/layout'
-import Space from './components/space'
-import Affix from './components/affix'
-import Form from './components/form'
+import ButtonDemo from './components/button';
+import IconDemo from './components/icon';
+import TypographyDemo from './components/typography';
+import DividerDemo from './components/divider';
+import GridDemo from './components/grid';
+import LayoutDemo from './components/layout';
+import SpaceDemo from './components/space';
+import AffixDemo from './components/affix';
+import BreadcrumbDemo from './components/breadcrumb';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -27,19 +27,19 @@ const AntDesignPage = () => {
             disabled: true,
           },
           {
-            label: `Button 按钮`,
+            label: 'Button 按钮',
             key: 'Button',
-            children: <><h1>child-react16-ant-design-4.x: Button</h1><Button /></>,
+            children: <><h1>child-react16-ant-design-4.x: Button 按钮</h1><ButtonDemo /></>,
           },
           {
-            label: `Icon 图标`,
+            label: 'Icon 图标',
             key: 'Icon',
-            children: <><h1>child-react16-ant-design-4.x: Icon</h1><Icon /></>,
+            children: <><h1>child-react16-ant-design-4.x: Icon 图标</h1><IconDemo /></>,
           },
           {
-            label: `Typography 排版`,
+            label: 'Typography 排版',
             key: 'Typography',
-            children: <><h1>child-react16-ant-design-4.x: Button</h1><Typography /></>,
+            children: <><h1>child-react16-ant-design-4.x: Typography 排版</h1><TypographyDemo /></>,
           },
           {
             label: `布局`,
@@ -47,24 +47,24 @@ const AntDesignPage = () => {
             disabled: true,
           },
           {
-            label: `Divider 分割线`,
+            label: 'Divider 分割线',
             key: 'Divider',
-            children: <><h1>child-react16-ant-design-4.x: Divider</h1><Divider /></>,
+            children: <><h1>child-react16-ant-design-4.x: Divider 分割线</h1><DividerDemo /></>,
           },
           {
-            label: `Grid 栅格`,
+            label: 'Grid 栅格',
             key: 'Grid',
-            children: <><h1>child-react16-ant-design-4.x: Grid</h1><Grid /></>,
+            children: <><h1>child-react16-ant-design-4.x: Grid 栅格</h1><GridDemo /></>,
           },
           {
-            label: `Layout 布局`,
+            label: 'Layout 布局',
             key: 'Layout',
-            children: <><h1>child-react16-ant-design-4.x: Layout</h1><Layout /></>,
+            children: <><h1>child-react16-ant-design-4.x: Layout 布局</h1><LayoutDemo /></>,
           },
           {
-            label: `Space 间距`,
+            label: 'Space 间距',
             key: 'Space',
-            children: <><h1>child-react16-ant-design-4.x: Space</h1><Space /></>,
+            children: <><h1>child-react16-ant-design-4.x: Space 间距</h1><SpaceDemo /></>,
           },
           {
             label: `导航`,
@@ -72,19 +72,14 @@ const AntDesignPage = () => {
             disabled: true,
           },
           {
-            label: `Affix 固钉`,
+            label: 'Affix 固钉',
             key: 'Affix',
-            children: <><h1>child-react16-ant-design-4.x: Affix</h1><Affix /></>,
+            children: <><h1>child-react16-ant-design-4.x: Affix 固钉</h1><AffixDemo /></>,
           },
           {
-            label: `数据录入`,
-            key: '数据录入',
-            disabled: true,
-          },
-          {
-            label: `Form 表单`,
-            key: 'Form',
-            children: <><h1>child-react16-ant-design-4.x: Form</h1><Form /></>,
+            label: 'Breadcrumb 面包屑',
+            key: 'Breadcrumb',
+            children: <><h1>child-react16-ant-design-4.x: Breadcrumb 面包屑</h1><BreadcrumbDemo /></>,
           },
         ]}
       />
