@@ -13,6 +13,7 @@ import DropdownDemo from './components/dropdown';
 import MenuDemo from './components/menu';
 import PageHeaderDemo from './components/page-header';
 import PaginationDemo from './components/pagination';
+import StepsDemo from './components/steps';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -104,6 +105,11 @@ const AntDesignPage = () => {
             label: 'Pagination 分页',
             key: 'Pagination',
             children: <><h1>child-react16-ant-design-4.x: Pagination 分页</h1><PaginationDemo /></>,
+          },
+          {
+            label: 'Steps 步骤条',
+            key: 'Steps',
+            children: <><h1>child-react16-ant-design-4.x: Steps 步骤条</h1><StepsDemo /></>,
           },
         ]}
       />
