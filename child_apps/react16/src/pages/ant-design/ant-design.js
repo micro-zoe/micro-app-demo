@@ -16,6 +16,7 @@ import PaginationDemo from './components/pagination';
 import StepsDemo from './components/steps';
 import AutoCompleteDemo from './components/auto-complete';
 import CascaderDemo from './components/cascader';
+import CheckboxDemo from './components/checkbox';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -127,6 +128,11 @@ const AntDesignPage = () => {
             label: 'Cascader 级联选择',
             key: 'Cascader',
             children: <><h1>child-react16-ant-design-4.x: Cascader 级联选择</h1><CascaderDemo /></>,
+          },
+          {
+            label: 'Checkbox 多选框',
+            key: 'Checkbox',
+            children: <><h1>child-react16-ant-design-4.x: Checkbox 多选框</h1><CheckboxDemo /></>,
           },
         ]}
       />
