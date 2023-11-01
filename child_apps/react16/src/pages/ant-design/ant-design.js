@@ -19,6 +19,7 @@ import CascaderDemo from './components/cascader';
 import CheckboxDemo from './components/checkbox';
 import DatePickerDemo from './components/date-picker';
 import FormDemo from './components/form';
+import InputDemo from './components/input';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -145,6 +146,11 @@ const AntDesignPage = () => {
             label: 'Form 表单',
             key: 'Form',
             children: <><h1>child-react16-ant-design-4.x: Form 表单</h1><FormDemo /></>,
+          },
+          {
+            label: 'Input 输入框',
+            key: 'Input',
+            children: <><h1>child-react16-ant-design-4.x: Input 输入框</h1><InputDemo /></>,
           },
         ]}
       />
