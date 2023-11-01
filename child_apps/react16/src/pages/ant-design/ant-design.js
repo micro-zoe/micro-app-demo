@@ -18,6 +18,7 @@ import AutoCompleteDemo from './components/auto-complete';
 import CascaderDemo from './components/cascader';
 import CheckboxDemo from './components/checkbox';
 import DatePickerDemo from './components/date-picker';
+import FormDemo from './components/form';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -139,6 +140,11 @@ const AntDesignPage = () => {
             label: 'DatePicker 日期选择框',
             key: 'DatePicker',
             children: <><h1>child-react16-ant-design-4.x: DatePicker 日期选择框</h1><DatePickerDemo /></>,
+          },
+          {
+            label: 'Form 表单',
+            key: 'Form',
+            children: <><h1>child-react16-ant-design-4.x: Form 表单</h1><FormDemo /></>,
           },
         ]}
       />
