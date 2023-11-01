@@ -20,6 +20,7 @@ import CheckboxDemo from './components/checkbox';
 import DatePickerDemo from './components/date-picker';
 import FormDemo from './components/form';
 import InputDemo from './components/input';
+import InputNumberDemo from './components/input-number';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -151,6 +152,11 @@ const AntDesignPage = () => {
             label: 'Input 输入框',
             key: 'Input',
             children: <><h1>child-react16-ant-design-4.x: Input 输入框</h1><InputDemo /></>,
+          },
+          {
+            label: 'InputNumber 数字输入框',
+            key: 'InputNumber',
+            children: <><h1>child-react16-ant-design-4.x: InputNumber 数字输入框</h1><InputNumberDemo /></>,
           },
         ]}
       />
