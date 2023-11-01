@@ -21,6 +21,7 @@ import DatePickerDemo from './components/date-picker';
 import FormDemo from './components/form';
 import InputDemo from './components/input';
 import InputNumberDemo from './components/input-number';
+import MentionsDemo from './components/mentions';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -157,6 +158,11 @@ const AntDesignPage = () => {
             label: 'InputNumber 数字输入框',
             key: 'InputNumber',
             children: <><h1>child-react16-ant-design-4.x: InputNumber 数字输入框</h1><InputNumberDemo /></>,
+          },
+          {
+            label: 'Mentions 提及',
+            key: 'Mentions',
+            children: <><h1>child-react16-ant-design-4.x: Mentions 提及</h1><MentionsDemo /></>,
           },
         ]}
       />
