@@ -14,6 +14,7 @@ import MenuDemo from './components/menu';
 import PageHeaderDemo from './components/page-header';
 import PaginationDemo from './components/pagination';
 import StepsDemo from './components/steps';
+import AutoCompleteDemo from './components/auto-complete';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -110,6 +111,16 @@ const AntDesignPage = () => {
             label: 'Steps 步骤条',
             key: 'Steps',
             children: <><h1>child-react16-ant-design-4.x: Steps 步骤条</h1><StepsDemo /></>,
+          },
+          {
+            label: `数据录入`,
+            key: '数据录入',
+            disabled: true,
+          },
+          {
+            label: 'AutoComplete 自动完成',
+            key: 'AutoComplete',
+            children: <><h1>child-react16-ant-design-4.x: AutoComplete 自动完成</h1><AutoCompleteDemo /></>,
           },
         ]}
       />
