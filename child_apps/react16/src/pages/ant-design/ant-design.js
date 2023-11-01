@@ -15,6 +15,7 @@ import PageHeaderDemo from './components/page-header';
 import PaginationDemo from './components/pagination';
 import StepsDemo from './components/steps';
 import AutoCompleteDemo from './components/auto-complete';
+import CascaderDemo from './components/cascader';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -121,6 +122,11 @@ const AntDesignPage = () => {
             label: 'AutoComplete 自动完成',
             key: 'AutoComplete',
             children: <><h1>child-react16-ant-design-4.x: AutoComplete 自动完成</h1><AutoCompleteDemo /></>,
+          },
+          {
+            label: 'Cascader 级联选择',
+            key: 'Cascader',
+            children: <><h1>child-react16-ant-design-4.x: Cascader 级联选择</h1><CascaderDemo /></>,
           },
         ]}
       />
