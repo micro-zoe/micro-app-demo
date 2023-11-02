@@ -25,6 +25,7 @@ import MentionsDemo from './components/mentions';
 import RadioDemo from './components/radio';
 import RateDemo from './components/rate';
 import SelectDemo from './components/select';
+import SliderDemo from './components/slider';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -181,6 +182,11 @@ const AntDesignPage = () => {
             label: 'Select 选择器',
             key: 'Select',
             children: <><h1>child-react16-ant-design-4.x: Select 选择器</h1><SelectDemo /></>,
+          },
+          {
+            label: 'Slider 滑动输入条',
+            key: 'Slider',
+            children: <><h1>child-react16-ant-design-4.x: Slider 滑动输入条</h1><SliderDemo /></>,
           },
         ]}
       />
