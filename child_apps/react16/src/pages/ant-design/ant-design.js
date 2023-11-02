@@ -22,6 +22,7 @@ import FormDemo from './components/form';
 import InputDemo from './components/input';
 import InputNumberDemo from './components/input-number';
 import MentionsDemo from './components/mentions';
+import RadioDemo from './components/radio';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -163,6 +164,11 @@ const AntDesignPage = () => {
             label: 'Mentions 提及',
             key: 'Mentions',
             children: <><h1>child-react16-ant-design-4.x: Mentions 提及</h1><MentionsDemo /></>,
+          },
+          {
+            label: 'Radio 单选框',
+            key: 'Radio',
+            children: <><h1>child-react16-ant-design-4.x: Radio 单选框</h1><RadioDemo /></>,
           },
         ]}
       />
