@@ -27,6 +27,7 @@ import RateDemo from './components/rate';
 import SelectDemo from './components/select';
 import SliderDemo from './components/slider';
 import SwitchDemo from './components/switch';
+import TimePickerDemo from './components/time-picker';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -193,6 +194,11 @@ const AntDesignPage = () => {
             label: 'Switch 开关',
             key: 'Switch',
             children: <><h1>child-react16-ant-design-4.x: Switch 开关</h1><SwitchDemo /></>,
+          },
+          {
+            label: 'TimePicker 时间选择框',
+            key: 'TimePicker',
+            children: <><h1>child-react16-ant-design-4.x: TimePicker 时间选择框</h1><TimePickerDemo /></>,
           },
         ]}
       />
