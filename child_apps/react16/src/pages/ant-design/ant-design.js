@@ -24,6 +24,7 @@ import InputNumberDemo from './components/input-number';
 import MentionsDemo from './components/mentions';
 import RadioDemo from './components/radio';
 import RateDemo from './components/rate';
+import SelectDemo from './components/select';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -175,6 +176,11 @@ const AntDesignPage = () => {
             label: 'Rate 评分',
             key: 'Rate',
             children: <><h1>child-react16-ant-design-4.x: Rate 评分</h1><RateDemo /></>,
+          },
+          {
+            label: 'Select 选择器',
+            key: 'Select',
+            children: <><h1>child-react16-ant-design-4.x: Select 选择器</h1><SelectDemo /></>,
           },
         ]}
       />
