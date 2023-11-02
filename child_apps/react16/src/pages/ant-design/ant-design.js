@@ -26,6 +26,7 @@ import RadioDemo from './components/radio';
 import RateDemo from './components/rate';
 import SelectDemo from './components/select';
 import SliderDemo from './components/slider';
+import SwitchDemo from './components/switch';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -187,6 +188,11 @@ const AntDesignPage = () => {
             label: 'Slider 滑动输入条',
             key: 'Slider',
             children: <><h1>child-react16-ant-design-4.x: Slider 滑动输入条</h1><SliderDemo /></>,
+          },
+          {
+            label: 'Switch 开关',
+            key: 'Switch',
+            children: <><h1>child-react16-ant-design-4.x: Switch 开关</h1><SwitchDemo /></>,
           },
         ]}
       />
