@@ -28,6 +28,7 @@ import SelectDemo from './components/select';
 import SliderDemo from './components/slider';
 import SwitchDemo from './components/switch';
 import TimePickerDemo from './components/time-picker';
+import TransferDemo from './components/transfer';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -199,6 +200,11 @@ const AntDesignPage = () => {
             label: 'TimePicker 时间选择框',
             key: 'TimePicker',
             children: <><h1>child-react16-ant-design-4.x: TimePicker 时间选择框</h1><TimePickerDemo /></>,
+          },
+          {
+            label: 'Transfer 穿梭框',
+            key: 'Transfer',
+            children: <><h1>child-react16-ant-design-4.x: Transfer 穿梭框</h1><TransferDemo /></>,
           },
         ]}
       />
