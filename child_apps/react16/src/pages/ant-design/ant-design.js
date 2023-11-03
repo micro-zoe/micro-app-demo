@@ -35,6 +35,7 @@ import AvatarDemo from './components/avatar';
 import BadgeDemo from './components/badge';
 import CalendarDemo from './components/calendar';
 import CardDemo from './components/card';
+import CarouselDemo from './components/carousel';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -246,6 +247,11 @@ const AntDesignPage = () => {
             label: 'Card 卡片',
             key: 'Card',
             children: <><h1>child-react16-ant-design-4.x: Card 卡片</h1><CardDemo /></>,
+          },
+          {
+            label: 'Carousel 走马灯',
+            key: 'Carousel',
+            children: <><h1>child-react16-ant-design-4.x: Carousel 走马灯</h1><CarouselDemo /></>,
           },
         ]}
       />
