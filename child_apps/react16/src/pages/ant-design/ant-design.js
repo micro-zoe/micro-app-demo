@@ -29,6 +29,7 @@ import SliderDemo from './components/slider';
 import SwitchDemo from './components/switch';
 import TimePickerDemo from './components/time-picker';
 import TransferDemo from './components/transfer';
+import TreeSelectDemo from './components/tree-select';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -205,6 +206,11 @@ const AntDesignPage = () => {
             label: 'Transfer 穿梭框',
             key: 'Transfer',
             children: <><h1>child-react16-ant-design-4.x: Transfer 穿梭框</h1><TransferDemo /></>,
+          },
+          {
+            label: 'TreeSelect 树选择',
+            key: 'TreeSelect',
+            children: <><h1>child-react16-ant-design-4.x: TreeSelect 树选择</h1><TreeSelectDemo /></>,
           },
         ]}
       />
