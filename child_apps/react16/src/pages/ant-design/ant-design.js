@@ -34,6 +34,7 @@ import UploadDemo from './components/upload';
 import AvatarDemo from './components/avatar';
 import BadgeDemo from './components/badge';
 import CalendarDemo from './components/calendar';
+import CardDemo from './components/card';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -240,6 +241,11 @@ const AntDesignPage = () => {
             label: 'Calendar 日历',
             key: 'Calendar',
             children: <><h1>child-react16-ant-design-4.x: Calendar 日历</h1><CalendarDemo /></>,
+          },
+          {
+            label: 'Card 卡片',
+            key: 'Card',
+            children: <><h1>child-react16-ant-design-4.x: Card 卡片</h1><CardDemo /></>,
           },
         ]}
       />
