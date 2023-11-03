@@ -33,6 +33,7 @@ import TreeSelectDemo from './components/tree-select';
 import UploadDemo from './components/upload';
 import AvatarDemo from './components/avatar';
 import BadgeDemo from './components/badge';
+import CalendarDemo from './components/calendar';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -234,6 +235,11 @@ const AntDesignPage = () => {
             label: 'Badge 徽标数',
             key: 'Badge',
             children: <><h1>child-react16-ant-design-4.x: Badge 徽标数</h1><BadgeDemo /></>,
+          },
+          {
+            label: 'Calendar 日历',
+            key: 'Calendar',
+            children: <><h1>child-react16-ant-design-4.x: Calendar 日历</h1><CalendarDemo /></>,
           },
         ]}
       />
