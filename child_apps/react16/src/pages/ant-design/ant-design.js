@@ -44,6 +44,7 @@ import ImageDemo from './components/image';
 import ListDemo from './components/list';
 import PopoverDemo from './components/popover';
 import StatisticDemo from './components/statistic';
+import TableDemo from './components/table';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -300,6 +301,11 @@ const AntDesignPage = () => {
             label: 'Statistic 统计数值',
             key: 'Statistic',
             children: <><h1>child-react16-ant-design-4.x: Statistic 统计数值</h1><StatisticDemo /></>,
+          },
+          {
+            label: 'Table 表格',
+            key: 'Table',
+            children: <><h1>child-react16-ant-design-4.x: Table 表格</h1><TableDemo /></>,
           },
         ]}
       />
