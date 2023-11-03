@@ -37,6 +37,7 @@ import CalendarDemo from './components/calendar';
 import CardDemo from './components/card';
 import CarouselDemo from './components/carousel';
 import CollapseDemo from './components/collapse';
+import CommentDemo from './components/comment';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -258,6 +259,11 @@ const AntDesignPage = () => {
             label: 'Collapse 折叠面板',
             key: 'Collapse',
             children: <><h1>child-react16-ant-design-4.x: Collapse 折叠面板</h1><CollapseDemo /></>,
+          },
+          {
+            label: 'Comment 评论',
+            key: 'Comment',
+            children: <><h1>child-react16-ant-design-4.x: Comment 评论</h1><CommentDemo /></>,
           },
         ]}
       />
