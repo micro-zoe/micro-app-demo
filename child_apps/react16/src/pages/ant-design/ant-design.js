@@ -38,6 +38,7 @@ import CardDemo from './components/card';
 import CarouselDemo from './components/carousel';
 import CollapseDemo from './components/collapse';
 import CommentDemo from './components/comment';
+import DescriptionsDemo from './components/descriptions';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -264,6 +265,11 @@ const AntDesignPage = () => {
             label: 'Comment 评论',
             key: 'Comment',
             children: <><h1>child-react16-ant-design-4.x: Comment 评论</h1><CommentDemo /></>,
+          },
+          {
+            label: 'Descriptions 描述列表',
+            key: 'Descriptions',
+            children: <><h1>child-react16-ant-design-4.x: Descriptions 描述列表</h1><DescriptionsDemo /></>,
           },
         ]}
       />
