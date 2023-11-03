@@ -40,6 +40,7 @@ import CollapseDemo from './components/collapse';
 import CommentDemo from './components/comment';
 import DescriptionsDemo from './components/descriptions';
 import EmptyDemo from './components/empty';
+import ImageDemo from './components/image';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -276,6 +277,11 @@ const AntDesignPage = () => {
             label: 'Empty 空状态',
             key: 'Empty',
             children: <><h1>child-react16-ant-design-4.x: Empty 空状态</h1><EmptyDemo /></>,
+          },
+          {
+            label: 'Image 图片',
+            key: 'Image',
+            children: <><h1>child-react16-ant-design-4.x: Image 图片</h1><ImageDemo /></>,
           },
         ]}
       />
