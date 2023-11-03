@@ -41,6 +41,7 @@ import CommentDemo from './components/comment';
 import DescriptionsDemo from './components/descriptions';
 import EmptyDemo from './components/empty';
 import ImageDemo from './components/image';
+import ListDemo from './components/list';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -282,6 +283,11 @@ const AntDesignPage = () => {
             label: 'Image 图片',
             key: 'Image',
             children: <><h1>child-react16-ant-design-4.x: Image 图片</h1><ImageDemo /></>,
+          },
+          {
+            label: 'List 列表',
+            key: 'List',
+            children: <><h1>child-react16-ant-design-4.x: List 列表</h1><ListDemo /></>,
           },
         ]}
       />
