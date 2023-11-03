@@ -31,6 +31,7 @@ import TimePickerDemo from './components/time-picker';
 import TransferDemo from './components/transfer';
 import TreeSelectDemo from './components/tree-select';
 import UploadDemo from './components/upload';
+import AvatarDemo from './components/avatar';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -217,6 +218,16 @@ const AntDesignPage = () => {
             label: 'Upload 上传',
             key: 'Upload',
             children: <><h1>child-react16-ant-design-4.x: Upload 上传</h1><UploadDemo /></>,
+          },
+          {
+            label: `数据展示`,
+            key: '数据展示',
+            disabled: true,
+          },
+          {
+            label: 'Avatar 头像',
+            key: 'Avatar',
+            children: <><h1>child-react16-ant-design-4.x: Avatar 头像</h1><AvatarDemo /></>,
           },
         ]}
       />
