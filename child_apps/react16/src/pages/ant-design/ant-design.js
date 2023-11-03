@@ -30,6 +30,7 @@ import SwitchDemo from './components/switch';
 import TimePickerDemo from './components/time-picker';
 import TransferDemo from './components/transfer';
 import TreeSelectDemo from './components/tree-select';
+import UploadDemo from './components/upload';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -211,6 +212,11 @@ const AntDesignPage = () => {
             label: 'TreeSelect 树选择',
             key: 'TreeSelect',
             children: <><h1>child-react16-ant-design-4.x: TreeSelect 树选择</h1><TreeSelectDemo /></>,
+          },
+          {
+            label: 'Upload 上传',
+            key: 'Upload',
+            children: <><h1>child-react16-ant-design-4.x: Upload 上传</h1><UploadDemo /></>,
           },
         ]}
       />
