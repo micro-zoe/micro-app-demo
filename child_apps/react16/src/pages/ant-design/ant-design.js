@@ -32,6 +32,7 @@ import TransferDemo from './components/transfer';
 import TreeSelectDemo from './components/tree-select';
 import UploadDemo from './components/upload';
 import AvatarDemo from './components/avatar';
+import BadgeDemo from './components/badge';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -228,6 +229,11 @@ const AntDesignPage = () => {
             label: 'Avatar 头像',
             key: 'Avatar',
             children: <><h1>child-react16-ant-design-4.x: Avatar 头像</h1><AvatarDemo /></>,
+          },
+          {
+            label: 'Badge 徽标数',
+            key: 'Badge',
+            children: <><h1>child-react16-ant-design-4.x: Badge 徽标数</h1><BadgeDemo /></>,
           },
         ]}
       />
