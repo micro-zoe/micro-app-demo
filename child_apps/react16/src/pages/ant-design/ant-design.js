@@ -47,6 +47,7 @@ import StatisticDemo from './components/statistic';
 import TableDemo from './components/table';
 import TabsDemo from './components/tabs';
 import TagDemo from './components/tag';
+import TimelineDemo from './components/timeline';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -318,6 +319,11 @@ const AntDesignPage = () => {
             label: 'Tag 标签',
             key: 'Tag',
             children: <><h1>child-react16-ant-design-4.x: Tag 标签</h1><TagDemo /></>,
+          },
+          {
+            label: 'Timeline 时间轴',
+            key: 'Timeline',
+            children: <><h1>child-react16-ant-design-4.x: Timeline 时间轴</h1><TimelineDemo /></>,
           },
         ]}
       />
