@@ -46,6 +46,7 @@ import PopoverDemo from './components/popover';
 import StatisticDemo from './components/statistic';
 import TableDemo from './components/table';
 import TabsDemo from './components/tabs';
+import TagDemo from './components/tag';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -312,6 +313,11 @@ const AntDesignPage = () => {
             label: 'Tabs 标签页',
             key: 'Tabs',
             children: <><h1>child-react16-ant-design-4.x: Tabs 标签页</h1><TabsDemo /></>,
+          },
+          {
+            label: 'Tag 标签',
+            key: 'Tag',
+            children: <><h1>child-react16-ant-design-4.x: Tag 标签</h1><TagDemo /></>,
           },
         ]}
       />
