@@ -49,6 +49,7 @@ import TabsDemo from './components/tabs';
 import TagDemo from './components/tag';
 import TimelineDemo from './components/timeline';
 import TooltipDemo from './components/tooltip';
+import TreeDemo from './components/tree';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -330,6 +331,11 @@ const AntDesignPage = () => {
             label: 'Tooltip 文字提示',
             key: 'Tooltip',
             children: <><h1>child-react16-ant-design-4.x: Tooltip 文字提示</h1><TooltipDemo /></>,
+          },
+          {
+            label: 'Tree 树形控件',
+            key: 'Tree',
+            children: <><h1>child-react16-ant-design-4.x: Tree 树形控件</h1><TreeDemo /></>,
           },
         ]}
       />
