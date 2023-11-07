@@ -50,6 +50,7 @@ import TagDemo from './components/tag';
 import TimelineDemo from './components/timeline';
 import TooltipDemo from './components/tooltip';
 import TreeDemo from './components/tree';
+import AlertDemo from './components/alert';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -336,6 +337,16 @@ const AntDesignPage = () => {
             label: 'Tree 树形控件',
             key: 'Tree',
             children: <><h1>child-react16-ant-design-4.x: Tree 树形控件</h1><TreeDemo /></>,
+          },
+          {
+            label: `反馈`,
+            key: '反馈',
+            disabled: true,
+          },
+          {
+            label: 'Alert 警告提示',
+            key: 'Alert',
+            children: <><h1>child-react16-ant-design-4.x: Alert 警告提示</h1><AlertDemo /></>,
           },
         ]}
       />
