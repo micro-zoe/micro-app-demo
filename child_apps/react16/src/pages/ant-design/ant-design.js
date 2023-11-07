@@ -53,6 +53,7 @@ import TreeDemo from './components/tree';
 import AlertDemo from './components/alert';
 import DrawerDemo from './components/drawer';
 import MessageDemo from './components/message';
+import ModalDemo from './components/modal';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -359,6 +360,11 @@ const AntDesignPage = () => {
             label: 'Message 全局提示',
             key: 'Message',
             children: <><h1>child-react16-ant-design-4.x: Message 全局提示</h1><MessageDemo /></>,
+          },
+          {
+            label: 'Modal 对话框',
+            key: 'Modal',
+            children: <><h1>child-react16-ant-design-4.x: Modal 对话框</h1><ModalDemo /></>,
           },
         ]}
       />
