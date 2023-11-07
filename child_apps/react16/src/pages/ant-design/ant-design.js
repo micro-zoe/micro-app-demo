@@ -52,6 +52,7 @@ import TooltipDemo from './components/tooltip';
 import TreeDemo from './components/tree';
 import AlertDemo from './components/alert';
 import DrawerDemo from './components/drawer';
+import MessageDemo from './components/message';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -353,6 +354,11 @@ const AntDesignPage = () => {
             label: 'Drawer 抽屉',
             key: 'Drawer',
             children: <><h1>child-react16-ant-design-4.x: Drawer 抽屉</h1><DrawerDemo /></>,
+          },
+          {
+            label: 'Message 全局提示',
+            key: 'Message',
+            children: <><h1>child-react16-ant-design-4.x: Message 全局提示</h1><MessageDemo /></>,
           },
         ]}
       />
