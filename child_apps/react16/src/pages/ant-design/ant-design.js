@@ -51,6 +51,7 @@ import TimelineDemo from './components/timeline';
 import TooltipDemo from './components/tooltip';
 import TreeDemo from './components/tree';
 import AlertDemo from './components/alert';
+import DrawerDemo from './components/drawer';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -347,6 +348,11 @@ const AntDesignPage = () => {
             label: 'Alert 警告提示',
             key: 'Alert',
             children: <><h1>child-react16-ant-design-4.x: Alert 警告提示</h1><AlertDemo /></>,
+          },
+          {
+            label: 'Drawer 抽屉',
+            key: 'Drawer',
+            children: <><h1>child-react16-ant-design-4.x: Drawer 抽屉</h1><DrawerDemo /></>,
           },
         ]}
       />
