@@ -163,8 +163,7 @@
     <el-dialog
       title="提示"
       :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleCloseDialog">
+      width="30%">
       <span>这是一段信息</span>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
@@ -457,6 +456,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'ElementUI',
   data() {
@@ -604,40 +604,22 @@ export default {
       setTimeout(() => (this.skeletonLoading = false), 2000)
     },
     messageOpen1() {
-      this.$message({
-        showClose: true,
-        message: '这是一条消息提示'
-      });
+      this.$message.info('这是一条消息提示');
     },
     messageOpen2() {
-      this.$message({
-        showClose: true,
-        message: '恭喜你，这是一条成功消息',
-        type: 'success'
-      });
+      this.$message.success('恭喜你，这是一条成功消息');
     },
     messageOpen3() {
-      this.$message({
-        showClose: true,
-        message: '警告哦，这是一条警告消息',
-        type: 'warning'
-      });
+      this.$message.warn('警告哦，这是一条警告消息');
     },
     messageOpen4() {
-      this.$message({
-        showClose: true,
-        message: '错了哦，这是一条错误消息',
-        type: 'error'
-      });
+      this.$message.error('错了哦，这是一条错误消息');
     },
     MessageBoxOpen() {
       this.$alert('这是一段内容', '标题名称', {
         confirmButtonText: '确定',
         callback: action => {
-          this.$message({
-            type: 'info',
-            message: `action: ${ action }`
-          });
+          this.$message.info(`action: ${ action }`);
         }
       });
     },
@@ -670,13 +652,6 @@ export default {
         message: '这是一条错误的提示消息'
       });
     },
-    handleCloseDialog(done) {
-      this.$confirm('确认关闭？')
-        .then(_ => {
-          done();
-        })
-        .catch(_ => {});
-    },
     infiniteLoad () {
       this.infiniteCount += 2
     },
@@ -688,6 +663,7 @@ export default {
 .element-ui-page {
   width: 700px;
   margin: 0 auto;
+  padding-bottom: 30px;
 }
 
 .demo-ruleForm {

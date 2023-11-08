@@ -1,9 +1,15 @@
 <template>
   <div>
-    <div id='public-links' @click="onRouteChange">
-      <NuxtLink to="/">Home</NuxtLink> |
-      <NuxtLink to="/page2">Page2</NuxtLink>
-    </div>
+    <el-menu
+      :default-active="activeIndex"
+      class="el-menu-demo"
+      mode="horizontal"
+      router
+    >
+      <el-menu-item index="/">home</el-menu-item>
+      <el-menu-item index="/element-ui">element-ui</el-menu-item>
+      <el-menu-item index="/ant-design-vue">ant-design-vue</el-menu-item>
+    </el-menu>
     <Nuxt />
   </div>
 </template>
@@ -14,12 +20,24 @@ import Vue from 'vue'
 declare global {
   interface Window {
     microApp: any
+    rawWindow: any,
     __MICRO_APP_NAME__: string
     __MICRO_APP_ENVIRONMENT__: string
   }
 }
 
 export default Vue.extend({
+  data () {
+    return {
+      activeIndex: '',
+    }
+  },
+  created () {
+    // 初始化 activeIndex
+    this.$router.onReady(() => {
+      this.activeIndex = this.$route.path
+    })
+  },
   mounted() {
     console.log('微应用child-nuxtjs渲染了');
 
@@ -31,11 +49,6 @@ export default Vue.extend({
       // 监听基座下发的数据变化
       window.microApp.addDataListener((data: Record<string, any>) => {
         console.log('child-nuxtjs addDataListener:', data);
-
-        // 当基座下发path时进行跳转
-        if (data.path && data.path !== this.$router.currentRoute.path) {
-          this.$router.push(data.path as string)
-        }
       })
 
       // 向基座发送数据
@@ -53,8 +66,19 @@ export default Vue.extend({
     // 子应用内部跳转时，通知侧边栏改变菜单状态
     onRouteChange (): void {
       if (window.__MICRO_APP_ENVIRONMENT__) {
-        // 发送全局数据，通知侧边栏修改菜单展示
-        window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
+        window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+      }
+    }
+  },
+  watch: {
+    // 监听路由变化
+    $route () {
+      this.activeIndex = this.$route.path
+      /**
+       * 跳转后向主应用发送PopStateEvent事件，使主应用响应路由变化，触发侧边栏高亮，实际项目中并不一定需要，根据实际情况而定
+       */
+      if (window.__MICRO_APP_ENVIRONMENT__) {
+        window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
       }
     }
   }

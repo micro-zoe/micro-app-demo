@@ -1,7 +1,7 @@
 const isProduction = process.env.NODE_ENV === 'production'
 
 const port = parseInt(process.env.PORT, 10) || 4003
-const basePath = '/nuxtjs2'
+const basePath = '/app-nuxtjs2'
 
 // 设置资源前缀，用于补全静态资源地址
 const assetPrefix = isProduction ? `http://www.micro-zoe.com:${port}${basePath}` : `http://localhost:${port}${basePath}`
@@ -23,6 +23,18 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [
+    'element-ui/lib/theme-chalk/index.css',
+    'ant-design-vue/dist/antd.css',
+  ],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [
+    { src: '~/plugins/element-ui.js' },
+    { src: '~/plugins/ant-design-vue.js' },
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

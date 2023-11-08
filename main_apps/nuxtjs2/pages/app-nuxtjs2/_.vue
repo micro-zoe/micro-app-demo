@@ -2,9 +2,11 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-nuxtjs2'
+      name='nuxtjs2'
       :url='url'
       ssr
+      iframe
+      router-mode='custom'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
