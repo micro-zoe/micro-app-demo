@@ -55,6 +55,7 @@ import DrawerDemo from './components/drawer';
 import MessageDemo from './components/message';
 import ModalDemo from './components/modal';
 import NotificationDemo from './components/notification';
+import PopconfirmDemo from './components/popconfirm';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -371,6 +372,11 @@ const AntDesignPage = () => {
             label: 'Notification 通知提醒框',
             key: 'Notification',
             children: <><h1>child-react16-ant-design-4.x: Notification 通知提醒框</h1><NotificationDemo /></>,
+          },
+          {
+            label: 'Popconfirm 气泡确认框',
+            key: 'Popconfirm',
+            children: <><h1>child-react16-ant-design-4.x: Popconfirm 气泡确认框</h1><PopconfirmDemo /></>,
           },
         ]}
       />
