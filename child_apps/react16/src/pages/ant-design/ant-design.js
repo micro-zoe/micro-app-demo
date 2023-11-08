@@ -59,6 +59,7 @@ import PopconfirmDemo from './components/popconfirm';
 import ProgressDemo from './components/progress';
 import ResultDemo from './components/result';
 import SkeletonDemo from './components/skeleton';
+import SpinDemo from './components/spin';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -395,6 +396,11 @@ const AntDesignPage = () => {
             label: 'Skeleton 骨架屏',
             key: 'Skeleton',
             children: <><h1>child-react16-ant-design-4.x: Skeleton 骨架屏</h1><SkeletonDemo /></>,
+          },
+          {
+            label: 'Spin 加载中',
+            key: 'Spin',
+            children: <><h1>child-react16-ant-design-4.x: Spin 加载中</h1><SpinDemo /></>,
           },
         ]}
       />
