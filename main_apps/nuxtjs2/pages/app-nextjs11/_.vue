@@ -2,7 +2,7 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-nextjs11'
+      name='nextjs11'
       :url='url'
       :data='microAppData'
       ssr
@@ -21,7 +21,6 @@
 import config from '../../lib/config'
 
 export default {
-  name: 'nextjs11',
   data () {
     return {
       show: false,

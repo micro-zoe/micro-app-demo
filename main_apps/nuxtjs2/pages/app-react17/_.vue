@@ -2,7 +2,7 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-react17'
+      name='react17'
       :url='url'
       :data='microAppData'
       @created='handleCreate'

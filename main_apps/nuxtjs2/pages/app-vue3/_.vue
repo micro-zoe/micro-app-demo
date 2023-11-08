@@ -2,9 +2,10 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-vue3'
+      name='vue3'
       :url='url'
       baseroute='/app-vue3'
+      router-mode='custom'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'

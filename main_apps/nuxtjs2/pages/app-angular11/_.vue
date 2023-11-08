@@ -2,7 +2,7 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-angular11'
+      name='angular11'
       :url='url'
       baseroute='/app-angular11'
       :data='microAppData'
@@ -21,7 +21,6 @@ import 'zone.js'
 import config from '../../lib/config'
 
 export default {
-  name: 'angular11',
   data () {
     return {
       show: false,

@@ -1,6 +1,6 @@
 <template>
   <div id="sidebar">
-    <h3 :abc="activeIndex">侧边栏</h3>
+    <h3>侧边栏</h3>
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="activeIndex"

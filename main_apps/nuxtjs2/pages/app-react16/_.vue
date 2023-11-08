@@ -2,7 +2,7 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-react16'
+      name='react16'
       :url='url'
       baseroute='/app-react16'
       :data='microAppData'

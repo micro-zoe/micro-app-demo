@@ -2,9 +2,11 @@
   <div>
     <micro-app
       v-if='show'
-      name='appname-vue2'
+      name='vue2'
       :url='url'
       baseroute='/app-vue2'
+      router-mode='custom'
+      iframe
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
@@ -20,7 +22,6 @@
 import config from '../../lib/config'
 
 export default {
-  name: 'vue2',
   data () {
     return {
       show: false,
