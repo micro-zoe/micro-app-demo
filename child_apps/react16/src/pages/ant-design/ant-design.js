@@ -56,6 +56,7 @@ import MessageDemo from './components/message';
 import ModalDemo from './components/modal';
 import NotificationDemo from './components/notification';
 import PopconfirmDemo from './components/popconfirm';
+import ProgressDemo from './components/progress';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -377,6 +378,11 @@ const AntDesignPage = () => {
             label: 'Popconfirm 气泡确认框',
             key: 'Popconfirm',
             children: <><h1>child-react16-ant-design-4.x: Popconfirm 气泡确认框</h1><PopconfirmDemo /></>,
+          },
+          {
+            label: 'Progress 进度条',
+            key: 'Progress',
+            children: <><h1>child-react16-ant-design-4.x: Progress 进度条</h1><ProgressDemo /></>,
           },
         ]}
       />
