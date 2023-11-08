@@ -58,6 +58,7 @@ import NotificationDemo from './components/notification';
 import PopconfirmDemo from './components/popconfirm';
 import ProgressDemo from './components/progress';
 import ResultDemo from './components/result';
+import SkeletonDemo from './components/skeleton';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -389,6 +390,11 @@ const AntDesignPage = () => {
             label: 'Result 结果',
             key: 'Result',
             children: <><h1>child-react16-ant-design-4.x: Result 结果</h1><ResultDemo /></>,
+          },
+          {
+            label: 'Skeleton 骨架屏',
+            key: 'Skeleton',
+            children: <><h1>child-react16-ant-design-4.x: Skeleton 骨架屏</h1><SkeletonDemo /></>,
           },
         ]}
       />
