@@ -3,6 +3,9 @@ import { createApp, App as AppInstance } from 'vue'
 import { createRouter, createWebHistory, Router, RouterHistory, RouterOptions } from 'vue-router'
 import App from './App.vue'
 import routes from './router'
+import installElementPlus from './plugins/element'
+import installAntd from './plugins/antd'
+
 
 declare global {
   interface Window {
@@ -73,6 +76,8 @@ function mount () {
 
   // @ts-ignore
   app = createApp(App)
+  installElementPlus(app)
+  installAntd(app)
   app.use(router)
   app.mount('#vue3-app')
 

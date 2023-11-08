@@ -7,10 +7,15 @@ const routes = [
     component: Home
   },
   {
-    path: '/page2',
-    name: 'page2',
-    component: () => import(/* webpackChunkName: "page2" */ '../views/page2.vue')
-  }
+    path: '/element-plus-1',
+    name: 'element-plus 1.x',
+    component: () => import(/* webpackChunkName: "element-plus-1" */ '../views/element-plus-1.vue')
+  },
+  {
+    path: '/ant-design-vue-4',
+    name: 'ant-design-vue 4.x',
+    component: () => import(/* webpackChunkName: "ant-design-vue" */ '../views/ant-design-vue-4.vue'),
+  },
 ]
 
 export default routes

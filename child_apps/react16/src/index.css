@@ -19,7 +19,13 @@ code {
 }
 
 #public-links {
+  height: 60px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
   flex: 0 0 auto;
+  padding: 0;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 #react16-root > :not(#public-links) {

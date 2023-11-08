@@ -9,7 +9,7 @@ const items = [
   },
   {
     key: '/ant-design',
-    label: 'Ant Design 5.x',
+    label: 'Ant Design 4.x',
   },
 ]
 
@@ -35,7 +35,7 @@ const Navbar = () => {
   }, [history.location.pathname])
 
   return (
-    <div id='public-links' style={{ display: 'flex', justifyContent: 'center' }}>
+    <div id='public-links'>
       <Tabs activeKey={activeKey} items={items} onChange={onRouteChange} />
     </div>
   )
