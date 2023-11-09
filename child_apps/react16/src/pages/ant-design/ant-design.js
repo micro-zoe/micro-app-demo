@@ -60,6 +60,7 @@ import ProgressDemo from './components/progress';
 import ResultDemo from './components/result';
 import SkeletonDemo from './components/skeleton';
 import SpinDemo from './components/spin';
+import AnchorDemo from './components/anchor';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -401,6 +402,16 @@ const AntDesignPage = () => {
             label: 'Spin 加载中',
             key: 'Spin',
             children: <><h1>child-react16-ant-design-4.x: Spin 加载中</h1><SpinDemo /></>,
+          },
+          {
+            label: `其他`,
+            key: '其他',
+            disabled: true,
+          },
+          {
+            label: 'Anchor 锚点',
+            key: 'Anchor',
+            children: <><h1>child-react16-ant-design-4.x: Anchor 锚点</h1><AnchorDemo /></>,
           },
         ]}
       />
