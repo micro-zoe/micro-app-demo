@@ -61,6 +61,7 @@ import ResultDemo from './components/result';
 import SkeletonDemo from './components/skeleton';
 import SpinDemo from './components/spin';
 import AnchorDemo from './components/anchor';
+import BackTopDemo from './components/back-top';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -412,6 +413,11 @@ const AntDesignPage = () => {
             label: 'Anchor 锚点',
             key: 'Anchor',
             children: <><h1>child-react16-ant-design-4.x: Anchor 锚点</h1><AnchorDemo /></>,
+          },
+          {
+            label: 'BackTop 回到顶部',
+            key: 'BackTop',
+            children: <><h1>child-react16-ant-design-4.x: BackTop 回到顶部</h1><BackTopDemo /></>,
           },
         ]}
       />
