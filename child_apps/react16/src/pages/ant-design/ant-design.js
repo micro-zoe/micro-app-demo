@@ -62,6 +62,7 @@ import SkeletonDemo from './components/skeleton';
 import SpinDemo from './components/spin';
 import AnchorDemo from './components/anchor';
 import BackTopDemo from './components/back-top';
+import ConfigProviderDemo from './components/config-provider';
 import './ant-design.css'
 
 const AntDesignPage = () => {
@@ -418,6 +419,11 @@ const AntDesignPage = () => {
             label: 'BackTop 回到顶部',
             key: 'BackTop',
             children: <><h1>child-react16-ant-design-4.x: BackTop 回到顶部</h1><BackTopDemo /></>,
+          },
+          {
+            label: 'ConfigProvider 全局化配置',
+            key: 'ConfigProvider',
+            children: <><h1>child-react16-ant-design-4.x: ConfigProvider 全局化配置</h1><ConfigProviderDemo /></>,
           },
         ]}
       />

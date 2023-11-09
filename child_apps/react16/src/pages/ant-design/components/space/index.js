@@ -1,14 +1,14 @@
 import React from 'react';
-import BaseDemo from './base';
-import VerticalDemo from './vertical';
-import SizeDemo from './size';
-import AlignDemo from './align';
-import CustomizeDemo from './customize';
-import WrapDemo from './wrap';
-import SplitDemo from './split';
-import CompactDemo from './compact';
-import CompactButtonsDemo from './compact-buttons';
-import CompactButtonVerticalDemo from './compact-button-vertical';
+import SpaceBaseDemo from './base';
+import SpaceVerticalDemo from './vertical';
+import SpaceSizeDemo from './size';
+import SpaceAlignDemo from './align';
+import SpaceCustomizeDemo from './customize';
+import SpaceWrapDemo from './wrap';
+import SpaceSplitDemo from './split';
+import SpaceCompactDemo from './compact';
+import SpaceCompactButtonsDemo from './compact-buttons';
+import SpaceCompactButtonVerticalDemo from './compact-button-vertical';
 import './index.css';
 
 const SpaceDemo = () => (
@@ -17,70 +17,70 @@ const SpaceDemo = () => (
     <div id="components-space-demo-base">
       <h2>Base 基本用法</h2>
       <div className="code-box-demo">
-        <BaseDemo />
+        <SpaceBaseDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-vertical">
       <h2>Vertical 垂直间距</h2>
       <div className="code-box-demo">
-        <VerticalDemo />
+        <SpaceVerticalDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-size">
       <h2>Size 间距大小</h2>
       <div className="code-box-demo">
-        <SizeDemo />
+        <SpaceSizeDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-align">
       <h2>Align 对齐</h2>
       <div className="code-box-demo">
-        <AlignDemo />
+        <SpaceAlignDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-customize">
       <h2>Customize 自定义尺寸</h2>
       <div className="code-box-demo">
-        <CustomizeDemo />
+        <SpaceCustomizeDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-wrap">
       <h2>Wrap 自动换行</h2>
       <div className="code-box-demo">
-        <WrapDemo />
+        <SpaceWrapDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-split">
       <h2>Split 分隔符</h2>
       <div className="code-box-demo">
-        <SplitDemo />
+        <SpaceSplitDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-compact">
       <h2>Compact 紧凑布局组合</h2>
       <div className="code-box-demo">
-        <CompactDemo />
+        <SpaceCompactDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-compact-buttons">
       <h2>CompactButtons Button 紧凑布局</h2>
       <div className="code-box-demo">
-        <CompactButtonsDemo />
+        <SpaceCompactButtonsDemo />
       </div>
     </div>
     <hr />
     <div id="components-space-demo-compact-button-vertical">
       <h2>CompactButtonVertical 垂直方向紧凑布局</h2>
       <div className="code-box-demo">
-        <CompactButtonVerticalDemo />
+        <SpaceCompactButtonVerticalDemo />
       </div>
     </div>
     <hr />
