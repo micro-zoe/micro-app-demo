@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Tabs } from 'antd'
+import { useHistory } from 'react-router-dom';
 import ButtonDemo from './components/button';
 import IconDemo from './components/icon';
 import TypographyDemo from './components/typography';
@@ -63,15 +64,32 @@ import SpinDemo from './components/spin';
 import AnchorDemo from './components/anchor';
 import BackTopDemo from './components/back-top';
 import ConfigProviderDemo from './components/config-provider';
-import './ant-design.css'
+import './ant-design.css';
+
+const toPascalCase = s => s
+  .replace(/-[a-z0-9]/ug, letter => `${letter.substring(1).toUpperCase()}`)
+  .replace(/^[a-z0-9]/ug, letter => `${letter.toUpperCase()}`);
+
+const toKebabCase = s => s
+  .replace(/^[A-Z0-9]/ug, letter => `${letter.toLowerCase()}`)
+  .replace(/[A-Z0-9]/ug, letter => `-${letter.toLowerCase()}`);
+
 
 const AntDesignPage = () => {
+  const history = useHistory();
+  const [activeKey, setActiveKey] = useState('Button');
+  useEffect(
+    () => {
+      setActiveKey(toPascalCase(history.location.pathname.replace(/^\/ant-design\/?/, '') || 'button'));
+    },
+    [history.location]
+  );
   return (
     <div className="ant-design-demo">
       <Tabs
         size="small"
         tabPosition="left"
-        defaultActiveKey="Button"
+        activeKey={activeKey}
         className="ant-design-demo-tabs"
         style={{ height: 'calc(100vh - 100px)', width: 'calc(100vw - 256px)' }}
         items={[
@@ -426,6 +444,7 @@ const AntDesignPage = () => {
             children: <><h1>child-react16-ant-design-4.x: ConfigProvider 全局化配置</h1><ConfigProviderDemo /></>,
           },
         ]}
+        onChange={(k) => { history.push(`/ant-design/${toKebabCase(k)}`) }}
       />
     </div>
   );
