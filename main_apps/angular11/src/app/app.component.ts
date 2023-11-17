@@ -1,5 +1,5 @@
 import { Component, NgZone } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import microApp, { getActiveApps } from '@micro-zoe/micro-app'
 import config from '../config'
 

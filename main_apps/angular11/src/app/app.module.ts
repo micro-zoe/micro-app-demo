@@ -12,6 +12,10 @@ import { React17Component } from './react17/react17.component';
 import { ViteComponent } from './vite/vite.component';
 import { Vue2Component } from './vue2/vue2.component';
 import { Vue3Component } from './vue3/vue3.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -25,10 +29,14 @@ import { Vue3Component } from './vue3/vue3.component';
     ViteComponent,
     Vue2Component,
     Vue3Component,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTreeModule,
+    MatIconModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
