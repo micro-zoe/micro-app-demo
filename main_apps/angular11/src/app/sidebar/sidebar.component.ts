@@ -4,14 +4,14 @@ import { MatTreeNestedDataSource } from '@angular/material/tree';
 import { NavigationEnd, Router } from '@angular/router';
 import microApp from '@micro-zoe/micro-app';
 
-interface FoodNode {
+interface SidebarItem {
   name?: string;
   key?: string;
   type?: string;
-  children?: FoodNode[];
+  children?: SidebarItem[];
 }
 
-const sidebarItems: FoodNode[] = [
+const sidebarItems: SidebarItem[] = [
   { key: '/', name: '首页' },
   // 👇 一级菜单 key 为子应用名称，二级菜单 key 为路由地址
   { key: 'vue2', name: 'child-vue2', children: [
@@ -49,13 +49,13 @@ const sidebarItems: FoodNode[] = [
   ] },
 ];
 
-const matchSidebarItemKeys = (key) => {
-  const iter = (menus, keys) => {
+const matchSidebarItemKeys = (key: string): string[] | void => {
+  const iter = (menus: SidebarItem[], keys: string[]): string[] | void => {
     for (const menu of menus) {
       if (menu.key === key) {
         return [...keys, menu.key]
       }
-      if (menu.children) {
+      if (typeof menu.key === 'string' && menu.children) {
         const res = iter(menu.children, [...keys, menu.key])
         if (res) {
           return res
@@ -72,8 +72,8 @@ const matchSidebarItemKeys = (key) => {
   styleUrls: ['./sidebar.component.sass'],
 })
 export class SidebarComponent implements OnInit {
-  treeControl = new NestedTreeControl<FoodNode>(node => node.children);
-  dataSource = new MatTreeNestedDataSource<FoodNode>();
+  treeControl = new NestedTreeControl<SidebarItem>(node => node.children);
+  dataSource = new MatTreeNestedDataSource<SidebarItem>();
   currentRoute = '';
 
   constructor(router: Router) {
@@ -118,14 +118,17 @@ export class SidebarComponent implements OnInit {
           path: childPath,
         }));
       }
-      this.treeControl.collapseAll();
-      this.treeControl.expand(sidebarItems.find(s => s.key === indexPath[0]));
+      const expand = sidebarItems.find(s => s.key === indexPath[0]);
+      if (expand) {
+        this.treeControl.collapseAll();
+        this.treeControl.expand(expand);
+      }
       this.currentRoute = index;
     });
     this.dataSource.data = sidebarItems;
   }
 
-  hasChild = (_: number, node: FoodNode) => !!node.children && node.children.length > 0;
+  hasChild = (_: number, node: SidebarItem) => !!node.children && node.children.length > 0;
 
   ngOnInit(): void {
   }
