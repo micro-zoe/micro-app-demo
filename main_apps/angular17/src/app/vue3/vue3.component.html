@@ -1,0 +1,14 @@
+<div>
+  <micro-app
+    name='vue3'
+    [attr.url]='url'
+    baseroute='/main-angular17/app-vue3'
+    [data]='microAppData'
+    (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
+    (mounted)='handleMount()'
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
+    (datachange)='handleDataChange($event)'
+  ></micro-app>
+</div>

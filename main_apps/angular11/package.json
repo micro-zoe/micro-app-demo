@@ -11,15 +11,17 @@
   },
   "private": true,
   "dependencies": {
-    "@micro-zoe/micro-app": "latest",
     "@angular/animations": "~11.1.2",
+    "@angular/cdk": "~11.1.2",
     "@angular/common": "~11.1.2",
     "@angular/compiler": "~11.1.2",
     "@angular/core": "~11.1.2",
     "@angular/forms": "~11.1.2",
+    "@angular/material": "~11.1.2",
     "@angular/platform-browser": "~11.1.2",
     "@angular/platform-browser-dynamic": "~11.1.2",
     "@angular/router": "~11.1.2",
+    "@micro-zoe/micro-app": "^1.0.0-rc.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Tabs } from 'antd'
+import { useHistory } from 'react-router-dom';
 import ButtonDemo from './components/button';
 import IconDemo from './components/icon';
 import TypographyDemo from './components/typography';
@@ -60,15 +61,35 @@ import ProgressDemo from './components/progress';
 import ResultDemo from './components/result';
 import SkeletonDemo from './components/skeleton';
 import SpinDemo from './components/spin';
-import './ant-design.css'
+import AnchorDemo from './components/anchor';
+import BackTopDemo from './components/back-top';
+import ConfigProviderDemo from './components/config-provider';
+import './ant-design.css';
+
+const toPascalCase = s => s
+  .replace(/-[a-z0-9]/ug, letter => `${letter.substring(1).toUpperCase()}`)
+  .replace(/^[a-z0-9]/ug, letter => `${letter.toUpperCase()}`);
+
+const toKebabCase = s => s
+  .replace(/^[A-Z0-9]/ug, letter => `${letter.toLowerCase()}`)
+  .replace(/[A-Z0-9]/ug, letter => `-${letter.toLowerCase()}`);
+
 
 const AntDesignPage = () => {
+  const history = useHistory();
+  const [activeKey, setActiveKey] = useState('Button');
+  useEffect(
+    () => {
+      setActiveKey(toPascalCase(history.location.pathname.replace(/^\/ant-design\/?/, '') || 'button'));
+    },
+    [history.location]
+  );
   return (
     <div className="ant-design-demo">
       <Tabs
         size="small"
         tabPosition="left"
-        defaultActiveKey="Button"
+        activeKey={activeKey}
         className="ant-design-demo-tabs"
         style={{ height: 'calc(100vh - 100px)', width: 'calc(100vw - 256px)' }}
         items={[
@@ -402,7 +423,28 @@ const AntDesignPage = () => {
             key: 'Spin',
             children: <><h1>child-react16-ant-design-4.x: Spin 加载中</h1><SpinDemo /></>,
           },
+          {
+            label: `其他`,
+            key: '其他',
+            disabled: true,
+          },
+          {
+            label: 'Anchor 锚点',
+            key: 'Anchor',
+            children: <><h1>child-react16-ant-design-4.x: Anchor 锚点</h1><AnchorDemo /></>,
+          },
+          {
+            label: 'BackTop 回到顶部',
+            key: 'BackTop',
+            children: <><h1>child-react16-ant-design-4.x: BackTop 回到顶部</h1><BackTopDemo /></>,
+          },
+          {
+            label: 'ConfigProvider 全局化配置',
+            key: 'ConfigProvider',
+            children: <><h1>child-react16-ant-design-4.x: ConfigProvider 全局化配置</h1><ConfigProviderDemo /></>,
+          },
         ]}
+        onChange={(k) => { history.push(`/ant-design/${toKebabCase(k)}`) }}
       />
     </div>
   );

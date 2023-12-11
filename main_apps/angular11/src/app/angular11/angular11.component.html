@@ -3,6 +3,7 @@
     name='angular11'
     [attr.url]='url'
     baseroute='/main-angular11/app-angular11'
+    router-mode="custom"
     [data]='microAppData'
     (created)='handleCreate()'
     (beforemount)='handleBeforeMount()'
@@ -10,5 +11,6 @@
     (unmount)='handleUnmount()'
     (error)='handleError()'
     (datachange)='handleDataChange($event)'
+    inline
   ></micro-app>
 </div>

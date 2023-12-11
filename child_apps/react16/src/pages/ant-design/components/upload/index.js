@@ -127,13 +127,13 @@ const UploadDemo = () => (
       </div>
     </div>
     <hr />
-    <div id="components-upload-demo-drag-sorting">
+    {/* <div id="components-upload-demo-drag-sorting">
       <h2>DragSorting 上传列表拖拽排序</h2>
       <div className="code-box-demo">
         <UploadDragSortingDemo />
       </div>
     </div>
-    <hr />
+    <hr /> */}
     <div id="components-upload-demo-crop-image">
       <h2>CropImage 上传前裁切图片</h2>
       <div className="code-box-demo">

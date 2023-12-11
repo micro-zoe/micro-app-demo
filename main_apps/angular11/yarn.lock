@@ -134,6 +134,15 @@
   dependencies:
     tslib "^2.0.0"
 
+"@angular/cdk@~11.1.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-11.1.2.tgz#89708a97be340bbfb7d64c84dbc7bb100f77d7ff"
+  integrity sha512-RnKvMWAIcWbWoUdBfAoOs4pQl6t5O+1OuPlBNK5aL2FYqoLv5U0fP88Rf7OhjPlD0ASsPGLG45t+dA5sUVZ46Q==
+  dependencies:
+    tslib "^2.0.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@~11.1.4":
   version "11.1.4"
   resolved "https://registry.npmmirror.com/@angular/cli/download/@angular/cli-11.1.4.tgz#46222917988723dbac5e4a9f864f73db5abb4ebb"
@@ -217,6 +226,13 @@
   version "11.1.2"
   resolved "https://registry.npmmirror.com/@angular/forms/download/@angular/forms-11.1.2.tgz#bb45bfb8f97f90e41473afc893097048bc38fd55"
   integrity sha1-u0W/uPl/kOQUc6/IkwlwSLw4/VU=
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular/material@~11.1.2":
+  version "11.1.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-11.1.2.tgz#6b466c95b65921e95d26bce34216439fc9b7881e"
+  integrity sha512-Fyjk6LUrJ+mJmRMrnM2L4Q9pijuhLa8q1G50mUYa81OJPWnhMRlzoM2dDHpS/ibIARpBc3QA8PmF3hUgyLxgMg==
   dependencies:
     tslib "^2.0.0"
 
@@ -1131,10 +1147,10 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
-"@micro-zoe/micro-app@latest":
-  version "0.6.2"
-  resolved "https://registry.npmmirror.com/@micro-zoe/micro-app/download/@micro-zoe/micro-app-0.6.2.tgz#470e2036cf84a9353354995862a7c160d708ab92"
-  integrity sha512-Qx3UzjRIuhAw7bxL9P9iD4KNQIn6tk3Paq66KZ/M+HlV7z1jL99khIqMRdLiQemHA/cFqi2B1n7BaWB2wb2aZQ==
+"@micro-zoe/micro-app@^1.0.0-rc.2":
+  version "1.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@micro-zoe/micro-app/-/micro-app-1.0.0-rc.2.tgz#6f3d97bdb3e226d713bc1b819b89c45bf1758b66"
+  integrity sha512-+wvl5U3wgNIHx5W3IYjy8lW/LgaGYev0OHVbzUW6Ida7ku0PVOvxr9PkbANwzIEijGZui89nrXE2yp63Qb4aqQ==
 
 "@ngtools/webpack@11.1.4":
   version "11.1.4"
@@ -6495,6 +6511,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha1-mLTTZrWyZqfNkLS1iQZmeviC2ro=
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parse5@^6.0.1:
   version "6.0.1"

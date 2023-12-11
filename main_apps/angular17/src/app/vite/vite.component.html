@@ -1,0 +1,15 @@
+<div>
+  <micro-app
+    name='vite'
+    [attr.url]='url'
+    inline
+    disablesandbox
+    [data]='microAppData'
+    (created)='handleCreate()'
+    (beforemount)='handleBeforeMount()'
+    (mounted)='handleMount()'
+    (unmount)='handleUnmount()'
+    (error)='handleError()'
+    (datachange)='handleDataChange($event)'
+  ></micro-app>
+</div>
