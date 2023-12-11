@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="vue-home">
     <img alt="Vue logo" src="../assets/logo.png">
     <h1>主应用 - Vue@{{version}}</h1>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style>
-
+  .vue-home {
+    text-align: center;
+  }
 </style>
