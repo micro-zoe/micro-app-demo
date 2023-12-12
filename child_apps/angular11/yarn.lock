@@ -10,6 +10,14 @@
     "@angular-devkit/core" "11.1.4"
     rxjs "6.6.3"
 
+"@angular-devkit/architect@0.1102.19":
+  version "0.1102.19"
+  resolved "https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1102.19.tgz#3dd1a1d5ecbf539e5d4734e56343bf605455ff85"
+  integrity sha512-5Opv6H+XyCkuQvQ1jsxw416YqMDPX3dVonMarFGBPLBe8YEXLRTJ60dvmuLsLpWk6ccTd3XiNT7WEJy4ctDc2Q==
+  dependencies:
+    "@angular-devkit/core" "11.2.19"
+    rxjs "6.6.3"
+
 "@angular-devkit/build-angular@~0.1101.4":
   version "0.1101.4"
   resolved "https://registry.npmmirror.com/@angular-devkit/build-angular/download/@angular-devkit/build-angular-0.1101.4.tgz#6812596c345e40e9f0e707cb0f5e472a5aca8de6"
@@ -118,32 +126,52 @@
     rxjs "6.6.3"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@11.1.4":
-  version "11.1.4"
-  resolved "https://registry.npmmirror.com/@angular-devkit/schematics/download/@angular-devkit/schematics-11.1.4.tgz#c14fc484a58e6a63e1fde8404138dd9b2a80e5a2"
-  integrity sha1-wU/EhKWOamPh/ehAQTjdmyqA5aI=
+"@angular-devkit/core@11.2.19":
+  version "11.2.19"
+  resolved "https://registry.npmmirror.com/@angular-devkit/core/-/core-11.2.19.tgz#f827e205c5bd8a3a7cfb02b5651affef7b1e8f52"
+  integrity sha512-kvS0QXDYDatLyf0NYv2sahPYD7kya4g5GpQAV1ddjjLmEVeZssHt+Xfk2tzrkzYzqRMiyspx3HPPrrOnMUAFhQ==
   dependencies:
-    "@angular-devkit/core" "11.1.4"
-    ora "5.2.0"
+    ajv "6.12.6"
+    fast-json-stable-stringify "2.1.0"
+    magic-string "0.25.7"
+    rxjs "6.6.3"
+    source-map "0.7.3"
+
+"@angular-devkit/schematics@11.2.19":
+  version "11.2.19"
+  resolved "https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-11.2.19.tgz#5624d23aeba0ec8326d2150f9791291897f6b488"
+  integrity sha512-jefsjIlaznKxn5+dHSMwvXTO+QKCKtahu/iZoRcdb25JWGXrkj8/quCuj4VeMFY48g/EPjX+9WhDtRl8TjYBiA==
+  dependencies:
+    "@angular-devkit/core" "11.2.19"
+    ora "5.3.0"
     rxjs "6.6.3"
 
-"@angular/animations@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/animations/download/@angular/animations-11.1.2.tgz#df5d5284625e17a4b094a6cf8c420d3c5f187693"
-  integrity sha1-311ShGJeF6SwlKbPjEINPF8YdpM=
+"@angular/animations@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/animations/-/animations-11.2.14.tgz#cf119ea779bf11bd3759f1355c85e4e8e9e7bb03"
+  integrity sha512-Heq/nNrCmb3jbkusu+BQszOecfFI/31Oxxj+CDQkqqYpBcswk6bOJLoEE472o+vmgxaXbgeflU9qbIiCQhpMFA==
   dependencies:
     tslib "^2.0.0"
 
-"@angular/cli@~11.1.4":
-  version "11.1.4"
-  resolved "https://registry.npmmirror.com/@angular/cli/download/@angular/cli-11.1.4.tgz#46222917988723dbac5e4a9f864f73db5abb4ebb"
-  integrity sha1-RiIpF5iHI9usXkqfhk9z21q7Trs=
+"@angular/cdk@~11.2.12":
+  version "11.2.13"
+  resolved "https://registry.npmmirror.com/@angular/cdk/-/cdk-11.2.13.tgz#d54c9187e3b8cf3f8ba190b1edddc08ed2b740de"
+  integrity sha512-FkE4iCwoLbQxLDUOjV1I7M/6hmpyb7erAjEdWgch7nGRNxF1hqX5Bqf1lvLFKPNCbx5NRI5K7YVAdIUQUR8vug==
   dependencies:
-    "@angular-devkit/architect" "0.1101.4"
-    "@angular-devkit/core" "11.1.4"
-    "@angular-devkit/schematics" "11.1.4"
-    "@schematics/angular" "11.1.4"
-    "@schematics/update" "0.1101.4"
+    tslib "^2.0.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
+"@angular/cli@~11.2.12":
+  version "11.2.19"
+  resolved "https://registry.npmmirror.com/@angular/cli/-/cli-11.2.19.tgz#b170e3007b9c014ff405ecb7a86b18adc6e74cc4"
+  integrity sha512-B7ZRmcleBF/D6ojt+LOfHE/2Cs3jpHWK/Khho0c2i1jrqLjCTFlgGfK0NKztbFr0lmbhL6Z7Oj4ge3X6dMcSuQ==
+  dependencies:
+    "@angular-devkit/architect" "0.1102.19"
+    "@angular-devkit/core" "11.2.19"
+    "@angular-devkit/schematics" "11.2.19"
+    "@schematics/angular" "11.2.19"
+    "@schematics/update" "0.1102.19"
     "@yarnpkg/lockfile" "1.1.0"
     ansi-colors "4.1.1"
     debug "4.3.1"
@@ -152,8 +180,9 @@
     jsonc-parser "3.0.0"
     npm-package-arg "8.1.0"
     npm-pick-manifest "6.1.0"
-    open "7.3.1"
-    pacote "11.1.14"
+    open "7.4.0"
+    ora "5.3.0"
+    pacote "11.2.4"
     resolve "1.19.0"
     rimraf "3.0.2"
     semver "7.3.4"
@@ -161,17 +190,17 @@
     universal-analytics "0.4.23"
     uuid "8.3.2"
 
-"@angular/common@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/common/download/@angular/common-11.1.2.tgz#500ca8c380ce57642d7c6e479e798275e9711c12"
-  integrity sha1-UAyow4DOV2QtfG5HnnmCdelxHBI=
+"@angular/common@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/common/-/common-11.2.14.tgz#52887277b0ae0438e584f9ae97b417ee51a694b5"
+  integrity sha512-ZSLV/3j7eCTyLf/8g4yBFLWySjiLz3vLJAGWscYoUpnJWMnug1VRu6zoF/COxCbtORgE+Wz6K0uhfS6MziBGVw==
   dependencies:
     tslib "^2.0.0"
 
-"@angular/compiler-cli@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/compiler-cli/download/@angular/compiler-cli-11.1.2.tgz#476a3520ee73873859b4d3a029aa58bc5cc63be4"
-  integrity sha1-R2o1IO5zhzhZtNOgKapYvFzGO+Q=
+"@angular/compiler-cli@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/compiler-cli/-/compiler-cli-11.2.14.tgz#fdd22aeec25aa2477595bed631d19e977254ecc5"
+  integrity sha512-A7ltnCp03/EVqK/Q3tVUDsokgz5GHW3dSPGl0Csk7Ys5uBB9ibHTmVt4eiXA4jt0+6Bk+mKxwe5BEDqLvwYFAg==
   dependencies:
     "@babel/core" "^7.8.6"
     "@babel/types" "^7.8.6"
@@ -187,17 +216,17 @@
     source-map "^0.6.1"
     sourcemap-codec "^1.4.8"
     tslib "^2.0.0"
-    yargs "^16.1.1"
+    yargs "^16.2.0"
 
 "@angular/compiler@9.0.0":
   version "9.0.0"
   resolved "https://registry.npmmirror.com/@angular/compiler/download/@angular/compiler-9.0.0.tgz#87e0bef4c369b6cadae07e3a4295778fc93799d5"
   integrity sha1-h+C+9MNptsra4H46QpV3j8k3mdU=
 
-"@angular/compiler@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/compiler/download/@angular/compiler-11.1.2.tgz#1bfec2892c7ddbc40331de3a1bb6ea3997f3e436"
-  integrity sha1-G/7CiSx928QDMd46G7bqOZfz5DY=
+"@angular/compiler@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/compiler/-/compiler-11.2.14.tgz#9d3ea26b4d2d858aab935f69af9e201f53453a0f"
+  integrity sha512-XBOK3HgA+/y6Cz7kOX4zcJYmgJ264XnfcbXUMU2cD7Ac+mbNhLPKohWrEiSWalfcjnpf5gRfufQrQP7lpAGu0A==
   dependencies:
     tslib "^2.0.0"
 
@@ -206,17 +235,17 @@
   resolved "https://registry.npmmirror.com/@angular/core/download/@angular/core-9.0.0.tgz#227dc53e1ac81824f998c6e76000b7efc522641e"
   integrity sha1-In3FPhrIGCT5mMbnYAC378UiZB4=
 
-"@angular/core@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/core/download/@angular/core-11.1.2.tgz#8aa910860309886090d66cce45dd166b1082eb05"
-  integrity sha1-iqkQhgMJiGCQ1mzORd0WaxCC6wU=
+"@angular/core@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/core/-/core-11.2.14.tgz#3ebe298c79d5413dc670d56b7f503bd4d788d4a8"
+  integrity sha512-vpR4XqBGitk1Faph37CSpemwIYTmJ3pdIVNoHKP6jLonpWu+0azkchf0f7oD8/2ivj2F81opcIw0tcsy/D/5Vg==
   dependencies:
     tslib "^2.0.0"
 
-"@angular/forms@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/forms/download/@angular/forms-11.1.2.tgz#bb45bfb8f97f90e41473afc893097048bc38fd55"
-  integrity sha1-u0W/uPl/kOQUc6/IkwlwSLw4/VU=
+"@angular/forms@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/forms/-/forms-11.2.14.tgz#dc858408f7647f4fd033996a03aa74df18a02079"
+  integrity sha512-4LWqY6KEIk1AZQFnk+4PJSOCamlD4tumuVN06gO4D0dZo9Cx+GcvW6pM6N0CPubRvPs3sScCnu20WT11HNWC1w==
   dependencies:
     tslib "^2.0.0"
 
@@ -227,24 +256,24 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/platform-browser-dynamic@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-11.1.2.tgz#f9167fe41c649b1dce0e05902a39d85571bd818b"
-  integrity sha1-+RZ/5Bxkmx3ODgWQKjnYVXG9gYs=
+"@angular/platform-browser-dynamic@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-11.2.14.tgz#3c7fff1a1daacba5390acf033d28c377ec281166"
+  integrity sha512-TWTPdFs6iBBcp+/YMsgCRQwdHpWGq8KjeJDJ2tfatGgBD3Gqt2YaHOMST1zPW6RkrmupytTejuVqXzeaKWFxuw==
   dependencies:
     tslib "^2.0.0"
 
-"@angular/platform-browser@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/platform-browser/download/@angular/platform-browser-11.1.2.tgz#2b794799cb3edffcdac27637cc6e75d5bab9f1c5"
-  integrity sha1-K3lHmcs+3/zawnY3zG511bq58cU=
+"@angular/platform-browser@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-11.2.14.tgz#e52ad7a54a42a865033a17e57e213013919f1b1d"
+  integrity sha512-fb7b7ss/gRoP8wLAN17W62leMgjynuyjEPU2eUoAAazsG9f2cgM+z3rK29GYncDVyYQxZUZYnjSqvL6GSXx86A==
   dependencies:
     tslib "^2.0.0"
 
-"@angular/router@~11.1.2":
-  version "11.1.2"
-  resolved "https://registry.npmmirror.com/@angular/router/download/@angular/router-11.1.2.tgz#c057c626796bc83178f09df766212fa7ae82a426"
-  integrity sha1-wFfGJnlryDF48J33ZiEvp66CpCY=
+"@angular/router@~11.2.12":
+  version "11.2.14"
+  resolved "https://registry.npmmirror.com/@angular/router/-/router-11.2.14.tgz#4a8eb6d010a1a45c8e7f0c3b5b705959bdb69294"
+  integrity sha512-3aYBmj+zrEL9yf/ntIQxHIYaWShZOBKP3U07X2mX+TPMpGlvHDnR7L6bWhQVZwewzMMz7YVR16ldg50IFuAlfA==
   dependencies:
     tslib "^2.0.0"
 
@@ -1233,26 +1262,26 @@
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
 
-"@schematics/angular@11.1.4":
-  version "11.1.4"
-  resolved "https://registry.npmmirror.com/@schematics/angular/download/@schematics/angular-11.1.4.tgz#60c4236d2b62f37c163531e0543150ba12fd4bbc"
-  integrity sha1-YMQjbSti83wWNTHgVDFQuhL9S7w=
+"@schematics/angular@11.2.19":
+  version "11.2.19"
+  resolved "https://registry.npmmirror.com/@schematics/angular/-/angular-11.2.19.tgz#7901f92af6e1328ccb1ab1e8c8332c3c897a17c4"
+  integrity sha512-cZys7nRo/CI81EtPu4VJiAyv53gPfIfLteykhrTQpAp9AZK9UuRHauiJq7BhHRAUEc3z148xjSQgMvEu7/vAuA==
   dependencies:
-    "@angular-devkit/core" "11.1.4"
-    "@angular-devkit/schematics" "11.1.4"
+    "@angular-devkit/core" "11.2.19"
+    "@angular-devkit/schematics" "11.2.19"
     jsonc-parser "3.0.0"
 
-"@schematics/update@0.1101.4":
-  version "0.1101.4"
-  resolved "https://registry.npmmirror.com/@schematics/update/download/@schematics/update-0.1101.4.tgz#2a4c58fabafdb61442da172071a0878de417abbe"
-  integrity sha1-KkxY+rr9thRC2hcgcaCHjeQXq74=
+"@schematics/update@0.1102.19":
+  version "0.1102.19"
+  resolved "https://registry.npmmirror.com/@schematics/update/-/update-0.1102.19.tgz#7022577ed2491857c1757b271a49662786bc69ab"
+  integrity sha512-NdWzL6n/ZEgnposWdAPo8PTOn+8Baf/J9isjF+QOUUMbpZY/+QfLpej7eDAlcQ2Begiz/selMsnod70r9PYZUg==
   dependencies:
-    "@angular-devkit/core" "11.1.4"
-    "@angular-devkit/schematics" "11.1.4"
+    "@angular-devkit/core" "11.2.19"
+    "@angular-devkit/schematics" "11.2.19"
     "@yarnpkg/lockfile" "1.1.0"
     ini "2.0.0"
     npm-package-arg "^8.0.0"
-    pacote "11.1.14"
+    pacote "11.2.4"
     semver "7.3.4"
     semver-intersect "1.4.0"
 
@@ -6301,6 +6330,14 @@ open@7.3.1:
     is-docker "^2.0.0"
     is-wsl "^2.1.1"
 
+open@7.4.0:
+  version "7.4.0"
+  resolved "https://registry.npmmirror.com/open/-/open-7.4.0.tgz#ad95b98f871d9acb0ec8fecc557082cc9986626b"
+  integrity sha512-PGoBCX/lclIWlpS/R2PQuIR4NJoXh6X5AwVzE7WXnWRGvHg7+4TBCgsujUgiPpm0K1y4qvQeWnCWVTpTKZBtvA==
+  dependencies:
+    is-docker "^2.0.0"
+    is-wsl "^2.1.1"
+
 opn@^5.5.0:
   version "5.5.0"
   resolved "https://registry.npmmirror.com/opn/download/opn-5.5.0.tgz#fc7164fab56d235904c51c3b27da6758ca3b9bfc"
@@ -6312,6 +6349,20 @@ ora@5.2.0:
   version "5.2.0"
   resolved "https://registry.nlark.com/ora/download/ora-5.2.0.tgz?cache=0&sync_timestamp=1631556513877&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fora%2Fdownload%2Fora-5.2.0.tgz#de10bfd2d15514384af45f3fa9d9b1aaf344fda1"
   integrity sha1-3hC/0tFVFDhK9F8/qdmxqvNE/aE=
+  dependencies:
+    bl "^4.0.3"
+    chalk "^4.1.0"
+    cli-cursor "^3.1.0"
+    cli-spinners "^2.5.0"
+    is-interactive "^1.0.0"
+    log-symbols "^4.0.0"
+    strip-ansi "^6.0.0"
+    wcwidth "^1.0.1"
+
+ora@5.3.0:
+  version "5.3.0"
+  resolved "https://registry.npmmirror.com/ora/-/ora-5.3.0.tgz#fb832899d3a1372fe71c8b2c534bbfe74961bb6f"
+  integrity sha512-zAKMgGXUim0Jyd6CXK9lraBnD3H5yPGBPPOkC23a2BG6hsm4Zu6OQSjQuEtV0BHDf4aKHcUFvJiGRrFuW3MG8g==
   dependencies:
     bl "^4.0.3"
     chalk "^4.1.0"
@@ -6396,10 +6447,10 @@ p-try@^2.0.0:
   resolved "https://registry.npmmirror.com/p-try/download/p-try-2.2.0.tgz?cache=0&sync_timestamp=1633364506847&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fp-try%2Fdownload%2Fp-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha1-yyhoVA4xPWHeWPr741zpAE1VQOY=
 
-pacote@11.1.14:
-  version "11.1.14"
-  resolved "https://registry.npmmirror.com/pacote/download/pacote-11.1.14.tgz#c60b9849ab05488d3f9ccd644c8a42543f2f36d6"
-  integrity sha1-xguYSasFSI0/nM1kTIpCVD8vNtY=
+pacote@11.2.4:
+  version "11.2.4"
+  resolved "https://registry.npmmirror.com/pacote/-/pacote-11.2.4.tgz#dc7ca740a573ed86a3bf863511d22c1d413ec82f"
+  integrity sha512-GfTeVQGJ6WyBQbQD4t3ocHbyOmTQLmWjkCKSZPmKiGFKYKNUaM5U2gbLzUW8WG1XmS9yQFnsTFA0k3o1+q4klQ==
   dependencies:
     "@npmcli/git" "^2.0.1"
     "@npmcli/installed-package-contents" "^1.0.5"
@@ -6497,6 +6548,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha1-mLTTZrWyZqfNkLS1iQZmeviC2ro=
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.npmmirror.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parse5@^6.0.1:
   version "6.0.1"
@@ -9348,10 +9404,10 @@ yargs@^15.3.1:
     y18n "^4.0.0"
     yargs-parser "^18.1.2"
 
-yargs@^16.1.1:
+yargs@^16.2.0:
   version "16.2.0"
-  resolved "https://registry.npmmirror.com/yargs/download/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
-  integrity sha1-HIK/D2tqZur85+8w43b0mhJHf2Y=
+  resolved "https://registry.npmmirror.com/yargs/-/yargs-16.2.0.tgz#1c82bf0f6b6a66eafce7ef30e376f49a12477f66"
+  integrity sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"
