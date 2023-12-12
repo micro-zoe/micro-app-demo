@@ -39,8 +39,7 @@ const Vue2 = () => {
     <div>
       <micro-app
         name='vue2'
-        url={`${config.vue2}/child/vue2/`}
-        router-mode='custom'
+        url={`http://localhost:3000/`}
         baseroute='/main-react18/app-vue2'
         data={microAppData}
         onCreated={handleCreate}
@@ -49,6 +48,7 @@ const Vue2 = () => {
         onUnmount={handleUnmount}
         onError={handleError}
         onDataChange={handleDataChange}
+        iframe
       ></micro-app>
     </div>
   )
