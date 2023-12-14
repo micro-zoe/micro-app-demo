@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MaterialRoutingModule } from './material-routing.module'
 import { MaterialComponent } from './material.component';
-import { MaterialComponentDemoAutocompleteModule } from './components/autocomplete/app-material-component-demo-autocomplete.module'
-
+import { MaterialComponentDemoAutocompleteModule } from './components/autocomplete/app-material-component-demo-autocomplete.module';
+import { MaterialComponentDemoBadgeModule } from './components/badge/app-material-component-demo-badge.module';
 
 @NgModule({
   declarations: [
@@ -14,6 +14,7 @@ import { MaterialComponentDemoAutocompleteModule } from './components/autocomple
     CommonModule,
     MaterialRoutingModule,
     MaterialComponentDemoAutocompleteModule,
+    MaterialComponentDemoBadgeModule,
   ],
 })
 export class MaterialModule { }
