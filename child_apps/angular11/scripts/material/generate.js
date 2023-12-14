@@ -91,6 +91,7 @@ const EXTRA_MODULE = [
   { key: 'matSort', name: 'MatSortModule', from: '@angular/material/sort' },
   { key: 'matTooltip', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
   { key: 'matTooltipPosition', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
+  { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
   { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
 ];
 
