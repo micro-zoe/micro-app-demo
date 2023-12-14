@@ -249,10 +249,17 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/material@11.2.13":
+"@angular/material-moment-adapter@~11.2.12":
   version "11.2.13"
-  resolved "https://registry.npmmirror.com/@angular/material/download/@angular/material-11.2.13.tgz#99960316d3ce58aac7497d7bb8b0c05468f502b9"
-  integrity sha1-mZYDFtPOWKrHSX17uLDAVGj1Ark=
+  resolved "https://registry.npmmirror.com/@angular/material-moment-adapter/-/material-moment-adapter-11.2.13.tgz#b597cb84ec219847c171e0df790f64b54ab0e842"
+  integrity sha512-KDD7QcfePpwvPG3HYy4kA8Ju222fUZeoyGXxFVE98KgaIIHrTRIGPFLHbpzxIl+AYVgJcW2OiIXKLI09FiYirg==
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular/material@~11.2.12":
+  version "11.2.13"
+  resolved "https://registry.npmmirror.com/@angular/material/-/material-11.2.13.tgz#99960316d3ce58aac7497d7bb8b0c05468f502b9"
+  integrity sha512-FqFdGSkOtqsmeLyTSousodDGUy2NqbtxCIKv2rwbsIRwHNKB0KpR/UQhA2gMRuGa5hxhMJ0DW0Tf9neMRuLCTg==
   dependencies:
     tslib "^2.0.0"
 
@@ -5917,6 +5924,11 @@ mkdirp@^1.0.3, mkdirp@^1.0.4, mkdirp@~1.0.4:
   version "1.0.4"
   resolved "https://registry.npmmirror.com/mkdirp/download/mkdirp-1.0.4.tgz#3eb5ed62622756d79a5f0e2a221dfebad75c2f7e"
   integrity sha1-PrXtYmInVteaXw4qIh3+utdcL34=
+
+moment@^2.29.4:
+  version "2.29.4"
+  resolved "https://registry.npmmirror.com/moment/-/moment-2.29.4.tgz#3dbe052889fe7c1b2ed966fcb3a77328964ef108"
+  integrity sha512-5LC9SOxjSc2HF6vO2CyuTDNivEdoz2IvyJJGj6X8DJ0eFyfszE0QiEd+iXmBvUP3WHxSjFH/vIsA0EN00cgr8w==
 
 move-concurrently@^1.0.1:
   version "1.0.1"
