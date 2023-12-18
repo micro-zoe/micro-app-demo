@@ -12,6 +12,7 @@ import { MaterialComponentDemoCardModule } from './components/card/app-material-
 import { MaterialComponentDemoCheckboxModule } from './components/checkbox/app-material-component-demo-checkbox.module';
 import { MaterialComponentDemoChipsModule } from './components/chips/app-material-component-demo-chips.module';
 import { MaterialComponentDemoDatepickerModule } from './components/datepicker/app-material-component-demo-datepicker.module';
+import { MaterialComponentDemoDialogModule } from './components/dialog/app-material-component-demo-dialog.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { MaterialComponentDemoDatepickerModule } from './components/datepicker/a
     MaterialComponentDemoCheckboxModule,
     MaterialComponentDemoChipsModule,
     MaterialComponentDemoDatepickerModule,
+    MaterialComponentDemoDialogModule,
   ],
 })
 export class MaterialModule { }
