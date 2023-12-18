@@ -19,6 +19,7 @@ import { MaterialComponentDemoFormFieldModule } from './components/form-field/ap
 import { MaterialComponentDemoGridListModule } from './components/grid-list/app-material-component-demo-grid-list.module';
 import { MaterialComponentDemoIconModule } from './components/icon/app-material-component-demo-icon.module';
 import { MaterialComponentDemoInputModule } from './components/input/app-material-component-demo-input.module';
+import { MaterialComponentDemoListModule } from './components/list/app-material-component-demo-list.module';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MaterialComponentDemoInputModule } from './components/input/app-materia
     MaterialComponentDemoGridListModule,
     MaterialComponentDemoIconModule,
     MaterialComponentDemoInputModule,
+    MaterialComponentDemoListModule,
   ],
 })
 export class MaterialModule { }
