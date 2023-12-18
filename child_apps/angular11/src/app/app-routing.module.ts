@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-// import { Page2Component } from './page2/page2.component';
+// import { MaterialModule } from './material/material.component';
 import { APP_BASE_HREF } from '@angular/common';
 
 const routes: Routes = [
@@ -10,9 +10,9 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'page2',
+    path: 'material',
     // 懒加载
-    loadChildren: () => import('./page2/page2.module').then(m => m.Page2Module)
+    loadChildren: () => import('./material/material.module').then(m => m.MaterialModule)
   },
 ];
 
