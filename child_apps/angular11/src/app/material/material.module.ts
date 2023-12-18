@@ -8,6 +8,7 @@ import { MaterialComponentDemoBadgeModule } from './components/badge/app-materia
 import { MaterialComponentDemoBottomSheetModule } from './components/bottom-sheet/app-material-component-demo-bottom-sheet.module';
 import { MaterialComponentDemoButtonModule } from './components/button/app-material-component-demo-button.module';
 import { MaterialComponentDemoButtonToggleModule } from './components/button-toggle/app-material-component-demo-button-toggle.module';
+import { MaterialComponentDemoCardModule } from './components/card/app-material-component-demo-card.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MaterialComponentDemoButtonToggleModule } from './components/button-tog
     MaterialComponentDemoBottomSheetModule,
     MaterialComponentDemoButtonModule,
     MaterialComponentDemoButtonToggleModule,
+    MaterialComponentDemoCardModule,
   ],
 })
 export class MaterialModule { }
