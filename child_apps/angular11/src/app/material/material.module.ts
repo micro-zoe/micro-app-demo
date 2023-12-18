@@ -9,6 +9,7 @@ import { MaterialComponentDemoBottomSheetModule } from './components/bottom-shee
 import { MaterialComponentDemoButtonModule } from './components/button/app-material-component-demo-button.module';
 import { MaterialComponentDemoButtonToggleModule } from './components/button-toggle/app-material-component-demo-button-toggle.module';
 import { MaterialComponentDemoCardModule } from './components/card/app-material-component-demo-card.module';
+import { MaterialComponentDemoCheckboxModule } from './components/checkbox/app-material-component-demo-checkbox.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { MaterialComponentDemoCardModule } from './components/card/app-material-
     MaterialComponentDemoButtonModule,
     MaterialComponentDemoButtonToggleModule,
     MaterialComponentDemoCardModule,
+    MaterialComponentDemoCheckboxModule,
   ],
 })
 export class MaterialModule { }
