@@ -93,6 +93,7 @@ const EXTRA_MODULE = [
   { key: 'matTooltipPosition', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
   { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
   { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
+  { key: 'mat-button', name: 'MatButtonModule', from: '@angular/material/button' },
   { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
   { key: 'mat-raised-button', name: 'MatButtonModule', from: '@angular/material/button' },
 ];

@@ -7,6 +7,7 @@ import { MaterialComponentDemoAutocompleteModule } from './components/autocomple
 import { MaterialComponentDemoBadgeModule } from './components/badge/app-material-component-demo-badge.module';
 import { MaterialComponentDemoBottomSheetModule } from './components/bottom-sheet/app-material-component-demo-bottom-sheet.module';
 import { MaterialComponentDemoButtonModule } from './components/button/app-material-component-demo-button.module';
+import { MaterialComponentDemoButtonToggleModule } from './components/button-toggle/app-material-component-demo-button-toggle.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MaterialComponentDemoButtonModule } from './components/button/app-mater
     MaterialComponentDemoBadgeModule,
     MaterialComponentDemoBottomSheetModule,
     MaterialComponentDemoButtonModule,
+    MaterialComponentDemoButtonToggleModule,
   ],
 })
 export class MaterialModule { }
