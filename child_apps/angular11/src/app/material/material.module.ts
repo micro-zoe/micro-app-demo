@@ -14,6 +14,7 @@ import { MaterialComponentDemoChipsModule } from './components/chips/app-materia
 import { MaterialComponentDemoDatepickerModule } from './components/datepicker/app-material-component-demo-datepicker.module';
 import { MaterialComponentDemoDialogModule } from './components/dialog/app-material-component-demo-dialog.module';
 import { MaterialComponentDemoDividerModule } from './components/divider/app-material-component-demo-divider.module';
+import { MaterialComponentDemoExpansionModule } from './components/expansion/app-material-component-demo-expansion.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MaterialComponentDemoDividerModule } from './components/divider/app-mat
     MaterialComponentDemoDatepickerModule,
     MaterialComponentDemoDialogModule,
     MaterialComponentDemoDividerModule,
+    MaterialComponentDemoExpansionModule,
   ],
 })
 export class MaterialModule { }
