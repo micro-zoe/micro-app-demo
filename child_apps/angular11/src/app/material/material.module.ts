@@ -11,6 +11,7 @@ import { MaterialComponentDemoButtonToggleModule } from './components/button-tog
 import { MaterialComponentDemoCardModule } from './components/card/app-material-component-demo-card.module';
 import { MaterialComponentDemoCheckboxModule } from './components/checkbox/app-material-component-demo-checkbox.module';
 import { MaterialComponentDemoChipsModule } from './components/chips/app-material-component-demo-chips.module';
+import { MaterialComponentDemoDatepickerModule } from './components/datepicker/app-material-component-demo-datepicker.module';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MaterialComponentDemoChipsModule } from './components/chips/app-materia
     MaterialComponentDemoCardModule,
     MaterialComponentDemoCheckboxModule,
     MaterialComponentDemoChipsModule,
+    MaterialComponentDemoDatepickerModule,
   ],
 })
 export class MaterialModule { }

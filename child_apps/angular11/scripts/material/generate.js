@@ -81,21 +81,23 @@ const MAT_TAG_MODULE = [
 ];
 
 const EXTRA_MODULE = [
-  { key: 'dataSource', name: 'MatTableModule', from: '@angular/material/table' },
   { key: 'formControl', name: 'ReactiveFormsModule', from: '@angular/forms' },
   { key: 'formGroup', name: 'ReactiveFormsModule', from: '@angular/forms' },
+  { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
+  { key: 'matEndDate', name: 'MatMomentDateModule', from: '@angular/material-moment-adapter' },
   { key: 'matBadge', name: 'MatBadgeModule', from: '@angular/material/badge' },
+  { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
+  { key: 'mat-button', name: 'MatButtonModule', from: '@angular/material/button' },
+  { key: 'mat-raised-button', name: 'MatButtonModule', from: '@angular/material/button' },
+  { key: 'matRippleColor', name: 'MatRippleModule', from: '@angular/material/core' },
+  { key: 'matStartDate', name: 'MatDatepickerModule', from: '@angular/material/datepicker' },
+  { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
   { key: 'matInput', name: 'MatInputModule', from: '@angular/material/input' },
   { key: 'matNativeControl', name: 'MatInputModule', from: '@angular/material/input' },
-  { key: 'matRippleColor', name: 'MatRippleModule', from: '@angular/material/core' },
   { key: 'matSort', name: 'MatSortModule', from: '@angular/material/sort' },
+  { key: 'dataSource', name: 'MatTableModule', from: '@angular/material/table' },
   { key: 'matTooltip', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
   { key: 'matTooltipPosition', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
-  { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
-  { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
-  { key: 'mat-button', name: 'MatButtonModule', from: '@angular/material/button' },
-  { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
-  { key: 'mat-raised-button', name: 'MatButtonModule', from: '@angular/material/button' },
 ];
 
 const rootPath = path.join(__dirname, '../../src/app/material/');
