@@ -10,6 +10,7 @@ import { MaterialComponentDemoButtonModule } from './components/button/app-mater
 import { MaterialComponentDemoButtonToggleModule } from './components/button-toggle/app-material-component-demo-button-toggle.module';
 import { MaterialComponentDemoCardModule } from './components/card/app-material-component-demo-card.module';
 import { MaterialComponentDemoCheckboxModule } from './components/checkbox/app-material-component-demo-checkbox.module';
+import { MaterialComponentDemoChipsModule } from './components/chips/app-material-component-demo-chips.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MaterialComponentDemoCheckboxModule } from './components/checkbox/app-m
     MaterialComponentDemoButtonToggleModule,
     MaterialComponentDemoCardModule,
     MaterialComponentDemoCheckboxModule,
+    MaterialComponentDemoChipsModule,
   ],
 })
 export class MaterialModule { }
