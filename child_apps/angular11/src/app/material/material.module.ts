@@ -17,6 +17,7 @@ import { MaterialComponentDemoDividerModule } from './components/divider/app-mat
 import { MaterialComponentDemoExpansionModule } from './components/expansion/app-material-component-demo-expansion.module';
 import { MaterialComponentDemoFormFieldModule } from './components/form-field/app-material-component-demo-form-field.module';
 import { MaterialComponentDemoGridListModule } from './components/grid-list/app-material-component-demo-grid-list.module';
+import { MaterialComponentDemoIconModule } from './components/icon/app-material-component-demo-icon.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MaterialComponentDemoGridListModule } from './components/grid-list/app-
     MaterialComponentDemoExpansionModule,
     MaterialComponentDemoFormFieldModule,
     MaterialComponentDemoGridListModule,
+    MaterialComponentDemoIconModule,
   ],
 })
 export class MaterialModule { }
