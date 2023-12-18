@@ -20,6 +20,7 @@ import { MaterialComponentDemoGridListModule } from './components/grid-list/app-
 import { MaterialComponentDemoIconModule } from './components/icon/app-material-component-demo-icon.module';
 import { MaterialComponentDemoInputModule } from './components/input/app-material-component-demo-input.module';
 import { MaterialComponentDemoListModule } from './components/list/app-material-component-demo-list.module';
+import { MaterialComponentDemoMenuModule } from './components/menu/app-material-component-demo-menu.module';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MaterialComponentDemoListModule } from './components/list/app-material-
     MaterialComponentDemoIconModule,
     MaterialComponentDemoInputModule,
     MaterialComponentDemoListModule,
+    MaterialComponentDemoMenuModule,
   ],
 })
 export class MaterialModule { }
