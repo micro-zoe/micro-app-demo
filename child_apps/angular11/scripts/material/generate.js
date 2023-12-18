@@ -94,6 +94,7 @@ const EXTRA_MODULE = [
   { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
   { key: 'matInput', name: 'MatInputModule', from: '@angular/material/input' },
   { key: 'matNativeControl', name: 'MatInputModule', from: '@angular/material/input' },
+  { key: 'MatSnackBar', name: 'MatSnackBarModule', from: '@angular/material/snack-bar' },
   { key: 'matSort', name: 'MatSortModule', from: '@angular/material/sort' },
   { key: 'dataSource', name: 'MatTableModule', from: '@angular/material/table' },
   { key: 'matTooltip', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
