@@ -1,0 +1,6 @@
+.ant-design-demo-tabs {
+  overflow: hidden;
+}
+.ant-design-demo-tabs .ant-tabs-content-holder {
+  overflow-y: scroll;
+}
