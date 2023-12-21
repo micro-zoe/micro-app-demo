@@ -22,6 +22,7 @@ import { MaterialComponentDemoInputModule } from './components/input/app-materia
 import { MaterialComponentDemoListModule } from './components/list/app-material-component-demo-list.module';
 import { MaterialComponentDemoMenuModule } from './components/menu/app-material-component-demo-menu.module';
 import { MaterialComponentDemoPaginatorModule } from './components/paginator/app-material-component-demo-paginator.module';
+import { MaterialComponentDemoProgressBarModule } from './components/progress-bar/app-material-component-demo-progress-bar.module';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { MaterialComponentDemoPaginatorModule } from './components/paginator/app
     MaterialComponentDemoListModule,
     MaterialComponentDemoMenuModule,
     MaterialComponentDemoPaginatorModule,
+    MaterialComponentDemoProgressBarModule,
   ],
 })
 export class MaterialModule { }
