@@ -26,6 +26,7 @@ import { MaterialComponentDemoProgressBarModule } from './components/progress-ba
 import { MaterialComponentDemoProgressSpinnerModule } from './components/progress-spinner/app-material-component-demo-progress-spinner.module';
 import { MaterialComponentDemoRadioModule } from './components/radio/app-material-component-demo-radio.module';
 import { MaterialComponentDemoRippleModule } from './components/ripple/app-material-component-demo-ripple.module';
+import { MaterialComponentDemoSelectModule } from './components/select/app-material-component-demo-select.module';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { MaterialComponentDemoRippleModule } from './components/ripple/app-mater
     MaterialComponentDemoProgressSpinnerModule,
     MaterialComponentDemoRadioModule,
     MaterialComponentDemoRippleModule,
+    MaterialComponentDemoSelectModule,
   ],
 })
 export class MaterialModule { }
