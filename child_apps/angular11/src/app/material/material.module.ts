@@ -30,6 +30,7 @@ import { MaterialComponentDemoSelectModule } from './components/select/app-mater
 import { MaterialComponentDemoSidenavModule } from './components/sidenav/app-material-component-demo-sidenav.module';
 import { MaterialComponentDemoSlideToggleModule } from './components/slide-toggle/app-material-component-demo-slide-toggle.module';
 import { MaterialComponentDemoSliderModule } from './components/slider/app-material-component-demo-slider.module';
+import { MaterialComponentDemoSnackBarModule } from './components/snack-bar/app-material-component-demo-snack-bar.module';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { MaterialComponentDemoSliderModule } from './components/slider/app-mater
     MaterialComponentDemoSidenavModule,
     MaterialComponentDemoSlideToggleModule,
     MaterialComponentDemoSliderModule,
+    MaterialComponentDemoSnackBarModule,
   ],
 })
 export class MaterialModule { }
