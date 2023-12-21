@@ -29,6 +29,7 @@ import { MaterialComponentDemoRippleModule } from './components/ripple/app-mater
 import { MaterialComponentDemoSelectModule } from './components/select/app-material-component-demo-select.module';
 import { MaterialComponentDemoSidenavModule } from './components/sidenav/app-material-component-demo-sidenav.module';
 import { MaterialComponentDemoSlideToggleModule } from './components/slide-toggle/app-material-component-demo-slide-toggle.module';
+import { MaterialComponentDemoSliderModule } from './components/slider/app-material-component-demo-slider.module';
 
 @NgModule({
   declarations: [
@@ -63,6 +64,7 @@ import { MaterialComponentDemoSlideToggleModule } from './components/slide-toggl
     MaterialComponentDemoSelectModule,
     MaterialComponentDemoSidenavModule,
     MaterialComponentDemoSlideToggleModule,
+    MaterialComponentDemoSliderModule,
   ],
 })
 export class MaterialModule { }
