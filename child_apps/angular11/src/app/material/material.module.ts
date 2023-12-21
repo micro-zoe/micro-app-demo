@@ -21,6 +21,7 @@ import { MaterialComponentDemoIconModule } from './components/icon/app-material-
 import { MaterialComponentDemoInputModule } from './components/input/app-material-component-demo-input.module';
 import { MaterialComponentDemoListModule } from './components/list/app-material-component-demo-list.module';
 import { MaterialComponentDemoMenuModule } from './components/menu/app-material-component-demo-menu.module';
+import { MaterialComponentDemoPaginatorModule } from './components/paginator/app-material-component-demo-paginator.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MaterialComponentDemoMenuModule } from './components/menu/app-material-
     MaterialComponentDemoInputModule,
     MaterialComponentDemoListModule,
     MaterialComponentDemoMenuModule,
+    MaterialComponentDemoPaginatorModule,
   ],
 })
 export class MaterialModule { }
