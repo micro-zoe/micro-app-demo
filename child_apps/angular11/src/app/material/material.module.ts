@@ -23,6 +23,7 @@ import { MaterialComponentDemoListModule } from './components/list/app-material-
 import { MaterialComponentDemoMenuModule } from './components/menu/app-material-component-demo-menu.module';
 import { MaterialComponentDemoPaginatorModule } from './components/paginator/app-material-component-demo-paginator.module';
 import { MaterialComponentDemoProgressBarModule } from './components/progress-bar/app-material-component-demo-progress-bar.module';
+import { MaterialComponentDemoProgressSpinnerModule } from './components/progress-spinner/app-material-component-demo-progress-spinner.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { MaterialComponentDemoProgressBarModule } from './components/progress-ba
     MaterialComponentDemoMenuModule,
     MaterialComponentDemoPaginatorModule,
     MaterialComponentDemoProgressBarModule,
+    MaterialComponentDemoProgressSpinnerModule,
   ],
 })
 export class MaterialModule { }
