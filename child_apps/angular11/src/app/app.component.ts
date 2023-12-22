@@ -28,11 +28,26 @@ export class AppComponent {
     })
   }
 
+  routes = [
+    { path: '/', title: 'Home' },
+    { path: '/material', title: 'Material UI 11.x' },
+  ];
+  currentRoute = (() => {
+    const currentPath = window.location.pathname.replace('/child/angular11', '') || '/';
+    return this.routes
+      .filter(route => currentPath.startsWith(route.path))
+      .sort((r1, r2) => r2.path.length - r1.path.length)
+      ?.[0]
+      ?.path
+      ?? '/';
+  })();
+
   // 子应用内部跳转时，通知侧边栏改变菜单状态
-  onRouteChange (e): void {
+  onRouteChange (routePath: string): void {
     if (window.__MICRO_APP_ENVIRONMENT__) {
       // 发送全局数据，通知侧边栏修改菜单展示
       window.microApp.setGlobalData({ name: window.__MICRO_APP_NAME__ })
     }
+    this.currentRoute = routePath;
   }
 }
