@@ -37,7 +37,7 @@ const sidebarItems: SidebarItem[] = [
   ] },
   { key: 'angular11', name: 'child-angular11', children: [
     { key: '/app-angular11', name: 'home' },
-    { key: '/app-angular11/page2', name: 'page2' },
+    { key: '/app-angular11/material', name: 'material 11.x' },
   ] },
   { key: 'nextjs11', name: 'child-nextjs11', children: [
     { key: '/app-nextjs11', name: 'home' },
