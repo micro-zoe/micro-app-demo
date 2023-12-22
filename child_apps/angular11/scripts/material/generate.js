@@ -81,6 +81,7 @@ const MAT_TAG_MODULE = [
 ];
 
 const EXTRA_MODULE = [
+  { key: 'HttpClient', name: 'HttpClientModule', from: '@angular/common/http' },
   { key: 'formControl', name: 'ReactiveFormsModule', from: '@angular/forms' },
   { key: 'formGroup', name: 'ReactiveFormsModule', from: '@angular/forms' },
   { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },

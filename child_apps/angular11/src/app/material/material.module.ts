@@ -31,6 +31,7 @@ import { MaterialComponentDemoSidenavModule } from './components/sidenav/app-mat
 import { MaterialComponentDemoSlideToggleModule } from './components/slide-toggle/app-material-component-demo-slide-toggle.module';
 import { MaterialComponentDemoSliderModule } from './components/slider/app-material-component-demo-slider.module';
 import { MaterialComponentDemoSnackBarModule } from './components/snack-bar/app-material-component-demo-snack-bar.module';
+import { MaterialComponentDemoSortModule } from './components/sort/app-material-component-demo-sort.module';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { MaterialComponentDemoSnackBarModule } from './components/snack-bar/app-
     MaterialComponentDemoSlideToggleModule,
     MaterialComponentDemoSliderModule,
     MaterialComponentDemoSnackBarModule,
+    MaterialComponentDemoSortModule,
   ],
 })
 export class MaterialModule { }
