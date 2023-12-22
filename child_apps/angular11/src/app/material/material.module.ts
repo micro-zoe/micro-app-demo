@@ -37,6 +37,7 @@ import { MaterialComponentDemoTableModule } from './components/table/app-materia
 import { MaterialComponentDemoTabsModule } from './components/tabs/app-material-component-demo-tabs.module';
 import { MaterialComponentDemoToolbarModule } from './components/toolbar/app-material-component-demo-toolbar.module';
 import { MaterialComponentDemoTooltipModule } from './components/tooltip/app-material-component-demo-tooltip.module';
+import { MaterialComponentDemoTreeModule } from './components/tree/app-material-component-demo-tree.module';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { MaterialComponentDemoTooltipModule } from './components/tooltip/app-mat
     MaterialComponentDemoTabsModule,
     MaterialComponentDemoToolbarModule,
     MaterialComponentDemoTooltipModule,
+    MaterialComponentDemoTreeModule,
   ],
 })
 export class MaterialModule { }
