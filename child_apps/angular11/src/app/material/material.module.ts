@@ -36,6 +36,7 @@ import { MaterialComponentDemoStepperModule } from './components/stepper/app-mat
 import { MaterialComponentDemoTableModule } from './components/table/app-material-component-demo-table.module';
 import { MaterialComponentDemoTabsModule } from './components/tabs/app-material-component-demo-tabs.module';
 import { MaterialComponentDemoToolbarModule } from './components/toolbar/app-material-component-demo-toolbar.module';
+import { MaterialComponentDemoTooltipModule } from './components/tooltip/app-material-component-demo-tooltip.module';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { MaterialComponentDemoToolbarModule } from './components/toolbar/app-mat
     MaterialComponentDemoTableModule,
     MaterialComponentDemoTabsModule,
     MaterialComponentDemoToolbarModule,
+    MaterialComponentDemoTooltipModule,
   ],
 })
 export class MaterialModule { }
