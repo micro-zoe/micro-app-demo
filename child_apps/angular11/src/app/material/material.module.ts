@@ -32,6 +32,7 @@ import { MaterialComponentDemoSlideToggleModule } from './components/slide-toggl
 import { MaterialComponentDemoSliderModule } from './components/slider/app-material-component-demo-slider.module';
 import { MaterialComponentDemoSnackBarModule } from './components/snack-bar/app-material-component-demo-snack-bar.module';
 import { MaterialComponentDemoSortModule } from './components/sort/app-material-component-demo-sort.module';
+import { MaterialComponentDemoStepperModule } from './components/stepper/app-material-component-demo-stepper.module';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { MaterialComponentDemoSortModule } from './components/sort/app-material-
     MaterialComponentDemoSliderModule,
     MaterialComponentDemoSnackBarModule,
     MaterialComponentDemoSortModule,
+    MaterialComponentDemoStepperModule,
   ],
 })
 export class MaterialModule { }
