@@ -35,6 +35,7 @@ import { MaterialComponentDemoSortModule } from './components/sort/app-material-
 import { MaterialComponentDemoStepperModule } from './components/stepper/app-material-component-demo-stepper.module';
 import { MaterialComponentDemoTableModule } from './components/table/app-material-component-demo-table.module';
 import { MaterialComponentDemoTabsModule } from './components/tabs/app-material-component-demo-tabs.module';
+import { MaterialComponentDemoToolbarModule } from './components/toolbar/app-material-component-demo-toolbar.module';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { MaterialComponentDemoTabsModule } from './components/tabs/app-material-
     MaterialComponentDemoStepperModule,
     MaterialComponentDemoTableModule,
     MaterialComponentDemoTabsModule,
+    MaterialComponentDemoToolbarModule,
   ],
 })
 export class MaterialModule { }
