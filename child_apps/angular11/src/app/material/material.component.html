@@ -1,38 +1,78 @@
-<div>
-  <h1>child-angular11-material-11</h1>
-  <app-material-component-demo-autocomplete></app-material-component-demo-autocomplete>
-  <app-material-component-demo-badge></app-material-component-demo-badge>
-  <app-material-component-demo-bottom-sheet></app-material-component-demo-bottom-sheet>
-  <app-material-component-demo-button></app-material-component-demo-button>
-  <app-material-component-demo-button-toggle></app-material-component-demo-button-toggle>
-  <app-material-component-demo-card></app-material-component-demo-card>
-  <app-material-component-demo-checkbox></app-material-component-demo-checkbox>
-  <app-material-component-demo-chips></app-material-component-demo-chips>
-  <app-material-component-demo-datepicker></app-material-component-demo-datepicker>
-  <app-material-component-demo-dialog></app-material-component-demo-dialog>
-  <app-material-component-demo-divider></app-material-component-demo-divider>
-  <app-material-component-demo-expansion></app-material-component-demo-expansion>
-  <app-material-component-demo-form-field></app-material-component-demo-form-field>
-  <app-material-component-demo-grid-list></app-material-component-demo-grid-list>
-  <app-material-component-demo-icon></app-material-component-demo-icon>
-  <app-material-component-demo-input></app-material-component-demo-input>
-  <app-material-component-demo-list></app-material-component-demo-list>
-  <app-material-component-demo-menu></app-material-component-demo-menu>
-  <app-material-component-demo-paginator></app-material-component-demo-paginator>
-  <app-material-component-demo-progress-bar></app-material-component-demo-progress-bar>
-  <app-material-component-demo-progress-spinner></app-material-component-demo-progress-spinner>
-  <app-material-component-demo-radio></app-material-component-demo-radio>
-  <app-material-component-demo-ripple></app-material-component-demo-ripple>
-  <app-material-component-demo-select></app-material-component-demo-select>
-  <app-material-component-demo-sidenav></app-material-component-demo-sidenav>
-  <app-material-component-demo-slide-toggle></app-material-component-demo-slide-toggle>
-  <app-material-component-demo-slider></app-material-component-demo-slider>
-  <app-material-component-demo-snack-bar></app-material-component-demo-snack-bar>
-  <app-material-component-demo-sort></app-material-component-demo-sort>
-  <app-material-component-demo-stepper></app-material-component-demo-stepper>
-  <app-material-component-demo-table></app-material-component-demo-table>
-  <app-material-component-demo-tabs></app-material-component-demo-tabs>
-  <app-material-component-demo-toolbar></app-material-component-demo-toolbar>
-  <app-material-component-demo-tooltip></app-material-component-demo-tooltip>
-  <app-material-component-demo-tree></app-material-component-demo-tree>
+<div class="material-ui-demo">
+  <div class="material-ui-demo-nav">
+    <mat-nav-list>
+      <a mat-list-item [class]="currentComponent === 'autocomplete' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('autocomplete')">Autocomplete</a>
+      <a mat-list-item [class]="currentComponent === 'badge' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('badge')">Badge</a>
+      <a mat-list-item [class]="currentComponent === 'bottom-sheet' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('bottom-sheet')">BottomSheet</a>
+      <a mat-list-item [class]="currentComponent === 'button' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('button')">Button</a>
+      <a mat-list-item [class]="currentComponent === 'button-toggle' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('button-toggle')">ButtonToggle</a>
+      <a mat-list-item [class]="currentComponent === 'card' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('card')">Card</a>
+      <a mat-list-item [class]="currentComponent === 'checkbox' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('checkbox')">Checkbox</a>
+      <a mat-list-item [class]="currentComponent === 'chips' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('chips')">Chips</a>
+      <a mat-list-item [class]="currentComponent === 'datepicker' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('datepicker')">Datepicker</a>
+      <a mat-list-item [class]="currentComponent === 'dialog' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('dialog')">Dialog</a>
+      <a mat-list-item [class]="currentComponent === 'divider' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('divider')">Divider</a>
+      <a mat-list-item [class]="currentComponent === 'expansion' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('expansion')">Expansion</a>
+      <a mat-list-item [class]="currentComponent === 'form-field' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('form-field')">FormField</a>
+      <a mat-list-item [class]="currentComponent === 'grid-list' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('grid-list')">GridList</a>
+      <a mat-list-item [class]="currentComponent === 'icon' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('icon')">Icon</a>
+      <a mat-list-item [class]="currentComponent === 'input' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('input')">Input</a>
+      <a mat-list-item [class]="currentComponent === 'list' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('list')">List</a>
+      <a mat-list-item [class]="currentComponent === 'menu' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('menu')">Menu</a>
+      <a mat-list-item [class]="currentComponent === 'paginator' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('paginator')">Paginator</a>
+      <a mat-list-item [class]="currentComponent === 'progress-bar' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('progress-bar')">ProgressBar</a>
+      <a mat-list-item [class]="currentComponent === 'progress-spinner' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('progress-spinner')">ProgressSpinner</a>
+      <a mat-list-item [class]="currentComponent === 'radio' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('radio')">Radio</a>
+      <a mat-list-item [class]="currentComponent === 'ripple' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('ripple')">Ripple</a>
+      <a mat-list-item [class]="currentComponent === 'select' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('select')">Select</a>
+      <a mat-list-item [class]="currentComponent === 'sidenav' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('sidenav')">Sidenav</a>
+      <a mat-list-item [class]="currentComponent === 'slide-toggle' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('slide-toggle')">SlideToggle</a>
+      <a mat-list-item [class]="currentComponent === 'slider' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('slider')">Slider</a>
+      <a mat-list-item [class]="currentComponent === 'snack-bar' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('snack-bar')">SnackBar</a>
+      <a mat-list-item [class]="currentComponent === 'sort' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('sort')">Sort</a>
+      <a mat-list-item [class]="currentComponent === 'stepper' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('stepper')">Stepper</a>
+      <a mat-list-item [class]="currentComponent === 'table' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('table')">Table</a>
+      <a mat-list-item [class]="currentComponent === 'tabs' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('tabs')">Tabs</a>
+      <a mat-list-item [class]="currentComponent === 'toolbar' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('toolbar')">Toolbar</a>
+      <a mat-list-item [class]="currentComponent === 'tooltip' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('tooltip')">Tooltip</a>
+      <a mat-list-item [class]="currentComponent === 'tree' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('tree')">Tree</a>
+    </mat-nav-list>
+  </div>
+  <div class="material-ui-demo-content">
+    <app-material-component-demo-autocomplete *ngIf="currentComponent === 'autocomplete'"></app-material-component-demo-autocomplete>
+    <app-material-component-demo-badge *ngIf="currentComponent === 'badge'"></app-material-component-demo-badge>
+    <app-material-component-demo-bottom-sheet *ngIf="currentComponent === 'bottom-sheet'"></app-material-component-demo-bottom-sheet>
+    <app-material-component-demo-button *ngIf="currentComponent === 'button'"></app-material-component-demo-button>
+    <app-material-component-demo-button-toggle *ngIf="currentComponent === 'button-toggle'"></app-material-component-demo-button-toggle>
+    <app-material-component-demo-card *ngIf="currentComponent === 'card'"></app-material-component-demo-card>
+    <app-material-component-demo-checkbox *ngIf="currentComponent === 'checkbox'"></app-material-component-demo-checkbox>
+    <app-material-component-demo-chips *ngIf="currentComponent === 'chips'"></app-material-component-demo-chips>
+    <app-material-component-demo-datepicker *ngIf="currentComponent === 'datepicker'"></app-material-component-demo-datepicker>
+    <app-material-component-demo-dialog *ngIf="currentComponent === 'dialog'"></app-material-component-demo-dialog>
+    <app-material-component-demo-divider *ngIf="currentComponent === 'divider'"></app-material-component-demo-divider>
+    <app-material-component-demo-expansion *ngIf="currentComponent === 'expansion'"></app-material-component-demo-expansion>
+    <app-material-component-demo-form-field *ngIf="currentComponent === 'form-field'"></app-material-component-demo-form-field>
+    <app-material-component-demo-grid-list *ngIf="currentComponent === 'grid-list'"></app-material-component-demo-grid-list>
+    <app-material-component-demo-icon *ngIf="currentComponent === 'icon'"></app-material-component-demo-icon>
+    <app-material-component-demo-input *ngIf="currentComponent === 'input'"></app-material-component-demo-input>
+    <app-material-component-demo-list *ngIf="currentComponent === 'list'"></app-material-component-demo-list>
+    <app-material-component-demo-menu *ngIf="currentComponent === 'menu'"></app-material-component-demo-menu>
+    <app-material-component-demo-paginator *ngIf="currentComponent === 'paginator'"></app-material-component-demo-paginator>
+    <app-material-component-demo-progress-bar *ngIf="currentComponent === 'progress-bar'"></app-material-component-demo-progress-bar>
+    <app-material-component-demo-progress-spinner *ngIf="currentComponent === 'progress-spinner'"></app-material-component-demo-progress-spinner>
+    <app-material-component-demo-radio *ngIf="currentComponent === 'radio'"></app-material-component-demo-radio>
+    <app-material-component-demo-ripple *ngIf="currentComponent === 'ripple'"></app-material-component-demo-ripple>
+    <app-material-component-demo-select *ngIf="currentComponent === 'select'"></app-material-component-demo-select>
+    <app-material-component-demo-sidenav *ngIf="currentComponent === 'sidenav'"></app-material-component-demo-sidenav>
+    <app-material-component-demo-slide-toggle *ngIf="currentComponent === 'slide-toggle'"></app-material-component-demo-slide-toggle>
+    <app-material-component-demo-slider *ngIf="currentComponent === 'slider'"></app-material-component-demo-slider>
+    <app-material-component-demo-snack-bar *ngIf="currentComponent === 'snack-bar'"></app-material-component-demo-snack-bar>
+    <app-material-component-demo-sort *ngIf="currentComponent === 'sort'"></app-material-component-demo-sort>
+    <app-material-component-demo-stepper *ngIf="currentComponent === 'stepper'"></app-material-component-demo-stepper>
+    <app-material-component-demo-table *ngIf="currentComponent === 'table'"></app-material-component-demo-table>
+    <app-material-component-demo-tabs *ngIf="currentComponent === 'tabs'"></app-material-component-demo-tabs>
+    <app-material-component-demo-toolbar *ngIf="currentComponent === 'toolbar'"></app-material-component-demo-toolbar>
+    <app-material-component-demo-tooltip *ngIf="currentComponent === 'tooltip'"></app-material-component-demo-tooltip>
+    <app-material-component-demo-tree *ngIf="currentComponent === 'tree'"></app-material-component-demo-tree>
+  </div>
 </div>

@@ -33,7 +33,7 @@ export class AppComponent {
     { path: '/material', title: 'Material UI 11.x' },
   ];
   currentRoute = (() => {
-    const currentPath = window.location.pathname.replace('/child/angular11', '') || '/';
+    const currentPath = window.location.pathname.replace((window as any).__MICRO_APP_BASE_ROUTE__ || '/child/angular11', '') || '/';
     return this.routes
       .filter(route => currentPath.startsWith(route.path))
       .sort((r1, r2) => r2.path.length - r1.path.length)

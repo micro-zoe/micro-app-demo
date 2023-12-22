@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 import { MaterialRoutingModule } from './material-routing.module'
 import { MaterialComponent } from './material.component';
@@ -46,6 +47,7 @@ import { MaterialComponentDemoTreeModule } from './components/tree/app-material-
   imports: [
     CommonModule,
     MaterialRoutingModule,
+    MatListModule,
     MaterialComponentDemoAutocompleteModule,
     MaterialComponentDemoBadgeModule,
     MaterialComponentDemoBottomSheetModule,

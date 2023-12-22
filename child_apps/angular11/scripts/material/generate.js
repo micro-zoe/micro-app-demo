@@ -214,8 +214,7 @@ export class MaterialComponentDemo${toPascalCase(componentName)} implements OnIn
 
   // component html file
   const indexHtml = `<div>
-  <hr />
-  <h1>${encodeHTML(componentTitle)}</h1>
+  <h1>Material UI 11.x: ${encodeHTML(componentTitle)}</h1>
 ${
   componentDemos
     .map(demo => `  <hr />
@@ -236,6 +235,7 @@ ${
 
 const mainModuleTs = `import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 import { MaterialRoutingModule } from './material-routing.module'
 import { MaterialComponent } from './material.component';
@@ -254,6 +254,7 @@ ${
   imports: [
     CommonModule,
     MaterialRoutingModule,
+    MatListModule,
 ${
   data
     .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
@@ -267,15 +268,27 @@ export class MaterialModule { }
 `;
 fs.writeFileSync(path.join(rootPath, 'material.module.ts'), mainModuleTs);
 
-const mainHtml = `<div>
-  <h1>child-angular11-material-11</h1>
+const mainHtml = `<div class="material-ui-demo">
+  <div class="material-ui-demo-nav">
+    <mat-nav-list>
 ${
   data
     .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
-      return `  <app-material-component-demo-${componentName}></app-material-component-demo-${componentName}>`
+      return `      <a mat-list-item [class]="currentComponent === '${componentName}' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('${componentName}')">${toPascalCase(componentName)}</a>`
     })
     .join('\n')
 }
+    </mat-nav-list>
+  </div>
+  <div class="material-ui-demo-content">
+${
+  data
+    .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
+      return `    <app-material-component-demo-${componentName} *ngIf="currentComponent === '${componentName}'"></app-material-component-demo-${componentName}>`
+    })
+    .join('\n')
+}
+  </div>
 </div>
 `;
 fs.writeFileSync(path.join(rootPath, 'material.component.html'), mainHtml);
