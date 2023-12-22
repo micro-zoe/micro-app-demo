@@ -33,6 +33,7 @@ import { MaterialComponentDemoSliderModule } from './components/slider/app-mater
 import { MaterialComponentDemoSnackBarModule } from './components/snack-bar/app-material-component-demo-snack-bar.module';
 import { MaterialComponentDemoSortModule } from './components/sort/app-material-component-demo-sort.module';
 import { MaterialComponentDemoStepperModule } from './components/stepper/app-material-component-demo-stepper.module';
+import { MaterialComponentDemoTableModule } from './components/table/app-material-component-demo-table.module';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { MaterialComponentDemoStepperModule } from './components/stepper/app-mat
     MaterialComponentDemoSnackBarModule,
     MaterialComponentDemoSortModule,
     MaterialComponentDemoStepperModule,
+    MaterialComponentDemoTableModule,
   ],
 })
 export class MaterialModule { }
