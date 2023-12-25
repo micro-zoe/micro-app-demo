@@ -32,7 +32,7 @@ const sidebarItems: MenuProps['items'] = [
   ] },
   { key: 'angular11', label: 'child-angular11', icon: <AppstoreOutlined />, children: [
     { key: '/app-angular11', label: 'home' },
-    { key: '/app-angular11/page2', label: 'page2' },
+    { key: '/app-angular11/material', label: 'material 11.x' },
   ] },
   { key: 'nextjs11', label: 'child-nextjs11', icon: <AppstoreOutlined />, children: [
     { key: '/app-nextjs11', label: 'home' },
