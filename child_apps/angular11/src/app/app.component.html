@@ -1,6 +1,11 @@
 <router-outlet>
-  <div id=public-links (click)='onRouteChange($event)'>
-    <a routerLink="/">Home</a> |
-    <a routerLink="/material">Material</a>
-  </div>
+  <nav mat-tab-nav-bar mat-align-tabs="center" id="public-links">
+    <a
+      *ngFor="let route of routes"
+      mat-tab-link
+      [routerLink]="route.path"
+      [active]="currentRoute == route.path"
+      (click)="onRouteChange(route.path)"
+    > {{route.title}} </a>
+  </nav>
 </router-outlet>

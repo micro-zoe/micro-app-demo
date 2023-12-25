@@ -81,20 +81,25 @@ const MAT_TAG_MODULE = [
 ];
 
 const EXTRA_MODULE = [
-  { key: 'dataSource', name: 'MatTableModule', from: '@angular/material/table' },
+  { key: 'HttpClient', name: 'HttpClientModule', from: '@angular/common/http' },
   { key: 'formControl', name: 'ReactiveFormsModule', from: '@angular/forms' },
   { key: 'formGroup', name: 'ReactiveFormsModule', from: '@angular/forms' },
+  { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
+  { key: 'matEndDate', name: 'MatMomentDateModule', from: '@angular/material-moment-adapter' },
   { key: 'matBadge', name: 'MatBadgeModule', from: '@angular/material/badge' },
+  { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
+  { key: 'mat-button', name: 'MatButtonModule', from: '@angular/material/button' },
+  { key: 'mat-raised-button', name: 'MatButtonModule', from: '@angular/material/button' },
+  { key: 'matRippleColor', name: 'MatRippleModule', from: '@angular/material/core' },
+  { key: 'matStartDate', name: 'MatDatepickerModule', from: '@angular/material/datepicker' },
+  { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
   { key: 'matInput', name: 'MatInputModule', from: '@angular/material/input' },
   { key: 'matNativeControl', name: 'MatInputModule', from: '@angular/material/input' },
-  { key: 'matRippleColor', name: 'MatRippleModule', from: '@angular/material/core' },
+  { key: 'MatSnackBar', name: 'MatSnackBarModule', from: '@angular/material/snack-bar' },
   { key: 'matSort', name: 'MatSortModule', from: '@angular/material/sort' },
+  { key: 'dataSource', name: 'MatTableModule', from: '@angular/material/table' },
   { key: 'matTooltip', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
   { key: 'matTooltipPosition', name: 'MatTooltipModule', from: '@angular/material/tooltip' },
-  { key: 'MatBottomSheet', name: 'MatBottomSheetModule', from: '@angular/material/bottom-sheet' },
-  { key: 'ngModel', name: 'FormsModule', from: '@angular/forms' },
-  { key: 'mat-icon-button', name: 'MatIconModule', from: '@angular/material/icon' },
-  { key: 'mat-raised-button', name: 'MatButtonModule', from: '@angular/material/button' },
 ];
 
 const rootPath = path.join(__dirname, '../../src/app/material/');
@@ -209,8 +214,7 @@ export class MaterialComponentDemo${toPascalCase(componentName)} implements OnIn
 
   // component html file
   const indexHtml = `<div>
-  <hr />
-  <h1>${encodeHTML(componentTitle)}</h1>
+  <h1>Material UI 11.x: ${encodeHTML(componentTitle)}</h1>
 ${
   componentDemos
     .map(demo => `  <hr />
@@ -231,6 +235,7 @@ ${
 
 const mainModuleTs = `import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 
 import { MaterialRoutingModule } from './material-routing.module'
 import { MaterialComponent } from './material.component';
@@ -249,6 +254,7 @@ ${
   imports: [
     CommonModule,
     MaterialRoutingModule,
+    MatListModule,
 ${
   data
     .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
@@ -262,15 +268,27 @@ export class MaterialModule { }
 `;
 fs.writeFileSync(path.join(rootPath, 'material.module.ts'), mainModuleTs);
 
-const mainHtml = `<div>
-  <h1>child-angular11-material-11</h1>
+const mainHtml = `<div class="material-ui-demo">
+  <div class="material-ui-demo-nav">
+    <mat-nav-list>
 ${
   data
     .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
-      return `  <app-material-component-demo-${componentName}></app-material-component-demo-${componentName}>`
+      return `      <a mat-list-item [class]="currentComponent === '${componentName}' ? 'material-ui-demo-nav-active' : ''" (click)="onComponentLinkClick('${componentName}')">${toPascalCase(componentName)}</a>`
     })
     .join('\n')
 }
+    </mat-nav-list>
+  </div>
+  <div class="material-ui-demo-content">
+${
+  data
+    .map(({ name: componentName, title: componentTitle, demos: componentDemos }) => {
+      return `    <app-material-component-demo-${componentName} *ngIf="currentComponent === '${componentName}'"></app-material-component-demo-${componentName}>`
+    })
+    .join('\n')
+}
+  </div>
 </div>
 `;
 fs.writeFileSync(path.join(rootPath, 'material.component.html'), mainHtml);
