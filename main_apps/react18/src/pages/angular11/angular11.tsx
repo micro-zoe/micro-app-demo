@@ -43,6 +43,7 @@ const Angular11 = () => {
         name='angular11'
         url={`${config.angular11}/child/angular11/`}
         baseroute='/main-react18/app-angular11'
+        router-mode="custom"
         data={microAppData}
         onCreated={handleCreate}
         onBeforemount={handleBeforeMount}
