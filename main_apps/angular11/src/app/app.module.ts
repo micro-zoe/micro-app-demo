@@ -13,6 +13,7 @@ import { ViteComponent } from './vite/vite.component';
 import { Vue2Component } from './vue2/vue2.component';
 import { Vue3Component } from './vue3/vue3.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { MatButtonModule } from '@angular/material/button';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +35,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
     MatTreeModule,
     MatIconModule,
     BrowserAnimationsModule,
