@@ -1,4 +1,5 @@
-import React, { useState, LazyExoticComponent } from "react";
+import React, { useState, LazyExoticComponent, useEffect } from "react";
+import { useSearchParams } from 'react-router-dom';
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import "./ant-design.css";
@@ -32,6 +33,14 @@ const ResultDemo = React.lazy(() => import("./components/result"));
 const SkeletonDemo = React.lazy(() => import("./components/skeleton"));
 const SpinDemo = React.lazy(() => import("./components/spin"));
 const FormDemo = React.lazy(() => import("./components/form"));
+
+const toPascalCase = (s: string) => s
+  .replace(/-[a-z0-9]/ug, letter => `${letter.substring(1).toUpperCase()}`)
+  .replace(/^[a-z0-9]/ug, letter => `${letter.toUpperCase()}`);
+
+const toKebabCase = (s: string) => s
+  .replace(/^[A-Z0-9]/ug, letter => `${letter.toLowerCase()}`)
+  .replace(/[A-Z0-9]/ug, letter => `-${letter.toLowerCase()}`);
 
 const LazyImportComponent = ({
   title,
@@ -330,10 +339,15 @@ const AntDesignPage = () => {
       ),
     },
   ];
+
+  const [searchParams, setSearchParams] = useSearchParams();
+  const id = searchParams.get("id") || 'button'
   const [activeKey, setActiveKey] = useState<string>("Button");
 
+  useEffect(() => { setActiveKey(toPascalCase(id)); }, [id]);
+
   const onChange = (k: string) => {
-    setActiveKey(k);
+    setSearchParams({id: toKebabCase(k)})
   };
 
   return (
