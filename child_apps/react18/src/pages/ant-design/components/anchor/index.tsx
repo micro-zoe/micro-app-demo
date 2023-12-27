@@ -1,10 +1,12 @@
 import React from 'react';
 import AnchorBasicDemo from './basic';
+import AnchorHorizontalDemo from './horizontal'
 import AnchorStaticDemo from './static';
 import AnchorOnClickDemo from './on-click';
 import AnchorCustomizeHighlightDemo from './customize-highlight';
 import AnchorTargetOffsetDemo from './target-offset';
 import AnchorOnChangeDemo from './on-change';
+import AnchorHrefDemo from './href'
 import './index.css';
 
 const AnchorDemo: React.FC = () => (
@@ -14,6 +16,13 @@ const AnchorDemo: React.FC = () => (
       <h2>Basic 基本</h2>
       <div className="code-box-demo">
         <AnchorBasicDemo />
+      </div>
+    </div>
+    <hr />
+    <div id="components-anchor-demo-basic">
+      <h2>Horizontal 横向 Anchor</h2>
+      <div className="code-box-demo">
+        <AnchorHorizontalDemo />
       </div>
     </div>
     <hr />
@@ -46,9 +55,16 @@ const AnchorDemo: React.FC = () => (
     </div>
     <hr />
     <div id="components-anchor-demo-on-change">
-      <h2>替换历史中的 href</h2>
+      <h2>监听锚点链接改变</h2>
       <div className="code-box-demo">
         <AnchorOnChangeDemo />
+      </div>
+    </div>
+    <hr />
+    <div id="components-anchor-demo-href">
+      <h2>替换历史中的 href</h2>
+      <div className="code-box-demo">
+        <AnchorHrefDemo />
       </div>
     </div>
     <hr />

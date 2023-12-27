@@ -1,0 +1,4 @@
+.tree-transfer .ant-transfer-list:first-child {
+  flex: none;
+  width: 50%;
+}

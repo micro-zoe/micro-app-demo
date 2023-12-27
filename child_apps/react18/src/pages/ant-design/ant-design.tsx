@@ -345,7 +345,7 @@ const AntDesignPage = () => {
         activeKey={activeKey}
         onChange={onChange}
         className="ant-design-demo-tabs"
-        style={{ height: "calc(100vh - 100px)", width: "calc(100vw - 256px)" }}
+        style={{ height: 'calc(100vh - 100px)', width: 'calc(100vw - 256px)' }}
       />
     </div>
   );

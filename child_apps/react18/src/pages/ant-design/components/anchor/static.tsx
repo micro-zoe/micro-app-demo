@@ -1,37 +1,39 @@
-import { Anchor } from 'antd';
 import React from 'react';
+import { Anchor } from 'antd';
+
 const App: React.FC = () => (
   <Anchor
     affix={false}
     items={[
       {
-        key: 'basic',
+        key: '1',
         href: '#components-anchor-demo-basic',
         title: 'Basic demo',
       },
       {
-        key: 'static',
+        key: '2',
         href: '#components-anchor-demo-static',
         title: 'Static demo',
       },
       {
-        key: 'api',
-        href: '#API',
+        key: '3',
+        href: '#api',
         title: 'API',
         children: [
           {
             key: '4',
-            href: '#Anchor-Props',
+            href: '#anchor-props',
             title: 'Anchor Props',
           },
           {
             key: '5',
-            href: '#Link-Props',
+            href: '#link-props',
             title: 'Link Props',
           },
-        ]
+        ],
       },
     ]}
   />
 );
+
 export default App;

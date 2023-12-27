@@ -1,13 +1,17 @@
-import { Anchor } from 'antd';
 import React from 'react';
-const handleClick = (e: React.MouseEvent<HTMLElement>,
+import { Anchor } from 'antd';
+
+const handleClick = (
+  e: React.MouseEvent<HTMLElement>,
   link: {
     title: React.ReactNode;
     href: string;
-  },) => {
+  },
+) => {
   e.preventDefault();
   console.log(link);
 };
+
 const App: React.FC = () => (
   <Anchor
     affix={false}
@@ -43,4 +47,5 @@ const App: React.FC = () => (
     ]}
   />
 );
+
 export default App;

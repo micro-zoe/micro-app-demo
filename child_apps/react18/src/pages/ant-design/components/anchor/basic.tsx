@@ -1,38 +1,35 @@
 import React from 'react';
-import { Anchor } from 'antd';
+import { Anchor, Row, Col } from 'antd';
 
 const App: React.FC = () => (
-  <Anchor
-    affix={false}
-    items={[
-      {
-        key: 'basic',
-        href: '#components-anchor-demo-basic',
-        title: 'Basic demo',
-      },
-      {
-        key: 'static',
-        href: '#components-anchor-demo-static',
-        title: 'Static demo',
-      },
-      {
-        key: 'api',
-        href: '#API',
-        title: 'API',
-        children: [
+  <Row>
+    <Col span={16}>
+      <div id="part-1" style={{ height: '100px', background: 'rgba(255,0,0,0.02)' }} />
+      <div id="part-2" style={{ height: '100px', background: 'rgba(0,255,0,0.02)' }} />
+      <div id="part-3" style={{ height: '100px', background: 'rgba(0,0,255,0.02)' }} />
+    </Col>
+    <Col span={8}>
+      <Anchor
+        items={[
           {
-            key: '4',
-            href: '#Anchor-Props',
-            title: 'Anchor Props',
+            key: 'part-1',
+            href: '#part-1',
+            title: 'Part 1',
           },
           {
-            key: '5',
-            href: '#Link-Props',
-            title: 'Link Props',
+            key: 'part-2',
+            href: '#part-2',
+            title: 'Part 2',
           },
-        ]
-      },
-    ]}
-  />
+          {
+            key: 'part-3',
+            href: '#part-3',
+            title: 'Part 3',
+          },
+        ]}
+      />
+    </Col>
+  </Row>
 );
+
 export default App;
