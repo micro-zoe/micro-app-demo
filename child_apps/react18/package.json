@@ -12,8 +12,9 @@
     "@types/node": "^16.18.58",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
-    "antd": "^5.10.1",
+    "antd": "^5.12.5",
     "react": "^18.2.0",
+    "react-countup": "^6.4.2",
     "react-dom": "^18.2.0",
     "react-router": "^6.17.0",
     "react-router-dom": "^6.17.0",
@@ -46,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@types/lodash.difference": "^4.5.9",
     "react-app-rewired": "^2.2.1"
   }
 }
