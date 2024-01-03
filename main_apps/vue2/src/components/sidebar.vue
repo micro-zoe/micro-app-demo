@@ -46,8 +46,11 @@
         <el-menu-item index="/app-vite">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vite#/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-vite/element-plus">
+          <span class='menu-item-text'>element-plus</span>
+        </el-menu-item>
+        <el-menu-item index="/app-vite/ant-design-vue">
+          <span class='menu-item-text'>ant-design-vue</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="react16">

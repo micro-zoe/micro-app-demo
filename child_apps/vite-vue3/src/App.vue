@@ -1,29 +1,79 @@
 <template>
-  <div>
-    <div id='public-links' @click="onRouteChange">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/page2">Page2</router-link>
+  <div id=vite-app>
+    <div>
+      <el-menu
+        :default-active="activeIndex"
+        class="el-menu-demo"
+        mode="horizontal"
+        router
+      >
+        <el-menu-item index="/">home</el-menu-item>
+        <el-menu-item index="/element-plus">element-plus</el-menu-item>
+        <el-menu-item index="/ant-design-vue">ant-design-vue</el-menu-item>
+      </el-menu>
     </div>
-    <router-view></router-view>
+    <router-view v-slot="{ Component, route }">
+      <transition :name="route.meta.transition || 'fade'" mode="out-in">
+        <keep-alive>
+          <component
+            :is="Component"
+            :key="route.meta.usePathKey ? route.path : undefined"
+          />
+        </keep-alive>
+      </transition>
+    </router-view>
   </div>
 </template>
 
-<script lang="ts" setup>
-// 子应用内部跳转时，通知侧边栏改变菜单状态
-const onRouteChange = () => {
-  if (window.eventCenterForAppNameVite) {
-    // 发送全局数据，通知侧边栏修改菜单展示
-    window.eventCenterForAppNameVite.setGlobalData({ name: 'child-vite' })
+<script lang="ts">
+// @ts-nocheck
+export default {
+  name: 'App',
+  data () {
+    return {
+      activeIndex: '/',
+    }
+  },
+  created () {
+    // 初始化 activeIndex
+    this.$router.isReady().then(() => {
+      this.activeIndex = this.$route.path
+    })
+  },
+  watch: {
+    // 监听路由变化
+    $route () {
+      /**
+       * 跳转后向主应用发送PopStateEvent事件，使主应用响应路由变化，触发侧边栏高亮，实际项目中并不一定需要，根据实际情况而定
+       */
+      if (this.activeIndex !== this.$route.path) {
+        this.activeIndex = this.$route.path
+
+        if (window.__MICRO_APP_ENVIRONMENT__) {
+          window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+        }
+      }
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #vite-app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

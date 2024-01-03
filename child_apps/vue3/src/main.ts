@@ -13,7 +13,6 @@ declare global {
     microApp: any
     mount: CallableFunction
     unmount: CallableFunction
-    __MICRO_APP_NAME__: string
     __MICRO_APP_ENVIRONMENT__: string
     __MICRO_APP_BASE_ROUTE__: string
   }
@@ -70,7 +69,7 @@ window.mount = () => {
   router = createRouter({
     history,
     routes,
-  }) as Router
+  })
 
   // @ts-ignore
   app = createApp(App)

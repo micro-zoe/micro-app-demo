@@ -4,6 +4,8 @@
       name='vite'
       :url='url'
       iframe
+      router-mode='custom'
+      baseroute='/main-vue2/app-vite'
       :data='microAppData'
       @created='handleCreate'
       @beforemount='handleBeforeMount'
