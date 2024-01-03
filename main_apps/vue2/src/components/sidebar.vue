@@ -32,8 +32,11 @@
         <el-menu-item index="/app-vue3">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vue3/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-vue3/element-plus">
+          <span class='menu-item-text'>element-plus</span>
+        </el-menu-item>
+        <el-menu-item index="/app-vue3/ant-design-vue">
+          <span class='menu-item-text'>ant-design-vue</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="vite">
@@ -76,8 +79,8 @@
         <el-menu-item index="/app-angular11">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-angular11/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-angular11/material">
+          <span class='menu-item-text'>material</span>
         </el-menu-item>
       </el-submenu>
       <el-submenu index="nextjs11">

@@ -1,5 +1,5 @@
 <template>
-  <div class='element-plus-1.x'>
+  <div class='element-plus'>
     <h1 style="text-align: center;">Form 表单</h1>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name">

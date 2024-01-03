@@ -7,14 +7,14 @@ const routes = [
     component: Home
   },
   {
-    path: '/element-plus-1',
-    name: 'element-plus 1.x',
-    component: () => import(/* webpackChunkName: "element-plus-1" */ '../views/element-plus-1.vue')
+    path: '/element-plus',
+    name: 'element-plus',
+    component: () => import(/* webpackChunkName: "element-plus" */ '../views/element-plus.vue')
   },
   {
-    path: '/ant-design-vue-4',
-    name: 'ant-design-vue 4.x',
-    component: () => import(/* webpackChunkName: "ant-design-vue" */ '../views/ant-design-vue-4.vue'),
+    path: '/ant-design-vue',
+    name: 'ant-design-vue',
+    component: () => import(/* webpackChunkName: "ant-design-vue" */ '../views/ant-design-vue.vue'),
   },
 ]
 

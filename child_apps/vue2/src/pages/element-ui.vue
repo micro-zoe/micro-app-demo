@@ -1,6 +1,6 @@
 <template>
   <div class='element-ui-page'>
-    <h1 style="text-align: center;">Form 表单</h1>
+    <h1>Form 表单</h1>
     <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
       <el-form-item label="活动名称" prop="name">
         <el-input v-model="ruleForm.name"></el-input>
@@ -687,12 +687,11 @@ export default {
 <style>
 .element-ui-page {
   width: 700px;
-  margin: 0 auto;
+  margin: 30px auto 0;
 }
 
 .demo-ruleForm {
   width: 500px;
-  margin: 0 auto;
 }
 
 .element-ui-page .item {

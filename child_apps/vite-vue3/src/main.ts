@@ -113,7 +113,7 @@ function mount () {
 
   console.log('微应用child-vite渲染了')
 
-  handleMicroData(router)
+  // handleMicroData(router)
 
   // fixBugForVueRouter4(router)
 }

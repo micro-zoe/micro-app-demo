@@ -18,6 +18,12 @@ module.exports = {
   lintOnSave: false,
   // 自定义webpack配置
   configureWebpack: {
-
+    module:{
+      rules:[{
+          test:/\.mjs$/,
+          include:/node_modules/,
+          type:'javascript/auto'
+      }]
+    }
   },
 }

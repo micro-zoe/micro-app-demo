@@ -3,6 +3,7 @@
     <micro-app
       name='vue3'
       :url='url'
+      router-mode='custom'
       baseroute='/main-vue2/app-vue3'
       :data='microAppData'
       @created='handleCreate'

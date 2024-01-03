@@ -1,6 +1,6 @@
 <template>
   <div class='ant-design-vue-page'>
-    <h1 style="text-align: center;">Form 表单</h1>
+    <h1>Form 表单</h1>
     <a-form
       id="components-form-demo-validate-other"
       :form="form"
@@ -772,7 +772,7 @@ export default {
 <style>
 .ant-design-vue-page {
   width: 700px;
-  margin: 0 auto;
+  margin: 30px auto 0;
 }
 
 .ant-design-vue-page .ant-btn {

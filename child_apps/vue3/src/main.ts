@@ -3,13 +3,16 @@ import { createApp, App as AppInstance } from 'vue'
 import { createRouter, createWebHistory, Router, RouterHistory, RouterOptions } from 'vue-router'
 import App from './App.vue'
 import routes from './router'
-import installElementPlus from './plugins/element'
-import installAntd from './plugins/antd'
-
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import Antd from 'ant-design-vue'
+import 'ant-design-vue/dist/reset.css'
 
 declare global {
   interface Window {
     microApp: any
+    mount: CallableFunction
+    unmount: CallableFunction
     __MICRO_APP_NAME__: string
     __MICRO_APP_ENVIRONMENT__: string
     __MICRO_APP_BASE_ROUTE__: string
@@ -17,7 +20,7 @@ declare global {
 }
 
 // 与基座进行数据交互
-function handleMicroData (router: Router) {
+function handleMicroData () {
   // 是否是微前端环境
   if (window.__MICRO_APP_ENVIRONMENT__) {
     // 主动获取基座下发的数据
@@ -26,11 +29,6 @@ function handleMicroData (router: Router) {
     // 监听基座下发的数据变化
     window.microApp.addDataListener((data: Record<string, unknown>) => {
       console.log('child-vue3 addDataListener:', data)
-
-      // 当基座下发path时进行跳转
-      if (data.path && data.path !== router.currentRoute.value.path) {
-        router.push(data.path as string)
-      }
     })
 
     // 向基座发送数据
@@ -52,7 +50,7 @@ function handleMicroData (router: Router) {
 
 // console.log('微应用child-vue3渲染了')
 
-// handleMicroData(router)
+// handleMicroData()
 
 // // 监听卸载操作
 // window.addEventListener('unmount', function () {
@@ -66,7 +64,7 @@ let app: AppInstance | null = null
 let router: Router | null = null
 let history: RouterHistory | null = null
 // 将渲染操作放入 mount 函数
-function mount () {
+window.mount = () => {
   // __MICRO_APP_BASE_ROUTE__ 为micro-app传入的基础路由
   history = createWebHistory(window.__MICRO_APP_BASE_ROUTE__ || process.env.BASE_URL)
   router = createRouter({
@@ -76,18 +74,18 @@ function mount () {
 
   // @ts-ignore
   app = createApp(App)
-  installElementPlus(app)
-  installAntd(app)
   app.use(router)
+  app.use(ElementPlus)
+  app.use(Antd)
   app.mount('#vue3-app')
 
   console.log('微应用child-vue3渲染了')
 
-  handleMicroData(router)
+  handleMicroData()
 }
 
 // 将卸载操作放入 unmount 函数
-function unmount () {
+window.unmount = () => {
   app?.unmount()
   history?.destroy()
   app = null
@@ -96,12 +94,8 @@ function unmount () {
   console.log('微应用child-vue3卸载了')
 }
 
-// 微前端环境下，注册mount和unmount方法
-if (window.__MICRO_APP_ENVIRONMENT__) {
-  // @ts-ignore
-  window[`micro-app-${window.__MICRO_APP_NAME__}`] = { mount, unmount }
-} else {
-  // 非微前端环境直接渲染
-  mount()
+// 如果不在微前端环境，则直接执行mount渲染
+if (!window.__MICRO_APP_ENVIRONMENT__) {
+  window.mount()
 }
 

@@ -3,6 +3,7 @@
     <micro-app
       name='angular11'
       :url='url'
+      router-mode='custom'
       baseroute='/main-vue2/app-angular11'
       :data='microAppData'
       @created='handleCreate'
