@@ -86,7 +86,7 @@
           <span class='menu-item-text'>material</span>
         </el-menu-item>
       </el-submenu>
-      <el-submenu index="nextjs11">
+      <!-- <el-submenu index="nextjs11">
         <template slot="title">
           <span class='submenu-text'>child-nextjs11</span>
         </template>
@@ -107,7 +107,7 @@
         <el-menu-item index="/app-nuxtjs2/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
-      </el-submenu>
+      </el-submenu> -->
     </el-menu>
   </div>
 </template>

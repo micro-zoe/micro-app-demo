@@ -90,5 +90,5 @@ if (!window.__MICRO_APP_ENVIRONMENT__) {
 }
 
 window.addEventListener('popstate', () => {
-  console.log(11111111)
+  console.log('angular11: child app popstate event')
 })
