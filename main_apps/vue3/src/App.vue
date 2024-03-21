@@ -3,10 +3,11 @@
     <SideBar />
     <router-view id='router-container' v-slot="{ Component, route }">
       <transition :name="route.meta.transition || 'fade'" mode="out-in">
+        <!-- :key="route.fullPath route.path" -->
         <keep-alive>
           <component
             :is="Component"
-            :key="$route.name"
+            :key="route.name"
           />
         </keep-alive>
       </transition>
@@ -34,7 +35,7 @@ export default defineComponent({
          * @param childPath 子应用的跳转地址
          */
         pushState: (appName: string, parentPath: string, childPath: string) => {
-          // console.log(1111111, appName, parentPath, childPath, this.$route, microApp.router.current)
+          console.log(1111111, appName, parentPath, childPath, this.$route)
           /**
            * ******************************** 注意！********************************
            * 这里展示了如何通过基座的侧边栏控制子应用渲染指定的页面

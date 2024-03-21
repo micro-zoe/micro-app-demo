@@ -5,7 +5,7 @@
     <micro-app
       name='vue2'
       :url='url'
-      router-mode='custom'
+      router-mode='search'
       baseroute='/main-vue2/app-vue2'
       :data='microAppData'
       @created='handleCreate'

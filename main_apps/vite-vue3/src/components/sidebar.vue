@@ -1,6 +1,6 @@
 <template>
   <div id="sidebar">
-    <h3 :abc="activeIndex">侧边栏</h3>
+    <h3>侧边栏</h3>
     <el-menu
       class="el-menu-vertical-demo"
       :default-active="activeIndex"
@@ -10,9 +10,9 @@
       <el-menu-item index="/">
         <span slot="title" class='submenu-text'>首页</span>
       </el-menu-item>
-      <!-- 菜单(el-sub-menu) index为子应用名称，子菜单(el-menu-item) index为路由地址 -->
-      <el-sub-menu index="vue2" title="child-vue2">
-        <template #title>
+      <!-- 菜单(el-submenu) index为子应用名称，子菜单(el-menu-item) index为路由地址 -->
+      <el-submenu index="vue2">
+        <template slot="title">
           <span class='submenu-text'>child-vue2</span>
         </template>
         <el-menu-item index="/app-vue2">
@@ -24,9 +24,9 @@
         <el-menu-item index="/app-vue2/ant-design-vue">
           <span class='menu-item-text'>ant-design-vue</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="vue3">
-        <template #title>
+      </el-submenu>
+      <el-submenu index="vue3">
+        <template slot="title">
           <span class='submenu-text'>child-vue3</span>
         </template>
         <el-menu-item index="/app-vue3">
@@ -38,20 +38,23 @@
         <el-menu-item index="/app-vue3/ant-design-vue">
           <span class='menu-item-text'>ant-design-vue</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="vite">
-        <template #title>
+      </el-submenu>
+      <el-submenu index="vite">
+        <template slot="title">
           <span class='submenu-text'>child-vite</span>
         </template>
         <el-menu-item index="/app-vite">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-vite#/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-vite/element-plus">
+          <span class='menu-item-text'>element-plus</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="react16">
-        <template #title>
+        <el-menu-item index="/app-vite/ant-design-vue">
+          <span class='menu-item-text'>ant-design-vue</span>
+        </el-menu-item>
+      </el-submenu>
+      <el-submenu index="react16">
+        <template slot="title">
           <span class='submenu-text'>child-react16</span>
         </template>
         <el-menu-item index="/app-react16">
@@ -60,9 +63,9 @@
         <el-menu-item index="/app-react16/ant-design">
           <span class='menu-item-text'>ant-design</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="react18">
-        <template #title>
+      </el-submenu>
+      <el-submenu index="react18">
+        <template slot="title">
           <span class='submenu-text'>child-react18</span>
         </template>
         <el-menu-item index="/app-react18">
@@ -71,20 +74,20 @@
         <el-menu-item index="/app-react18/ant-design">
           <span class='menu-item-text'>ant-design</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="angular11">
-        <template #title>
+      </el-submenu>
+      <el-submenu index="angular11">
+        <template slot="title">
           <span class='submenu-text'>child-angular11</span>
         </template>
         <el-menu-item index="/app-angular11">
           <span class='menu-item-text'>home</span>
         </el-menu-item>
-        <el-menu-item index="/app-angular11/page2">
-          <span class='menu-item-text'>page2</span>
+        <el-menu-item index="/app-angular11/material">
+          <span class='menu-item-text'>material</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="nextjs11">
-        <template #title>
+      </el-submenu>
+      <!-- <el-submenu index="nextjs11">
+        <template slot="title">
           <span class='submenu-text'>child-nextjs11</span>
         </template>
         <el-menu-item index="/app-nextjs11">
@@ -93,9 +96,9 @@
         <el-menu-item index="/app-nextjs11/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
-      </el-sub-menu>
-      <el-sub-menu index="nuxtjs2">/
-        <template #title>
+      </el-submenu>
+      <el-submenu index="nuxtjs2">/
+        <template slot="title">
           <span class='submenu-text'>child-nuxtjs2</span>
         </template>
         <el-menu-item index="/app-nuxtjs2">
@@ -104,7 +107,7 @@
         <el-menu-item index="/app-nuxtjs2/page2">
           <span class='menu-item-text'>page2</span>
         </el-menu-item>
-      </el-sub-menu>
+      </el-submenu> -->
     </el-menu>
   </div>
 </template>
@@ -120,7 +123,7 @@ export default {
     }
   },
   created () {
-    this.$router.isReady().then(() => {
+    this.$router.onReady(() => {
       this.activeIndex = this.$route.path
     })
   },
@@ -131,9 +134,7 @@ export default {
      */
     handleSelect (index, indexPath) {
       const appName = indexPath[0] // 获取子应用appName
-      const childPath = '/main-vue3' + indexPath[1] // 子应用跳转地址为：基座前缀 + 跳转地址
-      const appNames = microApp.getActiveApps()
-      console.log("childPath", childPath, appNames);
+      const childPath = '/main-vue2' + indexPath[1] // 子应用跳转地址为：基座前缀 + 跳转地址
       if (
         index !== '/' && // 非基座首页
         this.$route.path !== indexPath[1] && // 防止重复跳转

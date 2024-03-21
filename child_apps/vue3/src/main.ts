@@ -98,3 +98,6 @@ if (!window.__MICRO_APP_ENVIRONMENT__) {
   window.mount()
 }
 
+window.addEventListener('popstate', (e) => {
+  console.log('子应用vue3监听的 popstate', window.location.href)
+})

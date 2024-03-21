@@ -81,6 +81,6 @@ if (window.__MICRO_APP_ENVIRONMENT__) {
   mount()
 }
 
-// window.addEventListener('popstate', () => {
-//   console.log('子应用 popstate')
-// })
+window.addEventListener('popstate', (e) => {
+  console.log('子应用vue2监听的 popstate', e)
+})

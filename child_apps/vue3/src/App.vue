@@ -49,9 +49,9 @@ export default {
       if (this.activeIndex !== this.$route.path) {
         this.activeIndex = this.$route.path
 
-        if (window.__MICRO_APP_ENVIRONMENT__) {
-          window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
-        }
+        // if (window.__MICRO_APP_ENVIRONMENT__) {
+        //   window.rawWindow.dispatchEvent(new PopStateEvent('popstate', { state: null }))
+        // }
       }
     }
   }
